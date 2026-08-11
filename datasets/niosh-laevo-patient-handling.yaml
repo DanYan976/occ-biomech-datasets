@@ -1,0 +1,31 @@
+id: niosh-laevo-patient-handling
+title: "NIOSH: Passive Back-Support Exoskeleton During In-Bed Patient Handling"
+status: open
+sample: false
+
+source:
+  authors: "National Institute for Occupational Safety and Health (NIOSH)"
+  institution: "NIOSH / CDC"
+  year: 2024
+
+access:
+  url: "https://doi.org/10.26616/NIOSHRD-1092-2024-0"
+  doi: "10.26616/NIOSHRD-1092-2024-0"
+  license: "Public domain (U.S. Government work)"
+
+tasks: [pulling, holding]
+modalities: [emg, physiological]
+
+subjects:
+  n: 8
+  sex: "3F / 5M"
+
+load: "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations"
+equipment: "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor"
+tags: [exoskeleton, back, patient-handling, healthcare, laevo]
+description: >
+  NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in a
+  healthcare context: 8 participants performed four in-bed patient-handling
+  tasks with and without the device. Measured outcomes include trunk and hip
+  angles, low-back muscle activity (EMG), and heart rate.
+added: 2026-08-07

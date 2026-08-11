@@ -1,0 +1,41 @@
+id: gt-second-skin
+title: "The Second Skin: Wearable Sensor Suite for Real-Time Biomechanics Tracking"
+status: open
+sample: false
+
+source:
+  authors: "Casey R., Nuesslein C., Davenport F., Wheeler J., Mazumdar A., Sawicki G.S., Young A.J."
+  institution: "EPIC Lab, Georgia Institute of Technology"
+  year: 2025
+
+access:
+  url: "https://repository.gatech.edu/entities/publication/c7a857c8-79d8-4119-8ce0-be568d942f49"
+  doi: "10.1109/TBME.2025.3589996"
+  license: "CC-BY-4.0"
+
+tasks: [lifting, lowering, carrying, pushing, pulling, holding, squatting, walking, mmh]
+modalities: [imu, pressure_insole, emg, mocap, force_plate, grf]
+
+subjects:
+  n: 10
+  sex: "2F / 8M"
+  age_range: "25.2 +/- 3.1 yr (mean +/- SD)"
+
+load: "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/pull, shoveling, stair and ladder climbing"
+equipment: "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells"
+sampling:
+  imu: 200
+  pressure_insole: 80
+  mocap: 200
+  force_plate: 2000
+
+formats: [csv, mat]
+tags: [exoskeleton-control, deep-learning, joint-moments, opensim, manual-labor, real-time]
+description: >
+  Full-body wearable sensor suite (IMUs, pressure insoles, EMG) synchronized with
+  lab-grade motion capture and force plates from 10 participants across 33 task
+  variations of simulated manual labor: lead blanket lifting, squatting, wagon
+  push/pull, shoveling, stair and ladder climbing, and level or graded walking.
+  Includes OpenSim inverse kinematics, inverse dynamics, and right knee joint
+  reaction forces as labels for real-time biomechanics estimation.
+added: 2026-07-25

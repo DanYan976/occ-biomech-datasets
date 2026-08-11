@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Occupational Biomechanics Dataset Entry",
+  "description": "Metadata record for one dataset in the catalog. Aligned with schema.org/Dataset where possible; extended with occupational-biomechanics fields.",
+  "type": "object",
+  "required": ["id", "title", "status", "source", "tasks", "modalities"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique slug, also the filename. Lowercase, hyphenated.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "title": { "type": "string", "minLength": 4 },
+    "status": {
+      "type": "string",
+      "enum": ["open", "coming_soon", "restricted"],
+      "description": "open = publicly downloadable; restricted = available under a data-use agreement; coming_soon = planned, not yet released."
+    },
+    "sample": {
+      "type": "boolean",
+      "description": "true for placeholder/example entries shipped with the template. Remove or set false for real records.",
+      "default": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["authors", "institution"],
+      "additionalProperties": false,
+      "properties": {
+        "authors": { "type": "string" },
+        "institution": { "type": "string" },
+        "year": { "type": "integer", "minimum": 1980, "maximum": 2100 }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": { "type": "string", "description": "Canonical landing page or DOI resolver. The catalog links out; it does not rehost." },
+        "doi": { "type": "string" },
+        "license": { "type": "string", "description": "SPDX-style id or short name, e.g. CC-BY-4.0. Datasets keep their own license." }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["lifting", "lowering", "carrying", "pushing", "pulling", "holding", "reaching", "squatting", "walking", "assembly", "mmh"]
+      },
+      "description": "Controlled vocabulary. 'mmh' = manual materials handling (umbrella term)."
+    },
+    "modalities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["mocap", "imu", "emg", "force_plate", "grf", "video", "egocentric_video", "pose_estimation", "pressure_insole", "physiological"]
+      }
+    },
+    "subjects": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "n": { "type": "integer", "minimum": 1 },
+        "sex": { "type": "string", "description": "Free text, e.g. '12F / 12M'." },
+        "age_range": { "type": "string" }
+      }
+    },
+    "load": { "type": "string", "description": "Handled load / task intensity, e.g. '5-15 kg boxes'." },
+    "equipment": { "type": "string", "description": "Capture systems, e.g. 'OptiTrack (12 cam), Delsys Trigno EMG'." },
+    "sampling": {
+      "type": "object",
+      "description": "Sampling rates per modality in Hz (video in fps).",
+      "additionalProperties": { "type": ["integer", "number"] }
+    },
+    "formats": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["c3d", "trc", "mot", "sto", "csv", "json", "mp4", "mat", "edf", "bag", "npz"]
+      }
+    },
+    "description": { "type": "string", "maxLength": 600 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "added": { "type": "string", "format": "date", "description": "Date added to the catalog (YYYY-MM-DD)." }
+  }
+}

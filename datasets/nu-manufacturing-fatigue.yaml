@@ -1,0 +1,31 @@
+id: nu-manufacturing-fatigue
+title: "Wearable Multi-Level Physical Fatigue Prediction in Manufacturing"
+status: open
+sample: false
+
+source:
+  authors: "Northwestern University"
+  institution: "Northwestern University"
+  year: 2024
+
+access:
+  url: "https://doi.org/10.5281/zenodo.12788571"
+  doi: "10.5281/zenodo.12788571"
+  license: "CC-BY-4.0"
+
+tasks: [assembly, reaching, mmh]
+modalities: [physiological, imu]
+
+subjects:
+  n: 43
+
+load: "Composite sheet layup and wire harnessing simulations with weighted vest"
+equipment: "Flexible wearable sensors: ANNE vitals (heart rate, ECG, chest temperature) + chest accelerometer/gyroscope; Borg RPE scale"
+formats: [csv]
+tags: [fatigue, manufacturing, wearables, borg-scale, physiological]
+description: >
+  Wearable-sensor (heart rate, ECG, chest temperature, chest accelerometer/
+  gyroscope) and self-reported Borg data from 43 workers performing composite
+  layup and wire-harnessing tasks with a weighted vest to induce fatigue,
+  across five work segments plus rest, for multi-level fatigue prediction.
+added: 2026-07-11

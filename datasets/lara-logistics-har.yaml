@@ -1,0 +1,30 @@
+id: lara-logistics-har
+title: "LARa: Logistic Activity Recognition Challenge (v01)"
+status: open
+sample: false
+
+source:
+  authors: "Niemann F., Reining C., Moya Rueda F., Altermann E., Nair N.R., Steffens J.A., Fink G.A., ten Hompel M."
+  institution: "TU Dortmund University"
+  year: 2020
+
+access:
+  url: "https://doi.org/10.5281/zenodo.3862782"
+  doi: "10.5281/zenodo.3862782"
+  license: "CC-BY-NC-4.0"          # non-commercial only
+
+tasks: [carrying, reaching, mmh, walking]
+modalities: [mocap, imu, video]
+
+subjects:
+  n: 14
+
+load: "Warehouse picking and packing scenarios (758 min of footage)"
+equipment: "Optical mocap (OMoCap), IMUs, RGB video"
+formats: [csv, mp4]
+tags: [logistics, activity-recognition, har, picking, packing, non-commercial]
+description: >
+  The first freely accessible logistics dataset for human activity recognition:
+  two picking and one packing scenario from 14 participants, with mocap, IMU and
+  RGB video annotated into 8 activity classes and 19 binary semantic attributes.
+added: 2026-07-10

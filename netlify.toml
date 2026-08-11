@@ -1,0 +1,21 @@
+[build]
+  # $URL is Netlify's primary site URL. It is the netlify.app address today and
+  # switches to the custom domain automatically once one is attached, so the
+  # JSON-LD always claims the origin the page is actually served from.
+  command = "pip install -r scripts/requirements.txt && SITE_URL=${URL:-https://occbiomechanics.org} python3 scripts/build_catalog.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# Netlify always keeps the project reachable at its netlify.app subdomain, which
+# leaves a second address serving the same catalog. Send it to the canonical
+# domain so search engines index one origin and citations settle on one URL.
+# force = true is required: without it the rule only fires when no file matches,
+# and index.html always matches. The host is spelled out so deploy previews
+# (<id>--occbiomechanics.netlify.app) keep resolving normally.
+[[redirects]]
+  from = "https://occbiomechanics.netlify.app/*"
+  to = "https://occbiomechanics.org/:splat"
+  status = 301
+  force = true

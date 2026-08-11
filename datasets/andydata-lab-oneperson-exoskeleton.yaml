@@ -1,0 +1,32 @@
+id: andydata-lab-oneperson-exoskeleton
+title: "AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder"
+status: open
+sample: false
+
+source:
+  authors: "Maurice P., Camernik J., Gorjan D., Babic J., Schirrmeister B., Bornmann J., Ivaldi S., Tagliapietra L., Latella C., Pucci D."
+  institution: "Inria / Jozef Stefan Institute (AnDy project)"
+  year: 2018
+
+access:
+  url: "https://doi.org/10.5281/zenodo.1472214"
+  doi: "10.5281/zenodo.1472214"
+  license: "CC-BY-4.0"
+
+tasks: [reaching, holding]
+modalities: [mocap, grf, emg, physiological, video]
+
+subjects:
+  n: 12
+
+load: "Overhead pointing task, with vs. without the Paexo Shoulder passive exoskeleton"
+equipment: "Whole-body mocap, force plates, shoulder & back EMG, oxygen consumption, heart rate; Paexo Shoulder (Ottobock)"
+formats: [mat, csv, mp4]
+tags: [exoskeleton, shoulder, overhead-work, paexo, ergonomics]
+description: >
+  Whole-body kinematics, ground reaction forces, shoulder/back EMG, oxygen
+  consumption, heart rate and subjective workload from 12 participants doing
+  overhead pointing with and without the Paexo Shoulder passive exoskeleton.
+  Used as input by Fritzsche et al. (2021) for AnyBody simulation of overhead
+  drilling, showing 54-87% deltoid activity reduction.
+added: 2026-08-07

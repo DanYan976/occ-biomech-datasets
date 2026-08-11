@@ -1,0 +1,29 @@
+id: openpack
+title: "OpenPack: Packaging Work Recognition in IoT Logistics"
+status: open
+sample: false
+
+source:
+  authors: "Yoshimura N., Morales J., Maekawa T., Hara T."
+  institution: "Osaka University"
+  year: 2024
+
+access:
+  url: "https://open-pack.github.io/"
+  license: "CC-BY-NC-SA-4.0 (non-RGB); RGB under restrictive academic-only license"
+
+tasks: [assembly, reaching, mmh]
+modalities: [imu, physiological, pose_estimation, video]
+
+subjects:
+  n: 16
+
+load: "Packaging operations (picking, box assembly, item insertion, scanning, labeling)"
+equipment: "4x IMU, 2x Empatica E4 (BVP/EDA), 2x depth camera, 1x LiDAR, barcode scanners"
+formats: [csv, json, mp4]
+tags: [logistics, packaging, activity-recognition, multimodal, non-commercial, iot]
+description: >
+  53+ hours of multimodal packaging work from 16 subjects: acceleration, gyro,
+  quaternion, BVP, EDA, keypoints, LiDAR and depth. 20,129 annotated operations
+  across 10 operation classes. Non-RGB is CC-BY-NC-SA; RGB is academic-use only.
+added: 2026-07-11

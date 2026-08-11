@@ -1,0 +1,31 @@
+id: reimeir-back-exo-mechanisms
+title: "Five Back-Support Exoskeletons: Trunk EMG & Kinematics in Lift-Carry-Lower"
+status: restricted
+sample: false
+
+source:
+  authors: "Reimeir B., Calisti M., Mittermeier R., Ralfs L., Weidner R."
+  institution: "University of Innsbruck"
+  year: 2023
+
+access:
+  url: "https://doi.org/10.1017/wtc.2023.5"
+  doi: "10.1017/wtc.2023.5"
+  license: "Data on request from the corresponding author"
+
+tasks: [lifting, carrying, lowering]
+modalities: [emg, mocap]
+
+subjects:
+  n: 12
+
+load: "Combined lift-carry-lower of a 13 kg box"
+equipment: "Rakunie, BionicBack, SoftExo Lift (passive); Japet.W, Cray X (active); EMG, motion capture"
+tags: [exoskeleton, back, passive-exoskeleton, active-exoskeleton, force-path, data-on-request]
+description: >
+  Comparison of five back-support exoskeletons with different functional
+  mechanisms (three passive, two active) in Wearable Technologies (2023):
+  12 participants lifted, carried and lowered a 13 kg box while trunk muscle
+  EMG and kinematics were recorded. Data are not publicly deposited; available
+  from the corresponding author on request. Link goes to the paper.
+added: 2026-08-07

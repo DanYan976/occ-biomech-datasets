@@ -1,0 +1,31 @@
+id: mayer-apogee-lifting-speeds
+title: "Apogee Active Back Exoskeleton: Box Lifting at Different Speeds"
+status: restricted
+sample: false
+
+source:
+  authors: "Mayer D., Siebert T., Hasenmaier J., Stutzig N."
+  institution: "University of Stuttgart"
+  year: 2025
+
+access:
+  url: "https://doi.org/10.3389/fbioe.2025.1685634"
+  doi: "10.3389/fbioe.2025.1685634"
+  license: "Data on request from the corresponding author"
+
+tasks: [lifting]
+modalities: [emg, mocap]
+
+subjects:
+  n: 16
+
+load: "Box lifting at two speeds under four support conditions (with/without active back support)"
+equipment: "Apogee (German Bionic) active back-support exoskeleton, EMG, 3D motion capture"
+tags: [exoskeleton, back, active-exoskeleton, lifting-speed, data-on-request]
+description: >
+  Biomechanical evaluation of the Apogee active back-support exoskeleton
+  (Frontiers in Bioengineering and Biotechnology, 2025): 16 participants
+  lifted boxes at two speeds across four support conditions while EMG and 3D
+  motion capture were recorded. Data are not deposited in a public repository;
+  available from the corresponding author on request. Link goes to the paper.
+added: 2026-08-07

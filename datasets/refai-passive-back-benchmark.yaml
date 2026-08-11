@@ -1,0 +1,31 @@
+id: refai-passive-back-benchmark
+title: "Benchmarking Four Commercial Passive Back Exoskeletons for Industrial Work"
+status: restricted
+sample: false
+
+source:
+  authors: "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M."
+  institution: "University of Twente"
+  year: 2024
+
+access:
+  url: "https://doi.org/10.1017/wtc.2024.2"
+  doi: "10.1017/wtc.2024.2"
+  license: "Data on request from the corresponding author"
+
+tasks: [lifting, mmh]
+modalities: [emg]
+
+subjects:
+  n: 10
+
+load: "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons"
+equipment: "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement"
+tags: [exoskeleton, back, benchmark, passive-exoskeleton, comfort, data-on-request]
+description: >
+  Head-to-head benchmark of four commercial passive back exoskeletons (two
+  rigid, two soft) in Wearable Technologies (2024): 10 participants performed
+  four workplace-simulated tasks; assistive moments, trunk muscle EMG, comfort
+  and exertion were compared across devices. Data are not publicly deposited;
+  available from the corresponding author on request. Link goes to the paper.
+added: 2026-08-07

@@ -1,0 +1,676 @@
+{
+  "generated_from": "datasets/*.yaml",
+  "count": 15,
+  "datasets": [
+    {
+      "id": "andydata-lab-oneperson",
+      "title": "AndyData-lab-onePerson: Industrial Task Motion & Contact Forces",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Maurice P., Malaisé A., Ivaldi S., Rochel O., Amiot C., Paris N., Richard G.-J., Fritzsche L.",
+        "institution": "Inria / DFKI (AnDy project)",
+        "year": 2019
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.3254403",
+        "doi": "10.5281/zenodo.3254403",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "reaching",
+        "carrying",
+        "assembly",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "imu",
+        "video"
+      ],
+      "subjects": {
+        "n": 13
+      },
+      "load": "Industrial-mimicking tasks (screwing, carrying, manipulation) per EAWS taxonomy",
+      "equipment": "Qualisys optical mocap, Xsens inertial mocap, pressure glove, video",
+      "formats": [
+        "c3d",
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "ergonomics",
+        "industrial",
+        "eaws",
+        "action-annotation",
+        "posture"
+      ],
+      "description": "Whole-body kinematics (optical + inertial) and hand contact pressure from 13 participants performing industrial-mimicking tasks, with video annotations of actions and postures using the Ergonomic Assessment Worksheet (EAWS) taxonomy.\n",
+      "added": "2026-07-10"
+    },
+    {
+      "id": "lara-logistics-har",
+      "title": "LARa: Logistic Activity Recognition Challenge (v01)",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Niemann F., Reining C., Moya Rueda F., Altermann E., Nair N.R., Steffens J.A., Fink G.A., ten Hompel M.",
+        "institution": "TU Dortmund University",
+        "year": 2020
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.3862782",
+        "doi": "10.5281/zenodo.3862782",
+        "license": "CC-BY-NC-4.0"
+      },
+      "tasks": [
+        "carrying",
+        "reaching",
+        "mmh",
+        "walking"
+      ],
+      "modalities": [
+        "mocap",
+        "imu",
+        "video"
+      ],
+      "subjects": {
+        "n": 14
+      },
+      "load": "Warehouse picking and packing scenarios (758 min of footage)",
+      "equipment": "Optical mocap (OMoCap), IMUs, RGB video",
+      "formats": [
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "logistics",
+        "activity-recognition",
+        "har",
+        "picking",
+        "packing",
+        "non-commercial"
+      ],
+      "description": "The first freely accessible logistics dataset for human activity recognition: two picking and one packing scenario from 14 participants, with mocap, IMU and RGB video annotated into 8 activity classes and 19 binary semantic attributes.\n",
+      "added": "2026-07-10"
+    },
+    {
+      "id": "moped25",
+      "title": "MOPED25: Full-Body Pose & Motion in Occupational Tasks",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Li L., Xie Z., Xu X.",
+        "institution": "NC State University (Biomechanics Lab)",
+        "year": 2020
+      },
+      "access": {
+        "url": "https://github.com/human-systems-ise-ncsu/MOPED25",
+        "license": "Freely available; cite Li et al. 2020 (no explicit license stated)"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "reaching",
+        "pushing",
+        "pulling",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "video"
+      ],
+      "subjects": {
+        "n": 11
+      },
+      "load": "25 occupational tasks (lifting, carrying, reaching, pushing, pulling)",
+      "equipment": "37-marker optical mocap, synchronized video",
+      "sampling": {
+        "mocap": 60,
+        "video": 30
+      },
+      "formats": [
+        "mat",
+        "csv"
+      ],
+      "tags": [
+        "ergonomics",
+        "full-body-pose",
+        "occupational-tasks",
+        "markers"
+      ],
+      "description": "Full-body 3-D kinematics from 37 markers (60 Hz) plus synchronized video (.avi, 30 Hz) for 11 subjects performing 25 occupational tasks. Download link via the lab's GitHub page. Cite Li, Xie & Xu (J. Biomechanics, 2020) when used.\n",
+      "added": "2026-07-10"
+    },
+    {
+      "id": "nu-manufacturing-fatigue",
+      "title": "Wearable Multi-Level Physical Fatigue Prediction in Manufacturing",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Northwestern University",
+        "institution": "Northwestern University",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.12788571",
+        "doi": "10.5281/zenodo.12788571",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "assembly",
+        "reaching",
+        "mmh"
+      ],
+      "modalities": [
+        "physiological",
+        "imu"
+      ],
+      "subjects": {
+        "n": 43
+      },
+      "load": "Composite sheet layup and wire harnessing simulations with weighted vest",
+      "equipment": "Flexible wearable sensors: ANNE vitals (heart rate, ECG, chest temperature) + chest accelerometer/gyroscope; Borg RPE scale",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "fatigue",
+        "manufacturing",
+        "wearables",
+        "borg-scale",
+        "physiological"
+      ],
+      "description": "Wearable-sensor (heart rate, ECG, chest temperature, chest accelerometer/ gyroscope) and self-reported Borg data from 43 workers performing composite layup and wire-harnessing tasks with a weighted vest to induce fatigue, across five work segments plus rest, for multi-level fatigue prediction.\n",
+      "added": "2026-07-11"
+    },
+    {
+      "id": "openpack",
+      "title": "OpenPack: Packaging Work Recognition in IoT Logistics",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Yoshimura N., Morales J., Maekawa T., Hara T.",
+        "institution": "Osaka University",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://open-pack.github.io/",
+        "license": "CC-BY-NC-SA-4.0 (non-RGB); RGB under restrictive academic-only license"
+      },
+      "tasks": [
+        "assembly",
+        "reaching",
+        "mmh"
+      ],
+      "modalities": [
+        "imu",
+        "physiological",
+        "pose_estimation",
+        "video"
+      ],
+      "subjects": {
+        "n": 16
+      },
+      "load": "Packaging operations (picking, box assembly, item insertion, scanning, labeling)",
+      "equipment": "4x IMU, 2x Empatica E4 (BVP/EDA), 2x depth camera, 1x LiDAR, barcode scanners",
+      "formats": [
+        "csv",
+        "json",
+        "mp4"
+      ],
+      "tags": [
+        "logistics",
+        "packaging",
+        "activity-recognition",
+        "multimodal",
+        "non-commercial",
+        "iot"
+      ],
+      "description": "53+ hours of multimodal packaging work from 16 subjects: acceleration, gyro, quaternion, BVP, EDA, keypoints, LiDAR and depth. 20,129 annotated operations across 10 operation classes. Non-RGB is CC-BY-NC-SA; RGB is academic-use only.\n",
+      "added": "2026-07-11"
+    },
+    {
+      "id": "pesenti-exo-payload-imu",
+      "title": "IMU Activity Recognition & Payload Estimation for Low-Back Exoskeletons",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Pesenti M.",
+        "institution": "Politecnico di Milano",
+        "year": 2022
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.7182799",
+        "doi": "10.5281/zenodo.7182799",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "mmh"
+      ],
+      "modalities": [
+        "imu"
+      ],
+      "subjects": {
+        "n": 12,
+        "sex": "6F / 6M"
+      },
+      "load": "Lifting and lowering a box with 5, 10 and 15 kg payloads (no exoskeleton worn during collection)",
+      "equipment": "5x wireless IMU (chest, both wrists, both thighs)",
+      "sampling": {
+        "imu": 100
+      },
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "exoskeleton",
+        "activity-recognition",
+        "payload-estimation",
+        "low-back",
+        "deep-learning"
+      ],
+      "description": "IMU recordings from 12 subjects lifting and lowering boxes of 5-15 kg, pre-split into train/validation/test for intention (activity) classification and payload estimation, intended for low-back exoskeleton control. Sensors on chest, wrists and thighs; no exoskeleton was worn during collection.\n",
+      "added": "2026-07-11"
+    },
+    {
+      "id": "gt-second-skin",
+      "title": "The Second Skin: Wearable Sensor Suite for Real-Time Biomechanics Tracking",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Casey R., Nuesslein C., Davenport F., Wheeler J., Mazumdar A., Sawicki G.S., Young A.J.",
+        "institution": "EPIC Lab, Georgia Institute of Technology",
+        "year": 2025
+      },
+      "access": {
+        "url": "https://repository.gatech.edu/entities/publication/c7a857c8-79d8-4119-8ce0-be568d942f49",
+        "doi": "10.1109/TBME.2025.3589996",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "carrying",
+        "pushing",
+        "pulling",
+        "holding",
+        "squatting",
+        "walking",
+        "mmh"
+      ],
+      "modalities": [
+        "imu",
+        "pressure_insole",
+        "emg",
+        "mocap",
+        "force_plate",
+        "grf"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "2F / 8M",
+        "age_range": "25.2 +/- 3.1 yr (mean +/- SD)"
+      },
+      "load": "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/pull, shoveling, stair and ladder climbing",
+      "equipment": "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells",
+      "sampling": {
+        "imu": 200,
+        "pressure_insole": 80,
+        "mocap": 200,
+        "force_plate": 2000
+      },
+      "formats": [
+        "csv",
+        "mat"
+      ],
+      "tags": [
+        "exoskeleton-control",
+        "deep-learning",
+        "joint-moments",
+        "opensim",
+        "manual-labor",
+        "real-time"
+      ],
+      "description": "Full-body wearable sensor suite (IMUs, pressure insoles, EMG) synchronized with lab-grade motion capture and force plates from 10 participants across 33 task variations of simulated manual labor: lead blanket lifting, squatting, wagon push/pull, shoveling, stair and ladder climbing, and level or graded walking. Includes OpenSim inverse kinematics, inverse dynamics, and right knee joint reaction forces as labels for real-time biomechanics estimation.\n",
+      "added": "2026-07-25"
+    },
+    {
+      "id": "andydata-lab-oneperson-exoskeleton",
+      "title": "AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Maurice P., Camernik J., Gorjan D., Babic J., Schirrmeister B., Bornmann J., Ivaldi S., Tagliapietra L., Latella C., Pucci D.",
+        "institution": "Inria / Jozef Stefan Institute (AnDy project)",
+        "year": 2018
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.1472214",
+        "doi": "10.5281/zenodo.1472214",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "reaching",
+        "holding"
+      ],
+      "modalities": [
+        "mocap",
+        "grf",
+        "emg",
+        "physiological",
+        "video"
+      ],
+      "subjects": {
+        "n": 12
+      },
+      "load": "Overhead pointing task, with vs. without the Paexo Shoulder passive exoskeleton",
+      "equipment": "Whole-body mocap, force plates, shoulder & back EMG, oxygen consumption, heart rate; Paexo Shoulder (Ottobock)",
+      "formats": [
+        "mat",
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "overhead-work",
+        "paexo",
+        "ergonomics"
+      ],
+      "description": "Whole-body kinematics, ground reaction forces, shoulder/back EMG, oxygen consumption, heart rate and subjective workload from 12 participants doing overhead pointing with and without the Paexo Shoulder passive exoskeleton. Used as input by Fritzsche et al. (2021) for AnyBody simulation of overhead drilling, showing 54-87% deltoid activity reduction.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "divekar-knee-exo-lifting",
+      "title": "Versatile Knee Exoskeleton: Lifting, Lowering & Carrying Fatigue Dataset",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Divekar N., Thomas G., Yerva A., Frame H., Gregg R.",
+        "institution": "University of Michigan",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.5061/dryad.z34tmpgks",
+        "doi": "10.5061/dryad.z34tmpgks",
+        "license": "CC0-1.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "carrying",
+        "squatting",
+        "walking"
+      ],
+      "modalities": [
+        "emg",
+        "grf",
+        "imu"
+      ],
+      "subjects": {
+        "n": 10
+      },
+      "load": "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons",
+      "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors",
+      "formats": [
+        "mat"
+      ],
+      "tags": [
+        "exoskeleton",
+        "knee",
+        "fatigue",
+        "quadriceps",
+        "task-adaptive-control"
+      ],
+      "description": "Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects performed lifting, lowering, carrying, walking, ramp and stair tasks with and without a backdrivable knee exoskeleton. Includes normalized quadriceps and hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction forces, task performance and perceptual ratings.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "niosh-laevo-patient-handling",
+      "title": "NIOSH: Passive Back-Support Exoskeleton During In-Bed Patient Handling",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "National Institute for Occupational Safety and Health (NIOSH)",
+        "institution": "NIOSH / CDC",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.26616/NIOSHRD-1092-2024-0",
+        "doi": "10.26616/NIOSHRD-1092-2024-0",
+        "license": "Public domain (U.S. Government work)"
+      },
+      "tasks": [
+        "pulling",
+        "holding"
+      ],
+      "modalities": [
+        "emg",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 8,
+        "sex": "3F / 5M"
+      },
+      "load": "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "patient-handling",
+        "healthcare",
+        "laevo"
+      ],
+      "description": "NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in a healthcare context: 8 participants performed four in-bed patient-handling tasks with and without the device. Measured outcomes include trunk and hip angles, low-back muscle activity (EMG), and heart rate.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "mayer-apogee-lifting-speeds",
+      "title": "Apogee Active Back Exoskeleton: Box Lifting at Different Speeds",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Mayer D., Siebert T., Hasenmaier J., Stutzig N.",
+        "institution": "University of Stuttgart",
+        "year": 2025
+      },
+      "access": {
+        "url": "https://doi.org/10.3389/fbioe.2025.1685634",
+        "doi": "10.3389/fbioe.2025.1685634",
+        "license": "Data on request from the corresponding author"
+      },
+      "tasks": [
+        "lifting"
+      ],
+      "modalities": [
+        "emg",
+        "mocap"
+      ],
+      "subjects": {
+        "n": 16
+      },
+      "load": "Box lifting at two speeds under four support conditions (with/without active back support)",
+      "equipment": "Apogee (German Bionic) active back-support exoskeleton, EMG, 3D motion capture",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "active-exoskeleton",
+        "lifting-speed",
+        "data-on-request"
+      ],
+      "description": "Biomechanical evaluation of the Apogee active back-support exoskeleton (Frontiers in Bioengineering and Biotechnology, 2025): 16 participants lifted boxes at two speeds across four support conditions while EMG and 3D motion capture were recorded. Data are not deposited in a public repository; available from the corresponding author on request. Link goes to the paper.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "mitterlehner-paexo-back-logistics",
+      "title": "Paexo Back Passive Exoskeleton in Simulated Logistics Workplaces",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Mitterlehner L., Li Y.X., Wolf M.",
+        "institution": "Graz University of Technology",
+        "year": 2023
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2023.19",
+        "doi": "10.1017/wtc.2023.19",
+        "license": "Data on request from the corresponding author"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "pushing",
+        "pulling",
+        "walking",
+        "mmh"
+      ],
+      "modalities": [
+        "imu",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 30,
+        "sex": "8F / 22M"
+      },
+      "load": "Three simulated logistics workplaces: deep-box unloading to an elevated table, order picking/storing with trolley, and pick-walk-store",
+      "equipment": "Paexo Back (Ottobock) passive low-back exoskeleton; Zephyr Bioharness 3.0 (heart rate, trunk inclination/acceleration)",
+      "sampling": {
+        "imu": 100,
+        "physiological": 1
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "logistics",
+        "order-picking",
+        "acceptance",
+        "data-on-request"
+      ],
+      "description": "Objective and subjective evaluation of the Paexo Back passive low-back exoskeleton (Wearable Technologies, 2023): 30 participants worked at three simulated logistics workplaces; heart rate, trunk inclination/acceleration, throughput, exertion and acceptance were recorded. Data are not publicly deposited; available from the corresponding author on request. Link goes to the paper.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "refai-passive-back-benchmark",
+      "title": "Benchmarking Four Commercial Passive Back Exoskeletons for Industrial Work",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M.",
+        "institution": "University of Twente",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2024.2",
+        "doi": "10.1017/wtc.2024.2",
+        "license": "Data on request from the corresponding author"
+      },
+      "tasks": [
+        "lifting",
+        "mmh"
+      ],
+      "modalities": [
+        "emg"
+      ],
+      "subjects": {
+        "n": 10
+      },
+      "load": "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons",
+      "equipment": "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "benchmark",
+        "passive-exoskeleton",
+        "comfort",
+        "data-on-request"
+      ],
+      "description": "Head-to-head benchmark of four commercial passive back exoskeletons (two rigid, two soft) in Wearable Technologies (2024): 10 participants performed four workplace-simulated tasks; assistive moments, trunk muscle EMG, comfort and exertion were compared across devices. Data are not publicly deposited; available from the corresponding author on request. Link goes to the paper.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "reimeir-back-exo-mechanisms",
+      "title": "Five Back-Support Exoskeletons: Trunk EMG & Kinematics in Lift-Carry-Lower",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Reimeir B., Calisti M., Mittermeier R., Ralfs L., Weidner R.",
+        "institution": "University of Innsbruck",
+        "year": 2023
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2023.5",
+        "doi": "10.1017/wtc.2023.5",
+        "license": "Data on request from the corresponding author"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "lowering"
+      ],
+      "modalities": [
+        "emg",
+        "mocap"
+      ],
+      "subjects": {
+        "n": 12
+      },
+      "load": "Combined lift-carry-lower of a 13 kg box",
+      "equipment": "Rakunie, BionicBack, SoftExo Lift (passive); Japet.W, Cray X (active); EMG, motion capture",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "passive-exoskeleton",
+        "active-exoskeleton",
+        "force-path",
+        "data-on-request"
+      ],
+      "description": "Comparison of five back-support exoskeletons with different functional mechanisms (three passive, two active) in Wearable Technologies (2023): 12 participants lifted, carried and lowered a 13 kg box while trunk muscle EMG and kinematics were recorded. Data are not publicly deposited; available from the corresponding author on request. Link goes to the paper.\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "njit-egocentric-boxlifting",
+      "title": "Egocentric Multimodal Box-Lifting Dataset",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "NJIT Occupational Biomechanics Lab",
+        "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "year": 2026
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "carrying",
+        "walking",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "egocentric_video",
+        "physiological"
+      ],
+      "load": "Boxes at multiple weights, walking and carrying in confined space",
+      "equipment": "OptiTrack optical mocap, helmet-mounted GoPro MAX 360 (Gen 2), physiological sensors",
+      "sampling": {
+        "mocap": 120,
+        "video": 60
+      },
+      "formats": [
+        "c3d",
+        "mp4",
+        "csv"
+      ],
+      "tags": [
+        "egocentric",
+        "fatigue-aware",
+        "vision-driven-control",
+        "low-back-exoskeleton"
+      ],
+      "description": "Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned.\n",
+      "added": "2026-01-01"
+    }
+  ]
+}

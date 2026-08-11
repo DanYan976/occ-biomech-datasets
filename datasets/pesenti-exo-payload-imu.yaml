@@ -1,0 +1,34 @@
+id: pesenti-exo-payload-imu
+title: "IMU Activity Recognition & Payload Estimation for Low-Back Exoskeletons"
+status: open
+sample: false
+
+source:
+  authors: "Pesenti M."
+  institution: "Politecnico di Milano"
+  year: 2022
+
+access:
+  url: "https://doi.org/10.5281/zenodo.7182799"
+  doi: "10.5281/zenodo.7182799"
+  license: "CC-BY-4.0"
+
+tasks: [lifting, carrying, mmh]
+modalities: [imu]
+
+subjects:
+  n: 12
+  sex: "6F / 6M"
+
+load: "Lifting and lowering a box with 5, 10 and 15 kg payloads (no exoskeleton worn during collection)"
+equipment: "5x wireless IMU (chest, both wrists, both thighs)"
+sampling:
+  imu: 100
+formats: [csv]
+tags: [exoskeleton, activity-recognition, payload-estimation, low-back, deep-learning]
+description: >
+  IMU recordings from 12 subjects lifting and lowering boxes of 5-15 kg,
+  pre-split into train/validation/test for intention (activity) classification
+  and payload estimation, intended for low-back exoskeleton control. Sensors on
+  chest, wrists and thighs; no exoskeleton was worn during collection.
+added: 2026-07-11

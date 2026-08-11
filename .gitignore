@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+node_modules/
+.claude/
+
+# Local working docs (not part of the catalog)
+website_description*.docx
+website_description*.pdf
+~$*.docx

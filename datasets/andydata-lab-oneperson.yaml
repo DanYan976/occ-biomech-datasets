@@ -1,0 +1,30 @@
+id: andydata-lab-oneperson
+title: "AndyData-lab-onePerson: Industrial Task Motion & Contact Forces"
+status: open
+sample: false
+
+source:
+  authors: "Maurice P., Malaisé A., Ivaldi S., Rochel O., Amiot C., Paris N., Richard G.-J., Fritzsche L."
+  institution: "Inria / DFKI (AnDy project)"
+  year: 2019
+
+access:
+  url: "https://doi.org/10.5281/zenodo.3254403"
+  doi: "10.5281/zenodo.3254403"
+  license: "CC-BY-4.0"
+
+tasks: [reaching, carrying, assembly, mmh]
+modalities: [mocap, imu, video]
+
+subjects:
+  n: 13
+
+load: "Industrial-mimicking tasks (screwing, carrying, manipulation) per EAWS taxonomy"
+equipment: "Qualisys optical mocap, Xsens inertial mocap, pressure glove, video"
+formats: [c3d, csv, mp4]
+tags: [ergonomics, industrial, eaws, action-annotation, posture]
+description: >
+  Whole-body kinematics (optical + inertial) and hand contact pressure from 13
+  participants performing industrial-mimicking tasks, with video annotations of
+  actions and postures using the Ergonomic Assessment Worksheet (EAWS) taxonomy.
+added: 2026-07-10

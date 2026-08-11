@@ -1,0 +1,27 @@
+# Real planned dataset (your lab). Marked coming_soon until release.
+id: njit-egocentric-boxlifting
+title: "Egocentric Multimodal Box-Lifting Dataset"
+status: coming_soon
+sample: false
+
+source:
+  authors: "NJIT Occupational Biomechanics Lab"
+  institution: "New Jersey Institute of Technology (AnyMotion Lab)"
+  year: 2026
+
+tasks: [lifting, lowering, carrying, walking, mmh]
+modalities: [mocap, egocentric_video, physiological]
+
+
+load: "Boxes at multiple weights, walking and carrying in confined space"
+equipment: "OptiTrack optical mocap, helmet-mounted GoPro MAX 360 (Gen 2), physiological sensors"
+sampling:
+  mocap: 120
+  video: 60
+formats: [c3d, mp4, csv]
+tags: [egocentric, fatigue-aware, vision-driven-control, low-back-exoskeleton]
+description: >
+  Synchronized optical motion capture, first-person 360 video, and physiological
+  signals from simulated lifting tasks, collected to support fatigue-aware and
+  vision-driven control of an active low-back exoskeleton. Release planned.
+added: 2026-01-01

@@ -1,0 +1,41 @@
+# Copy this file to a new name (e.g. datasets/my-dataset.yaml) and fill it in.
+# Files starting with "_" are ignored by the build. See schema/dataset.schema.json
+# for the full field list and allowed values. Required: id, title, status,
+# source, tasks, modalities.
+
+id: my-dataset                        # lowercase-hyphenated slug (must match intent, not the filename)
+title: "Human-readable dataset title"
+status: coming_soon                   # open | coming_soon | restricted
+sample: false
+
+source:
+  authors: "Last F., Last F., et al."
+  institution: "Lab / University"
+  year: 2025
+
+access:                               # omit entirely for coming_soon entries with no page yet
+  url: "https://doi.org/10.xxxx/xxxxx"
+  doi: "10.xxxx/xxxxx"
+  license: "CC-BY-4.0"                # datasets keep their own license
+
+tasks: [lifting, mmh]                 # controlled vocab (see schema)
+modalities: [mocap, video, emg]       # controlled vocab (see schema)
+
+subjects:
+  n: 24
+  sex: "12F / 12M"
+  age_range: "18-45"
+
+load: "5-15 kg boxes, floor-to-waist"
+equipment: "OptiTrack (12 cam), Delsys Trigno EMG, force plates"
+sampling:                             # Hz (video in fps)
+  mocap: 120
+  emg: 2000
+  video: 60
+
+formats: [c3d, csv, mp4]
+tags: [ergonomics, low-back]
+description: >
+  One or two sentences: what task was performed, what was captured, and what
+  makes this dataset useful. Keep it under ~600 characters.
+added: 2025-01-01

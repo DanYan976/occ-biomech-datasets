@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Schema &amp; API — ErgoBiomech</title>
+<meta name="description" content="How ErgoBiomech dataset metadata is structured (fields and controlled vocabularies) and how to consume the catalog programmatically via catalog.json." />
+<link rel="canonical" href="https://occbiomechanics.org/docs.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ErgoBiomech" />
+<meta property="og:title" content="Schema &amp; API — ErgoBiomech" />
+<meta property="og:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the ErgoBiomech catalog." />
+<meta property="og:url" content="https://occbiomechanics.org/docs.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Schema &amp; API — ErgoBiomech" />
+<meta name="twitter:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the ErgoBiomech catalog." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">EB</span>
+      <span class="name">ErgoBiomech</span>
+    </a>
+    <nav class="nav">
+      <a href="datasets.html">Datasets</a>
+      <a href="docs.html" class="active">Docs</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Documentation</span>
+    <h1>Schema &amp; API</h1>
+    <p class="lede">Every dataset in the catalog is described by one metadata record, validated against a JSON Schema. The compiled catalog is a single JSON file you can fetch — no key, no rate limits.</p>
+  </div>
+</section>
+
+<main class="wrap detail">
+
+  <h2>Metadata schema</h2>
+  <p class="gov">Each record has the following fields. Four are required: <code>id</code>, <code>title</code>, <code>status</code>, <code>source</code>, plus at least one entry each in <code>tasks</code> and <code>modalities</code>. Everything else is optional — we fill what the source documents.</p>
+
+  <dl class="detail-table">
+    <dt><code>id</code></dt><dd>Unique lowercase-hyphenated slug; also the URL of the dataset's page (<code>/datasets/&lt;id&gt;.html</code>).</dd>
+    <dt><code>title</code></dt><dd>Human-readable dataset title.</dd>
+    <dt><code>status</code></dt><dd><code>open</code> = publicly downloadable · <code>restricted</code> = available on request or under a data-use agreement · <code>coming_soon</code> = announced, not yet released.</dd>
+    <dt><code>source</code></dt><dd>Authors, institution, and publication year of the dataset.</dd>
+    <dt><code>access</code></dt><dd>Canonical landing page URL, DOI, and license. The catalog links out; it does not rehost. Datasets keep their own licenses.</dd>
+    <dt><code>tasks</code></dt><dd>Occupational tasks performed, from a controlled vocabulary (below). <code>mmh</code> is the umbrella term for manual materials handling.</dd>
+    <dt><code>modalities</code></dt><dd>Sensor/data modalities captured, from a controlled vocabulary (below).</dd>
+    <dt><code>subjects</code></dt><dd>Participant count <code>n</code>, sex split, and age range as reported by the source.</dd>
+    <dt><code>load</code></dt><dd>Free-text protocol summary: handled loads, task intensity, conditions.</dd>
+    <dt><code>equipment</code></dt><dd>Capture systems used (mocap brand, EMG system, IMU count and placement…).</dd>
+    <dt><code>sampling</code></dt><dd>Sampling rate per modality in Hz (video in fps).</dd>
+    <dt><code>formats</code></dt><dd>File formats distributed, from a controlled vocabulary (below).</dd>
+    <dt><code>description</code></dt><dd>What was performed, what was captured, and why it is useful (≤600 characters).</dd>
+    <dt><code>tags</code></dt><dd>Free-form keywords for search.</dd>
+    <dt><code>added</code></dt><dd>Date the entry was added to this catalog (not the dataset's release date).</dd>
+  </dl>
+
+  <h2>Controlled vocabularies</h2>
+  <p class="gov">These lists are generated from the JSON Schema at build time, so they always match what validation accepts.</p>
+  <!-- VOCAB:START -->
+<dl class="detail-table">
+  <dt>status</dt><dd><code>open</code> <code>coming_soon</code> <code>restricted</code></dd>
+  <dt>tasks</dt><dd><code>lifting</code> <code>lowering</code> <code>carrying</code> <code>pushing</code> <code>pulling</code> <code>holding</code> <code>reaching</code> <code>squatting</code> <code>walking</code> <code>assembly</code> <code>mmh</code></dd>
+  <dt>modalities</dt><dd><code>mocap</code> <code>imu</code> <code>emg</code> <code>force_plate</code> <code>grf</code> <code>video</code> <code>egocentric_video</code> <code>pose_estimation</code> <code>pressure_insole</code> <code>physiological</code></dd>
+  <dt>formats</dt><dd><code>c3d</code> <code>trc</code> <code>mot</code> <code>sto</code> <code>csv</code> <code>json</code> <code>mp4</code> <code>mat</code> <code>edf</code> <code>bag</code> <code>npz</code></dd>
+</dl>
+<!-- VOCAB:END -->
+
+  <h2>JSON API</h2>
+  <p class="gov">The whole catalog is compiled into one static JSON file. Fetch it directly — it is CORS-friendly, requires no authentication, and its shape is stable:</p>
+  <div class="citebox">
+    <pre>curl https://occbiomechanics.org/catalog.json</pre>
+  </div>
+  <p class="gov">Example: list all open datasets that include EMG, in Python:</p>
+  <div class="citebox">
+    <pre>import requests
+
+catalog = requests.get("https://occbiomechanics.org/catalog.json").json()
+for d in catalog["datasets"]:
+    if d["status"] == "open" and "emg" in d["modalities"]:
+        print(d["id"], "->", d["access"]["url"])</pre>
+  </div>
+  <p class="gov">Response shape: <code>{"generated_from", "count", "datasets": [ ... ]}</code>, where each element of <code>datasets</code> is one metadata record with the fields documented above. Released datasets are also described with <a href="https://schema.org/Dataset" target="_blank" rel="noopener">schema.org/Dataset</a> JSON-LD on their pages for Google Dataset Search.</p>
+
+  <h2>Suggest a dataset</h2>
+  <p class="gov">Know a public dataset of occupational tasks we should index? Email the link and a short description to <a href="mailto:dy266@njit.edu">dy266@njit.edu</a> — we will fill in the metadata and credit the suggestion.</p>
+
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a></p>
+    <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

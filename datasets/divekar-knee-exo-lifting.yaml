@@ -1,0 +1,32 @@
+id: divekar-knee-exo-lifting
+title: "Versatile Knee Exoskeleton: Lifting, Lowering & Carrying Fatigue Dataset"
+status: open
+sample: false
+
+source:
+  authors: "Divekar N., Thomas G., Yerva A., Frame H., Gregg R."
+  institution: "University of Michigan"
+  year: 2024
+
+access:
+  url: "https://doi.org/10.5061/dryad.z34tmpgks"
+  doi: "10.5061/dryad.z34tmpgks"
+  license: "CC0-1.0"
+
+tasks: [lifting, lowering, carrying, squatting, walking]
+modalities: [emg, grf, imu]
+
+subjects:
+  n: 10
+
+load: "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons"
+equipment: "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors"
+formats: [mat]
+tags: [exoskeleton, knee, fatigue, quadriceps, task-adaptive-control]
+description: >
+  Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects
+  performed lifting, lowering, carrying, walking, ramp and stair tasks with and
+  without a backdrivable knee exoskeleton. Includes normalized quadriceps and
+  hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction
+  forces, task performance and perceptual ratings.
+added: 2026-08-07

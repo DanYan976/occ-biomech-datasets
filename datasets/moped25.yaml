@@ -1,0 +1,32 @@
+id: moped25
+title: "MOPED25: Full-Body Pose & Motion in Occupational Tasks"
+status: open
+sample: false
+
+source:
+  authors: "Li L., Xie Z., Xu X."
+  institution: "NC State University (Biomechanics Lab)"
+  year: 2020
+
+access:
+  url: "https://github.com/human-systems-ise-ncsu/MOPED25"
+  license: "Freely available; cite Li et al. 2020 (no explicit license stated)"
+
+tasks: [lifting, carrying, reaching, pushing, pulling, mmh]
+modalities: [mocap, video]
+
+subjects:
+  n: 11
+
+load: "25 occupational tasks (lifting, carrying, reaching, pushing, pulling)"
+equipment: "37-marker optical mocap, synchronized video"
+sampling:
+  mocap: 60
+  video: 30
+formats: [mat, csv]
+tags: [ergonomics, full-body-pose, occupational-tasks, markers]
+description: >
+  Full-body 3-D kinematics from 37 markers (60 Hz) plus synchronized video
+  (.avi, 30 Hz) for 11 subjects performing 25 occupational tasks. Download link
+  via the lab's GitHub page. Cite Li, Xie & Xu (J. Biomechanics, 2020) when used.
+added: 2026-07-10
