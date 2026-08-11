@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dataset Library — ErgoBiomech</title>
+<title>Dataset Library — OccBiomechanics</title>
 <meta name="description" content="Browse motion capture, video, and wearable-sensor datasets of occupational tasks: filter by task, modality, license, and access; sort by year or date added." />
 <link rel="canonical" href="https://occbiomechanics.org/datasets.html" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="ErgoBiomech" />
-<meta property="og:title" content="Dataset Library — ErgoBiomech" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Dataset Library — OccBiomechanics" />
 <meta property="og:description" content="Browse motion capture, video, and wearable-sensor datasets of occupational tasks." />
 <meta property="og:url" content="https://occbiomechanics.org/datasets.html" />
 <meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Dataset Library — ErgoBiomech" />
+<meta name="twitter:title" content="Dataset Library — OccBiomechanics" />
 <meta name="twitter:description" content="Browse motion capture, video, and wearable-sensor datasets of occupational tasks." />
 <meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "DataCatalog",
   "@id": "https://occbiomechanics.org/datasets.html#catalog",
-  "name": "ErgoBiomech",
+  "name": "OccBiomechanics",
   "url": "https://occbiomechanics.org/datasets.html",
   "description": "A discovery catalog of motion capture, video, and wearable-sensor datasets of occupational tasks. Indexes metadata and links to each source; does not rehost data files.",
   "publisher": {
@@ -88,12 +88,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="mark">EB</span>
-      <span class="name">ErgoBiomech</span>
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
       <a href="datasets.html" class="active">Datasets</a>
+      <a href="exoskeletons.html">Exoskeletons</a>
       <a href="docs.html">Docs</a>
+      <a href="index.html#collaborate">Collaborate</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -103,7 +105,7 @@
   <div class="wrap">
     <span class="eyebrow">Library</span>
     <h1>Datasets</h1>
-    <p class="lede">Lab-based lifting, carrying, and manual materials handling — captured with motion capture, video, and wearable sensors. Each entry links to its original source.</p>
+    <p class="lede">Lab-based lifting, carrying, and manual materials handling — captured with motion capture, video, and wearable sensors. Each entry links to its original source. Exoskeleton studies can be filtered below, or browsed device-first in the <a href="exoskeletons.html">exoskeleton collection</a>.</p>
   </div>
 </section>
 
@@ -129,6 +131,18 @@
     <div class="filter-row">
       <span class="group-label">License</span>
       <span class="chips" id="license-chips"></span>
+    </div>
+    <div class="filter-row" id="exo-filter-row" hidden>
+      <span class="group-label">Exoskeleton</span>
+      <span class="chips" id="exo-role-chips"></span>
+    </div>
+    <div class="filter-row" id="exo-region-row" hidden>
+      <span class="group-label">Body region</span>
+      <span class="chips" id="exo-region-chips"></span>
+    </div>
+    <div class="filter-row" id="exo-actuation-row" hidden>
+      <span class="group-label">Actuation</span>
+      <span class="chips" id="exo-actuation-chips"></span>
     </div>
 
     <div class="result-bar">
@@ -160,7 +174,7 @@
       <thead>
         <tr>
           <th>Dataset</th><th>Institution</th><th>Year</th><th>Subj.</th>
-          <th>Modalities</th><th>Access</th><th>Added</th>
+          <th>Modalities</th><th>Exoskeleton</th><th>Access</th><th>Added</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -171,8 +185,8 @@
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p id="contribute">Know a public dataset we should list? Email us the link and a short description, and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
     <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
@@ -442,6 +456,13 @@
         "n": 12,
         "sex": "6F / 6M"
       },
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back"
+        ],
+        "comparison": "No device worn; recorded to train intention and payload estimation for low-back exoskeleton control"
+      },
       "load": "Lifting and lowering a box with 5, 10 and 15 kg payloads (no exoskeleton worn during collection)",
       "equipment": "5x wireless IMU (chest, both wrists, both thighs)",
       "sampling": {
@@ -499,6 +520,14 @@
         "sex": "2F / 8M",
         "age_range": "25.2 +/- 3.1 yr (mean +/- SD)"
       },
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back",
+          "knee"
+        ],
+        "comparison": "No device worn; wearable-sensor labels for real-time joint-moment estimation aimed at exoskeleton control"
+      },
       "load": "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/pull, shoveling, stair and ladder climbing",
       "equipment": "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells",
       "sampling": {
@@ -551,6 +580,27 @@
       "subjects": {
         "n": 12
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Paexo Shoulder (Ottobock)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "metabolic",
+          "cardiovascular",
+          "subjective"
+        ]
+      },
       "load": "Overhead pointing task, with vs. without the Paexo Shoulder passive exoskeleton",
       "equipment": "Whole-body mocap, force plates, shoulder & back EMG, oxygen consumption, heart rate; Paexo Shoulder (Ottobock)",
       "formats": [
@@ -598,6 +648,26 @@
       "subjects": {
         "n": 10
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Bilateral backdrivable knee exoskeleton (Divekar et al., 2024)"
+        ],
+        "body_region": [
+          "knee"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "With vs. without the exoskeleton, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "task_performance",
+          "subjective"
+        ]
+      },
       "load": "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons",
       "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors",
       "formats": [
@@ -640,6 +710,24 @@
         "n": 8,
         "sex": "3F / 5M"
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo V2.5"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, four in-bed patient-handling tasks",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "cardiovascular"
+        ]
+      },
       "load": "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations",
       "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor",
       "tags": [
@@ -676,6 +764,23 @@
       ],
       "subjects": {
         "n": 16
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Apogee (German Bionic)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Four support conditions at two lifting speeds, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
       },
       "load": "Box lifting at two speeds under four support conditions (with/without active back support)",
       "equipment": "Apogee (German Bionic) active back-support exoskeleton, EMG, 3D motion capture",
@@ -720,6 +825,25 @@
         "n": 30,
         "sex": "8F / 22M"
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Paexo Back (Ottobock)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton at three simulated logistics workplaces",
+        "outcomes": [
+          "cardiovascular",
+          "kinematics",
+          "task_performance",
+          "subjective"
+        ]
+      },
       "load": "Three simulated logistics workplaces: deep-box unloading to an elevated table, order picking/storing with trolley, and pick-walk-store",
       "equipment": "Paexo Back (Ottobock) passive low-back exoskeleton; Zephyr Bioharness 3.0 (heart rate, trunk inclination/acceleration)",
       "sampling": {
@@ -762,6 +886,28 @@
       "subjects": {
         "n": 10
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo Flex",
+          "Paexo Back (Ottobock)",
+          "Darwing Hakobelude",
+          "Auxivo LiftSuit 1.0"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Four devices vs. no device, head-to-head, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinetics",
+          "subjective",
+          "discomfort"
+        ]
+      },
       "load": "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons",
       "equipment": "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement",
       "tags": [
@@ -802,6 +948,28 @@
       "subjects": {
         "n": 12
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Rakunie",
+          "BionicBack",
+          "SoftExo Lift",
+          "Japet.W",
+          "Cray X (German Bionic)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive",
+          "active"
+        ],
+        "comparison": "Five devices vs. no device, head-to-head, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
+      },
       "load": "Combined lift-carry-lower of a 13 kg box",
       "equipment": "Rakunie, BionicBack, SoftExo Lift (passive); Japet.W, Cray X (active); EMG, motion capture",
       "tags": [
@@ -837,6 +1005,13 @@
         "egocentric_video",
         "physiological"
       ],
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back"
+        ],
+        "comparison": "No device worn; collected for fatigue-aware, vision-driven control of an active low-back exoskeleton"
+      },
       "load": "Boxes at multiple weights, walking and carrying in confined space",
       "equipment": "OptiTrack optical mocap, helmet-mounted GoPro MAX 360 (Gen 2), physiological sensors",
       "sampling": {

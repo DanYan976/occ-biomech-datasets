@@ -1,7 +1,8 @@
-/* Occupational Biomechanics Dataset Catalog — client logic.
-   Reads the JSON injected by scripts/build_catalog.py and renders either the
-   landing page (stats + recently added) or the catalog page (filters, sort,
-   cards/table views), depending on which elements exist in the document.
+/* Occupational Biomechanics Catalog — client logic.
+   Reads the JSON injected by scripts/build_catalog.py and renders whichever of
+   the three views the current document asks for: the landing page (stats +
+   recently added), the catalog page (filters, sort, cards/table views), or the
+   exoskeleton collection (grouped by supported body region).
    No build step needed to view: serve the site/ folder. */
 
 (function () {
@@ -27,6 +28,15 @@
   };
   var STATUS_LABEL = { open: "Open", coming_soon: "Coming soon", restricted: "Restricted" };
 
+  var EXO_ROLE_LABEL = { evaluation: "Device evaluation", control_input: "Exoskeleton-control data" };
+  var EXO_ROLE_BADGE = { evaluation: "Exo evaluation", control_input: "Exo-control data" };
+  var EXO_REGION_LABEL = {
+    back: "Back", shoulder: "Shoulder", knee: "Knee", hip: "Hip",
+    ankle: "Ankle", neck: "Neck", wrist: "Wrist", full_body: "Full body"
+  };
+  var EXO_ACTUATION_LABEL = { passive: "Passive", active: "Active", quasi_passive: "Quasi-passive" };
+  var REGION_ORDER = ["back", "shoulder", "knee", "hip", "ankle", "neck", "wrist", "full_body"];
+
   // License strings are free text; bucket them for filtering.
   var LICENSE_BUCKETS = [
     { key: "cc0", label: "CC0 / Public domain", test: /cc0|public domain/i },
@@ -43,6 +53,31 @@
   }
 
   function detailUrl(d) { return "datasets/" + d.id + ".html"; }
+
+  // ---- exoskeleton helpers ---------------------------------------------
+  function exo(d) { return d.exoskeleton || null; }
+  function exoRole(d) { return exo(d) ? d.exoskeleton.role : null; }
+  function exoList(d, key) { return (exo(d) && d.exoskeleton[key]) || []; }
+  var EXO_DATA = DATA.filter(exo);
+
+  function setExoStats() {
+    function put(id, value) {
+      var node = document.getElementById(id);
+      if (node) node.textContent = value;
+    }
+    var devices = new Set(), regions = new Set(), evals = 0, control = 0;
+    EXO_DATA.forEach(function (d) {
+      if (exoRole(d) === "evaluation") evals++;
+      if (exoRole(d) === "control_input") control++;
+      exoList(d, "devices").forEach(function (v) { devices.add(v); });
+      exoList(d, "body_region").forEach(function (v) { regions.add(v); });
+    });
+    put("stat-exo", EXO_DATA.length);
+    put("exo-eval-count", evals);
+    put("exo-device-count", devices.size);
+    put("exo-region-count", regions.size);
+    put("exo-control-count", control);
+  }
 
   // ---- shared helpers ---------------------------------------------------
   function el(tag, cls, txt) {
@@ -99,6 +134,7 @@
     var badges = el("div");
     badges.style.cssText = "display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end";
     badges.appendChild(el("span", "badge " + d.status, STATUS_LABEL[d.status] || d.status));
+    if (exoRole(d)) badges.appendChild(el("span", "badge exo", EXO_ROLE_BADGE[exoRole(d)]));
     if (d.sample) badges.appendChild(el("span", "badge sample", "sample"));
     top.appendChild(left);
     top.appendChild(badges);
@@ -127,6 +163,11 @@
     metrics.appendChild(metric("Load", d.load ? shorten(d.load, 22) : "—", d.load));
     metrics.appendChild(metric("Rate", samplingText(d, true) || "—", samplingText(d, false)));
     metrics.appendChild(metric("Formats", (d.formats || []).join(", ") || "—"));
+    var devices = exoList(d, "devices");
+    if (devices.length) {
+      var joined = devices.join(", ");
+      metrics.appendChild(metric("Device", shorten(joined, 46), joined));
+    }
     c.appendChild(metrics);
 
     // footer: license + link out / pending
@@ -150,10 +191,118 @@
   var recentGrid = document.getElementById("recent-grid");
   if (recentGrid) {
     setStats();
+    setExoStats();
     DATA.slice()
       .sort(function (a, b) { return String(b.added || "").localeCompare(String(a.added || "")); })
       .slice(0, 3)
       .forEach(function (d) { recentGrid.appendChild(card(d)); });
+  }
+
+  // ======================================================================
+  // Exoskeleton collection: device index + groups by supported body region
+  // ======================================================================
+  var exoGroups = document.getElementById("exo-groups");
+  if (exoGroups) {
+    setExoStats();
+
+    var deviceFilter = null;   // null = show every record
+
+    var inFilter = function (d) {
+      return !deviceFilter || exoList(d, "devices").indexOf(deviceFilter) !== -1;
+    };
+
+    var deviceIndex = function () {
+      var box = document.getElementById("device-index");
+      if (!box) return;
+      var counts = new Map();
+      EXO_DATA.forEach(function (d) {
+        exoList(d, "devices").forEach(function (name) {
+          counts.set(name, (counts.get(name) || 0) + 1);
+        });
+      });
+      box.innerHTML = "";
+      if (!counts.size) {
+        box.appendChild(el("p", "gov", "No devices indexed yet."));
+        return;
+      }
+      Array.from(counts.keys()).sort().forEach(function (name) {
+        var b = document.createElement("button");
+        b.className = "device-chip";
+        b.type = "button";
+        b.setAttribute("aria-pressed", deviceFilter === name ? "true" : "false");
+        b.appendChild(el("span", "dname", name));
+        b.appendChild(el("span", "dcount", String(counts.get(name))));
+        b.addEventListener("click", function () {
+          deviceFilter = deviceFilter === name ? null : name;
+          renderCollection();
+        });
+        box.appendChild(b);
+      });
+    };
+
+    var group = function (title, note, items) {
+      if (!items.length) return null;
+      var sec = el("section", "exo-group");
+      var head = el("div", "section-head");
+      head.appendChild(el("h2", null, title));
+      head.appendChild(el("span", "count-note", items.length + (items.length === 1 ? " study" : " studies")));
+      sec.appendChild(head);
+      if (note) sec.appendChild(el("p", "section-lede", note));
+      var g = el("div", "grid");
+      items.forEach(function (d) { g.appendChild(card(d)); });
+      sec.appendChild(g);
+      return sec;
+    };
+
+    var renderCollection = function () {
+      deviceIndex();
+      exoGroups.innerHTML = "";
+
+      var shown = EXO_DATA.filter(inFilter);
+      var evaluations = shown.filter(function (d) { return exoRole(d) === "evaluation"; });
+      var controls = shown.filter(function (d) { return exoRole(d) === "control_input"; });
+
+      if (deviceFilter) {
+        var bar = el("div", "filter-note");
+        bar.appendChild(el("span", null, "Showing studies of " + deviceFilter + "."));
+        var clear = document.createElement("button");
+        clear.className = "linkbtn";
+        clear.type = "button";
+        clear.textContent = "Show all devices";
+        clear.addEventListener("click", function () { deviceFilter = null; renderCollection(); });
+        bar.appendChild(clear);
+        exoGroups.appendChild(bar);
+      }
+
+      REGION_ORDER.forEach(function (region) {
+        var items = evaluations.filter(function (d) {
+          return exoList(d, "body_region").indexOf(region) !== -1;
+        });
+        var sec = group((EXO_REGION_LABEL[region] || region) + " support", null, items);
+        if (sec) exoGroups.appendChild(sec);
+      });
+
+      var unplaced = evaluations.filter(function (d) { return !exoList(d, "body_region").length; });
+      var other = group("Other evaluations", null, unplaced);
+      if (other) exoGroups.appendChild(other);
+
+      var ctrl = group(
+        "Datasets for exoskeleton control",
+        "No device was worn during capture. These recordings exist to train and validate the " +
+        "intent detection, payload estimation, and joint-load models an exoskeleton controller needs.",
+        controls
+      );
+      if (ctrl) exoGroups.appendChild(ctrl);
+
+      if (!shown.length) {
+        var e = el("div", "empty");
+        e.appendChild(el("b", null, "Nothing to show."));
+        e.appendChild(el("span", null, "No exoskeleton record matches this device."));
+        exoGroups.appendChild(e);
+      }
+    };
+
+    renderCollection();
   }
 
   // ======================================================================
@@ -163,10 +312,13 @@
   var taskBox = document.getElementById("task-chips");
   if (!grid || !taskBox) return;
 
-  var state = { q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set() };
+  var state = {
+    q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set(),
+    exoRole: new Set(), exoRegion: new Set(), exoActuation: new Set()
+  };
   var sortKey = "added-desc";
   var view = "cards";
-  try { view = localStorage.getItem("eb-view") || "cards"; } catch (e) {}
+  try { view = localStorage.getItem("ob-view") || "cards"; } catch (e) {}
 
   document.getElementById("total").textContent = DATA.length;
 
@@ -175,6 +327,12 @@
     var s = new Set();
     DATA.forEach(function (d) { (d[key] || []).forEach(function (v) { s.add(v); }); });
     return Array.from(s).sort();
+  }
+
+  function uniqueExo(key) {
+    var s = new Set();
+    EXO_DATA.forEach(function (d) { exoList(d, key).forEach(function (v) { s.add(v); }); });
+    return Array.from(s);
   }
 
   function makeChip(container, value, label, bucket, statusClass) {
@@ -190,6 +348,15 @@
       render();
     });
     container.appendChild(b);
+  }
+
+  // An exoskeleton row is only shown when the catalog holds those values.
+  function fillRow(rowId, boxId, values, labels, bucket) {
+    var row = document.getElementById(rowId);
+    var box = document.getElementById(boxId);
+    if (!row || !box || !values.length) return;
+    values.forEach(function (v) { makeChip(box, v, labels[v] || v, bucket, false); });
+    row.hidden = false;
   }
 
   function buildFilters() {
@@ -210,6 +377,17 @@
       if (present.has(b.key)) makeChip(licBox, b.key, b.label, state.lic, false);
     });
     if (present.has("other")) makeChip(licBox, "other", "Other", state.lic, false);
+
+    var roles = ["evaluation", "control_input"].filter(function (r) {
+      return EXO_DATA.some(function (d) { return exoRole(d) === r; });
+    });
+    var regions = REGION_ORDER.filter(function (r) { return uniqueExo("body_region").indexOf(r) !== -1; });
+    var actuations = ["passive", "active", "quasi_passive"].filter(function (a) {
+      return uniqueExo("actuation").indexOf(a) !== -1;
+    });
+    fillRow("exo-filter-row", "exo-role-chips", roles, EXO_ROLE_LABEL, state.exoRole);
+    fillRow("exo-region-row", "exo-region-chips", regions, EXO_REGION_LABEL, state.exoRegion);
+    fillRow("exo-actuation-row", "exo-actuation-chips", actuations, EXO_ACTUATION_LABEL, state.exoActuation);
   }
 
   // ---- filtering + sorting ---------------------------------------------
@@ -218,10 +396,14 @@
     if (state.lic.size && !state.lic.has(licenseBucket(d))) return false;
     if (state.tasks.size && !(d.tasks || []).some(function (t) { return state.tasks.has(t); })) return false;
     if (state.mods.size && !(d.modalities || []).some(function (m) { return state.mods.has(m); })) return false;
+    if (state.exoRole.size && !state.exoRole.has(exoRole(d))) return false;
+    if (state.exoRegion.size && !exoList(d, "body_region").some(function (r) { return state.exoRegion.has(r); })) return false;
+    if (state.exoActuation.size && !exoList(d, "actuation").some(function (a) { return state.exoActuation.has(a); })) return false;
     if (state.q) {
       var hay = [
         d.title, d.id, (d.source && d.source.institution), (d.source && d.source.authors),
-        (d.tasks || []).join(" "), (d.tags || []).join(" "), d.description
+        (d.tasks || []).join(" "), (d.tags || []).join(" "), d.description,
+        exoList(d, "devices").join(" ")
       ].join(" ").toLowerCase();
       if (hay.indexOf(state.q) === -1) return false;
     }
@@ -252,6 +434,7 @@
     tr.appendChild(el("td", "mono", src.year ? String(src.year) : "—"));
     tr.appendChild(el("td", "mono", subj.n ? String(subj.n) : "—"));
     tr.appendChild(el("td", "mono", (d.modalities || []).map(function (m) { return MOD_LABEL[m] || m; }).join(", ")));
+    tr.appendChild(el("td", null, exoList(d, "devices").join(", ") || (exoRole(d) ? EXO_ROLE_LABEL[exoRole(d)] : "—")));
 
     var tdStatus = document.createElement("td");
     tdStatus.appendChild(el("span", "badge " + d.status, STATUS_LABEL[d.status] || d.status));
@@ -263,7 +446,7 @@
 
   function setView(v) {
     view = v;
-    try { localStorage.setItem("eb-view", v); } catch (e) {}
+    try { localStorage.setItem("ob-view", v); } catch (e) {}
     document.getElementById("view-cards").setAttribute("aria-pressed", v === "cards" ? "true" : "false");
     document.getElementById("view-table").setAttribute("aria-pressed", v === "table" ? "true" : "false");
     grid.hidden = v !== "cards";
@@ -301,6 +484,17 @@
     if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // A link like datasets.html?exo=evaluation lands with that filter applied,
+  // which is how the exoskeleton pages hand off to the full catalog.
+  function applyQueryFilters() {
+    var role = new URLSearchParams(location.search).get("exo");
+    if (!role || !EXO_ROLE_LABEL[role]) return;
+    var chips = document.querySelectorAll("#exo-role-chips .chip");
+    for (var i = 0; i < chips.length; i++) {
+      if (chips[i].textContent === EXO_ROLE_LABEL[role]) { chips[i].click(); return; }
+    }
+  }
+
   // ---- wiring -----------------------------------------------------------
   document.getElementById("search").addEventListener("input", function (e) {
     state.q = e.target.value.trim().toLowerCase();
@@ -313,7 +507,9 @@
   document.getElementById("view-cards").addEventListener("click", function () { setView("cards"); });
   document.getElementById("view-table").addEventListener("click", function () { setView("table"); });
   document.getElementById("clear").addEventListener("click", function () {
-    state.q = ""; state.tasks.clear(); state.mods.clear(); state.status.clear(); state.lic.clear();
+    state.q = "";
+    [state.tasks, state.mods, state.status, state.lic,
+     state.exoRole, state.exoRegion, state.exoActuation].forEach(function (s) { s.clear(); });
     document.getElementById("search").value = "";
     document.querySelectorAll(".chip[aria-pressed='true']").forEach(function (b) {
       b.setAttribute("aria-pressed", "false");
@@ -322,8 +518,10 @@
   });
 
   setStats();
+  setExoStats();
   buildFilters();
   setView(view);
   render();
+  applyQueryFilters();
   focusHash();
 })();

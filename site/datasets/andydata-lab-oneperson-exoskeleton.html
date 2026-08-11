@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder — ErgoBiomech</title>
+<title>AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder — OccBiomechanics</title>
 <meta name="description" content="Whole-body kinematics, ground reaction forces, shoulder/back EMG, oxygen consumption, heart rate and subjective workload from 12 participants doing overhead pointing with and without the Paexo Shoulder passive exoskeleton. Used as input by Fritzsche et al. (2021) for AnyBody simulation of overhead drilling, showing 54-87% deltoid activity reduction." />
 <link rel="canonical" href="https://occbiomechanics.org/datasets/andydata-lab-oneperson-exoskeleton.html" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="ErgoBiomech" />
+<meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder" />
 <meta property="og:description" content="Whole-body kinematics, ground reaction forces, shoulder/back EMG, oxygen consumption, heart rate and subjective workload from 12 participants doing overhead pointing with and without the Paexo Shoulder passive exoskeleton. Used as input by Fritzsche et al. (2021) for AnyBody simulation of overhead drilling, showing 54-87% deltoid activity reduction." />
 <meta property="og:url" content="https://occbiomechanics.org/datasets/andydata-lab-oneperson-exoskeleton.html" />
@@ -84,6 +84,7 @@
   "sameAs": "https://doi.org/10.5281/zenodo.1472214",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "keywords": [
+    "Paexo Shoulder (Ottobock)",
     "emg",
     "ergonomics",
     "exoskeleton",
@@ -118,12 +119,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <span class="mark">EB</span>
-      <span class="name">ErgoBiomech</span>
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
       <a href="/datasets.html" class="active">Datasets</a>
+      <a href="/exoskeletons.html">Exoskeletons</a>
       <a href="/docs.html">Docs</a>
+      <a href="/index.html#collaborate">Collaborate</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -133,7 +136,7 @@
   <p class="crumb"><a href="/datasets.html">← All datasets</a></p>
 
   <div class="detail-head">
-    <div class="dmeta"><span class="cid">andydata-lab-oneperson-exoskeleton</span> <span class="badge open">Open</span></div>
+    <div class="dmeta"><span class="cid">andydata-lab-oneperson-exoskeleton</span> <span class="badge open">Open</span> <span class="badge exo">Exo evaluation</span></div>
     <h1>AndyData-lab-onePersonWithExoskeleton: Overhead Work with Paexo Shoulder</h1>
     <p class="src">Maurice P., Camernik J., Gorjan D., Babic J., Schirrmeister B., Bornmann J., Ivaldi S., Tagliapietra L., Latella C., Pucci D.</p>
     <p class="src">Inria / Jozef Stefan Institute (AnDy project) · 2018</p>
@@ -154,6 +157,17 @@
   <dt>Added to catalog</dt><dd>2026-08-07</dd>
   </dl>
 
+  <h2>Exoskeleton</h2>
+  <dl class="detail-table">
+  <dt>Record type</dt><dd>Device evaluation</dd>
+  <dt>Device(s)</dt><dd>Paexo Shoulder (Ottobock)</dd>
+  <dt>Body region</dt><dd>Shoulder</dd>
+  <dt>Actuation</dt><dd>Passive</dd>
+  <dt>Study design</dt><dd>With vs. without the exoskeleton, within-subject</dd>
+  <dt>Outcomes</dt><dd>Muscle activity (EMG), Kinematics, Kinetics / assistive forces, Metabolic cost, Cardiovascular, Subjective ratings</dd>
+  </dl>
+  <p class="gov">This record is part of the <a href="/exoskeletons.html">exoskeleton collection</a>.</p>
+
   <h2>Cite</h2>
   <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
   <div class="citebox">
@@ -171,8 +185,8 @@
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p>Know a public dataset we should list? Email us the link and a short description, and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="/catalog.json">catalog.json</a> · <a href="/docs.html">schema &amp; API docs</a></p>
     <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>

@@ -26,7 +26,7 @@ except ImportError:
     sys.exit("Missing dependency: pyyaml. Run: pip install pyyaml")
 
 ROOT = Path(__file__).resolve().parents[1]
-UA = "Mozilla/5.0 (compatible; ErgoBiomech-linkcheck; +https://occbiomechanics.org)"
+UA = "Mozilla/5.0 (compatible; OccBiomechanics-linkcheck; +https://occbiomechanics.org)"
 BOT_BLOCKED = {403, 429}
 TIMEOUT = 30
 

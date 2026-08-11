@@ -20,6 +20,11 @@ subjects:
   n: 12
   sex: "6F / 6M"
 
+exoskeleton:
+  role: control_input
+  body_region: [back]
+  comparison: "No device worn; recorded to train intention and payload estimation for low-back exoskeleton control"
+
 load: "Lifting and lowering a box with 5, 10 and 15 kg payloads (no exoskeleton worn during collection)"
 equipment: "5x wireless IMU (chest, both wrists, both thighs)"
 sampling:

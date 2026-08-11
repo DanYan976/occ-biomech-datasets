@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
+scripts/.fontcache/
 .DS_Store
 node_modules/
 .claude/

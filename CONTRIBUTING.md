@@ -33,9 +33,26 @@ squatting, walking, assembly, mmh.
 **modalities**: mocap, imu, emg, force_plate, grf, video, egocentric_video,
 pose_estimation, pressure_insole, physiological.
 
+**exoskeleton.role**: `evaluation` (a device was worn and its effect measured),
+`control_input` (collected to develop or control an exoskeleton, no device worn).
+
+**exoskeleton.body_region**: back, shoulder, knee, hip, ankle, neck, wrist,
+full_body. **exoskeleton.actuation**: passive, active, quasi_passive.
+**exoskeleton.outcomes**: muscle_activity, kinematics, kinetics, metabolic,
+cardiovascular, task_performance, subjective, discomfort.
+
 Need a value that isn't listed? Add it to the relevant `enum` in
 `schema/dataset.schema.json` in the same pull request, with a one-line note in
 the PR description.
+
+## Exoskeleton records
+
+If the record involves an occupational exoskeleton, add the `exoskeleton` block
+(see `datasets/_template.yaml`). It is what puts the entry in the exoskeleton
+collection at `site/exoskeletons.html` and behind the exoskeleton filters on the
+catalog page. Fill `outcomes` from what the source actually reports — an empty
+outcome is more useful than a guessed one, because the point of the field is to
+show where evaluations differ.
 
 ## What we index
 

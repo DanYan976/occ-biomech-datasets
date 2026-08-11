@@ -19,6 +19,14 @@ modalities: [emg, mocap]
 subjects:
   n: 12
 
+exoskeleton:
+  role: evaluation
+  devices: ["Rakunie", "BionicBack", "SoftExo Lift", "Japet.W", "Cray X (German Bionic)"]
+  body_region: [back]
+  actuation: [passive, active]
+  comparison: "Five devices vs. no device, head-to-head, within-subject"
+  outcomes: [muscle_activity, kinematics]
+
 load: "Combined lift-carry-lower of a 13 kg box"
 equipment: "Rakunie, BionicBack, SoftExo Lift (passive); Japet.W, Cray X (active); EMG, motion capture"
 tags: [exoskeleton, back, passive-exoskeleton, active-exoskeleton, force-path, data-on-request]

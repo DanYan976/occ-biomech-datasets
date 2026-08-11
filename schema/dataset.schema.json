@@ -67,6 +67,49 @@
         "age_range": { "type": "string" }
       }
     },
+    "exoskeleton": {
+      "type": "object",
+      "description": "Present when the record is exoskeleton-relevant. Omit entirely for datasets with no exoskeleton connection.",
+      "required": ["role"],
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": ["evaluation", "control_input"],
+          "description": "evaluation = a device was worn and its effect measured; control_input = collected to develop or control an exoskeleton, no device worn during capture."
+        },
+        "devices": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Device names as the source reports them, e.g. 'Laevo V2.5 (Laevo Exoskeletons)'."
+        },
+        "body_region": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["back", "shoulder", "knee", "hip", "ankle", "neck", "wrist", "full_body"]
+          },
+          "description": "Body region the device supports (or the target region for control_input records)."
+        },
+        "actuation": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["passive", "active", "quasi_passive"] },
+          "description": "Actuation principle of the device(s) evaluated."
+        },
+        "comparison": {
+          "type": "string",
+          "description": "Study design in one line, e.g. 'with vs. without device, within-subject'."
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["muscle_activity", "kinematics", "kinetics", "metabolic", "cardiovascular", "task_performance", "subjective", "discomfort"]
+          },
+          "description": "Outcome families reported, so evaluations can be compared on what they actually measured."
+        }
+      }
+    },
     "load": { "type": "string", "description": "Handled load / task intensity, e.g. '5-15 kg boxes'." },
     "equipment": { "type": "string", "description": "Capture systems, e.g. 'OptiTrack (12 cam), Delsys Trigno EMG'." },
     "sampling": {

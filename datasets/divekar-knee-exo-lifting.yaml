@@ -19,6 +19,14 @@ modalities: [emg, grf, imu]
 subjects:
   n: 10
 
+exoskeleton:
+  role: evaluation
+  devices: ["Bilateral backdrivable knee exoskeleton (Divekar et al., 2024)"]
+  body_region: [knee]
+  actuation: [active]
+  comparison: "With vs. without the exoskeleton, within-subject"
+  outcomes: [muscle_activity, kinematics, kinetics, task_performance, subjective]
+
 load: "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons"
 equipment: "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors"
 formats: [mat]

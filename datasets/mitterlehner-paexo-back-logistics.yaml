@@ -20,6 +20,14 @@ subjects:
   n: 30
   sex: "8F / 22M"
 
+exoskeleton:
+  role: evaluation
+  devices: ["Paexo Back (Ottobock)"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton at three simulated logistics workplaces"
+  outcomes: [cardiovascular, kinematics, task_performance, subjective]
+
 load: "Three simulated logistics workplaces: deep-box unloading to an elevated table, order picking/storing with trolley, and pick-walk-store"
 equipment: "Paexo Back (Ottobock) passive low-back exoskeleton; Zephyr Bioharness 3.0 (heart rate, trunk inclination/acceleration)"
 sampling:

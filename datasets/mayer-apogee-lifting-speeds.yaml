@@ -19,6 +19,14 @@ modalities: [emg, mocap]
 subjects:
   n: 16
 
+exoskeleton:
+  role: evaluation
+  devices: ["Apogee (German Bionic)"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "Four support conditions at two lifting speeds, within-subject"
+  outcomes: [muscle_activity, kinematics]
+
 load: "Box lifting at two speeds under four support conditions (with/without active back support)"
 equipment: "Apogee (German Bionic) active back-support exoskeleton, EMG, 3D motion capture"
 tags: [exoskeleton, back, active-exoskeleton, lifting-speed, data-on-request]

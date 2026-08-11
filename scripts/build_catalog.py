@@ -5,7 +5,8 @@ Build the dataset catalog and the static pages derived from it.
 Reads every datasets/*.yaml (ignoring files that start with "_"), validates each
 against schema/dataset.schema.json, then:
   - writes site/catalog.json
-  - injects the JSON into site/index.html and site/datasets.html (CATALOG markers)
+  - injects the JSON into site/index.html, site/datasets.html and
+    site/exoskeletons.html (CATALOG markers)
   - injects schema.org JSON-LD into site/datasets.html (JSONLD markers): a
     DataCatalog node referencing every released dataset's detail page
   - generates one detail page per dataset under site/datasets/<id>.html, each
@@ -51,6 +52,7 @@ SCHEMA_PATH = ROOT / "schema" / "dataset.schema.json"
 SITE_DIR = ROOT / "site"
 INDEX_HTML = SITE_DIR / "index.html"
 DATASETS_HTML = SITE_DIR / "datasets.html"
+EXOS_HTML = SITE_DIR / "exoskeletons.html"
 DOCS_HTML = SITE_DIR / "docs.html"
 CATALOG_JSON = SITE_DIR / "catalog.json"
 DETAIL_DIR = SITE_DIR / "datasets"
@@ -80,6 +82,18 @@ MOD_LABEL = {
     "mocap": "Mocap", "imu": "IMU", "emg": "EMG", "force_plate": "Force plate",
     "grf": "GRF", "video": "Video", "egocentric_video": "Egocentric video",
     "pose_estimation": "Pose est.", "pressure_insole": "Insole", "physiological": "Physio",
+}
+EXO_ROLE_LABEL = {"evaluation": "Device evaluation", "control_input": "Exoskeleton-control data"}
+EXO_REGION_LABEL = {
+    "back": "Back", "shoulder": "Shoulder", "knee": "Knee", "hip": "Hip",
+    "ankle": "Ankle", "neck": "Neck", "wrist": "Wrist", "full_body": "Full body",
+}
+EXO_ACTUATION_LABEL = {"passive": "Passive", "active": "Active", "quasi_passive": "Quasi-passive"}
+EXO_OUTCOME_LABEL = {
+    "muscle_activity": "Muscle activity (EMG)", "kinematics": "Kinematics",
+    "kinetics": "Kinetics / assistive forces", "metabolic": "Metabolic cost",
+    "cardiovascular": "Cardiovascular", "task_performance": "Task performance",
+    "subjective": "Subjective ratings", "discomfort": "Discomfort / usability",
 }
 
 # Only SPDX-style ids we can resolve to a canonical deed. Anything else (free
@@ -181,6 +195,9 @@ def _jsonld_entry(entry: dict, catalog_id: str) -> dict:
     if access.get("license"):
         node["license"] = LICENSE_URLS.get(access["license"], access["license"])
     keywords = list(entry.get("tasks", [])) + list(entry.get("modalities", [])) + list(entry.get("tags", []))
+    exo = entry.get("exoskeleton")
+    if exo:
+        keywords += ["exoskeleton"] + list(exo.get("devices", []))
     if keywords:
         node["keywords"] = sorted(set(keywords))
     if entry.get("modalities"):
@@ -206,7 +223,7 @@ def catalog_jsonld(catalog: dict) -> dict:
         "@context": "https://schema.org",
         "@type": "DataCatalog",
         "@id": catalog_id,
-        "name": "ErgoBiomech",
+        "name": "OccBiomechanics",
         "url": f"{SITE_URL}/datasets.html",
         "description": (
             "A discovery catalog of motion capture, video, and wearable-sensor "
@@ -234,7 +251,7 @@ def _inject(path: Path, start: str, end: str, block: str) -> None:
 def inject_catalog(catalog: dict) -> None:
     payload = json.dumps(catalog, ensure_ascii=False, indent=2)
     block = f'<script id="catalog-data" type="application/json">\n{payload}\n</script>'
-    for page in (INDEX_HTML, DATASETS_HTML):
+    for page in (INDEX_HTML, DATASETS_HTML, EXOS_HTML):
         _inject(page, MARK_START, MARK_END, block)
 
 
@@ -255,6 +272,7 @@ def inject_vocab() -> None:
     mods = props["modalities"]["items"]["enum"]
     formats = props["formats"]["items"]["enum"]
     statuses = props["status"]["enum"]
+    exo = props["exoskeleton"]["properties"]
 
     def codes(values):
         return " ".join(f'<code>{v}</code>' for v in values)
@@ -265,6 +283,10 @@ def inject_vocab() -> None:
         f'  <dt>tasks</dt><dd>{codes(tasks)}</dd>\n'
         f'  <dt>modalities</dt><dd>{codes(mods)}</dd>\n'
         f'  <dt>formats</dt><dd>{codes(formats)}</dd>\n'
+        f'  <dt>exoskeleton.role</dt><dd>{codes(exo["role"]["enum"])}</dd>\n'
+        f'  <dt>exoskeleton.body_region</dt><dd>{codes(exo["body_region"]["items"]["enum"])}</dd>\n'
+        f'  <dt>exoskeleton.actuation</dt><dd>{codes(exo["actuation"]["items"]["enum"])}</dd>\n'
+        f'  <dt>exoskeleton.outcomes</dt><dd>{codes(exo["outcomes"]["items"]["enum"])}</dd>\n'
         f'</dl>'
     )
     _inject(DOCS_HTML, VOCAB_START, VOCAB_END, block)
@@ -349,6 +371,31 @@ def _detail_page(entry: dict) -> str:
         if value_html:
             rows.append(f"  <dt>{label}</dt><dd>{value_html}</dd>")
 
+    # Exoskeleton block: its own section, so evaluations can be read device-first.
+    exo = entry.get("exoskeleton") or {}
+    exo_rows = []
+
+    def exo_row(label, value_html):
+        if value_html:
+            exo_rows.append(f"  <dt>{label}</dt><dd>{value_html}</dd>")
+
+    exo_row("Record type", e(EXO_ROLE_LABEL.get(exo.get("role"), exo.get("role", ""))))
+    exo_row("Device(s)", ", ".join(e(d) for d in exo.get("devices", [])))
+    exo_row("Body region", ", ".join(e(EXO_REGION_LABEL.get(r, r)) for r in exo.get("body_region", [])))
+    exo_row("Actuation", ", ".join(e(EXO_ACTUATION_LABEL.get(a, a)) for a in exo.get("actuation", [])))
+    exo_row("Study design", e(exo.get("comparison", "")))
+    exo_row("Outcomes", ", ".join(e(EXO_OUTCOME_LABEL.get(o, o)) for o in exo.get("outcomes", [])))
+
+    exo_section = ""
+    exo_badge = ""
+    if exo_rows:
+        exo_section = ('<h2>Exoskeleton</h2>\n  <dl class="detail-table">\n'
+                       + "\n".join(exo_rows)
+                       + '\n  </dl>\n  <p class="gov">This record is part of the '
+                         '<a href="/exoskeletons.html">exoskeleton collection</a>.</p>\n\n  ')
+        label = "Exo evaluation" if exo.get("role") == "evaluation" else "Exo-control data"
+        exo_badge = f' <span class="badge exo">{label}</span>'
+
     row("Subjects", " · ".join(subj_bits))
     row("Protocol / load", e(entry.get("load", "")))
     row("Equipment", e(entry.get("equipment", "")))
@@ -368,13 +415,13 @@ def _detail_page(entry: dict) -> str:
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{e(entry['title'])} — ErgoBiomech</title>
+<title>{e(entry['title'])} — OccBiomechanics</title>
 <meta name="description" content="{e(desc)}" />
 <link rel="canonical" href="{e(url)}" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="ErgoBiomech" />
+<meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="{e(entry['title'])}" />
 <meta property="og:description" content="{e(desc)}" />
 <meta property="og:url" content="{e(url)}" />
@@ -393,12 +440,14 @@ def _detail_page(entry: dict) -> str:
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <span class="mark">EB</span>
-      <span class="name">ErgoBiomech</span>
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
       <a href="/datasets.html" class="active">Datasets</a>
+      <a href="/exoskeletons.html">Exoskeletons</a>
       <a href="/docs.html">Docs</a>
+      <a href="/index.html#collaborate">Collaborate</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -408,7 +457,7 @@ def _detail_page(entry: dict) -> str:
   <p class="crumb"><a href="/datasets.html">← All datasets</a></p>
 
   <div class="detail-head">
-    <div class="dmeta"><span class="cid">{e(entry['id'])}</span> <span class="badge {e(status)}">{e(STATUS_LABEL.get(status, status))}</span></div>
+    <div class="dmeta"><span class="cid">{e(entry['id'])}</span> <span class="badge {e(status)}">{e(STATUS_LABEL.get(status, status))}</span>{exo_badge}</div>
     <h1>{e(entry['title'])}</h1>
     {authors_line}
     <p class="src">{e(inst_line)}</p>
@@ -423,7 +472,7 @@ def _detail_page(entry: dict) -> str:
 {details}
   </dl>
 
-  <h2>Cite</h2>
+  {exo_section}<h2>Cite</h2>
   <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
   <div class="citebox">
     <pre id="bibtex">{e(_bibtex(entry))}</pre>
@@ -434,8 +483,8 @@ def _detail_page(entry: dict) -> str:
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p>Know a public dataset we should list? Email us the link and a short description, and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="/catalog.json">catalog.json</a> · <a href="/docs.html">schema &amp; API docs</a></p>
     <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
@@ -473,7 +522,8 @@ def build_detail_pages(catalog: dict) -> None:
 # ---------------------------------------------------------------- sitemap ----
 
 def build_sitemap(catalog: dict) -> None:
-    urls = [(f"{SITE_URL}/", None), (f"{SITE_URL}/datasets.html", None), (f"{SITE_URL}/docs.html", None)]
+    urls = [(f"{SITE_URL}/", None), (f"{SITE_URL}/datasets.html", None),
+            (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/docs.html", None)]
     for entry in catalog["datasets"]:
         urls.append((detail_url(entry), str(entry.get("added")) if entry.get("added") else None))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -511,7 +561,7 @@ def main() -> None:
     skipped = [d["id"] for d in catalog["datasets"] if not released(d)]
     print(f"Built catalog: {n} datasets {dict(by_status)}")
     print(f"  -> {CATALOG_JSON.relative_to(ROOT)}")
-    print(f"  -> catalog JSON injected into index.html + datasets.html")
+    print(f"  -> catalog JSON injected into index.html + datasets.html + exoskeletons.html")
     if skipped:
         print(f"  -> JSON-LD skipped {len(skipped)} unreleased/placeholder: {', '.join(skipped)}")
     print(f"  -> JSON-LD DataCatalog on datasets.html; Dataset nodes on detail pages ({SITE_URL})")

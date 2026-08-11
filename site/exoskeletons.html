@@ -1,3 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Exoskeleton Collection — OccBiomechanics</title>
+<meta name="description" content="Occupational exoskeleton studies indexed with device, actuation, supported body region, study design, and measured outcomes — grouped by body region, plus datasets collected for exoskeleton control." />
+<link rel="canonical" href="https://occbiomechanics.org/exoskeletons.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Exoskeleton Collection — OccBiomechanics" />
+<meta property="og:description" content="Occupational exoskeleton evaluations indexed with device, actuation, body region, study design, and measured outcomes." />
+<meta property="og:url" content="https://occbiomechanics.org/exoskeletons.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Exoskeleton Collection — OccBiomechanics" />
+<meta name="twitter:description" content="Occupational exoskeleton evaluations indexed with device, actuation, body region, study design, and measured outcomes." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="datasets.html">Datasets</a>
+      <a href="exoskeletons.html" class="active">Exoskeletons</a>
+      <a href="docs.html">Docs</a>
+      <a href="index.html#collaborate">Collaborate</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Collection</span>
+    <h1>Occupational exoskeletons</h1>
+    <p class="lede">Every record in the catalog that involves an occupational exoskeleton, grouped by the body region the device supports. Each one carries the device, its actuation, the study design, and the outcome families measured — so evaluations can be compared on what they actually tested rather than on their abstracts.</p>
+    <div class="readout" aria-label="Collection summary">
+      <div class="cell"><div class="num accent" id="exo-eval-count">0</div><div class="lbl">Device&nbsp;evaluations</div></div>
+      <div class="cell"><div class="num" id="exo-device-count">0</div><div class="lbl">Devices</div></div>
+      <div class="cell"><div class="num" id="exo-region-count">0</div><div class="lbl">Body&nbsp;regions</div></div>
+      <div class="cell"><div class="num" id="exo-control-count">0</div><div class="lbl">Control-input&nbsp;datasets</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="wrap" id="collection">
+
+  <section class="home-section">
+    <div class="section-head"><h2>Devices covered</h2></div>
+    <div class="device-index" id="device-index"></div>
+  </section>
+
+  <section class="home-section" id="exo-groups" aria-live="polite"></section>
+
+  <section class="home-section how">
+    <div class="section-head"><h2>How these records are described</h2></div>
+    <div class="how-grid">
+      <div class="how-cell">
+        <div class="eyebrow">Two kinds of record</div>
+        <p><strong>Device evaluations</strong> put an exoskeleton on a participant and measure its effect. <strong>Control-input datasets</strong> carry no device: they were collected to build the intent detection, payload estimation, or joint-load models an exoskeleton controller needs.</p>
+      </div>
+      <div class="how-cell">
+        <div class="eyebrow">Comparable outcomes</div>
+        <p>Each evaluation lists the outcome families it reported — muscle activity, kinematics, assistive forces, metabolic and cardiovascular cost, task performance, and comfort — which makes the gaps between studies visible as well as their findings.</p>
+      </div>
+      <div class="how-cell">
+        <div class="eyebrow">Toward shared standards</div>
+        <p>These fields are a first step toward reporting occupational exoskeleton evaluations consistently. If your group runs evaluations, we would like your input on what the schema should capture — see <a href="index.html#collaborate">Collaborate with us</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
+    <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+<!-- The build script (scripts/build_catalog.py) replaces everything between
+     these markers with the compiled catalog from datasets/*.yaml. -->
+<!-- CATALOG:START -->
+<script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
   "count": 15,
@@ -835,3 +935,8 @@
     }
   ]
 }
+</script>
+<!-- CATALOG:END -->
+<script src="app.js"></script>
+</body>
+</html>

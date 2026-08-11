@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ErgoBiomech — Occupational Biomechanics Data Catalog</title>
-<meta name="description" content="A discovery catalog of motion capture, video, and sensor datasets for the occupational biomechanics community. Indexes metadata and links to sources; does not rehost data." />
+<title>OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem</title>
+<meta name="description" content="Human-motion datasets, models, and analysis tools for occupational tasks, indexed in one place — including a dedicated collection of exoskeleton evaluation studies. We index and link to original sources; we do not rehost data." />
 <link rel="canonical" href="https://occbiomechanics.org/" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="ErgoBiomech" />
-<meta property="og:title" content="ErgoBiomech — Occupational Biomechanics Data Catalog" />
-<meta property="og:description" content="Motion capture, video, and wearable-sensor datasets of lifting, carrying, and manual materials handling — indexed in one place." />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem" />
+<meta property="og:description" content="Human-motion datasets, models, and analysis tools for occupational tasks — indexed in one place, with a dedicated exoskeleton evaluation collection." />
 <meta property="og:url" content="https://occbiomechanics.org/" />
 <meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ErgoBiomech — Occupational Biomechanics Data Catalog" />
-<meta name="twitter:description" content="Motion capture, video, and wearable-sensor datasets of lifting, carrying, and manual materials handling — indexed in one place." />
+<meta name="twitter:title" content="OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem" />
+<meta name="twitter:description" content="Human-motion datasets, models, and analysis tools for occupational tasks — indexed in one place, with a dedicated exoskeleton evaluation collection." />
 <meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,12 +37,14 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="mark">EB</span>
-      <span class="name">ErgoBiomech</span>
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
       <a href="datasets.html">Datasets</a>
+      <a href="exoskeletons.html">Exoskeletons</a>
       <a href="docs.html">Docs</a>
+      <a href="#collaborate">Collaborate</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -50,17 +52,19 @@ if (location.hash.indexOf("#dataset-") === 0) {
 
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Open data · occupational biomechanics</span>
-    <h1>Work-task motion, video &amp; sensor datasets, <em>indexed in one place.</em></h1>
-    <p class="lede">A discovery catalog for lab-based lifting, carrying, and manual materials handling — captured with motion capture, video, and wearable sensors. We index and link to sources; we don't host files.</p>
+    <span class="eyebrow">Open-source ecosystem · occupational biomechanics</span>
+    <h1>Human-motion datasets, models &amp; analysis tools for occupational tasks, <em>indexed in one place.</em></h1>
+    <p class="lede">A discovery catalog for occupational biomechanics: motion datasets from optical motion capture, video, and wearable sensors, plus AI and musculoskeletal models and open-source tools for motion analysis. We index and link to original sources.</p>
     <div class="cta-row">
       <a class="btn primary" href="datasets.html">Browse the catalog →</a>
+      <a class="btn" href="exoskeletons.html">Exoskeleton studies</a>
       <a class="btn" href="docs.html">Schema &amp; API</a>
     </div>
     <div class="readout" id="readout" aria-label="Catalog summary">
       <div class="cell"><div class="num" id="stat-total">0</div><div class="lbl">Datasets</div></div>
       <div class="cell"><div class="num accent" id="stat-open">0</div><div class="lbl">Open</div></div>
       <div class="cell"><div class="num amber" id="stat-soon">0</div><div class="lbl">Coming&nbsp;soon</div></div>
+      <div class="cell"><div class="num" id="stat-exo">0</div><div class="lbl">Exoskeleton&nbsp;records</div></div>
       <div class="cell"><div class="num" id="stat-mod">0</div><div class="lbl">Modalities</div></div>
     </div>
   </div>
@@ -73,6 +77,47 @@ if (location.hash.indexOf("#dataset-") === 0) {
       <a class="linkbtn" href="datasets.html">View all datasets →</a>
     </div>
     <div class="grid" id="recent-grid"></div>
+  </section>
+
+  <section class="home-section">
+    <div class="feature">
+      <div class="feature-body">
+        <div class="eyebrow">Focus area</div>
+        <h2>Occupational exoskeletons, described the same way</h2>
+        <p>Studies that put a device on a worker are indexed with the device, its actuation and supported body region, the study design, and the outcomes actually measured — muscle activity, kinematics, assistive forces, metabolic and cardiovascular cost, performance, and comfort. Evaluations that are otherwise scattered across journals become directly comparable.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="exoskeletons.html">Browse exoskeleton studies →</a>
+          <a class="btn" href="docs.html#exoskeleton-fields">Exoskeleton fields</a>
+        </div>
+      </div>
+      <ul class="feature-stats" id="exo-readout">
+        <li><span class="num" id="exo-eval-count">0</span> <span class="lbl">Device evaluations</span></li>
+        <li><span class="num" id="exo-device-count">0</span> <span class="lbl">Devices covered</span></li>
+        <li><span class="num" id="exo-region-count">0</span> <span class="lbl">Body regions</span></li>
+        <li><span class="num" id="exo-control-count">0</span> <span class="lbl">Control-input datasets</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-section" id="vision">
+    <div class="section-head"><h2>Where this is going</h2></div>
+    <ol class="roadmap">
+      <li class="rm-step is-now">
+        <div class="eyebrow">Now</div>
+        <h3>Gather what already exists</h3>
+        <p>Index public datasets, models, and analysis tools for occupational biomechanics under one schema, so a researcher can find and compare them instead of rediscovering them one paper at a time.</p>
+      </li>
+      <li class="rm-step">
+        <div class="eyebrow">Next</div>
+        <h3>Develop and publish our own open-source tools</h3>
+        <p>Release the analysis code this catalog is built to feed — pipelines for optical motion capture, egocentric video, and exoskeleton evaluation — openly, with the datasets they were validated on.</p>
+      </li>
+      <li class="rm-step">
+        <div class="eyebrow">Long term</div>
+        <h3>A community resource for evaluation standards</h3>
+        <p>Support shared standards for how occupational exoskeletons are evaluated and reported, and make occupational biomechanics analysis reproducible across labs.</p>
+      </li>
+    </ol>
   </section>
 
   <section class="home-section how">
@@ -92,13 +137,40 @@ if (location.hash.indexOf("#dataset-") === 0) {
       </div>
     </div>
   </section>
+
+  <section class="home-section" id="collaborate">
+    <div class="section-head"><h2>Collaborate with us</h2></div>
+    <p class="section-lede">The catalog is maintained in the open, and it grows through the community it serves. If any of these fit your work, we would like to hear from you.</p>
+    <div class="how-grid">
+      <div class="how-cell">
+        <div class="eyebrow">List a dataset</div>
+        <p>Published, planned, or available on request — we index the metadata and link to your repository, so the data stays with you under your license.</p>
+        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20dataset%20suggestion">Email the link</a></p>
+      </div>
+      <div class="how-cell">
+        <div class="eyebrow">Models &amp; analysis tools</div>
+        <p>We are extending the index beyond datasets to AI and musculoskeletal models and open-source analysis tools. Tell us what your lab has released, or what you wish existed.</p>
+        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20model%20or%20tool">Suggest a model or tool</a></p>
+      </div>
+      <div class="how-cell">
+        <div class="eyebrow">Exoskeleton evaluation</div>
+        <p>If your group evaluates occupational exoskeletons, we would like to compare notes on what gets measured and reported, and work toward evaluation practices that make studies comparable.</p>
+        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20exoskeleton%20evaluation">Start a conversation</a> · <a href="exoskeletons.html">see the collection</a></p>
+      </div>
+      <div class="how-cell">
+        <div class="eyebrow">Research collaboration</div>
+        <p>Joint studies, shared data collections, student projects, and visiting researchers at the AnyMotion Lab (NJIT).</p>
+        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20collaboration">Get in touch</a></p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p id="contribute">Know a public dataset we should list? Email us the link and a short description, and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
     <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
@@ -368,6 +440,13 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "n": 12,
         "sex": "6F / 6M"
       },
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back"
+        ],
+        "comparison": "No device worn; recorded to train intention and payload estimation for low-back exoskeleton control"
+      },
       "load": "Lifting and lowering a box with 5, 10 and 15 kg payloads (no exoskeleton worn during collection)",
       "equipment": "5x wireless IMU (chest, both wrists, both thighs)",
       "sampling": {
@@ -425,6 +504,14 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "sex": "2F / 8M",
         "age_range": "25.2 +/- 3.1 yr (mean +/- SD)"
       },
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back",
+          "knee"
+        ],
+        "comparison": "No device worn; wearable-sensor labels for real-time joint-moment estimation aimed at exoskeleton control"
+      },
       "load": "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/pull, shoveling, stair and ladder climbing",
       "equipment": "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells",
       "sampling": {
@@ -477,6 +564,27 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "subjects": {
         "n": 12
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Paexo Shoulder (Ottobock)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "metabolic",
+          "cardiovascular",
+          "subjective"
+        ]
+      },
       "load": "Overhead pointing task, with vs. without the Paexo Shoulder passive exoskeleton",
       "equipment": "Whole-body mocap, force plates, shoulder & back EMG, oxygen consumption, heart rate; Paexo Shoulder (Ottobock)",
       "formats": [
@@ -524,6 +632,26 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "subjects": {
         "n": 10
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Bilateral backdrivable knee exoskeleton (Divekar et al., 2024)"
+        ],
+        "body_region": [
+          "knee"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "With vs. without the exoskeleton, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "task_performance",
+          "subjective"
+        ]
+      },
       "load": "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons",
       "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors",
       "formats": [
@@ -566,6 +694,24 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "n": 8,
         "sex": "3F / 5M"
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo V2.5"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, four in-bed patient-handling tasks",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "cardiovascular"
+        ]
+      },
       "load": "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations",
       "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor",
       "tags": [
@@ -602,6 +748,23 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "subjects": {
         "n": 16
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Apogee (German Bionic)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Four support conditions at two lifting speeds, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
       },
       "load": "Box lifting at two speeds under four support conditions (with/without active back support)",
       "equipment": "Apogee (German Bionic) active back-support exoskeleton, EMG, 3D motion capture",
@@ -646,6 +809,25 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "n": 30,
         "sex": "8F / 22M"
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Paexo Back (Ottobock)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton at three simulated logistics workplaces",
+        "outcomes": [
+          "cardiovascular",
+          "kinematics",
+          "task_performance",
+          "subjective"
+        ]
+      },
       "load": "Three simulated logistics workplaces: deep-box unloading to an elevated table, order picking/storing with trolley, and pick-walk-store",
       "equipment": "Paexo Back (Ottobock) passive low-back exoskeleton; Zephyr Bioharness 3.0 (heart rate, trunk inclination/acceleration)",
       "sampling": {
@@ -688,6 +870,28 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "subjects": {
         "n": 10
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo Flex",
+          "Paexo Back (Ottobock)",
+          "Darwing Hakobelude",
+          "Auxivo LiftSuit 1.0"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Four devices vs. no device, head-to-head, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinetics",
+          "subjective",
+          "discomfort"
+        ]
+      },
       "load": "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons",
       "equipment": "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement",
       "tags": [
@@ -728,6 +932,28 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "subjects": {
         "n": 12
       },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Rakunie",
+          "BionicBack",
+          "SoftExo Lift",
+          "Japet.W",
+          "Cray X (German Bionic)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive",
+          "active"
+        ],
+        "comparison": "Five devices vs. no device, head-to-head, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
+      },
       "load": "Combined lift-carry-lower of a 13 kg box",
       "equipment": "Rakunie, BionicBack, SoftExo Lift (passive); Japet.W, Cray X (active); EMG, motion capture",
       "tags": [
@@ -763,6 +989,13 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "egocentric_video",
         "physiological"
       ],
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back"
+        ],
+        "comparison": "No device worn; collected for fatigue-aware, vision-driven control of an active low-back exoskeleton"
+      },
       "load": "Boxes at multiple weights, walking and carrying in confined space",
       "equipment": "OptiTrack optical mocap, helmet-mounted GoPro MAX 360 (Gen 2), physiological sensors",
       "sampling": {

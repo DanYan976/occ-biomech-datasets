@@ -21,6 +21,11 @@ subjects:
   sex: "2F / 8M"
   age_range: "25.2 +/- 3.1 yr (mean +/- SD)"
 
+exoskeleton:
+  role: control_input
+  body_region: [back, knee]
+  comparison: "No device worn; wearable-sensor labels for real-time joint-moment estimation aimed at exoskeleton control"
+
 load: "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/pull, shoveling, stair and ladder climbing"
 equipment: "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells"
 sampling:

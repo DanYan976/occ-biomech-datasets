@@ -20,6 +20,14 @@ subjects:
   n: 8
   sex: "3F / 5M"
 
+exoskeleton:
+  role: evaluation
+  devices: ["Laevo V2.5"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, four in-bed patient-handling tasks"
+  outcomes: [muscle_activity, kinematics, cardiovascular]
+
 load: "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations"
 equipment: "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor"
 tags: [exoskeleton, back, patient-handling, healthcare, laevo]

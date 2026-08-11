@@ -19,6 +19,14 @@ modalities: [mocap, grf, emg, physiological, video]
 subjects:
   n: 12
 
+exoskeleton:
+  role: evaluation
+  devices: ["Paexo Shoulder (Ottobock)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, within-subject"
+  outcomes: [muscle_activity, kinematics, kinetics, metabolic, cardiovascular, subjective]
+
 load: "Overhead pointing task, with vs. without the Paexo Shoulder passive exoskeleton"
 equipment: "Whole-body mocap, force plates, shoulder & back EMG, oxygen consumption, heart rate; Paexo Shoulder (Ottobock)"
 formats: [mat, csv, mp4]

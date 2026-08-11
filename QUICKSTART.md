@@ -32,10 +32,12 @@ python scripts/build_catalog.py
 This validates every dataset and compiles it into the page. On success you see:
 
 ```
-Validated 9 entries, no errors.
-Built catalog: 9 datasets {'open': 6, 'restricted': 1, 'coming_soon': 2}
+Validated 15 entries, no errors.
+  -> 15 detail pages in site/datasets/
+  -> sitemap.xml (19 URLs)
+Built catalog: 15 datasets {'open': 10, 'restricted': 4, 'coming_soon': 1}
   -> site/catalog.json
-  -> injected into site/index.html
+  -> catalog JSON injected into index.html + datasets.html
 ```
 
 If a YAML file is wrong, it prints `INVALID ...` with the file and field, then

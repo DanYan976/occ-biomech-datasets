@@ -1,18 +1,31 @@
-# ErgoBiomech
+# OccBiomechanics
 
-**A curated catalog of occupational biomechanics datasets** — by AnyMotion Lab at NJIT.
+**Human-motion datasets, models, and analysis tools for occupational tasks,
+indexed in one place** — by AnyMotion Lab at NJIT. Published at
+[occbiomechanics.org](https://occbiomechanics.org).
 
-A discovery catalog for **occupational biomechanics** datasets: lab-based motion
-capture, video, and wearable-sensor recordings of work tasks such as lifting,
-carrying, and manual materials handling (MMH).
+A discovery catalog for **occupational biomechanics**: lab-based motion capture,
+video, and wearable-sensor recordings of work tasks such as lifting, carrying,
+and manual materials handling (MMH), with a dedicated collection for
+**occupational exoskeleton** studies.
 
 The catalog **indexes metadata and links out to each dataset's source**. It does
 not rehost data files. Listing is descriptive, not an endorsement, and every
 dataset keeps its own license and access terms.
 
-This repo ships as an architecture-first skeleton: a working filterable site
-seeded with a few placeholder entries and your lab's planned datasets marked
-**Coming soon**. Swap in real records over time.
+### Where this is going
+
+1. **Now** — gather what exists: datasets, models, and analysis tools under one
+   schema, so they can be found and compared.
+2. **Next** — develop and publish our own open-source analysis tools, with the
+   datasets they were validated on.
+3. **Long term** — a community resource supporting exoskeleton evaluation
+   standards and reproducible occupational biomechanics analysis.
+
+Collaborators are welcome: dataset submissions, models and tools, exoskeleton
+evaluation partners, and joint research. See the
+[Collaborate section](https://occbiomechanics.org/#collaborate) or email
+<dy266@njit.edu>.
 
 ---
 
@@ -44,9 +57,13 @@ occ-biomech-datasets/
 │   ├── build_catalog.py      # validate + compile
 │   └── requirements.txt
 ├── site/                     # the published site
-│   ├── index.html            # structure + injected catalog data
+│   ├── index.html            # landing page: stats, roadmap, collaborate
+│   ├── datasets.html         # full catalog with filters and table view
+│   ├── exoskeletons.html     # exoskeleton collection, grouped by body region
+│   ├── docs.html             # schema, vocabularies, JSON API
+│   ├── datasets/<id>.html    # generated, one page per dataset
 │   ├── style.css
-│   ├── app.js                # search + filter logic
+│   ├── app.js                # search + filter logic (all three views)
 │   └── catalog.json          # generated
 └── .github/workflows/deploy.yml  # build + deploy to GitHub Pages
 ```
@@ -92,12 +109,34 @@ cleanly onto [Croissant](https://mlcommons.org/croissant/) (MLCommons) if you
 later want ML-ready, framework-loadable descriptions. Domain fields (tasks,
 modalities, load, sampling) extend that base for occupational biomechanics.
 
-## About the seeded entries
+## Exoskeleton records
 
-- `njit-*` entries are real planned datasets, marked `coming_soon` until release.
-- Real indexed datasets: `andydata-lab-oneperson` (CC-BY-4.0),
-  `lara-logistics-har` (CC-BY-**NC**-4.0, non-commercial), and `moped25`
-  (freely available, no explicit license — cite Li et al. 2020).
+Records that involve an occupational exoskeleton carry an extra `exoskeleton`
+object, which drives the exoskeleton filters on `datasets.html` and the grouping
+on `exoskeletons.html`:
+
+```yaml
+exoskeleton:
+  role: evaluation            # evaluation | control_input
+  devices: ["Laevo V2.5"]
+  body_region: [back]         # back | shoulder | knee | hip | ankle | neck | wrist | full_body
+  actuation: [passive]        # passive | active | quasi_passive
+  comparison: "With vs. without the exoskeleton, within-subject"
+  outcomes: [muscle_activity, kinematics, cardiovascular]
+```
+
+`role: evaluation` means a device was worn and its effect measured;
+`role: control_input` means the data were collected to develop or control an
+exoskeleton, with no device worn during capture. Datasets with no exoskeleton
+connection omit the object entirely. `outcomes` is the field that makes
+evaluations comparable — and makes the gaps between them visible.
+
+## About the entries
+
+`njit-*` entries are the lab's own planned datasets, marked `coming_soon` until
+release. Everything else is a published dataset indexed from its original source;
+check each record's `access.license` before use, since terms vary from CC0 to
+non-commercial to data-on-request.
 
 ## Licensing
 

@@ -26,6 +26,17 @@ subjects:
   sex: "12F / 12M"
   age_range: "18-45"
 
+# Only for exoskeleton-relevant records — delete this whole block otherwise.
+# role: evaluation    = a device was worn and its effect measured
+# role: control_input = collected to develop/control an exoskeleton, no device worn
+exoskeleton:
+  role: evaluation
+  devices: ["Device name (Manufacturer)"]
+  body_region: [back]                 # back | shoulder | knee | hip | ankle | neck | wrist | full_body
+  actuation: [passive]                # passive | active | quasi_passive
+  comparison: "With vs. without the exoskeleton, within-subject"
+  outcomes: [muscle_activity, kinematics]   # see schema for the full list
+
 load: "5-15 kg boxes, floor-to-waist"
 equipment: "OptiTrack (12 cam), Delsys Trigno EMG, force plates"
 sampling:                             # Hz (video in fps)

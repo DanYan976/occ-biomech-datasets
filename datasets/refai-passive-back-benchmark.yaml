@@ -19,6 +19,14 @@ modalities: [emg]
 subjects:
   n: 10
 
+exoskeleton:
+  role: evaluation
+  devices: ["Laevo Flex", "Paexo Back (Ottobock)", "Darwing Hakobelude", "Auxivo LiftSuit 1.0"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "Four devices vs. no device, head-to-head, within-subject"
+  outcomes: [muscle_activity, kinetics, subjective, discomfort]
+
 load: "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons"
 equipment: "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement"
 tags: [exoskeleton, back, benchmark, passive-exoskeleton, comfort, data-on-request]

@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Schema &amp; API — ErgoBiomech</title>
-<meta name="description" content="How ErgoBiomech dataset metadata is structured (fields and controlled vocabularies) and how to consume the catalog programmatically via catalog.json." />
+<title>Schema &amp; API — OccBiomechanics</title>
+<meta name="description" content="How OccBiomechanics dataset metadata is structured (fields and controlled vocabularies) and how to consume the catalog programmatically via catalog.json." />
 <link rel="canonical" href="https://occbiomechanics.org/docs.html" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
-<meta property="og:site_name" content="ErgoBiomech" />
-<meta property="og:title" content="Schema &amp; API — ErgoBiomech" />
-<meta property="og:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the ErgoBiomech catalog." />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Schema &amp; API — OccBiomechanics" />
+<meta property="og:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
 <meta property="og:url" content="https://occbiomechanics.org/docs.html" />
 <meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Schema &amp; API — ErgoBiomech" />
-<meta name="twitter:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the ErgoBiomech catalog." />
+<meta name="twitter:title" content="Schema &amp; API — OccBiomechanics" />
+<meta name="twitter:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
 <meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,12 +28,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <span class="mark">EB</span>
-      <span class="name">ErgoBiomech</span>
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
       <a href="datasets.html">Datasets</a>
+      <a href="exoskeletons.html">Exoskeletons</a>
       <a href="docs.html" class="active">Docs</a>
+      <a href="index.html#collaborate">Collaborate</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -61,6 +63,7 @@
     <dt><code>tasks</code></dt><dd>Occupational tasks performed, from a controlled vocabulary (below). <code>mmh</code> is the umbrella term for manual materials handling.</dd>
     <dt><code>modalities</code></dt><dd>Sensor/data modalities captured, from a controlled vocabulary (below).</dd>
     <dt><code>subjects</code></dt><dd>Participant count <code>n</code>, sex split, and age range as reported by the source.</dd>
+    <dt><code>exoskeleton</code></dt><dd>Present only on exoskeleton-relevant records. Detailed <a href="#exoskeleton-fields">below</a>.</dd>
     <dt><code>load</code></dt><dd>Free-text protocol summary: handled loads, task intensity, conditions.</dd>
     <dt><code>equipment</code></dt><dd>Capture systems used (mocap brand, EMG system, IMU count and placement…).</dd>
     <dt><code>sampling</code></dt><dd>Sampling rate per modality in Hz (video in fps).</dd>
@@ -70,6 +73,30 @@
     <dt><code>added</code></dt><dd>Date the entry was added to this catalog (not the dataset's release date).</dd>
   </dl>
 
+  <h2 id="exoskeleton-fields">Exoskeleton fields</h2>
+  <p class="gov">Records that involve an occupational exoskeleton carry an extra <code>exoskeleton</code> object. It is what drives the exoskeleton filters on the <a href="datasets.html">catalog page</a> and the grouping on the <a href="exoskeletons.html">exoskeleton collection</a>. Datasets with no exoskeleton connection omit the object entirely.</p>
+
+  <dl class="detail-table">
+    <dt><code>role</code></dt><dd>Required within the object. <code>evaluation</code> = a device was worn and its effect measured · <code>control_input</code> = collected to develop or control an exoskeleton, with no device worn during capture.</dd>
+    <dt><code>devices</code></dt><dd>Device names as the source reports them, e.g. <code>Laevo V2.5</code>. Several when a study compares devices.</dd>
+    <dt><code>body_region</code></dt><dd>Region the device supports — the grouping used on the collection page. For <code>control_input</code> records it is the region the work targets.</dd>
+    <dt><code>actuation</code></dt><dd>Actuation principle: passive, active, or quasi-passive. Several when a study compares mechanisms.</dd>
+    <dt><code>comparison</code></dt><dd>Study design in one line, e.g. "With vs. without the exoskeleton, within-subject".</dd>
+    <dt><code>outcomes</code></dt><dd>Outcome families reported, so evaluations can be compared on what they measured — and so gaps in the literature are visible.</dd>
+  </dl>
+
+  <div class="citebox">
+    <pre>exoskeleton:
+  role: evaluation
+  devices: ["Laevo V2.5"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, four in-bed patient-handling tasks"
+  outcomes: [muscle_activity, kinematics, cardiovascular]</pre>
+  </div>
+
+  <p class="gov">These fields are a working proposal, not a settled standard. If your group evaluates occupational exoskeletons and reports measures this schema cannot express, we would like to hear about it — see <a href="index.html#collaborate">Collaborate with us</a>.</p>
+
   <h2>Controlled vocabularies</h2>
   <p class="gov">These lists are generated from the JSON Schema at build time, so they always match what validation accepts.</p>
   <!-- VOCAB:START -->
@@ -78,6 +105,10 @@
   <dt>tasks</dt><dd><code>lifting</code> <code>lowering</code> <code>carrying</code> <code>pushing</code> <code>pulling</code> <code>holding</code> <code>reaching</code> <code>squatting</code> <code>walking</code> <code>assembly</code> <code>mmh</code></dd>
   <dt>modalities</dt><dd><code>mocap</code> <code>imu</code> <code>emg</code> <code>force_plate</code> <code>grf</code> <code>video</code> <code>egocentric_video</code> <code>pose_estimation</code> <code>pressure_insole</code> <code>physiological</code></dd>
   <dt>formats</dt><dd><code>c3d</code> <code>trc</code> <code>mot</code> <code>sto</code> <code>csv</code> <code>json</code> <code>mp4</code> <code>mat</code> <code>edf</code> <code>bag</code> <code>npz</code></dd>
+  <dt>exoskeleton.role</dt><dd><code>evaluation</code> <code>control_input</code></dd>
+  <dt>exoskeleton.body_region</dt><dd><code>back</code> <code>shoulder</code> <code>knee</code> <code>hip</code> <code>ankle</code> <code>neck</code> <code>wrist</code> <code>full_body</code></dd>
+  <dt>exoskeleton.actuation</dt><dd><code>passive</code> <code>active</code> <code>quasi_passive</code></dd>
+  <dt>exoskeleton.outcomes</dt><dd><code>muscle_activity</code> <code>kinematics</code> <code>kinetics</code> <code>metabolic</code> <code>cardiovascular</code> <code>task_performance</code> <code>subjective</code> <code>discomfort</code></dd>
 </dl>
 <!-- VOCAB:END -->
 
@@ -97,15 +128,24 @@ for d in catalog["datasets"]:
   </div>
   <p class="gov">Response shape: <code>{"generated_from", "count", "datasets": [ ... ]}</code>, where each element of <code>datasets</code> is one metadata record with the fields documented above. Released datasets are also described with <a href="https://schema.org/Dataset" target="_blank" rel="noopener">schema.org/Dataset</a> JSON-LD on their pages for Google Dataset Search.</p>
 
-  <h2>Suggest a dataset</h2>
-  <p class="gov">Know a public dataset of occupational tasks we should index? Email the link and a short description to <a href="mailto:dy266@njit.edu">dy266@njit.edu</a> — we will fill in the metadata and credit the suggestion.</p>
+  <p class="gov">Example: list every exoskeleton evaluation with the device and the outcomes it measured:</p>
+  <div class="citebox">
+    <pre>for d in catalog["datasets"]:
+    exo = d.get("exoskeleton")
+    if exo and exo["role"] == "evaluation":
+        print(d["id"], "|", ", ".join(exo.get("devices", [])), "|", ", ".join(exo.get("outcomes", [])))</pre>
+  </div>
+
+  <h2>Contribute or collaborate</h2>
+  <p class="gov">Know a public dataset, model, or analysis tool we should index? Email the link and a short description to <a href="mailto:dy266@njit.edu">dy266@njit.edu</a> — we will fill in the metadata against this schema and credit the suggestion. Sending the fields already filled in is welcome but not expected.</p>
+  <p class="gov">We are also looking for collaborators — labs sharing data, groups running exoskeleton evaluations, and researchers building open analysis tools. See <a href="index.html#collaborate">Collaborate with us</a>.</p>
 
 </main>
 
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community. Each entry describes a dataset and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
     <p>Machine-readable: <a href="catalog.json">catalog.json</a></p>
     <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
