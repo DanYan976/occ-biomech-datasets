@@ -207,7 +207,7 @@
 <script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
-  "count": 15,
+  "count": 16,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -1039,6 +1039,44 @@
       ],
       "description": "Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned.\n",
       "added": "2026-01-01"
+    },
+    {
+      "id": "njit-multimodality-boxlifting",
+      "title": "Multimodality Box-Lifting Dataset",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "NJIT Occupational Biomechanics Lab",
+        "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "year": 2026
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "video",
+        "imu",
+        "emg",
+        "pressure_insole"
+      ],
+      "load": "Box lifting across different box weights, lift heights, and asymmetry angles",
+      "equipment": "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles",
+      "formats": [
+        "c3d",
+        "mp4",
+        "csv"
+      ],
+      "tags": [
+        "box-lifting",
+        "multimodal",
+        "lifting-height",
+        "asymmetry"
+      ],
+      "description": "Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of box lifting performed at different box weights, lift heights, and asymmetry angles. Release planned.\n",
+      "added": "2026-08-12"
     }
   ]
 }

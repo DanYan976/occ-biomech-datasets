@@ -1,0 +1,23 @@
+# Real planned dataset (your lab). Marked coming_soon until release.
+id: njit-multimodality-boxlifting
+title: "Multimodality Box-Lifting Dataset"
+status: coming_soon
+sample: false
+
+source:
+  authors: "NJIT Occupational Biomechanics Lab"
+  institution: "New Jersey Institute of Technology (AnyMotion Lab)"
+  year: 2026
+
+tasks: [lifting, lowering, mmh]
+modalities: [mocap, video, imu, emg, pressure_insole]
+
+load: "Box lifting across different box weights, lift heights, and asymmetry angles"
+equipment: "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles"
+formats: [c3d, mp4, csv]
+tags: [box-lifting, multimodal, lifting-height, asymmetry]
+description: >
+  Synchronized optical motion capture, video, IMU, surface EMG, and
+  pressure-insole recordings of box lifting performed at different box weights,
+  lift heights, and asymmetry angles. Release planned.
+added: 2026-08-12
