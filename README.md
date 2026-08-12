@@ -1,7 +1,8 @@
 # OccBiomechanics
 
 **Human-motion datasets, models, and analysis tools for occupational tasks,
-indexed in one place** — by AnyMotion Lab at NJIT. Published at
+indexed in one place** — by the
+[AnyMotion Lab](https://sites.google.com/view/weiyin-njit) at NJIT. Published at
 [occbiomechanics.org](https://occbiomechanics.org).
 
 A discovery catalog for **occupational biomechanics**: lab-based motion capture,
@@ -22,9 +23,11 @@ dataset keeps its own license and access terms.
 3. **Long term** — a community resource supporting exoskeleton evaluation
    standards and reproducible occupational biomechanics analysis.
 
-Collaborators are welcome: dataset submissions, models and tools, exoskeleton
-evaluation partners, and joint research. See the
-[Collaborate section](https://occbiomechanics.org/#collaborate) or email
+Contributions are welcome: dataset submissions, models and tools, fixes to
+existing records, exoskeleton evaluation partners, and joint research. See
+[Contribute](https://occbiomechanics.org/contribute.html) (or `CONTRIBUTING.md`
+in this repo), meet the core team on the
+[Community page](https://occbiomechanics.org/community.html), or email
 <dy266@njit.edu>.
 
 ---
@@ -34,9 +37,9 @@ evaluation partners, and joint research. See the
 ```
 datasets/*.yaml   →   scripts/build_catalog.py   →   site/ (static, filterable)
    (source of         (validates against              (deploys to GitHub Pages)
-    truth, one          schema, compiles to
-    file per            JSON injected into
-    dataset)            site/index.html)
+    truth, one          schema, compiles JSON
+    file per            into the catalog pages +
+    dataset)            one detail page each)
 ```
 
 Data lives as one YAML file per dataset, so every change is a reviewable pull
@@ -57,12 +60,16 @@ occ-biomech-datasets/
 │   ├── build_catalog.py      # validate + compile
 │   └── requirements.txt
 ├── site/                     # the published site
-│   ├── index.html            # landing page: stats, roadmap, collaborate
+│   ├── index.html            # landing page: stats, roadmap, contribute teaser
 │   ├── datasets.html         # full catalog with filters and table view
 │   ├── exoskeletons.html     # exoskeleton collection, grouped by body region
 │   ├── docs.html             # schema, vocabularies, JSON API
+│   ├── contribute.html       # how to propose, fix, and review records
+│   ├── community.html        # core team and contributors
 │   ├── datasets/<id>.html    # generated, one page per dataset
+│   ├── assets/team/          # core-team headshots
 │   ├── style.css
+│   ├── nav.js                # header nav dropdown behavior
 │   ├── app.js                # search + filter logic (all three views)
 │   └── catalog.json          # generated
 └── .github/workflows/deploy.yml  # build + deploy to GitHub Pages
@@ -90,10 +97,15 @@ in the page, so it renders without a server.
 
 ## Deploy (GitHub Pages)
 
-1. Push this repo to GitHub.
-2. Settings → Pages → Build and deployment → Source: **GitHub Actions**.
-3. Push to `main`. The workflow in `.github/workflows/deploy.yml` runs the build
-   and publishes `site/`.
+The site is live at [occbiomechanics.org](https://occbiomechanics.org). Every
+push to `main` triggers `.github/workflows/deploy.yml`, which runs the build and
+publishes `site/` via GitHub Pages — so a merged pull request is deployed
+automatically, with no separate release step.
+
+Note for maintainers: the header/footer of the generated dataset detail pages
+comes from the HTML template inside `scripts/build_catalog.py`. Site-wide chrome
+changes (nav, footer) must be made both in the hand-written pages under `site/`
+and in that template, then rebuilt.
 
 ## Metadata standards
 
@@ -137,6 +149,19 @@ evaluations comparable — and makes the gaps between them visible.
 release. Everything else is a published dataset indexed from its original source;
 check each record's `access.license` before use, since terms vary from CC0 to
 non-commercial to data-on-request.
+
+## Core team
+
+- [Wei Yin](https://people.njit.edu/profile/wy37) — NJIT; directs the
+  [AnyMotion Lab](https://sites.google.com/view/weiyin-njit), which maintains
+  this catalog
+- [Yangming Shi](https://cee.mines.edu/project/shi-yangming/) — Colorado School
+  of Mines
+- [Xianlian Zhou](https://people.njit.edu/profile/alexzhou) — NJIT
+- [Xudong Zhang](https://engineering.tamu.edu/industrial/profiles/zhang-xudong.html)
+  — Texas A&M University
+
+More on the [Community page](https://occbiomechanics.org/community.html).
 
 ## Licensing
 

@@ -23,7 +23,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css?v=20260812" />
+<script src="nav.js" defer></script>
 <script>
 /* Old permalinks pointed at anchors on this page; cards now live on
    datasets.html and each dataset has its own page. Forward them. */
@@ -41,10 +42,17 @@ if (location.hash.indexOf("#dataset-") === 0) {
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
-      <a href="datasets.html">Datasets</a>
-      <a href="exoskeletons.html">Exoskeletons</a>
+      <a href="index.html" class="active">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="datasets.html">All Datasets</a>
+          <a href="exoskeletons.html">Exoskeleton Studies</a>
+        </div>
+      </div>
       <a href="docs.html">Docs</a>
-      <a href="#collaborate">Collaborate</a>
+      <a href="contribute.html">Contribute</a>
+      <a href="community.html">Community</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -139,40 +147,21 @@ if (location.hash.indexOf("#dataset-") === 0) {
   </section>
 
   <section class="home-section" id="collaborate">
-    <div class="section-head"><h2>Collaborate with us</h2></div>
-    <p class="section-lede">The catalog is maintained in the open, and it grows through the community it serves. If any of these fit your work, we would like to hear from you.</p>
-    <div class="how-grid">
-      <div class="how-cell">
-        <div class="eyebrow">List a dataset</div>
-        <p>Published, planned, or available on request — we index the metadata and link to your repository, so the data stays with you under your license.</p>
-        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20dataset%20suggestion">Email the link</a></p>
-      </div>
-      <div class="how-cell">
-        <div class="eyebrow">Models &amp; analysis tools</div>
-        <p>We are extending the index beyond datasets to AI and musculoskeletal models and open-source analysis tools. Tell us what your lab has released, or what you wish existed.</p>
-        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20model%20or%20tool">Suggest a model or tool</a></p>
-      </div>
-      <div class="how-cell">
-        <div class="eyebrow">Exoskeleton evaluation</div>
-        <p>If your group evaluates occupational exoskeletons, we would like to compare notes on what gets measured and reported, and work toward evaluation practices that make studies comparable.</p>
-        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20exoskeleton%20evaluation">Start a conversation</a> · <a href="exoskeletons.html">see the collection</a></p>
-      </div>
-      <div class="how-cell">
-        <div class="eyebrow">Research collaboration</div>
-        <p>Joint studies, shared data collections, student projects, and visiting researchers at the AnyMotion Lab (NJIT).</p>
-        <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20collaboration">Get in touch</a></p>
-      </div>
+    <div class="section-head">
+      <h2>Contribute</h2>
+      <a class="linkbtn" href="contribute.html">How to contribute →</a>
     </div>
+    <p class="section-lede">The catalog is maintained in the open, and it grows through the community it serves. Propose a dataset, model, or tool, improve an existing record, help shape exoskeleton evaluation standards, or build the platform with us — every record is one YAML file on <a href="https://github.com/DanYan976/occ-biomech-datasets">GitHub</a>, and adding or fixing one is a pull request.</p>
   </section>
 </main>
 
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
-    <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
   </div>
 </footer>

@@ -433,7 +433,8 @@ def _detail_page(entry: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="/style.css?v=20260812" />
+<script src="/nav.js" defer></script>
 {jsonld}</head>
 <body>
 
@@ -444,10 +445,17 @@ def _detail_page(entry: dict) -> str:
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
-      <a href="/datasets.html" class="active">Datasets</a>
-      <a href="/exoskeletons.html">Exoskeletons</a>
+      <a href="/index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="/datasets.html" class="active">All Datasets</a>
+          <a href="/exoskeletons.html">Exoskeleton Studies</a>
+        </div>
+      </div>
       <a href="/docs.html">Docs</a>
-      <a href="/index.html#collaborate">Collaborate</a>
+      <a href="/contribute.html">Contribute</a>
+      <a href="/community.html">Community</a>
       <a href="#about">About</a>
     </nav>
   </div>
@@ -483,10 +491,10 @@ def _detail_page(entry: dict) -> str:
 <footer class="site-footer" id="about">
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
-    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the AnyMotion Lab.</p>
-    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/index.html#collaborate">Collaborate with us</a>, or email the link and a short description and we will add it.</p>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
     <p>Machine-readable: <a href="/catalog.json">catalog.json</a> · <a href="/docs.html">schema &amp; API docs</a></p>
-    <p>A project of <strong>AnyMotion Lab</strong> · New Jersey Institute of Technology</p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
   </div>
 </footer>
@@ -523,7 +531,9 @@ def build_detail_pages(catalog: dict) -> None:
 
 def build_sitemap(catalog: dict) -> None:
     urls = [(f"{SITE_URL}/", None), (f"{SITE_URL}/datasets.html", None),
-            (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/docs.html", None)]
+            (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/docs.html", None),
+            (f"{SITE_URL}/contribute.html", None),
+            (f"{SITE_URL}/community.html", None)]
     for entry in catalog["datasets"]:
         urls.append((detail_url(entry), str(entry.get("added")) if entry.get("added") else None))
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',

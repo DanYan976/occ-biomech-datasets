@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contribute — OccBiomechanics</title>
+<meta name="description" content="How to contribute to the OccBiomechanics catalog: propose datasets, models, and tools, improve existing records, shape exoskeleton evaluation standards, or help build the platform." />
+<link rel="canonical" href="https://occbiomechanics.org/contribute.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Contribute — OccBiomechanics" />
+<meta property="og:description" content="Propose datasets, models, and tools, improve existing records, shape exoskeleton evaluation standards, or help build the platform." />
+<meta property="og:url" content="https://occbiomechanics.org/contribute.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contribute — OccBiomechanics" />
+<meta name="twitter:description" content="Propose datasets, models, and tools, improve existing records, shape exoskeleton evaluation standards, or help build the platform." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20260812" />
+<script src="nav.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">OB</span>
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="datasets.html">All Datasets</a>
+          <a href="exoskeletons.html">Exoskeleton Studies</a>
+        </div>
+      </div>
+      <a href="docs.html">Docs</a>
+      <a href="contribute.html" class="active">Contribute</a>
+      <a href="community.html">Community</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Get involved</span>
+    <h1>Contribute to OccBiomechanics</h1>
+    <p class="lede">Add resources, improve metadata, or help build the platform. The catalog is maintained in the open on <a href="https://github.com/DanYan976/occ-biomech-datasets">GitHub</a> — every record is one YAML file, and adding or fixing one is a pull request. Email works too if GitHub is not your thing.</p>
+  </div>
+</section>
+
+<main class="wrap detail">
+
+  <h2>Ways to contribute</h2>
+  <div class="how-grid">
+    <div class="how-cell">
+      <div class="eyebrow">Propose a resource</div>
+      <p>Suggest a dataset, model, or analysis tool — published, planned, or available on request. We index the metadata and link to your repository, so the data stays with you under your license.</p>
+      <p class="cell-links"><a href="https://github.com/DanYan976/occ-biomech-datasets/issues/new">Open an issue</a> · <a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20resource%20suggestion">email the link</a></p>
+    </div>
+    <div class="how-cell">
+      <div class="eyebrow">Improve existing records</div>
+      <p>Correct metadata, add missing licenses or DOIs, report broken links, and clarify descriptions. Each record is one YAML file in <code>datasets/</code> — small fixes are small pull requests.</p>
+      <p class="cell-links"><a href="https://github.com/DanYan976/occ-biomech-datasets/issues/new">Report an issue</a> · <a href="https://github.com/DanYan976/occ-biomech-datasets/tree/main/datasets">browse the records</a></p>
+    </div>
+    <div class="how-cell">
+      <div class="eyebrow">Shape evaluation standards</div>
+      <p>If your group evaluates occupational exoskeletons, help us converge on what gets measured and reported so studies become comparable — starting from the <a href="docs.html#exoskeleton-fields">exoskeleton fields</a> in our schema.</p>
+      <p class="cell-links"><a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20exoskeleton%20evaluation">Start a conversation</a> · <a href="exoskeletons.html">see the collection</a></p>
+    </div>
+    <div class="how-cell">
+      <div class="eyebrow">Build the platform</div>
+      <p>The schema, validation and build scripts, and this site are open source (MIT). Contribute to the <a href="https://github.com/DanYan976/occ-biomech-datasets/blob/main/schema/dataset.schema.json">JSON Schema</a>, the build pipeline, or the site itself, and influence what gets built next.</p>
+      <p class="cell-links"><a href="https://github.com/DanYan976/occ-biomech-datasets">View the repository</a></p>
+    </div>
+  </div>
+
+  <h2>How a record gets added</h2>
+  <p class="gov">The full walkthrough lives in <a href="https://github.com/DanYan976/occ-biomech-datasets/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>; this is the short version.</p>
+  <dl class="detail-table">
+    <dt>1 · Copy</dt><dd>Copy <a href="https://github.com/DanYan976/occ-biomech-datasets/blob/main/datasets/_template.yaml"><code>datasets/_template.yaml</code></a> to <code>datasets/&lt;your-id&gt;.yaml</code>.</dd>
+    <dt>2 · Describe</dt><dd>Fill in the fields. Required: <code>id</code>, <code>title</code>, <code>status</code>, <code>source</code>, plus at least one entry each in <code>tasks</code> and <code>modalities</code> — vocabularies are in the <a href="docs.html">docs</a>. Records involving an exoskeleton add the <code>exoskeleton</code> block.</dd>
+    <dt>3 · Validate</dt><dd>Run <code>python scripts/build_catalog.py</code>. The build fails with a clear message if a field is missing or uses a value outside the controlled vocabulary.</dd>
+    <dt>4 · Submit</dt><dd>Open a pull request with the YAML and the regenerated site files. We review for completeness and licensing clarity, not gatekeeping.</dd>
+  </dl>
+
+  <h2>Standards we hold records to</h2>
+  <p class="gov">Every record validates against the <a href="https://github.com/DanYan976/occ-biomech-datasets/blob/main/schema/dataset.schema.json">JSON Schema</a>: structured fields from controlled vocabularies, a clear license and access status, and a descriptive title and summary. Fields are filled from what the source actually documents — an empty field is more useful than a guessed one. Need a vocabulary value that doesn't exist yet? Propose it in the same pull request.</p>
+
+  <h2>Research collaboration</h2>
+  <p class="gov">Beyond the catalog, the <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> (NJIT) is open to joint studies, shared data collections, student projects, and visiting researchers — <a href="mailto:dy266@njit.edu?subject=OccBiomechanics%3A%20collaboration">get in touch</a>.</p>
+
+  <h2>Data usage</h2>
+  <p class="gov">OccBiomechanics indexes metadata and links to resources at their original home; we do not rehost data and claim no ownership of the resources we describe. Listing is descriptive, not an endorsement. Before reusing any dataset, review its license and access terms at the source.</p>
+
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
