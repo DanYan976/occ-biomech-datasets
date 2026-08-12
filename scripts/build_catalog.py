@@ -418,7 +418,7 @@ def _detail_page(entry: dict) -> str:
 <title>{e(entry['title'])} — OccBiomechanics</title>
 <meta name="description" content="{e(desc)}" />
 <link rel="canonical" href="{e(url)}" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260812" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
@@ -441,7 +441,7 @@ def _detail_page(entry: dict) -> str:
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <span class="mark">OB</span>
+      <img class="mark" src="/assets/logo.svg" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">

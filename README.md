@@ -67,7 +67,7 @@ occ-biomech-datasets/
 │   ├── contribute.html       # how to propose, fix, and review records
 │   ├── community.html        # core team and contributors
 │   ├── datasets/<id>.html    # generated, one page per dataset
-│   ├── assets/team/          # core-team headshots
+│   ├── assets/               # logo (light/dark) and core-team headshots
 │   ├── style.css
 │   ├── nav.js                # header nav dropdown behavior
 │   ├── app.js                # search + filter logic (all three views)

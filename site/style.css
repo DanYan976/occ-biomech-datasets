@@ -70,18 +70,13 @@ a:hover { text-decoration: underline; }
   display: flex; align-items: center; justify-content: space-between;
   height: 60px;
 }
-.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; }
 a.brand { color: inherit; }
 a.brand:hover { text-decoration: none; }
 .brand .mark {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--surface);
-  background: var(--ink);
-  padding: 3px 7px;
-  border-radius: 5px;
-  letter-spacing: .02em;
+  display: block;
+  width: 30px;
+  height: 30px;
 }
 .brand .name { font-weight: 600; letter-spacing: -.01em; }
 .nav { display: flex; align-items: center; gap: 22px; }
