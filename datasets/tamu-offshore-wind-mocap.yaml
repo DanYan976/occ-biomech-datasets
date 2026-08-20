@@ -1,0 +1,29 @@
+# Coming-soon entry; no public release yet, so no access link.
+id: tamu-offshore-wind-mocap
+title: "Offshore Wind Turbine Maintenance Motion Capture Dataset"
+status: coming_soon
+sample: false
+
+source:
+  authors: "Chen, Y., Santos, H., Tao, J., Ding, Y., Zhang, X."
+  institution: "Texas A&M University / Georgia Institute of Technology"
+  year: 2025
+
+tasks: [lifting, mmh]
+modalities: [mocap, imu, video, pose_estimation]
+
+subjects:
+  n: 24
+
+load: "Symmetric lifting, stepping onto/down a ladder, and climbing up/down ladder rungs, repeated across trials"
+equipment: "Marker-based optical motion capture; BioStamp nPoint flexible wearable sensors (accelerometer, gyroscope); smartphone/tablet cameras for video-based capture"
+formats: [csv, mp4]
+tags: [motion-capture, wearable-sensors, wind-energy, ladder-climbing, ergonomics]
+description: >
+  Multimodal motion data of simulated offshore wind turbine maintenance
+  activities: 24 participants performed symmetric lifting, ladder stepping,
+  and rung climbing while recorded concurrently by marker-based optical motion
+  capture, body-worn flexible sensors, and smartphone/tablet video, supporting
+  ergonomic assessment of biomechanical demands in wind-energy maintenance
+  work. Release planned.
+added: 2026-08-18

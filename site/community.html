@@ -21,7 +21,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260812" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="style.css?v=20260819" />
 <script src="nav.js" defer></script>
 </head>
 <body>
@@ -39,6 +40,8 @@
         <div class="dropdown-menu">
           <a href="datasets.html">All Datasets</a>
           <a href="exoskeletons.html">Exoskeleton Studies</a>
+          <a href="models.html">Models</a>
+          <a href="tools.html">Tools</a>
         </div>
       </div>
       <a href="docs.html">Docs</a>
@@ -68,7 +71,7 @@
         <div class="role">Assistant Professor</div>
         <div class="affil">School of Applied Engineering and Technology, New Jersey Institute of Technology</div>
         <p class="focus">Directs the AnyMotion Lab, which maintains this catalog — human modeling, wearable sensing, exoskeletons, and human-robot collaboration.</p>
-        <p class="cell-links"><a href="https://people.njit.edu/profile/wy37">Profile</a> · <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a></p>
+        <p class="cell-links"><a href="https://people.njit.edu/profile/wy37">Profile</a> · <a href="https://sites.google.com/view/weiyin-njit">Lab</a></p>
       </div>
     </div>
     <div class="person-card">
@@ -78,7 +81,7 @@
         <div class="role">Assistant Professor</div>
         <div class="affil">Civil and Environmental Engineering, Colorado School of Mines</div>
         <p class="focus">Data-driven VR/AR and AI approaches to human performance in construction and engineering.</p>
-        <p class="cell-links"><a href="https://cee.mines.edu/project/shi-yangming/">Profile</a></p>
+        <p class="cell-links"><a href="https://cee.mines.edu/project/shi-yangming/">Profile</a> · <a href="https://shiyangming.com/">Lab</a></p>
       </div>
     </div>
     <div class="person-card">
@@ -88,7 +91,7 @@
         <div class="role">Associate Professor</div>
         <div class="affil">Biomedical Engineering, New Jersey Institute of Technology</div>
         <p class="focus">Directs the BioDynamics Lab — computational biomechanics, human modeling and simulation, and injury prevention.</p>
-        <p class="cell-links"><a href="https://people.njit.edu/profile/alexzhou">Profile</a></p>
+        <p class="cell-links"><a href="https://people.njit.edu/profile/alexzhou">Profile</a> · <a href="https://web.njit.edu/~alexzhou/">Lab</a></p>
       </div>
     </div>
     <div class="person-card">
@@ -104,9 +107,436 @@
   </div>
 
   <h2>Contributors &amp; labs</h2>
+  <p class="gov">The catalog exists because these researchers and labs published their data, methods, and tools. Listed here are the corresponding authors behind the datasets, models, and tools in the index, with the group behind each record.</p>
+  <div class="people-carousel">
+    <button type="button" class="carousel-btn prev" aria-label="Previous contributors" disabled>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="people-scroller" tabindex="0" aria-label="Contributors, scroll horizontally">
+    <div class="person-card">
+      <img class="avatar" src="https://www.epic.gatech.edu/wp-content/uploads/2022/08/RyanCasey.jpg" alt="Headshot of Ryan Casey" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">RC</div>
+      <div>
+        <h3>Ryan Casey</h3>
+        <div class="role">Ph.D. Student, Robotics</div>
+        <div class="affil">EPIC Lab, Georgia Institute of Technology</div>
+        <p class="focus">Corresponding author of the <a href="datasets/gt-second-skin.html">Second Skin</a> wearable-sensing dataset.</p>
+        <p class="cell-links"><a href="https://www.epic.gatech.edu/ryan-casey/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://locolab.robotics.umich.edu/images/person-divekar.jpg" alt="Headshot of Nikhil Divekar" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">ND</div>
+      <div>
+        <h3>Nikhil Divekar, Ph.D.</h3>
+        <div class="role">Postdoctoral Research Fellow</div>
+        <div class="affil">Locomotor Control Systems Lab, University of Michigan</div>
+        <p class="focus">Co-corresponding author of the <a href="datasets/divekar-knee-exo-lifting.html">knee-exoskeleton lifting</a> dataset.</p>
+        <p class="cell-links"><a href="https://scholar.google.com/citations?user=avOOZucAAAAJ">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://robotics.umich.edu/_astro/rdgregg.Cq1Jnx0q_ZOEnVO.webp" alt="Headshot of Robert Gregg" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">RG</div>
+      <div>
+        <h3>Robert Gregg, Ph.D.</h3>
+        <div class="role">Professor</div>
+        <div class="affil">Robotics, University of Michigan</div>
+        <p class="focus">Directs the Locomotor Control Systems Lab; co-corresponding author of the <a href="datasets/divekar-knee-exo-lifting.html">knee-exoskeleton lifting</a> dataset.</p>
+        <p class="cell-links"><a href="https://robotics.umich.edu/profile/robert-gregg/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://www.mccormick.northwestern.edu/images/research-and-faculty/directory/guo-ping.jpg" alt="Headshot of Ping Guo" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">PG</div>
+      <div>
+        <h3>Ping Guo, Ph.D.</h3>
+        <div class="role">Associate Professor</div>
+        <div class="affil">Mechanical Engineering, Northwestern University</div>
+        <p class="focus">Co-corresponding author of the <a href="datasets/nu-manufacturing-fatigue.html">manufacturing fatigue</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/guo-ping.html">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://www.ise.vt.edu/content/dam/ise_vt_edu/People/additional-faculty/research-bios/kim-sunwook-portrait.png" alt="Headshot of Sunwook Kim" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">SK</div>
+      <div>
+        <h3>Sunwook Kim, Ph.D.</h3>
+        <div class="role">Research Associate Professor</div>
+        <div class="affil">Grado Department of Industrial &amp; Systems Engineering, Virginia Tech</div>
+        <p class="focus">Corresponding author of the <a href="datasets/kim-eksovest-automotive-assembly.html">EksoVest automotive assembly</a> field-study dataset.</p>
+        <p class="cell-links"><a href="https://www.ise.vt.edu/people/faculty/kim.html">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://t-m-comp.github.io/maekawa/pict/maekawa-face-2018.jpg" alt="Headshot of Takuya Maekawa" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">TM</div>
+      <div>
+        <h3>Takuya Maekawa, Ph.D.</h3>
+        <div class="role">Professor</div>
+        <div class="affil">Graduate School of Information Science and Technology, The University of Osaka</div>
+        <p class="focus">Leads the group behind the <a href="datasets/openpack.html">OpenPack</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.ist.osaka-u.ac.jp/english/researcher/detail.php?id=127">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://members.loria.fr/PMaurice/wp-content/blogs.dir/182/files/sites/182/2021/01/ID_pic-249x300.jpg" alt="Headshot of Pauline Maurice" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">PM</div>
+      <div>
+        <h3>Pauline Maurice, Ph.D.</h3>
+        <div class="role">CNRS Research Scientist</div>
+        <div class="affil">LORIA — CNRS / Inria / Université de Lorraine, Nancy, France</div>
+        <p class="focus">Corresponding author of the <a href="datasets/andydata-lab-oneperson.html">AnDy ergonomics</a> and <a href="datasets/andydata-lab-oneperson-exoskeleton.html">AnDy exoskeleton</a> datasets.</p>
+        <p class="cell-links"><a href="https://members.loria.fr/PMaurice/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="monogram" aria-hidden="true">DM</div>
+      <div>
+        <h3>Dominik Mayer</h3>
+        <div class="affil">Motion and Exercise Science, University of Stuttgart</div>
+        <p class="focus">Corresponding author of the <a href="datasets/mayer-apogee-lifting-speeds.html">Apogee lifting-speeds</a> dataset.</p>
+        <p class="cell-links"><a href="https://loop.frontiersin.org/people/3163885">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="assets/team/friedrich-niemann.jpg" alt="Headshot of Friedrich Niemann" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">FN</div>
+      <div>
+        <h3>Friedrich Niemann</h3>
+        <div class="affil">Chair of Material Handling and Warehousing (FLW), TU Dortmund University</div>
+        <p class="focus">Corresponding author of the <a href="datasets/lara-logistics-har.html">LARa</a> and <a href="datasets/dara-warehousing-har.html">DaRA</a> logistics datasets.</p>
+        <p class="cell-links"><a href="https://www.researchgate.net/profile/Friedrich-Niemann">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://ise.vt.edu/content/ise_vt_edu/en/people/faculty/nussbaum/_jcr_content/bio-image.transform/m-medium/image.jpg" alt="Headshot of Maury Nussbaum" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">MN</div>
+      <div>
+        <h3>Maury A. Nussbaum, Ph.D.</h3>
+        <div class="role">John Grado Professor</div>
+        <div class="affil">Grado Department of Industrial &amp; Systems Engineering, Virginia Tech</div>
+        <p class="focus">Co-directs the Occupational Ergonomics and Biomechanics Labs; senior author of the <a href="datasets/kim-eksovest-automotive-assembly.html">EksoVest automotive assembly</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.ise.vt.edu/people/faculty/nussbaum.html">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://deep-real.github.io/assets/img/xipeng/peng-headshot.jpg" alt="Headshot of Xi Peng" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">XP</div>
+      <div>
+        <h3>Xi Peng, Ph.D.</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="affil">Computer &amp; Information Sciences, University of Delaware</div>
+        <p class="focus">Leads the DeepREAL Lab; senior author of the <a href="models.html#model-kinematicnet">KinematicNet</a> and <a href="models.html#model-wang-roofing-pose-estimation">roofing pose-estimation</a> models.</p>
+        <p class="cell-links"><a href="https://www.cis.udel.edu/people/faculty/xi-peng/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=wcTVYMEAAAAJ&amp;citpid=1" alt="Headshot of Mattia Pesenti" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">MP</div>
+      <div>
+        <h3>Mattia Pesenti</h3>
+        <div class="role">Ph.D. Student</div>
+        <div class="affil">Politecnico di Milano</div>
+        <p class="focus">Corresponding author of the <a href="datasets/pesenti-exo-payload-imu.html">exoskeleton payload IMU</a> dataset — bioengineering, EMG, exoskeletons, control theory and AI.</p>
+        <p class="cell-links"><a href="https://scholar.google.com/citations?user=wcTVYMEAAAAJ">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://directory.engr.wisc.edu/private/includes/profilePictures/r/radwin_robert.JPG" alt="Headshot of Robert Radwin" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">RR</div>
+      <div>
+        <h3>Robert G. Radwin, Ph.D.</h3>
+        <div class="role">Duane H. and Dorothy M. Bluemke Professor Emeritus</div>
+        <div class="affil">Industrial &amp; Systems Engineering and Biomedical Engineering, University of Wisconsin&ndash;Madison</div>
+        <p class="focus">Author of the <a href="models.html#model-radwin-frequency-duty-cycle-hal">frequency</a>- and <a href="models.html#model-akkas-hand-speed-duty-cycle-hal">hand-speed</a>-duty-cycle HAL equations; developer of the <a href="tools.html#tool-mvta">MVTA</a> and <a href="tools.html#tool-kinevid">KineVid</a> tools.</p>
+        <p class="cell-links"><a href="https://directory.engr.wisc.edu/ie/Faculty/Radwin_Robert/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://utwente.becdn.net/.wh/ea/uc/i8a4c7598010382e8f0018c637303de4e043a6564acd30c016340014001854100000000/mimohamedrefai.avif" alt="Headshot of Mohamed Irfan Refai" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">MR</div>
+      <div>
+        <h3>Mohamed Irfan Refai, Ph.D.</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="affil">Biomechanical Engineering, University of Twente</div>
+        <p class="focus">Corresponding author of the <a href="datasets/refai-passive-back-benchmark.html">passive back-support benchmark</a> dataset.</p>
+        <p class="cell-links"><a href="https://people.utwente.nl/m.i.mohamedrefai">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://www.uibk.ac.at/media/filer_public_thumbnails/filer_public/4c/6c/4c6c3a44-f89f-47c3-8538-d8f3043a88cb/dsc_1758-2.jpg__576x768_q85_crop_subsampling-2_upscale.jpg" alt="Headshot of Benjamin Reimeir" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">BR</div>
+      <div>
+        <h3>Benjamin Reimeir</h3>
+        <div class="role">Research Assistant</div>
+        <div class="affil">Institute of Mechatronics &amp; Department of Sport Science, University of Innsbruck</div>
+        <p class="focus">Corresponding author of the <a href="datasets/reimeir-back-exo-mechanisms.html">back-exoskeleton mechanisms</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.uibk.ac.at/en/mechatronik/fertigungstechnik/team/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=cGwxRzAAAAAJ&amp;citpid=4" alt="Headshot of Christopher Reining" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">CR</div>
+      <div>
+        <h3>Christopher S. Reining, Dr.-Ing.</h3>
+        <div class="role">Chief Scientist</div>
+        <div class="affil">Chair of Material Handling and Warehousing (FLW), TU Dortmund University &amp; Fraunhofer IML</div>
+        <p class="focus">Co-author of the <a href="datasets/lara-logistics-har.html">LARa</a> and <a href="datasets/dara-warehousing-har.html">DaRA</a> logistics datasets; Executive Assistant to the Director at Fraunhofer IML.</p>
+        <p class="cell-links"><a href="https://scholar.google.de/citations?user=cGwxRzAAAAAJ">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://online.tugraz.at/tug_online/visitenkarte.showImage?pPersonenGruppe=3&amp;pPersonenId=83A7E33C1E36D25E" alt="Headshot of Matthias Wolf" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">MW</div>
+      <div>
+        <h3>Matthias Wolf, Dr.techn.</h3>
+        <div class="role">Assistant Professor</div>
+        <div class="affil">Institute of Innovation and Industrial Management, Graz University of Technology</div>
+        <p class="focus">Corresponding author of the <a href="datasets/mitterlehner-paexo-back-logistics.html">Paexo Back logistics</a> dataset.</p>
+        <p class="cell-links"><a href="https://graz.elsevierpure.com/en/persons/matthias-wolf">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://ise.ncsu.edu/wp-content/uploads/sites/353/2026/05/xu-xu-faculty-image-500x500-05-2026-01.jpg" alt="Headshot of Xu Xu" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">XX</div>
+      <div>
+        <h3>Xu Xu, Ph.D.</h3>
+        <div class="role">Professor</div>
+        <div class="affil">Industrial &amp; Systems Engineering, North Carolina State University</div>
+        <p class="focus">Directs the NC State Biomechanics Lab; senior author of <a href="datasets/moped25.html">MOPED25</a>.</p>
+        <p class="cell-links"><a href="https://ise.ncsu.edu/biomechanics/people/xxu/">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://www.me.gatech.edu/sites/default/files/2021-05/Aaron%20Young%20WEB.png" alt="Headshot of Aaron Young" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">AY</div>
+      <div>
+        <h3>Aaron J. Young, Ph.D.</h3>
+        <div class="role">Associate Professor &amp; Woodruff Faculty Fellow</div>
+        <div class="affil">Woodruff School of Mechanical Engineering, Georgia Institute of Technology</div>
+        <p class="focus">Directs the EPIC Lab — wearable robotics, exoskeletons and prosthetics; senior author of the <a href="datasets/gt-second-skin.html">Second Skin</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.me.gatech.edu/faculty/young">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <img class="avatar" src="https://www.mccormick.northwestern.edu/images/research-and-faculty/directory/zhu-qi.jpg" alt="Headshot of Qi Zhu" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+      <div class="monogram" aria-hidden="true" style="display:none">QZ</div>
+      <div>
+        <h3>Qi Zhu, Ph.D.</h3>
+        <div class="role">Professor</div>
+        <div class="affil">Electrical and Computer Engineering, Northwestern University</div>
+        <p class="focus">Co-corresponding author of the <a href="datasets/nu-manufacturing-fatigue.html">manufacturing fatigue</a> dataset.</p>
+        <p class="cell-links"><a href="https://www.mccormick.northwestern.edu/research-faculty/directory/profiles/zhu-qi.html">Profile</a></p>
+      </div>
+    </div>
+    <div class="person-card">
+      <div class="monogram org" aria-hidden="true">NIOSH</div>
+      <div>
+        <h3>NIOSH</h3>
+        <div class="role">National Institute for Occupational Safety and Health</div>
+        <div class="affil">Centers for Disease Control and Prevention, USA</div>
+        <p class="focus">Source of four public-domain studies in the catalog: <a href="datasets/niosh-laevo-patient-handling.html">patient handling</a>, <a href="datasets/niosh-laevo-bed-to-chair.html">bed-to-chair transfer</a>, <a href="datasets/niosh-roofing-hip-kinematics.html">roofing hip kinematics</a>, and <a href="datasets/niosh-roofing-knee-intervention.html">roofing knee intervention</a>.</p>
+        <p class="cell-links"><a href="https://www.cdc.gov/niosh/">Website</a></p>
+      </div>
+    </div>
+    </div>
+    <button type="button" class="carousel-btn next" aria-label="Next contributors">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
   <p class="gov">Every record in the catalog credits the lab that produced the data, and every improvement to the catalog itself is visible in the open on <a href="https://github.com/DanYan976/occ-biomech-datasets/graphs/contributors">GitHub</a>. If your group works on occupational biomechanics — datasets, models, tools, or exoskeleton evaluation — see <a href="contribute.html">how to contribute</a>; we would like the community listed here to grow.</p>
 
+  <h2>Affiliations &amp; organizations</h2>
+  <p class="gov">The institutions the core team and the contributing researchers work at — every group whose data or maintenance the catalog builds on.</p>
+  <div class="logo-marquee" aria-label="Affiliated institutions and organizations">
+    <div class="logo-row" data-direction="left">
+      <div class="logo-track">
+        <div class="logo-set">
+          <a href="https://www.njit.edu/" title="New Jersey Institute of Technology"><img src="https://upload.wikimedia.org/wikipedia/commons/4/40/New_Jersey_IT_logo.svg" alt="New Jersey Institute of Technology" loading="lazy" /></a>
+          <a href="https://www.mines.edu/" title="Colorado School of Mines"><img src="assets/mines-logo.png" alt="Colorado School of Mines" loading="lazy" /></a>
+          <a href="https://www.tamu.edu/" title="Texas A&amp;M University"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Texas_A%26M_University_wordmark.svg" alt="Texas A&amp;M University" loading="lazy" /></a>
+          <a href="https://www.gatech.edu/" title="Georgia Institute of Technology"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Georgia_Tech_logo_2021.svg" alt="Georgia Institute of Technology" loading="lazy" /></a>
+          <a href="https://umich.edu/" title="University of Michigan"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/University_of_Michigan_wordmark.svg" alt="University of Michigan" loading="lazy" /></a>
+          <a href="https://www.northwestern.edu/" title="Northwestern University"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Northwestern_University_wordmark.svg" alt="Northwestern University" loading="lazy" /></a>
+          <a href="https://www.ncsu.edu/" title="North Carolina State University"><img src="https://upload.wikimedia.org/wikipedia/commons/5/59/North_Carolina_State_University_logo.svg" alt="North Carolina State University" loading="lazy" /></a>
+          <a href="https://www.cdc.gov/niosh/" title="NIOSH"><img src="assets/niosh-logo.png" alt="NIOSH" loading="lazy" /></a>
+          <a href="https://www.osaka-u.ac.jp/en" title="The University of Osaka"><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/University_of_Osaka_logo%2C_A.svg" alt="The University of Osaka" loading="lazy" /></a>
+          <a href="https://www.utwente.nl/en/" title="University of Twente"><img src="assets/twente-logo.svg" alt="University of Twente" loading="lazy" /></a>
+          <a href="https://www.vt.edu/" title="Virginia Tech"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Virginia_Tech_logo.svg" alt="Virginia Tech" loading="lazy" /></a>
+          <a href="https://www.udel.edu/" title="University of Delaware"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/University_of_Delaware_wordmark.svg" alt="University of Delaware" loading="lazy" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="logo-row" data-direction="right">
+      <div class="logo-track">
+        <div class="logo-set">
+          <a href="https://www.cnrs.fr/en" title="CNRS"><img src="https://upload.wikimedia.org/wikipedia/fr/7/72/Logo_Centre_national_de_la_recherche_scientifique_%282023-%29.svg" alt="CNRS" loading="lazy" /></a>
+          <a href="https://www.inria.fr/en" title="Inria"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Inr_logo_rouge.svg" alt="Inria" loading="lazy" /></a>
+          <a href="https://www.ijs.si/" title="Jožef Stefan Institute"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Jo%C5%BEef_Stefan_Institute_logo.svg" alt="Jožef Stefan Institute" loading="lazy" /><span class="logo-label">Jožef Stefan Institute</span></a>
+          <a href="https://www.dfki.de/en/" title="DFKI"><img src="https://upload.wikimedia.org/wikipedia/de/8/88/Deutsches_Forschungszentrum_f%C3%BCr_K%C3%BCnstliche_Intelligenz_logo.svg" alt="DFKI" loading="lazy" /></a>
+          <a href="https://www.tu-dortmund.de/en/" title="TU Dortmund University"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Technische_Universit%C3%A4t_Dortmund_Logo.svg" alt="TU Dortmund University" loading="lazy" /></a>
+          <a href="https://www.iml.fraunhofer.de/en.html" title="Fraunhofer IML"><img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Fraunhofer-logo.svg" alt="Fraunhofer" loading="lazy" /></a>
+          <a href="https://www.uni-stuttgart.de/en/" title="University of Stuttgart"><img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Uni_stuttgart_logo_english.svg" alt="University of Stuttgart" loading="lazy" /></a>
+          <a href="https://www.tugraz.at/en/" title="Graz University of Technology"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/TU_Graz.svg" alt="Graz University of Technology" loading="lazy" /></a>
+          <a href="https://www.polimi.it/en/" title="Politecnico di Milano"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Politecnico_di_Milano_-_wordmark_%28Italy%2C_2024%29.svg" alt="Politecnico di Milano" loading="lazy" /></a>
+          <a href="https://www.uibk.ac.at/en/" title="University of Innsbruck"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Universitaet-innsbruck-logo-rgb-farbe.svg" alt="University of Innsbruck" loading="lazy" /></a>
+          <a href="https://www.wisc.edu/" title="University of Wisconsin&ndash;Madison"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Seal_of_the_University_of_Wisconsin.svg" alt="University of Wisconsin&ndash;Madison" loading="lazy" /><span class="logo-label">UW&ndash;Madison</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Global reach</h2>
+  <p class="gov">Where the catalog comes from: the institutions and labs contributing datasets and maintenance, weighted by the number of records each group is behind.</p>
+  <div class="reach-card">
+    <div id="reach-map" aria-label="World map showing the locations of contributing institutions"></div>
+    <p class="reach-note">Locations of contributing institutions, sized by number of catalog records. Not visitor tracking — this site collects no analytics.</p>
+  </div>
+
 </main>
+
+<script>
+(function () {
+  document.querySelectorAll('.logo-track').forEach(function (track) {
+    var clone = track.firstElementChild.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  });
+
+  var carousel = document.querySelector('.people-carousel');
+  if (!carousel) return;
+  var scroller = carousel.querySelector('.people-scroller');
+  var prev = carousel.querySelector('.carousel-btn.prev');
+  var next = carousel.querySelector('.carousel-btn.next');
+  function page(dir) {
+    scroller.scrollBy({ left: dir * scroller.clientWidth, behavior: 'smooth' });
+  }
+  prev.addEventListener('click', function () { page(-1); });
+  next.addEventListener('click', function () { page(1); });
+  function update() {
+    var max = scroller.scrollWidth - scroller.clientWidth - 1;
+    prev.disabled = scroller.scrollLeft <= 0;
+    next.disabled = scroller.scrollLeft >= max;
+  }
+  scroller.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js" integrity="sha256-65UqrlgGoRAnKfKRuriH3eeDrOhZgZo1SCenduc+SGo=" crossorigin=""></script>
+<script src="https://unpkg.com/topojson-client@3.1.0/dist/topojson-client.min.js" integrity="sha256-Jc0CrkhsxQY+AhWk5M+xXeg3AMh6xIusTVfcaq8+u4k=" crossorigin=""></script>
+<script>
+(function () {
+  if (typeof L === 'undefined' || !L.heatLayer || typeof topojson === 'undefined') return;
+
+  /* [lat, lng, weight] — contributing institutions, weighted by catalog records */
+  var institutions = [
+    [40.742, -74.178, 4],   // NJIT (maintainers + MMH and shoulder-exo datasets), Newark, USA
+    [39.751, -105.222, 1],  // Colorado School of Mines, Golden, USA
+    [30.618, -96.336, 2],   // Texas A&M, College Station, USA
+    [33.776, -84.398, 1],   // Georgia Tech, Atlanta, USA
+    [42.278, -83.738, 2],   // University of Michigan, Ann Arbor, USA
+    [42.056, -87.675, 2],   // Northwestern, Evanston, USA
+    [35.785, -78.682, 1],   // NC State, Raleigh, USA
+    [37.229, -80.414, 1],   // Virginia Tech, Blacksburg, USA
+    [39.678, -75.751, 2],   // University of Delaware (KinematicNet + roofing pose models), Newark, USA
+    [43.076, -89.412, 4],   // UW-Madison (HAL models + MVTA/KineVid tools), USA
+    [39.103, -84.512, 4],   // NIOSH, Cincinnati, USA
+    [34.822, 135.524, 1],   // The University of Osaka, Suita, Japan
+    [52.239, 6.857, 1],     // University of Twente, Enschede, Netherlands
+    [48.692, 6.184, 2],     // LORIA — CNRS/Inria/Univ. de Lorraine, Nancy, France
+    [46.043, 14.487, 1],    // Jožef Stefan Institute, Ljubljana, Slovenia
+    [49.428, 7.752, 1],     // DFKI, Kaiserslautern, Germany
+    [51.492, 7.418, 2],     // TU Dortmund, Germany
+    [51.495, 7.402, 1],     // Fraunhofer IML, Dortmund, Germany
+    [48.783, 9.181, 1],     // University of Stuttgart, Germany
+    [47.058, 15.459, 1],    // TU Graz, Austria
+    [47.263, 11.385, 1],    // University of Innsbruck, Austria
+    [45.478, 9.227, 1]      // Politecnico di Milano, Italy
+  ];
+
+  var map = L.map('reach-map', {
+    center: [32, 5],
+    zoom: 2,
+    minZoom: 2,
+    maxZoom: 6,
+    scrollWheelZoom: true,
+    zoomSnap: 0.25,
+    zoomDelta: 0.5,
+    wheelPxPerZoomLevel: 120,
+    wheelDebounceTime: 20,
+    maxBounds: [[-58, -200], [84, 200]],
+    maxBoundsViscosity: 0.8
+  });
+  map.attributionControl.addAttribution('Made with <a href="https://www.naturalearthdata.com/">Natural Earth</a> · Labels &copy; <a href="https://www.esri.com/">Esri</a>');
+
+  /* English place-name labels only (transparent tiles), above the heat layer */
+  map.createPane('labels');
+  map.getPane('labels').style.zIndex = 450;
+  map.getPane('labels').style.pointerEvents = 'none';
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    pane: 'labels',
+    maxZoom: 6
+  }).addTo(map);
+
+  /* land drawn from self-hosted Natural Earth topology; the ocean is the map background */
+  fetch('assets/countries-50m.json')
+    .then(function (r) { return r.json(); })
+    .then(function (topo) {
+      var world = topojson.feature(topo, topo.objects.countries);
+      /* Antarctica sits below maxBounds and crosses the antimeridian — drop it */
+      world.features = world.features.filter(function (f) {
+        return f.properties && f.properties.name !== 'Antarctica';
+      });
+      /* unwrap rings that cross the antimeridian (Russia, Fiji) so they
+         don't paint horizontal bands across the whole map */
+      world.features.forEach(function (f) {
+        var g = f.geometry;
+        if (!g) return;
+        var polys = g.type === 'Polygon' ? [g.coordinates] : g.coordinates;
+        polys.forEach(function (poly) {
+          poly.forEach(function (ring) {
+            var minL = Infinity, maxL = -Infinity;
+            ring.forEach(function (p) {
+              if (p[0] < minL) minL = p[0];
+              if (p[0] > maxL) maxL = p[0];
+            });
+            if (maxL - minL > 180) {
+              ring.forEach(function (p) { if (p[0] < 0) p[0] += 360; });
+            }
+          });
+        });
+      });
+
+      /* land goes in its own pane below the overlay pane (z 400),
+         so the heat canvas always renders on top of it */
+      map.createPane('land');
+      map.getPane('land').style.zIndex = 250;
+      L.geoJSON(world, {
+        pane: 'land',
+        interactive: false,
+        style: {
+          fillColor: '#fdfaf3', fillOpacity: 1,
+          color: '#b7cfda', weight: 0.7
+        }
+      }).addTo(map);
+
+      /* maxZoom 2 = full heat intensity at the initial world view
+         (leaflet.heat halves intensity for every zoom level below its maxZoom) */
+      L.heatLayer(institutions, {
+        radius: 28,
+        blur: 20,
+        max: 6,
+        maxZoom: 2,
+        minOpacity: 0.08,
+        gradient: { 0.15: '#7b68ee', 0.35: '#3d9be9', 0.5: '#39d0c4', 0.65: '#59d959', 0.8: '#f5e642', 1.0: '#ef4136' }
+      }).addTo(map);
+    });
+})();
+</script>
 
 <footer class="site-footer" id="about">
   <div class="wrap">

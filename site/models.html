@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Model Library — OccBiomechanics</title>
+<meta name="description" content="Published models, methods, and open-source code for occupational biomechanics: markerless pose and kinematics estimation for workplace tasks. Each entry links to its paper and source code." />
+<link rel="canonical" href="https://occbiomechanics.org/models.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260812" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Model Library — OccBiomechanics" />
+<meta property="og:description" content="Published models, methods, and open-source code for occupational biomechanics." />
+<meta property="og:url" content="https://occbiomechanics.org/models.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Model Library — OccBiomechanics" />
+<meta name="twitter:description" content="Published models, methods, and open-source code for occupational biomechanics." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20260819" />
+<script src="nav.js" defer></script>
+<!-- MODELS_JSONLD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-radwin-frequency-duty-cycle-hal",
+      "name": "Frequency-Duty Cycle Equation for the ACGIH Hand Activity Level",
+      "url": "https://doi.org/10.1080/00140139.2014.966154",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        },
+        {
+          "@type": "Person",
+          "name": "Azari D.P."
+        },
+        {
+          "@type": "Person",
+          "name": "Lindstrom M.J."
+        },
+        {
+          "@type": "Person",
+          "name": "Ulin S.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Armstrong T.J."
+        },
+        {
+          "@type": "Person",
+          "name": "Rempel D."
+        }
+      ],
+      "description": "Nonlinear regression equation, HAL = 6.56 ln D [F^1.31 / (1 + 3.18 F^1.31)], that predicts the ACGIH hand activity level from exertion frequency F and duty cycle D as a continuous function (Ergonomics, 2015). It closely matches the TLV lookup table while extending beyond it, and became the basis of the 2018 ACGIH HAL TLV revision. NIOSH-funded; open author PDF and CDC STACKS record available.",
+      "datePublished": "2015",
+      "identifier": "https://doi.org/10.1080/00140139.2014.966154",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/200748",
+      "keywords": [
+        "acgih-tlv",
+        "exposure-assessment",
+        "hand-activity-level",
+        "repetitive-motion",
+        "upper-extremity"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-akkas-hand-speed-duty-cycle-hal",
+      "name": "Hand Speed-Duty Cycle Equation for Estimating the ACGIH Hand Activity Level",
+      "url": "https://doi.org/10.1080/00140139.2014.966155",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Akkas O."
+        },
+        {
+          "@type": "Person",
+          "name": "Azari D.P."
+        },
+        {
+          "@type": "Person",
+          "name": "Chen C.-H.E."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu Y.H."
+        },
+        {
+          "@type": "Person",
+          "name": "Ulin S.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Armstrong T.J."
+        },
+        {
+          "@type": "Person",
+          "name": "Rempel D."
+        },
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        }
+      ],
+      "description": "Companion equation to the frequency-duty cycle model: estimates the ACGIH hand activity level directly from RMS hand speed tracked in conventional video, scaled relative to hand breadth, plus duty cycle (Ergonomics, 2015). It underpins Radwin's video-based HAL pipeline, since commercialized in patent-protected computer-vision tools (KineVid LLC, licensed through WARF). NIOSH-funded; CDC STACKS record available.",
+      "datePublished": "2015",
+      "identifier": "https://doi.org/10.1080/00140139.2014.966155",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/200752",
+      "keywords": [
+        "acgih-tlv",
+        "computer-vision",
+        "exposure-assessment",
+        "hand-activity-level",
+        "upper-extremity",
+        "video-analysis"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-wang-roofing-pose-estimation",
+      "name": "Video-Based 3D Pose Estimation for Residential Roofing",
+      "url": "https://doi.org/10.1080/21681163.2022.2072394",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Wang R."
+        },
+        {
+          "@type": "Person",
+          "name": "Zheng L."
+        },
+        {
+          "@type": "Person",
+          "name": "Hawke A.L."
+        },
+        {
+          "@type": "Person",
+          "name": "Carey R.E."
+        },
+        {
+          "@type": "Person",
+          "name": "Breloff S.P."
+        },
+        {
+          "@type": "Person",
+          "name": "Li K."
+        },
+        {
+          "@type": "Person",
+          "name": "Peng X."
+        }
+      ],
+      "description": "NIOSH-University of Delaware method for estimating 3D worker pose directly from video of residential roofing tasks (Comput. Methods Biomech. Biomed. Eng.: Imaging & Visualization, 2022), a step toward markerless ergonomic exposure assessment on job sites where marker-based motion capture is impractical. Public as a paper and NIOSH record; no code release.",
+      "datePublished": "2022",
+      "identifier": "https://doi.org/10.1080/21681163.2022.2072394",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/248720",
+      "keywords": [
+        "construction",
+        "deep-learning",
+        "markerless",
+        "pose-estimation",
+        "roofing"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-kinematicnet",
+      "name": "KinematicNet: Whole-Body Kinematics From Multi-View Images",
+      "url": "https://github.com/Nyquixt/KinematicNet",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Nguyen K.X."
+        },
+        {
+          "@type": "Person",
+          "name": "Zheng L."
+        },
+        {
+          "@type": "Person",
+          "name": "Hawke A.L."
+        },
+        {
+          "@type": "Person",
+          "name": "Carey R.E."
+        },
+        {
+          "@type": "Person",
+          "name": "Breloff S.P."
+        },
+        {
+          "@type": "Person",
+          "name": "Li K."
+        },
+        {
+          "@type": "Person",
+          "name": "Peng X."
+        }
+      ],
+      "description": "Deep-learning model that estimates whole-body joint kinematics directly from multi-view images (Computer Vision and Image Understanding, 2023), developed in a NIOSH-University of Delaware collaboration for markerless motion analysis of occupational tasks such as roofing. Open-access preprint on arXiv; PyTorch code released on GitHub under MIT.",
+      "datePublished": "2023",
+      "identifier": "https://doi.org/10.1016/j.cviu.2023.103780",
+      "codeRepository": "https://github.com/Nyquixt/KinematicNet",
+      "license": "https://opensource.org/license/mit",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/j.cviu.2023.103780"
+      },
+      "keywords": [
+        "deep-learning",
+        "kinematics",
+        "markerless",
+        "pose-estimation",
+        "pytorch",
+        "roofing"
+      ]
+    }
+  ]
+}
+</script>
+<!-- MODELS_JSONLD:END -->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/logo.svg" alt="" />
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="datasets.html">All Datasets</a>
+          <a href="exoskeletons.html">Exoskeleton Studies</a>
+          <a href="models.html" class="active">Models</a>
+          <a href="tools.html">Tools</a>
+        </div>
+      </div>
+      <a href="docs.html">Docs</a>
+      <a href="contribute.html">Contribute</a>
+      <a href="community.html">Community</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Library</span>
+    <h1>Models</h1>
+    <p class="lede">Published models, methods, and open-source code for occupational biomechanics — markerless pose and kinematics estimation for workplace tasks today, with musculoskeletal models and analysis tools to follow. Each entry links to its paper and, where released, its source code. Looking for data instead? Browse the <a href="datasets.html">dataset library</a>.</p>
+  </div>
+</section>
+
+<main class="wrap" id="models">
+  <!-- The build script (scripts/build_catalog.py) replaces everything between
+       these markers with cards compiled from models/*.yaml. -->
+  <!-- MODELS:START -->
+<section class="exo-group">
+  <div class="section-head"><h2>All models</h2><span class="count-note">4 models</span></div>
+  <div class="grid">
+<article class="card" id="model-radwin-frequency-duty-cycle-hal">
+  <div class="card-top">
+    <div><span class="cid">radwin-frequency-duty-cycle-hal</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2014.966154" target="_blank" rel="noopener">Frequency-Duty Cycle Equation for the ACGIH Hand Activity Level</a></h3>
+  <div class="src">University of Wisconsin-Madison / University of Michigan / UCSF · 2015</div>
+  <p class="desc">Nonlinear regression equation, HAL = 6.56 ln D [F^1.31 / (1 + 3.18 F^1.31)], that predicts the ACGIH hand activity level from exertion frequency F and duty cycle D as a continuous function (Ergonomics, 2015). It closely matches the TLV lookup table while extending beyond it, and became the basis of the 2018 ACGIH HAL TLV revision. NIOSH-funded; open author PDF and CDC STACKS record available.</p>
+  <div class="tags"><span class="tag">hand-activity-level</span><span class="tag">acgih-tlv</span><span class="tag">repetitive-motion</span><span class="tag">upper-extremity</span><span class="tag">exposure-assessment</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Exertion frequency (Hz) and duty cycle (%)">Exertion frequency (Hz) and duty cycle (%)</span></div><div class="metric"><span class="k">Output</span><span class="v" title="ACGIH hand activity level (HAL) rating">ACGIH hand activity level (HAL) rating</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive hand-intensive work (upper-extremity exposure assessment)">Repetitive hand-intensive work (upper-extremity exposure assessment)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2014.966154" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://ergo.wisc.edu/wp-content/uploads/sites/901/2020/04/Radwin-et-al-2015.pdf" target="_blank" rel="noopener">Preprint ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/200748" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-akkas-hand-speed-duty-cycle-hal">
+  <div class="card-top">
+    <div><span class="cid">akkas-hand-speed-duty-cycle-hal</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2014.966155" target="_blank" rel="noopener">Hand Speed-Duty Cycle Equation for Estimating the ACGIH Hand Activity Level</a></h3>
+  <div class="src">University of Wisconsin-Madison / University of Michigan / UCSF · 2015</div>
+  <p class="desc">Companion equation to the frequency-duty cycle model: estimates the ACGIH hand activity level directly from RMS hand speed tracked in conventional video, scaled relative to hand breadth, plus duty cycle (Ergonomics, 2015). It underpins Radwin&#x27;s video-based HAL pipeline, since commercialized in patent-protected computer-vision tools (KineVid LLC, licensed through WARF). NIOSH-funded; CDC STACKS record available.</p>
+  <div class="tags"><span class="tag">hand-activity-level</span><span class="tag">acgih-tlv</span><span class="tag">video-analysis</span><span class="tag">computer-vision</span><span class="tag">upper-extremity</span><span class="tag">exposure-assessment</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Tracked RMS hand speed (scaled by hand breadth) and duty cycle from video">Tracked RMS hand speed (scaled by hand breadth) and duty cycle from video</span></div><div class="metric"><span class="k">Output</span><span class="v" title="ACGIH hand activity level (HAL) rating">ACGIH hand activity level (HAL) rating</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive hand-intensive work (video-based exposure assessment)">Repetitive hand-intensive work (video-based exposure assessment)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2014.966155" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/200752" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-wang-roofing-pose-estimation">
+  <div class="card-top">
+    <div><span class="cid">wang-roofing-pose-estimation</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/21681163.2022.2072394" target="_blank" rel="noopener">Video-Based 3D Pose Estimation for Residential Roofing</a></h3>
+  <div class="src">NIOSH / University of Delaware · 2022</div>
+  <p class="desc">NIOSH-University of Delaware method for estimating 3D worker pose directly from video of residential roofing tasks (Comput. Methods Biomech. Biomed. Eng.: Imaging &amp; Visualization, 2022), a step toward markerless ergonomic exposure assessment on job sites where marker-based motion capture is impractical. Public as a paper and NIOSH record; no code release.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">markerless</span><span class="tag">roofing</span><span class="tag">construction</span><span class="tag">deep-learning</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video of roofing work">RGB video of roofing work</span></div><div class="metric"><span class="k">Output</span><span class="v" title="3D human pose (joint positions)">3D human pose (joint positions)</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Residential roofing (construction)">Residential roofing (construction)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/21681163.2022.2072394" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/248720" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-kinematicnet">
+  <div class="card-top">
+    <div><span class="cid">kinematicnet</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/Nyquixt/KinematicNet" target="_blank" rel="noopener">KinematicNet: Whole-Body Kinematics From Multi-View Images</a></h3>
+  <div class="src">NIOSH / University of Delaware · 2023</div>
+  <p class="desc">Deep-learning model that estimates whole-body joint kinematics directly from multi-view images (Computer Vision and Image Understanding, 2023), developed in a NIOSH-University of Delaware collaboration for markerless motion analysis of occupational tasks such as roofing. Open-access preprint on arXiv; PyTorch code released on GitHub under MIT.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">markerless</span><span class="tag">kinematics</span><span class="tag">roofing</span><span class="tag">deep-learning</span><span class="tag">pytorch</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Multi-view RGB images">Multi-view RGB images</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Whole-body joint kinematics">Whole-body joint kinematics</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Occupational tasks (residential roofing)">Occupational tasks (residential roofing)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">MIT</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.cviu.2023.103780" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/Nyquixt/KinematicNet" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://arxiv.org/abs/2307.05896" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+  </div>
+</section>
+<!-- MODELS:END -->
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="models.json">models.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -10,6 +10,12 @@
     <loc>https://occbiomechanics.org/exoskeletons.html</loc>
   </url>
   <url>
+    <loc>https://occbiomechanics.org/models.html</loc>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/tools.html</loc>
+  </url>
+  <url>
     <loc>https://occbiomechanics.org/docs.html</loc>
   </url>
   <url>
@@ -59,6 +65,26 @@
     <lastmod>2026-08-07</lastmod>
   </url>
   <url>
+    <loc>https://occbiomechanics.org/datasets/refai-passive-back-benchmark.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/dara-warehousing-har.html</loc>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/niosh-laevo-bed-to-chair.html</loc>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/niosh-roofing-hip-kinematics.html</loc>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/niosh-roofing-knee-intervention.html</loc>
+    <lastmod>2026-08-17</lastmod>
+  </url>
+  <url>
     <loc>https://occbiomechanics.org/datasets/mayer-apogee-lifting-speeds.html</loc>
     <lastmod>2026-08-07</lastmod>
   </url>
@@ -67,19 +93,27 @@
     <lastmod>2026-08-07</lastmod>
   </url>
   <url>
-    <loc>https://occbiomechanics.org/datasets/refai-passive-back-benchmark.html</loc>
-    <lastmod>2026-08-07</lastmod>
-  </url>
-  <url>
     <loc>https://occbiomechanics.org/datasets/reimeir-back-exo-mechanisms.html</loc>
     <lastmod>2026-08-07</lastmod>
   </url>
   <url>
-    <loc>https://occbiomechanics.org/datasets/njit-egocentric-boxlifting.html</loc>
+    <loc>https://occbiomechanics.org/datasets/kim-eksovest-automotive-assembly.html</loc>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/njit-egocentric-mmh.html</loc>
     <lastmod>2026-01-01</lastmod>
   </url>
   <url>
-    <loc>https://occbiomechanics.org/datasets/njit-multimodality-boxlifting.html</loc>
+    <loc>https://occbiomechanics.org/datasets/njit-multimodality-mmh.html</loc>
     <lastmod>2026-08-12</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/tamu-offshore-wind-mocap.html</loc>
+    <lastmod>2026-08-18</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/njit-niosh-shoulder-exo-stability.html</loc>
+    <lastmod>2026-08-20</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Occupational Biomechanics Model Entry",
+  "description": "Metadata record for one model/method in the Models library: a published method, trained model, or analysis tool. Aligned with schema.org/SoftwareSourceCode and ScholarlyArticle where possible. The library links out; it does not rehost code or weights.",
+  "type": "object",
+  "required": ["id", "title", "source", "links"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique slug, also the filename. Lowercase, hyphenated.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "title": { "type": "string", "minLength": 4 },
+    "sample": {
+      "type": "boolean",
+      "description": "true for placeholder/example entries. Remove or set false for real records.",
+      "default": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["authors", "institution"],
+      "additionalProperties": false,
+      "properties": {
+        "authors": { "type": "string" },
+        "institution": { "type": "string" },
+        "year": { "type": "integer", "minimum": 1980, "maximum": 2100 }
+      }
+    },
+    "links": {
+      "type": "object",
+      "description": "At least one outbound link. paper is the canonical landing page (usually the DOI resolver).",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "paper": { "type": "string", "description": "Canonical paper landing page, usually https://doi.org/..." },
+        "doi": { "type": "string" },
+        "code": { "type": "string", "description": "Source-code repository, when released." },
+        "preprint": { "type": "string", "description": "Open preprint (e.g. arXiv), when the paper is paywalled." },
+        "record": { "type": "string", "description": "Institutional record, e.g. a CDC STACKS page." }
+      }
+    },
+    "code_license": {
+      "type": "string",
+      "description": "SPDX-style license of the released code, e.g. MIT. Omit when no code is released."
+    },
+    "domain": { "type": "string", "description": "Occupational context the model was built for, e.g. 'Residential roofing'." },
+    "inputs": { "type": "string", "description": "What the model consumes, e.g. 'Multi-view RGB images'." },
+    "outputs": { "type": "string", "description": "What the model produces, e.g. 'Whole-body joint angles'." },
+    "related_datasets": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "description": "ids of catalog datasets this model was trained on or is otherwise tied to."
+    },
+    "description": { "type": "string", "maxLength": 600 },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "added": { "type": "string", "format": "date", "description": "Date added to the library (YYYY-MM-DD)." }
+  }
+}

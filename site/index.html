@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260812" />
+<link rel="stylesheet" href="style.css?v=20260819" />
 <script src="nav.js" defer></script>
 <script>
 /* Old permalinks pointed at anchors on this page; cards now live on
@@ -48,6 +48,8 @@ if (location.hash.indexOf("#dataset-") === 0) {
         <div class="dropdown-menu">
           <a href="datasets.html">All Datasets</a>
           <a href="exoskeletons.html">Exoskeleton Studies</a>
+          <a href="models.html">Models</a>
+          <a href="tools.html">Tools</a>
         </div>
       </div>
       <a href="docs.html">Docs</a>
@@ -172,7 +174,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
-  "count": 16,
+  "count": 23,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -667,7 +669,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "year": 2024
       },
       "access": {
-        "url": "https://doi.org/10.26616/NIOSHRD-1092-2024-0",
+        "url": "https://stacks.cdc.gov/view/cdc/208455",
         "doi": "10.26616/NIOSHRD-1092-2024-0",
         "license": "Public domain (U.S. Government work)"
       },
@@ -712,6 +714,254 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "description": "NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in a healthcare context: 8 participants performed four in-bed patient-handling tasks with and without the device. Measured outcomes include trunk and hip angles, low-back muscle activity (EMG), and heart rate.\n",
       "added": "2026-08-07"
+    },
+    {
+      "id": "refai-passive-back-benchmark",
+      "title": "Benchmarking Four Commercial Passive Back Exoskeletons for Industrial Work",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M.",
+        "institution": "University of Twente",
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.14983524",
+        "doi": "10.5281/zenodo.14983524",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "mmh"
+      ],
+      "modalities": [
+        "emg"
+      ],
+      "subjects": {
+        "n": 10
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo Flex",
+          "Paexo Back (Ottobock)",
+          "Darwing Hakobelude",
+          "Auxivo LiftSuit 1.0"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Four devices vs. no device, head-to-head, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinetics",
+          "subjective",
+          "discomfort"
+        ]
+      },
+      "load": "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons",
+      "equipment": "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement",
+      "formats": [
+        "mat"
+      ],
+      "tags": [
+        "exoskeleton",
+        "back",
+        "benchmark",
+        "passive-exoskeleton",
+        "comfort"
+      ],
+      "description": "Head-to-head benchmark of four commercial passive back exoskeletons (two rigid, two soft) in Wearable Technologies (2024): 10 participants performed four workplace-simulated tasks; assistive moments, trunk muscle EMG, comfort and exertion were compared across devices. The Zenodo deposit (CC BY 4.0) holds averaged 12-channel abdominal/back EMG for the dynamic tasks and static postures across all five conditions, plus comfort ratings (xlsx).\n",
+      "added": "2026-08-07"
+    },
+    {
+      "id": "dara-warehousing-har",
+      "title": "DaRA: Multi-Sensor Human Activity & Context Recognition in Warehousing",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A.",
+        "institution": "TU Dortmund University / Fraunhofer IML",
+        "year": 2026
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.10468175",
+        "doi": "10.5281/zenodo.10468175",
+        "license": "CC-BY-NC-4.0"
+      },
+      "tasks": [
+        "carrying",
+        "reaching",
+        "mmh",
+        "walking"
+      ],
+      "modalities": [
+        "imu",
+        "video",
+        "egocentric_video"
+      ],
+      "subjects": {
+        "n": 18
+      },
+      "load": "Order picking, packaging, unpacking and storage scenarios in a simulated warehouse; 32 h of egocentric and 109 h of fixed-camera video",
+      "equipment": "MotionMiners IMU sets (6 IMUs per subject, 100 Hz); 57 BLE beacons for indoor localization; GoPro first-person cameras; 6 fixed Mevo cameras; warehouse-management-system scan events",
+      "sampling": {
+        "imu": 100,
+        "video": 30
+      },
+      "formats": [
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "logistics",
+        "warehousing",
+        "activity-recognition",
+        "har",
+        "picking",
+        "packaging",
+        "localization",
+        "non-commercial"
+      ],
+      "description": "Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations.\n",
+      "added": "2026-08-17"
+    },
+    {
+      "id": "niosh-laevo-bed-to-chair",
+      "title": "NIOSH: Passive Back-Support Exoskeleton During Bed-to-Chair Patient Handling",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "National Institute for Occupational Safety and Health (NIOSH)",
+        "institution": "NIOSH / CDC",
+        "year": 2025
+      },
+      "access": {
+        "url": "https://stacks.cdc.gov/view/cdc/208709",
+        "doi": "10.26616/NIOSHRD-1110-2025-0",
+        "license": "Public domain (U.S. Government work)"
+      },
+      "tasks": [
+        "lifting",
+        "holding",
+        "pulling"
+      ],
+      "modalities": [
+        "emg",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 8
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo V2.5"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, four bed-to-chair patient-transfer tasks",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "cardiovascular"
+        ]
+      },
+      "load": "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, trunk/hip angle measurement, heart-rate monitor",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "patient-handling",
+        "healthcare",
+        "laevo"
+      ],
+      "description": "NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in bed-to-chair transfers (IJOSE, 2025): 8 participants performed lying-to-sitting, sitting-to-standing, standing-to-sitting and bed-to-wheelchair tasks with and without the device while trunk and hip angles, erector spinae EMG and heart rate were recorded. Public-domain NIOSH research dataset RD-1110-2025-0 on CDC STACKS.\n",
+      "added": "2026-08-17"
+    },
+    {
+      "id": "niosh-roofing-hip-kinematics",
+      "title": "NIOSH: Hip Kinematics Under Two Pelvis Marker Configurations in Roofing Tasks",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "National Institute for Occupational Safety and Health (NIOSH)",
+        "institution": "NIOSH / CDC",
+        "year": 2023
+      },
+      "access": {
+        "url": "https://stacks.cdc.gov/view/cdc/231361",
+        "doi": "10.26616/NIOSHRD-1062-2023-0",
+        "license": "Public domain (U.S. Government work)"
+      },
+      "tasks": [
+        "squatting",
+        "assembly"
+      ],
+      "modalities": [
+        "mocap"
+      ],
+      "subjects": {
+        "n": 7,
+        "sex": "7M"
+      },
+      "load": "Simulated standing and kneeling residential roofing tasks",
+      "equipment": "Marker-based 3D motion capture; CODA pelvis model with trochanter-based (TTM) and virtual-marker (VPTM) tracking configurations",
+      "tags": [
+        "roofing",
+        "construction",
+        "marker-set",
+        "methods",
+        "hip"
+      ],
+      "description": "Methods dataset comparing hip kinematics from two pelvis tracking-marker configurations (trochanter-based TTM vs. virtual-marker VPTM, CODA pelvis) while 7 participants mimicked standing and kneeling roofing tasks. Useful for marker-set selection and occlusion-robust pelvis tracking in occupational motion capture. Public-domain NIOSH research dataset RD-1062-2023-0 on CDC STACKS.\n",
+      "added": "2026-08-17"
+    },
+    {
+      "id": "niosh-roofing-knee-intervention",
+      "title": "NIOSH: Knee Savers & Knee Pads During Residential Shingle Installation",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "National Institute for Occupational Safety and Health (NIOSH)",
+        "institution": "NIOSH / CDC",
+        "year": 2025
+      },
+      "access": {
+        "url": "https://stacks.cdc.gov/view/cdc/208705",
+        "doi": "10.26616/NIOSHRD-1108-2025-0",
+        "license": "Public domain (U.S. Government work)"
+      },
+      "tasks": [
+        "squatting",
+        "reaching",
+        "assembly"
+      ],
+      "modalities": [
+        "mocap"
+      ],
+      "subjects": {
+        "n": 9,
+        "sex": "9M"
+      },
+      "load": "Simulated shingle installation on a slope-adjustable roof platform (0, 15 and 30 deg) under four conditions: no intervention, knee pads, knee savers, and both combined",
+      "equipment": "Marker-based 3D motion capture; slope-adjustable residential roof simulator; knee pads and knee savers",
+      "tags": [
+        "roofing",
+        "construction",
+        "kneeling",
+        "knee",
+        "intervention"
+      ],
+      "description": "Phase-level assessment of interventions against knee musculoskeletal disorder risk in roofing: 9 participants installed shingles on a slope-adjustable roof platform (0, 15, 30 deg) with no intervention, knee pads, knee savers, or both. Knee flexion, ab/adduction and rotation angles were captured across seven task phases, from reaching for shingles to returning upright. Public-domain NIOSH research dataset RD-1108-2025-0 on CDC STACKS.\n",
+      "added": "2026-08-17"
     },
     {
       "id": "mayer-apogee-lifting-speeds",
@@ -835,66 +1085,6 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "added": "2026-08-07"
     },
     {
-      "id": "refai-passive-back-benchmark",
-      "title": "Benchmarking Four Commercial Passive Back Exoskeletons for Industrial Work",
-      "status": "restricted",
-      "sample": false,
-      "source": {
-        "authors": "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M.",
-        "institution": "University of Twente",
-        "year": 2024
-      },
-      "access": {
-        "url": "https://doi.org/10.1017/wtc.2024.2",
-        "doi": "10.1017/wtc.2024.2",
-        "license": "Data on request from the corresponding author"
-      },
-      "tasks": [
-        "lifting",
-        "mmh"
-      ],
-      "modalities": [
-        "emg"
-      ],
-      "subjects": {
-        "n": 10
-      },
-      "exoskeleton": {
-        "role": "evaluation",
-        "devices": [
-          "Laevo Flex",
-          "Paexo Back (Ottobock)",
-          "Darwing Hakobelude",
-          "Auxivo LiftSuit 1.0"
-        ],
-        "body_region": [
-          "back"
-        ],
-        "actuation": [
-          "passive"
-        ],
-        "comparison": "Four devices vs. no device, head-to-head, within-subject",
-        "outcomes": [
-          "muscle_activity",
-          "kinetics",
-          "subjective",
-          "discomfort"
-        ]
-      },
-      "load": "Four workplace-simulated lifting tasks with rigid (Laevo Flex, Paexo Back) and soft (Darwing Hakobelude, Auxivo LiftSuit 1.0) passive back exoskeletons",
-      "equipment": "Laevo Flex, Paexo Back, Darwing Hakobelude, Auxivo LiftSuit 1.0; EMG, assistive-moment measurement",
-      "tags": [
-        "exoskeleton",
-        "back",
-        "benchmark",
-        "passive-exoskeleton",
-        "comfort",
-        "data-on-request"
-      ],
-      "description": "Head-to-head benchmark of four commercial passive back exoskeletons (two rigid, two soft) in Wearable Technologies (2024): 10 participants performed four workplace-simulated tasks; assistive moments, trunk muscle EMG, comfort and exertion were compared across devices. Data are not publicly deposited; available from the corresponding author on request. Link goes to the paper.\n",
-      "added": "2026-08-07"
-    },
-    {
       "id": "reimeir-back-exo-mechanisms",
       "title": "Five Back-Support Exoskeletons: Trunk EMG & Kinematics in Lift-Carry-Lower",
       "status": "restricted",
@@ -957,8 +1147,77 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "added": "2026-08-07"
     },
     {
-      "id": "njit-egocentric-boxlifting",
-      "title": "Egocentric Multimodal Box-Lifting Dataset",
+      "id": "kim-eksovest-automotive-assembly",
+      "title": "EksoVest in Automotive Assembly: 18-Month Longitudinal Field Study",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Kim S., Nussbaum M.A., Smets M., Ranganathan S.",
+        "institution": "Virginia Tech / Ford Motor Company",
+        "year": 2021
+      },
+      "access": {
+        "url": "https://doi.org/10.1002/ajim.23282",
+        "doi": "10.1002/ajim.23282",
+        "license": "Available on request from the authors"
+      },
+      "tasks": [
+        "assembly",
+        "reaching",
+        "holding"
+      ],
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 198
+      },
+      "publications": [
+        {
+          "citation": "Kim S., Nussbaum M.A., Smets M., Ranganathan S. (2021). Effects of an arm-support exoskeleton on perceived work intensity and musculoskeletal discomfort: An 18-month field study in automotive assembly. Am. J. Ind. Med. 64(11):905-914",
+          "doi": "10.1002/ajim.23282",
+          "note": "Perceived work intensity and musculoskeletal discomfort; 41 exoskeleton users + 83 controls"
+        },
+        {
+          "citation": "Kim S., Nussbaum M.A., Smets M. (2022). Usability, user acceptance, and health outcomes of arm-support exoskeleton use in automotive assembly: An 18-month field study. J. Occup. Environ. Med. 64(3):202-211",
+          "doi": "10.1097/JOM.0000000000002438",
+          "note": "Usability, user acceptance and health outcomes; 65 exoskeleton users + 133 controls"
+        }
+      ],
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "EksoVest (Ekso Bionics)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Exoskeleton users vs. matched controls, 18-month longitudinal field study at nine plants",
+        "outcomes": [
+          "subjective",
+          "discomfort"
+        ]
+      },
+      "load": "Overhead and elevated-arm assembly work during regular production shifts at nine automotive manufacturing facilities",
+      "equipment": "Repeated questionnaires (perceived work intensity, musculoskeletal discomfort, usability, intention-to-use) and plant medical-visit records",
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "arm-support",
+        "field-study",
+        "longitudinal",
+        "automotive",
+        "eksovest"
+      ],
+      "description": "18-month controlled field study of a passive arm-support exoskeleton (EksoVest) worn during overhead assembly work at nine Ford automotive plants, with matched controls. Repeated questionnaires captured perceived work intensity, discomfort, usability and acceptance; plant medical-visit records tracked health outcomes. Exoskeleton use reduced perceived shoulder demands and may lower medical-visit likelihood. One cohort, two reports — see Publications. Data shared on request.\n",
+      "added": "2026-08-20"
+    },
+    {
+      "id": "njit-egocentric-mmh",
+      "title": "Egocentric Multimodal Manual Material Handling Dataset",
       "status": "coming_soon",
       "sample": false,
       "source": {
@@ -1006,8 +1265,8 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "added": "2026-01-01"
     },
     {
-      "id": "njit-multimodality-boxlifting",
-      "title": "Multimodality Box-Lifting Dataset",
+      "id": "njit-multimodality-mmh",
+      "title": "Multimodality Manual Material Handling Dataset",
       "status": "coming_soon",
       "sample": false,
       "source": {
@@ -1027,7 +1286,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "emg",
         "pressure_insole"
       ],
-      "load": "Box lifting across different box weights, lift heights, and asymmetry angles",
+      "load": "Manual material handling across different box weights, lift heights, and asymmetry angles",
       "equipment": "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles",
       "formats": [
         "c3d",
@@ -1035,13 +1294,123 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "csv"
       ],
       "tags": [
-        "box-lifting",
+        "manual-material-handling",
         "multimodal",
         "lifting-height",
         "asymmetry"
       ],
-      "description": "Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of box lifting performed at different box weights, lift heights, and asymmetry angles. Release planned.\n",
+      "description": "Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of manual material handling performed at different box weights, lift heights, and asymmetry angles. Release planned.\n",
       "added": "2026-08-12"
+    },
+    {
+      "id": "tamu-offshore-wind-mocap",
+      "title": "Offshore Wind Turbine Maintenance Motion Capture Dataset",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "Chen, Y., Santos, H., Tao, J., Ding, Y., Zhang, X.",
+        "institution": "Texas A&M University / Georgia Institute of Technology",
+        "year": 2025
+      },
+      "tasks": [
+        "lifting",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "imu",
+        "video",
+        "pose_estimation"
+      ],
+      "subjects": {
+        "n": 24
+      },
+      "load": "Symmetric lifting, stepping onto/down a ladder, and climbing up/down ladder rungs, repeated across trials",
+      "equipment": "Marker-based optical motion capture; BioStamp nPoint flexible wearable sensors (accelerometer, gyroscope); smartphone/tablet cameras for video-based capture",
+      "formats": [
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "motion-capture",
+        "wearable-sensors",
+        "wind-energy",
+        "ladder-climbing",
+        "ergonomics"
+      ],
+      "description": "Multimodal motion data of simulated offshore wind turbine maintenance activities: 24 participants performed symmetric lifting, ladder stepping, and rung climbing while recorded concurrently by marker-based optical motion capture, body-worn flexible sensors, and smartphone/tablet video, supporting ergonomic assessment of biomechanical demands in wind-energy maintenance work. Release planned.\n",
+      "added": "2026-08-18"
+    },
+    {
+      "id": "njit-niosh-shoulder-exo-stability",
+      "title": "Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W.",
+        "institution": "New Jersey Institute of Technology (AnyMotion Lab) / NIOSH",
+        "year": 2026
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "walking",
+        "lowering",
+        "mmh"
+      ],
+      "modalities": [
+        "mocap",
+        "force_plate",
+        "grf"
+      ],
+      "subjects": {
+        "n": 11,
+        "age_range": "30.2 ± 3.9 yr"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "EXO1 (4.9 kg)",
+          "EXO2 (6.7 kg)",
+          "EXO3 (8.6 kg)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "No-exoskeleton baseline vs. each of three passive shoulder-assist exoskeletons, within-subject repeated measures, condition order randomized",
+        "outcomes": [
+          "kinematics",
+          "kinetics"
+        ]
+      },
+      "load": "Rigid 13.6 kg (30 lb) box, 14 x 10 x 6 in, floor-to-shelf transfer; 5 consecutive lift-walk-place cycles per trial, 2 trials per condition, 4 randomized conditions (8 trials per participant)",
+      "equipment": "OptiTrack 12-camera motion capture (Motive 3), two AMTI BMS464508 force plates with OPTIMA amplifiers; OpenSim v4.4 and MATLAB processing",
+      "sampling": {
+        "mocap": 100,
+        "force_plate": 1000
+      },
+      "formats": [
+        "csv",
+        "trc",
+        "mot",
+        "mat"
+      ],
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "balance",
+        "stability",
+        "margin-of-stability",
+        "sample-entropy",
+        "center-of-pressure",
+        "load-carrying",
+        "opensim"
+      ],
+      "description": "Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned.\n",
+      "added": "2026-08-20"
     }
   ]
 }

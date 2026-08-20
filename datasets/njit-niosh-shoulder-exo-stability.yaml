@@ -1,0 +1,43 @@
+# Real planned dataset (NJIT AnyMotion Lab + NIOSH). Marked coming_soon until release.
+id: njit-niosh-shoulder-exo-stability
+title: "Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset"
+status: coming_soon
+sample: false
+
+source:
+  authors: "Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W."
+  institution: "New Jersey Institute of Technology (AnyMotion Lab) / NIOSH"
+  year: 2026
+
+tasks: [lifting, carrying, walking, lowering, mmh]
+modalities: [mocap, force_plate, grf]
+
+subjects:
+  n: 11
+  age_range: "30.2 ± 3.9 yr"
+
+exoskeleton:
+  role: evaluation
+  devices: ["EXO1 (4.9 kg)", "EXO2 (6.7 kg)", "EXO3 (8.6 kg)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "No-exoskeleton baseline vs. each of three passive shoulder-assist exoskeletons, within-subject repeated measures, condition order randomized"
+  outcomes: [kinematics, kinetics]
+
+load: "Rigid 13.6 kg (30 lb) box, 14 x 10 x 6 in, floor-to-shelf transfer; 5 consecutive lift-walk-place cycles per trial, 2 trials per condition, 4 randomized conditions (8 trials per participant)"
+equipment: "OptiTrack 12-camera motion capture (Motive 3), two AMTI BMS464508 force plates with OPTIMA amplifiers; OpenSim v4.4 and MATLAB processing"
+sampling:
+  mocap: 100
+  force_plate: 1000
+formats: [csv, trc, mot, mat]
+tags: [exoskeleton, shoulder, balance, stability, margin-of-stability, sample-entropy, center-of-pressure, load-carrying, opensim]
+description: >
+  Whole-body optical motion capture and force-plate recordings of 11 adults
+  performing a simulated MMH sequence — floor lift, carry while walking, shelf
+  placement, retrieval and return of a 13.6 kg box — without an exoskeleton and
+  wearing three commercial passive shoulder-assist exoskeletons. Collected in
+  2024 to characterize how shoulder exoskeletons affect balance across the full
+  task: phase-specific margin of stability and sample entropy of the body+load
+  CoM during walking, and CoP time-to-boundary during box placement. Box tracked
+  as a rigid body; OpenSim-compatible. Release planned.
+added: 2026-08-20

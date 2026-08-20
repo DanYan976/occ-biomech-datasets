@@ -1,0 +1,26 @@
+id: akkas-hand-speed-duty-cycle-hal
+title: "Hand Speed-Duty Cycle Equation for Estimating the ACGIH Hand Activity Level"
+sample: false
+
+source:
+  authors: "Akkas O., Azari D.P., Chen C.-H.E., Hu Y.H., Ulin S.S., Armstrong T.J., Rempel D., Radwin R.G."
+  institution: "University of Wisconsin-Madison / University of Michigan / UCSF"
+  year: 2015
+
+links:
+  paper: "https://doi.org/10.1080/00140139.2014.966155"
+  doi: "10.1080/00140139.2014.966155"
+  record: "https://stacks.cdc.gov/view/cdc/200752"
+
+domain: "Repetitive hand-intensive work (video-based exposure assessment)"
+inputs: "Tracked RMS hand speed (scaled by hand breadth) and duty cycle from video"
+outputs: "ACGIH hand activity level (HAL) rating"
+tags: [hand-activity-level, acgih-tlv, video-analysis, computer-vision, upper-extremity, exposure-assessment]
+description: >
+  Companion equation to the frequency-duty cycle model: estimates the ACGIH
+  hand activity level directly from RMS hand speed tracked in conventional
+  video, scaled relative to hand breadth, plus duty cycle (Ergonomics, 2015).
+  It underpins Radwin's video-based HAL pipeline, since commercialized in
+  patent-protected computer-vision tools (KineVid LLC, licensed through WARF).
+  NIOSH-funded; CDC STACKS record available.
+added: 2026-08-20

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DaRA: Multi-Sensor Human Activity &amp; Context Recognition in Warehousing — OccBiomechanics</title>
+<meta name="description" content="Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations." />
+<link rel="canonical" href="https://occbiomechanics.org/datasets/dara-warehousing-har.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260812" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="DaRA: Multi-Sensor Human Activity &amp; Context Recognition in Warehousing" />
+<meta property="og:description" content="Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations." />
+<meta property="og:url" content="https://occbiomechanics.org/datasets/dara-warehousing-har.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="DaRA: Multi-Sensor Human Activity &amp; Context Recognition in Warehousing" />
+<meta name="twitter:description" content="Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css?v=20260819" />
+<script src="/nav.js" defer></script>
+<script type="application/ld+json">
+{
+  "@type": "Dataset",
+  "@id": "https://occbiomechanics.org/datasets/dara-warehousing-har.html",
+  "name": "DaRA: Multi-Sensor Human Activity & Context Recognition in Warehousing",
+  "url": "https://occbiomechanics.org/datasets/dara-warehousing-har.html",
+  "includedInDataCatalog": {
+    "@id": "https://occbiomechanics.org/datasets.html#catalog"
+  },
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Niemann F."
+    },
+    {
+      "@type": "Person",
+      "name": "Moya Rueda F."
+    },
+    {
+      "@type": "Person",
+      "name": "Nair N.R."
+    },
+    {
+      "@type": "Person",
+      "name": "Orth A."
+    },
+    {
+      "@type": "Person",
+      "name": "Al Kfari M.K."
+    },
+    {
+      "@type": "Person",
+      "name": "Frichert M."
+    },
+    {
+      "@type": "Person",
+      "name": "Abdulaal A."
+    },
+    {
+      "@type": "Person",
+      "name": "Abu Seer M."
+    },
+    {
+      "@type": "Person",
+      "name": "Almatalka H."
+    },
+    {
+      "@type": "Person",
+      "name": "Asskar H."
+    },
+    {
+      "@type": "Person",
+      "name": "Bork E."
+    },
+    {
+      "@type": "Person",
+      "name": "Dobariya B."
+    },
+    {
+      "@type": "Person",
+      "name": "Ghroubi E."
+    },
+    {
+      "@type": "Person",
+      "name": "Kersting F.F."
+    },
+    {
+      "@type": "Person",
+      "name": "König F."
+    },
+    {
+      "@type": "Person",
+      "name": "Qadri S.A.H."
+    },
+    {
+      "@type": "Person",
+      "name": "Reining C."
+    },
+    {
+      "@type": "Person",
+      "name": "Riedel T."
+    },
+    {
+      "@type": "Person",
+      "name": "Schauten D."
+    },
+    {
+      "@type": "Person",
+      "name": "Seval K."
+    },
+    {
+      "@type": "Person",
+      "name": "Youssef M."
+    },
+    {
+      "@type": "Person",
+      "name": "Zurkuhl K."
+    },
+    {
+      "@type": "Person",
+      "name": "Grzeszick R."
+    },
+    {
+      "@type": "Person",
+      "name": "Lüdtke S."
+    },
+    {
+      "@type": "Person",
+      "name": "Kirchheim A."
+    }
+  ],
+  "isAccessibleForFree": true,
+  "description": "Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "TU Dortmund University / Fraunhofer IML"
+  },
+  "datePublished": "2026",
+  "identifier": "https://doi.org/10.5281/zenodo.10468175",
+  "sameAs": "https://doi.org/10.5281/zenodo.10468175",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "keywords": [
+    "activity-recognition",
+    "carrying",
+    "egocentric_video",
+    "har",
+    "imu",
+    "localization",
+    "logistics",
+    "mmh",
+    "non-commercial",
+    "packaging",
+    "picking",
+    "reaching",
+    "video",
+    "walking",
+    "warehousing"
+  ],
+  "measurementTechnique": [
+    "imu",
+    "video",
+    "egocentric_video"
+  ],
+  "encodingFormat": [
+    "csv",
+    "mp4"
+  ],
+  "@context": "https://schema.org"
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img class="mark" src="/assets/logo.svg" alt="" />
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="/index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="/datasets.html" class="active">All Datasets</a>
+          <a href="/exoskeletons.html">Exoskeleton Studies</a>
+          <a href="/models.html">Models</a>
+          <a href="/tools.html">Tools</a>
+        </div>
+      </div>
+      <a href="/docs.html">Docs</a>
+      <a href="/contribute.html">Contribute</a>
+      <a href="/community.html">Community</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap detail">
+  <p class="crumb"><a href="/datasets.html">← All datasets</a></p>
+
+  <div class="detail-head">
+    <div class="dmeta"><span class="cid">dara-warehousing-har</span> <span class="badge open">Open</span></div>
+    <h1>DaRA: Multi-Sensor Human Activity &amp; Context Recognition in Warehousing</h1>
+    <p class="src">Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A.</p>
+    <p class="src">TU Dortmund University / Fraunhofer IML · 2026</p>
+  </div>
+
+  <p class="desc">Successor to LARa from the same Dortmund group: 18 subjects performed order-picking, packaging, unpacking and storage scenarios in the Fraunhofer IML research warehouse, captured with body-worn IMUs, first-person GoPro and six fixed cameras, BLE indoor localization and warehouse-management-system scan events. Annotated across 12 class categories (207 labels) spanning activities, sub-activities per limb, processes and locations.</p>
+  <div class="tags"><span class="tag mod">IMU</span><span class="tag mod">Video</span><span class="tag mod">Egocentric video</span><span class="tag">Carrying</span><span class="tag">Reaching</span><span class="tag">MMH</span><span class="tag">Walking</span></div>
+  <div class="cta-row"><a class="btn primary" href="https://doi.org/10.5281/zenodo.10468175" target="_blank" rel="noopener">View source ↗</a><span class="lic">DOI: <a href="https://doi.org/10.5281/zenodo.10468175" target="_blank" rel="noopener">10.5281/zenodo.10468175</a></span></div>
+
+  <h2>Details</h2>
+  <dl class="detail-table">
+  <dt>Subjects</dt><dd>n = 18</dd>
+  <dt>Protocol / load</dt><dd>Order picking, packaging, unpacking and storage scenarios in a simulated warehouse; 32 h of egocentric and 109 h of fixed-camera video</dd>
+  <dt>Equipment</dt><dd>MotionMiners IMU sets (6 IMUs per subject, 100 Hz); 57 BLE beacons for indoor localization; GoPro first-person cameras; 6 fixed Mevo cameras; warehouse-management-system scan events</dd>
+  <dt>Sampling</dt><dd>imu 100&nbsp;Hz · video 30&nbsp;Hz</dd>
+  <dt>Formats</dt><dd><code>csv</code>, <code>mp4</code></dd>
+  <dt>License</dt><dd>CC-BY-NC-4.0</dd>
+  <dt>Keywords</dt><dd>logistics, warehousing, activity-recognition, har, picking, packaging, localization, non-commercial</dd>
+  <dt>Added to catalog</dt><dd>2026-08-17</dd>
+  </dl>
+
+  <h2>Cite</h2>
+  <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
+  <div class="citebox">
+    <pre id="bibtex">@misc{dara-warehousing-har,
+  author = {Niemann, F. and Moya Rueda, F. and Nair, N.R. and Orth, A. and Al Kfari, M.K. and Frichert, M. and Abdulaal, A. and Abu Seer, M. and Almatalka, H. and Asskar, H. and Bork, E. and Dobariya, B. and Ghroubi, E. and Kersting, F.F. and König, F. and Qadri, S.A.H. and Reining, C. and Riedel, T. and Schauten, D. and Seval, K. and Youssef, M. and Zurkuhl, K. and Grzeszick, R. and Lüdtke, S. and Kirchheim, A.},
+  title  = {{DaRA: Multi-Sensor Human Activity \&amp; Context Recognition in Warehousing}},
+  year   = {2026},
+  doi    = {10.5281/zenodo.10468175},
+  url    = {https://doi.org/10.5281/zenodo.10468175},
+}</pre>
+    <button class="btn" id="copybib" type="button">Copy BibTeX</button>
+  </div>
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
+    <p>Machine-readable: <a href="/catalog.json">catalog.json</a> · <a href="/docs.html">schema &amp; API docs</a></p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("copybib").addEventListener("click", function () {
+  var btn = this;
+  navigator.clipboard.writeText(document.getElementById("bibtex").textContent).then(function () {
+    btn.textContent = "Copied ✓";
+    setTimeout(function () { btn.textContent = "Copy BibTeX"; }, 1600);
+  });
+});
+</script>
+</body>
+</html>

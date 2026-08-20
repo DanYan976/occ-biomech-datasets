@@ -55,7 +55,7 @@
       "minItems": 1,
       "items": {
         "type": "string",
-        "enum": ["mocap", "imu", "emg", "force_plate", "grf", "video", "egocentric_video", "pose_estimation", "pressure_insole", "physiological"]
+        "enum": ["mocap", "imu", "emg", "force_plate", "grf", "video", "egocentric_video", "pose_estimation", "pressure_insole", "physiological", "survey"]
       }
     },
     "subjects": {
@@ -107,6 +107,21 @@
             "enum": ["muscle_activity", "kinematics", "kinetics", "metabolic", "cardiovascular", "task_performance", "subjective", "discomfort"]
           },
           "description": "Outcome families reported, so evaluations can be compared on what they actually measured."
+        }
+      }
+    },
+    "publications": {
+      "type": "array",
+      "description": "Papers reporting on this dataset, when more than the access link is worth listing (e.g. one cohort, several analyses). Rendered as a Publications section on the detail page.",
+      "items": {
+        "type": "object",
+        "required": ["citation"],
+        "additionalProperties": false,
+        "properties": {
+          "citation": { "type": "string", "description": "Short citation, e.g. 'Kim et al. (2021). Title. Am. J. Ind. Med. 64(11):905-914'." },
+          "doi": { "type": "string" },
+          "url": { "type": "string", "description": "Landing page when there is no DOI." },
+          "note": { "type": "string", "description": "One line on what this paper reports from the dataset." }
         }
       }
     },

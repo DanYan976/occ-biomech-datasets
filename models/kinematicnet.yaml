@@ -1,0 +1,27 @@
+id: kinematicnet
+title: "KinematicNet: Whole-Body Kinematics From Multi-View Images"
+sample: false
+
+source:
+  authors: "Nguyen K.X., Zheng L., Hawke A.L., Carey R.E., Breloff S.P., Li K., Peng X."
+  institution: "NIOSH / University of Delaware"
+  year: 2023
+
+links:
+  paper: "https://doi.org/10.1016/j.cviu.2023.103780"
+  doi: "10.1016/j.cviu.2023.103780"
+  code: "https://github.com/Nyquixt/KinematicNet"
+  preprint: "https://arxiv.org/abs/2307.05896"
+
+code_license: "MIT"
+domain: "Occupational tasks (residential roofing)"
+inputs: "Multi-view RGB images"
+outputs: "Whole-body joint kinematics"
+tags: [pose-estimation, markerless, kinematics, roofing, deep-learning, pytorch]
+description: >
+  Deep-learning model that estimates whole-body joint kinematics directly from
+  multi-view images (Computer Vision and Image Understanding, 2023), developed
+  in a NIOSH-University of Delaware collaboration for markerless motion
+  analysis of occupational tasks such as roofing. Open-access preprint on
+  arXiv; PyTorch code released on GitHub under MIT.
+added: 2026-08-17

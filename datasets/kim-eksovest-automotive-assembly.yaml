@@ -1,0 +1,49 @@
+id: kim-eksovest-automotive-assembly
+title: "EksoVest in Automotive Assembly: 18-Month Longitudinal Field Study"
+status: restricted
+sample: false
+
+source:
+  authors: "Kim S., Nussbaum M.A., Smets M., Ranganathan S."
+  institution: "Virginia Tech / Ford Motor Company"
+  year: 2021
+
+access:
+  url: "https://doi.org/10.1002/ajim.23282"
+  doi: "10.1002/ajim.23282"
+  license: "Available on request from the authors"
+
+tasks: [assembly, reaching, holding]
+modalities: [survey]
+
+subjects:
+  n: 198
+
+publications:
+  - citation: "Kim S., Nussbaum M.A., Smets M., Ranganathan S. (2021). Effects of an arm-support exoskeleton on perceived work intensity and musculoskeletal discomfort: An 18-month field study in automotive assembly. Am. J. Ind. Med. 64(11):905-914"
+    doi: "10.1002/ajim.23282"
+    note: "Perceived work intensity and musculoskeletal discomfort; 41 exoskeleton users + 83 controls"
+  - citation: "Kim S., Nussbaum M.A., Smets M. (2022). Usability, user acceptance, and health outcomes of arm-support exoskeleton use in automotive assembly: An 18-month field study. J. Occup. Environ. Med. 64(3):202-211"
+    doi: "10.1097/JOM.0000000000002438"
+    note: "Usability, user acceptance and health outcomes; 65 exoskeleton users + 133 controls"
+
+exoskeleton:
+  role: evaluation
+  devices: ["EksoVest (Ekso Bionics)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "Exoskeleton users vs. matched controls, 18-month longitudinal field study at nine plants"
+  outcomes: [subjective, discomfort]
+
+load: "Overhead and elevated-arm assembly work during regular production shifts at nine automotive manufacturing facilities"
+equipment: "Repeated questionnaires (perceived work intensity, musculoskeletal discomfort, usability, intention-to-use) and plant medical-visit records"
+tags: [exoskeleton, shoulder, arm-support, field-study, longitudinal, automotive, eksovest]
+description: >
+  18-month controlled field study of a passive arm-support exoskeleton
+  (EksoVest) worn during overhead assembly work at nine Ford automotive
+  plants, with matched controls. Repeated questionnaires captured perceived
+  work intensity, discomfort, usability and acceptance; plant medical-visit
+  records tracked health outcomes. Exoskeleton use reduced perceived shoulder
+  demands and may lower medical-visit likelihood. One cohort, two reports —
+  see Publications. Data shared on request.
+added: 2026-08-20

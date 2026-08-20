@@ -1,0 +1,27 @@
+id: radwin-frequency-duty-cycle-hal
+title: "Frequency-Duty Cycle Equation for the ACGIH Hand Activity Level"
+sample: false
+
+source:
+  authors: "Radwin R.G., Azari D.P., Lindstrom M.J., Ulin S.S., Armstrong T.J., Rempel D."
+  institution: "University of Wisconsin-Madison / University of Michigan / UCSF"
+  year: 2015
+
+links:
+  paper: "https://doi.org/10.1080/00140139.2014.966154"
+  doi: "10.1080/00140139.2014.966154"
+  preprint: "https://ergo.wisc.edu/wp-content/uploads/sites/901/2020/04/Radwin-et-al-2015.pdf"
+  record: "https://stacks.cdc.gov/view/cdc/200748"
+
+domain: "Repetitive hand-intensive work (upper-extremity exposure assessment)"
+inputs: "Exertion frequency (Hz) and duty cycle (%)"
+outputs: "ACGIH hand activity level (HAL) rating"
+tags: [hand-activity-level, acgih-tlv, repetitive-motion, upper-extremity, exposure-assessment]
+description: >
+  Nonlinear regression equation, HAL = 6.56 ln D [F^1.31 / (1 + 3.18 F^1.31)],
+  that predicts the ACGIH hand activity level from exertion frequency F and
+  duty cycle D as a continuous function (Ergonomics, 2015). It closely matches
+  the TLV lookup table while extending beyond it, and became the basis of the
+  2018 ACGIH HAL TLV revision. NIOSH-funded; open author PDF and CDC STACKS
+  record available.
+added: 2026-08-20

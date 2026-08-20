@@ -1,0 +1,40 @@
+id: niosh-laevo-bed-to-chair
+title: "NIOSH: Passive Back-Support Exoskeleton During Bed-to-Chair Patient Handling"
+status: open
+sample: false
+
+source:
+  authors: "National Institute for Occupational Safety and Health (NIOSH)"
+  institution: "NIOSH / CDC"
+  year: 2025
+
+access:
+  url: "https://stacks.cdc.gov/view/cdc/208709"
+  doi: "10.26616/NIOSHRD-1110-2025-0"
+  license: "Public domain (U.S. Government work)"
+
+tasks: [lifting, holding, pulling]
+modalities: [emg, physiological]
+
+subjects:
+  n: 8
+
+exoskeleton:
+  role: evaluation
+  devices: ["Laevo V2.5"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, four bed-to-chair patient-transfer tasks"
+  outcomes: [muscle_activity, kinematics, cardiovascular]
+
+load: "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer"
+equipment: "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, trunk/hip angle measurement, heart-rate monitor"
+tags: [exoskeleton, back, patient-handling, healthcare, laevo]
+description: >
+  NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in
+  bed-to-chair transfers (IJOSE, 2025): 8 participants performed
+  lying-to-sitting, sitting-to-standing, standing-to-sitting and
+  bed-to-wheelchair tasks with and without the device while trunk and hip
+  angles, erector spinae EMG and heart rate were recorded. Public-domain
+  NIOSH research dataset RD-1110-2025-0 on CDC STACKS.
+added: 2026-08-17

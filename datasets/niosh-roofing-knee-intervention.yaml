@@ -1,0 +1,34 @@
+id: niosh-roofing-knee-intervention
+title: "NIOSH: Knee Savers & Knee Pads During Residential Shingle Installation"
+status: open
+sample: false
+
+source:
+  authors: "National Institute for Occupational Safety and Health (NIOSH)"
+  institution: "NIOSH / CDC"
+  year: 2025
+
+access:
+  url: "https://stacks.cdc.gov/view/cdc/208705"
+  doi: "10.26616/NIOSHRD-1108-2025-0"
+  license: "Public domain (U.S. Government work)"
+
+tasks: [squatting, reaching, assembly]
+modalities: [mocap]
+
+subjects:
+  n: 9
+  sex: "9M"
+
+load: "Simulated shingle installation on a slope-adjustable roof platform (0, 15 and 30 deg) under four conditions: no intervention, knee pads, knee savers, and both combined"
+equipment: "Marker-based 3D motion capture; slope-adjustable residential roof simulator; knee pads and knee savers"
+tags: [roofing, construction, kneeling, knee, intervention]
+description: >
+  Phase-level assessment of interventions against knee musculoskeletal
+  disorder risk in roofing: 9 participants installed shingles on a
+  slope-adjustable roof platform (0, 15, 30 deg) with no intervention, knee
+  pads, knee savers, or both. Knee flexion, ab/adduction and rotation angles
+  were captured across seven task phases, from reaching for shingles to
+  returning upright. Public-domain NIOSH research dataset RD-1108-2025-0 on
+  CDC STACKS.
+added: 2026-08-17

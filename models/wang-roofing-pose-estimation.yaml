@@ -1,0 +1,25 @@
+id: wang-roofing-pose-estimation
+title: "Video-Based 3D Pose Estimation for Residential Roofing"
+sample: false
+
+source:
+  authors: "Wang R., Zheng L., Hawke A.L., Carey R.E., Breloff S.P., Li K., Peng X."
+  institution: "NIOSH / University of Delaware"
+  year: 2022
+
+links:
+  paper: "https://doi.org/10.1080/21681163.2022.2072394"
+  doi: "10.1080/21681163.2022.2072394"
+  record: "https://stacks.cdc.gov/view/cdc/248720"
+
+domain: "Residential roofing (construction)"
+inputs: "RGB video of roofing work"
+outputs: "3D human pose (joint positions)"
+tags: [pose-estimation, markerless, roofing, construction, deep-learning]
+description: >
+  NIOSH-University of Delaware method for estimating 3D worker pose directly
+  from video of residential roofing tasks (Comput. Methods Biomech. Biomed.
+  Eng.: Imaging & Visualization, 2022), a step toward markerless ergonomic
+  exposure assessment on job sites where marker-based motion capture is
+  impractical. Public as a paper and NIOSH record; no code release.
+added: 2026-08-17

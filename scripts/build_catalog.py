@@ -14,6 +14,10 @@ against schema/dataset.schema.json, then:
   - injects the controlled vocabularies into site/docs.html (VOCAB markers)
   - writes site/sitemap.xml
 
+Also builds the model library: reads models/*.yaml, validates each against
+schema/model.schema.json, writes site/models.json, and injects rendered cards
+plus schema.org JSON-LD into site/models.html (MODELS / MODELS_JSONLD markers).
+
 Run from the repo root:  python scripts/build_catalog.py
 Requires: pyyaml, jsonschema  (pip install -r scripts/requirements.txt)
 
@@ -48,13 +52,21 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 DATASETS_DIR = ROOT / "datasets"
+MODELS_DIR = ROOT / "models"
+TOOLS_DIR = ROOT / "tools"
 SCHEMA_PATH = ROOT / "schema" / "dataset.schema.json"
+MODEL_SCHEMA_PATH = ROOT / "schema" / "model.schema.json"
+TOOL_SCHEMA_PATH = ROOT / "schema" / "tool.schema.json"
 SITE_DIR = ROOT / "site"
 INDEX_HTML = SITE_DIR / "index.html"
 DATASETS_HTML = SITE_DIR / "datasets.html"
 EXOS_HTML = SITE_DIR / "exoskeletons.html"
+MODELS_HTML = SITE_DIR / "models.html"
+TOOLS_HTML = SITE_DIR / "tools.html"
 DOCS_HTML = SITE_DIR / "docs.html"
 CATALOG_JSON = SITE_DIR / "catalog.json"
+MODELS_JSON = SITE_DIR / "models.json"
+TOOLS_JSON = SITE_DIR / "tools.json"
 DETAIL_DIR = SITE_DIR / "datasets"
 SITEMAP_XML = SITE_DIR / "sitemap.xml"
 
@@ -64,6 +76,14 @@ JSONLD_START = "<!-- JSONLD:START -->"
 JSONLD_END = "<!-- JSONLD:END -->"
 VOCAB_START = "<!-- VOCAB:START -->"
 VOCAB_END = "<!-- VOCAB:END -->"
+MODELS_START = "<!-- MODELS:START -->"
+MODELS_END = "<!-- MODELS:END -->"
+MODELS_JSONLD_START = "<!-- MODELS_JSONLD:START -->"
+MODELS_JSONLD_END = "<!-- MODELS_JSONLD:END -->"
+TOOLS_START = "<!-- TOOLS:START -->"
+TOOLS_END = "<!-- TOOLS:END -->"
+TOOLS_JSONLD_START = "<!-- TOOLS_JSONLD:START -->"
+TOOLS_JSONLD_END = "<!-- TOOLS_JSONLD:END -->"
 
 # Canonical origin, used to mint stable @id values in the JSON-LD.
 SITE_URL = os.environ.get("SITE_URL", "https://occbiomechanics.org").rstrip("/")
@@ -82,6 +102,7 @@ MOD_LABEL = {
     "mocap": "Mocap", "imu": "IMU", "emg": "EMG", "force_plate": "Force plate",
     "grf": "GRF", "video": "Video", "egocentric_video": "Egocentric video",
     "pose_estimation": "Pose est.", "pressure_insole": "Insole", "physiological": "Physio",
+    "survey": "Survey",
 }
 EXO_ROLE_LABEL = {"evaluation": "Device evaluation", "control_input": "Exoskeleton-control data"}
 EXO_REGION_LABEL = {
@@ -113,9 +134,9 @@ LICENSE_URLS = {
 _INITIALS = re.compile(r"\b[A-Z]\.(\s*-?\s*[A-Z]\.)*$")
 
 
-def load_entries() -> list[dict]:
+def load_entries(directory: Path = DATASETS_DIR) -> list[dict]:
     entries = []
-    for path in sorted(DATASETS_DIR.glob("*.yaml")):
+    for path in sorted(directory.glob("*.yaml")):
         if path.name.startswith("_"):
             continue
         with path.open(encoding="utf-8") as fh:
@@ -127,13 +148,13 @@ def load_entries() -> list[dict]:
     return entries
 
 
-def validate(entries: list[dict]) -> None:
+def validate(entries: list[dict], schema_path: Path = SCHEMA_PATH) -> None:
     try:
         import jsonschema
     except ImportError:
         print("WARNING: jsonschema not installed, skipping validation.")
         return
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
     validator = jsonschema.Draft7Validator(schema)
     errors = 0
     for entry in entries:
@@ -204,6 +225,16 @@ def _jsonld_entry(entry: dict, catalog_id: str) -> dict:
         node["measurementTechnique"] = entry["modalities"]
     if entry.get("formats"):
         node["encodingFormat"] = entry["formats"]
+    cites = []
+    for p in entry.get("publications", []):
+        cite = {"@type": "ScholarlyArticle", "name": p["citation"]}
+        if p.get("doi"):
+            cite["@id"] = f"https://doi.org/{p['doi']}"
+        elif p.get("url"):
+            cite["@id"] = p["url"]
+        cites.append(cite)
+    if cites:
+        node["citation"] = cites
     return node
 
 
@@ -407,6 +438,21 @@ def _detail_page(entry: dict) -> str:
     row("Added to catalog", e(str(entry.get("added", ""))))
     details = "\n".join(rows)
 
+    pubs_section = ""
+    pubs = entry.get("publications") or []
+    if pubs:
+        items = []
+        for p in pubs:
+            link = p.get("url") or (f"https://doi.org/{p['doi']}" if p.get("doi") else "")
+            cite = e(p["citation"])
+            if link:
+                cite = f'<a href="{e(link)}" target="_blank" rel="noopener">{cite}</a>'
+            note = f'<span class="pub-note">{e(p["note"])}</span>' if p.get("note") else ""
+            items.append(f"    <li>{cite}{note}</li>")
+        pubs_section = ('<h2>Publications</h2>\n  <ul class="pub-list">\n'
+                        + "\n".join(items)
+                        + '\n  </ul>\n\n  ')
+
     authors_line = f'<p class="src">{e(source.get("authors", ""))}</p>' if source.get("authors") else ""
     inst_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
 
@@ -433,7 +479,7 @@ def _detail_page(entry: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20260812" />
+<link rel="stylesheet" href="/style.css?v=20260819" />
 <script src="/nav.js" defer></script>
 {jsonld}</head>
 <body>
@@ -451,6 +497,8 @@ def _detail_page(entry: dict) -> str:
         <div class="dropdown-menu">
           <a href="/datasets.html" class="active">All Datasets</a>
           <a href="/exoskeletons.html">Exoskeleton Studies</a>
+          <a href="/models.html">Models</a>
+          <a href="/tools.html">Tools</a>
         </div>
       </div>
       <a href="/docs.html">Docs</a>
@@ -480,7 +528,7 @@ def _detail_page(entry: dict) -> str:
 {details}
   </dl>
 
-  {exo_section}<h2>Cite</h2>
+  {pubs_section}{exo_section}<h2>Cite</h2>
   <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
   <div class="citebox">
     <pre id="bibtex">{e(_bibtex(entry))}</pre>
@@ -527,11 +575,253 @@ def build_detail_pages(catalog: dict) -> None:
     print(f"  -> {len(wanted)} detail pages in site/datasets/")
 
 
+# ------------------------------------------------------------ model library ----
+
+def _model_link_row(links: dict) -> str:
+    """Outbound links for a model card, primary source first."""
+    e = html.escape
+    parts = []
+    if links.get("paper"):
+        parts.append(f'<a class="out" href="{e(links["paper"])}" target="_blank" rel="noopener">Paper ↗</a>')
+    if links.get("code"):
+        parts.append(f'<a class="out" href="{e(links["code"])}" target="_blank" rel="noopener">Code ↗</a>')
+    if links.get("preprint"):
+        parts.append(f'<a class="out" href="{e(links["preprint"])}" target="_blank" rel="noopener">Preprint ↗</a>')
+    if links.get("record"):
+        parts.append(f'<a class="out" href="{e(links["record"])}" target="_blank" rel="noopener">Record ↗</a>')
+    return '<span style="display:flex;gap:14px;flex-wrap:wrap">' + "".join(parts) + "</span>"
+
+
+def _model_card(m: dict) -> str:
+    e = html.escape
+    source = m.get("source") or {}
+    links = m.get("links") or {}
+    has_code = bool(links.get("code"))
+    badge = ('<span class="badge open">Code</span>' if has_code
+             else '<span class="badge restricted">Paper only</span>')
+    primary = links.get("code") or links.get("paper") or links.get("record") or ""
+    src_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
+    desc = " ".join((m.get("description") or "").split())
+
+    tags = "".join(f'<span class="tag">{e(t)}</span>' for t in m.get("tags", []))
+
+    metrics = []
+    for label, value in (("Input", m.get("inputs")), ("Output", m.get("outputs")), ("Domain", m.get("domain"))):
+        if value:
+            metrics.append(f'<div class="metric"><span class="k">{label}</span>'
+                           f'<span class="v" title="{e(value)}">{e(value)}</span></div>')
+
+    lic = m.get("code_license") or ("—" if has_code else "No code released")
+
+    return f"""<article class="card" id="model-{e(m['id'])}">
+  <div class="card-top">
+    <div><span class="cid">{e(m['id'])}</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">{badge}</div>
+  </div>
+  <h3><a class="title-link" href="{e(primary)}" target="_blank" rel="noopener">{e(m['title'])}</a></h3>
+  <div class="src">{e(src_line)}</div>
+  <p class="desc">{e(desc)}</p>
+  <div class="tags">{tags}</div>
+  <div class="metrics">{''.join(metrics)}</div>
+  <div class="card-foot">
+    <span class="lic">{e(lic)}</span>
+    {_model_link_row(links)}
+  </div>
+</article>"""
+
+
+def models_jsonld(models: list[dict]) -> dict:
+    """One node per model: SoftwareSourceCode when code is released, otherwise
+    ScholarlyArticle — so Google indexes each for what it actually is."""
+    nodes = []
+    for m in models:
+        if m.get("sample"):
+            continue
+        source = m.get("source") or {}
+        links = m.get("links") or {}
+        has_code = bool(links.get("code"))
+        node = {
+            "@type": "SoftwareSourceCode" if has_code else "ScholarlyArticle",
+            "@id": f"{SITE_URL}/models.html#model-{m['id']}",
+            "name": m["title"],
+            "url": links.get("code") or links.get("paper"),
+            "creator": _creators(source.get("authors", "")),
+        }
+        if m.get("description"):
+            node["description"] = " ".join(m["description"].split())
+        if source.get("year"):
+            node["datePublished"] = str(source["year"])
+        if links.get("doi"):
+            node["identifier"] = f"https://doi.org/{links['doi']}"
+        if has_code:
+            node["codeRepository"] = links["code"]
+            if m.get("code_license"):
+                node["license"] = LICENSE_URLS.get(m["code_license"], m["code_license"])
+            if links.get("paper"):
+                node["citation"] = {"@type": "ScholarlyArticle", "@id": f"https://doi.org/{links['doi']}" if links.get("doi") else links["paper"]}
+        elif links.get("record"):
+            node["sameAs"] = links["record"]
+        if m.get("tags"):
+            node["keywords"] = sorted(set(m["tags"]))
+        nodes.append(node)
+    return {"@context": "https://schema.org", "@graph": nodes}
+
+
+def build_models(models: list[dict]) -> None:
+    models = sorted(models, key=lambda m: (str(m.get("added", "")), m["id"]), reverse=True)
+    clean = [{k: v for k, v in m.items() if not k.startswith("_")} for m in models]
+    MODELS_JSON.write_text(
+        json.dumps({"generated_from": "models/*.yaml", "count": len(clean), "models": clean},
+                   ensure_ascii=False, indent=2),
+        encoding="utf-8")
+
+    n = len(models)
+    cards = "\n".join(_model_card(m) for m in models)
+    block = (f'<section class="exo-group">\n'
+             f'  <div class="section-head"><h2>All models</h2>'
+             f'<span class="count-note">{n} {"model" if n == 1 else "models"}</span></div>\n'
+             f'  <div class="grid">\n{cards}\n  </div>\n'
+             f'</section>')
+    _inject(MODELS_HTML, MODELS_START, MODELS_END, block)
+
+    jsonld = json.dumps(models_jsonld(models), ensure_ascii=False, indent=2)
+    _inject(MODELS_HTML, MODELS_JSONLD_START, MODELS_JSONLD_END,
+            f'<script type="application/ld+json">\n{jsonld}\n</script>')
+    print(f"  -> {MODELS_JSON.relative_to(ROOT)}; {n} model cards + JSON-LD injected into models.html")
+
+
+# ------------------------------------------------------------- tool library ----
+
+LICENSING_LABEL = {"commercial": "Commercial", "free": "Free", "open_source": "Open source"}
+
+
+def _tool_link_row(links: dict, patents: list[dict]) -> str:
+    """Outbound links for a tool card: vendor page first, then patents."""
+    e = html.escape
+    parts = []
+    if links.get("website"):
+        parts.append(f'<a class="out" href="{e(links["website"])}" target="_blank" rel="noopener">Website ↗</a>')
+    if links.get("docs"):
+        parts.append(f'<a class="out" href="{e(links["docs"])}" target="_blank" rel="noopener">Docs ↗</a>')
+    if links.get("paper"):
+        parts.append(f'<a class="out" href="{e(links["paper"])}" target="_blank" rel="noopener">Paper ↗</a>')
+    if links.get("record"):
+        parts.append(f'<a class="out" href="{e(links["record"])}" target="_blank" rel="noopener">Record ↗</a>')
+    for p in patents:
+        label = e(p["number"])
+        if p.get("url"):
+            parts.append(f'<a class="out" href="{e(p["url"])}" target="_blank" rel="noopener" title="{e(p.get("title", ""))}">{label} ↗</a>')
+        else:
+            parts.append(f'<span class="lic" title="{e(p.get("title", ""))}">{label}</span>')
+    return '<span style="display:flex;gap:14px;flex-wrap:wrap">' + "".join(parts) + "</span>"
+
+
+def _tool_card(t: dict) -> str:
+    e = html.escape
+    source = t.get("source") or {}
+    links = t.get("links") or {}
+    licensing = t.get("licensing", "")
+    badge_cls = "open" if licensing in ("free", "open_source") else "restricted"
+    badge = f'<span class="badge {badge_cls}">{e(LICENSING_LABEL.get(licensing, licensing) or "Tool")}</span>'
+    primary = links.get("website") or links.get("record") or links.get("paper") or ""
+    src_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
+    desc = " ".join((t.get("description") or "").split())
+
+    tags = "".join(f'<span class="tag">{e(x)}</span>' for x in t.get("tags", []))
+
+    metrics = []
+    for label, value in (("Vendor", t.get("vendor")), ("Input", t.get("inputs")),
+                         ("Output", t.get("outputs")), ("Category", t.get("category"))):
+        if value:
+            metrics.append(f'<div class="metric"><span class="k">{label}</span>'
+                           f'<span class="v" title="{e(value)}">{e(value)}</span></div>')
+
+    related = ""
+    if t.get("related_models"):
+        rel_links = ", ".join(f'<a href="models.html#model-{e(r)}">{e(r)}</a>' for r in t["related_models"])
+        related = f'<div class="src">Built on: {rel_links}</div>'
+
+    lic = t.get("pricing_note") or LICENSING_LABEL.get(licensing, "")
+
+    return f"""<article class="card" id="tool-{e(t['id'])}">
+  <div class="card-top">
+    <div><span class="cid">{e(t['id'])}</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">{badge}</div>
+  </div>
+  <h3><a class="title-link" href="{e(primary)}" target="_blank" rel="noopener">{e(t['title'])}</a></h3>
+  <div class="src">{e(src_line)}</div>
+  <p class="desc">{e(desc)}</p>
+  <div class="tags">{tags}</div>
+  <div class="metrics">{''.join(metrics)}</div>
+  {related}
+  <div class="card-foot">
+    <span class="lic">{e(lic)}</span>
+    {_tool_link_row(links, t.get("patents", []))}
+  </div>
+</article>"""
+
+
+def tools_jsonld(tools: list[dict]) -> dict:
+    """One SoftwareApplication node per tool — the schema.org type for a
+    product you obtain and run, as opposed to a published method."""
+    nodes = []
+    for t in tools:
+        if t.get("sample"):
+            continue
+        source = t.get("source") or {}
+        links = t.get("links") or {}
+        node = {
+            "@type": "SoftwareApplication",
+            "@id": f"{SITE_URL}/tools.html#tool-{t['id']}",
+            "name": t["title"],
+            "url": links.get("website") or links.get("record") or links.get("paper"),
+            "publisher": {"@type": "Organization", "name": t["vendor"]},
+            "applicationCategory": t.get("category") or "Ergonomics analysis software",
+        }
+        if source.get("authors"):
+            node["creator"] = _creators(source["authors"])
+        if t.get("description"):
+            node["description"] = " ".join(t["description"].split())
+        if links.get("doi"):
+            node["identifier"] = f"https://doi.org/{links['doi']}"
+        same_as = [p["url"] for p in t.get("patents", []) if p.get("url")]
+        if same_as:
+            node["sameAs"] = same_as
+        if t.get("tags"):
+            node["keywords"] = sorted(set(t["tags"]))
+        nodes.append(node)
+    return {"@context": "https://schema.org", "@graph": nodes}
+
+
+def build_tools(tools: list[dict]) -> None:
+    tools = sorted(tools, key=lambda t: (str(t.get("added", "")), t["id"]), reverse=True)
+    clean = [{k: v for k, v in t.items() if not k.startswith("_")} for t in tools]
+    TOOLS_JSON.write_text(
+        json.dumps({"generated_from": "tools/*.yaml", "count": len(clean), "tools": clean},
+                   ensure_ascii=False, indent=2),
+        encoding="utf-8")
+
+    n = len(tools)
+    cards = "\n".join(_tool_card(t) for t in tools)
+    block = (f'<section class="exo-group">\n'
+             f'  <div class="section-head"><h2>All tools</h2>'
+             f'<span class="count-note">{n} {"tool" if n == 1 else "tools"}</span></div>\n'
+             f'  <div class="grid">\n{cards}\n  </div>\n'
+             f'</section>')
+    _inject(TOOLS_HTML, TOOLS_START, TOOLS_END, block)
+
+    jsonld = json.dumps(tools_jsonld(tools), ensure_ascii=False, indent=2)
+    _inject(TOOLS_HTML, TOOLS_JSONLD_START, TOOLS_JSONLD_END,
+            f'<script type="application/ld+json">\n{jsonld}\n</script>')
+    print(f"  -> {TOOLS_JSON.relative_to(ROOT)}; {n} tool cards + JSON-LD injected into tools.html")
+
+
 # ---------------------------------------------------------------- sitemap ----
 
 def build_sitemap(catalog: dict) -> None:
     urls = [(f"{SITE_URL}/", None), (f"{SITE_URL}/datasets.html", None),
-            (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/docs.html", None),
+            (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/models.html", None),
+            (f"{SITE_URL}/tools.html", None), (f"{SITE_URL}/docs.html", None),
             (f"{SITE_URL}/contribute.html", None),
             (f"{SITE_URL}/community.html", None)]
     for entry in catalog["datasets"]:
@@ -564,6 +854,14 @@ def main() -> None:
     inject_vocab()
     build_detail_pages(catalog)
     build_sitemap(catalog)
+    models = load_entries(MODELS_DIR) if MODELS_DIR.exists() else []
+    if models:
+        validate(models, MODEL_SCHEMA_PATH)
+        build_models(models)
+    tools = load_entries(TOOLS_DIR) if TOOLS_DIR.exists() else []
+    if tools:
+        validate(tools, TOOL_SCHEMA_PATH)
+        build_tools(tools)
     n = catalog["count"]
     by_status = {}
     for d in catalog["datasets"]:

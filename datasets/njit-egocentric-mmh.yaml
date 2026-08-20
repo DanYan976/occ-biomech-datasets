@@ -1,6 +1,6 @@
 # Real planned dataset (your lab). Marked coming_soon until release.
-id: njit-egocentric-boxlifting
-title: "Egocentric Multimodal Box-Lifting Dataset"
+id: njit-egocentric-mmh
+title: "Egocentric Multimodal Manual Material Handling Dataset"
 status: coming_soon
 sample: false
 

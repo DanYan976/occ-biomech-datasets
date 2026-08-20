@@ -1,0 +1,82 @@
+{
+  "generated_from": "tools/*.yaml",
+  "count": 2,
+  "tools": [
+    {
+      "id": "mvta",
+      "title": "MVTA - Multimedia Video Task Analysis",
+      "sample": false,
+      "vendor": "NexGen Ergonomics",
+      "source": {
+        "authors": "Radwin R.G., Yen T.Y.",
+        "institution": "University of Wisconsin-Madison"
+      },
+      "links": {
+        "website": "http://www.nexgenergo.com/ergonomics/mvta.html",
+        "docs": "http://www.nexgenergo.com/ergonomics/mvtafaq.html",
+        "record": "https://mvta.engr.wisc.edu/"
+      },
+      "licensing": "commercial",
+      "pricing_note": "Licensed via NexGen Ergonomics; ~$10k/yr University of Wisconsin consortium option",
+      "category": "Video task analysis",
+      "inputs": "Task video, annotated interactively with event breakpoints",
+      "outputs": "Time-study reports, event frequency, duty cycle, postural analysis",
+      "related_models": [
+        "radwin-frequency-duty-cycle-hal",
+        "akkas-hand-speed-duty-cycle-hal"
+      ],
+      "tags": [
+        "video-analysis",
+        "time-study",
+        "duty-cycle",
+        "hand-activity-level",
+        "upper-extremity"
+      ],
+      "description": "Video task analysis software developed by Radwin and Yen at UW-Madison and distributed commercially by NexGen Ergonomics: analysts mark event breakpoints in video played at any speed or direction, and MVTA computes time studies, event frequencies, duty cycles and postural analyses. With its companion single-frame duty-cycle tool (SVDA) it supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.\n",
+      "added": "2026-08-20"
+    },
+    {
+      "id": "kinevid",
+      "title": "KineVid Computer-Vision HAL & Lifting Monitor",
+      "sample": false,
+      "vendor": "KineVid LLC",
+      "source": {
+        "authors": "Radwin R.G., Hu Y.H., Chen C.-H., Yen T.Y., Wang X.",
+        "institution": "University of Wisconsin-Madison"
+      },
+      "links": {
+        "website": "https://www.kinevid.com/"
+      },
+      "licensing": "commercial",
+      "pricing_note": "Patent-protected; licensed through WARF",
+      "category": "AI video ergonomics analysis",
+      "inputs": "Conventional workplace video, markerless (no sensors on the worker)",
+      "outputs": "ACGIH hand activity level; lifting-task risk parameters (posture, hand/feet location, movement frequency)",
+      "patents": [
+        {
+          "number": "US 9,566,004",
+          "title": "Apparatus, method and system for measuring repetitive motion activity",
+          "url": "https://patents.google.com/patent/US9566004B1/en"
+        },
+        {
+          "number": "US 11,450,148",
+          "title": "Movement monitoring system",
+          "url": "https://patents.google.com/patent/US11450148B2/en"
+        }
+      ],
+      "related_models": [
+        "akkas-hand-speed-duty-cycle-hal",
+        "radwin-frequency-duty-cycle-hal"
+      ],
+      "tags": [
+        "computer-vision",
+        "hand-activity-level",
+        "lifting",
+        "markerless",
+        "deep-learning"
+      ],
+      "description": "UW-Madison spin-off commercializing Radwin's computer-vision exposure assessment: automatic ACGIH hand activity level from tracked hand motion in ordinary video, and a single-camera monitor that extracts lifting risk parameters aligned with the NIOSH lifting equation. Both are patent-protected (US 9,566,004 assigned to KineVid; US 11,450,148 assigned to WARF) and build on the hand speed-duty cycle HAL equation.\n",
+      "added": "2026-08-20"
+    }
+  ]
+}

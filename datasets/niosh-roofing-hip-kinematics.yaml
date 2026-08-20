@@ -1,0 +1,33 @@
+id: niosh-roofing-hip-kinematics
+title: "NIOSH: Hip Kinematics Under Two Pelvis Marker Configurations in Roofing Tasks"
+status: open
+sample: false
+
+source:
+  authors: "National Institute for Occupational Safety and Health (NIOSH)"
+  institution: "NIOSH / CDC"
+  year: 2023
+
+access:
+  url: "https://stacks.cdc.gov/view/cdc/231361"
+  doi: "10.26616/NIOSHRD-1062-2023-0"
+  license: "Public domain (U.S. Government work)"
+
+tasks: [squatting, assembly]
+modalities: [mocap]
+
+subjects:
+  n: 7
+  sex: "7M"
+
+load: "Simulated standing and kneeling residential roofing tasks"
+equipment: "Marker-based 3D motion capture; CODA pelvis model with trochanter-based (TTM) and virtual-marker (VPTM) tracking configurations"
+tags: [roofing, construction, marker-set, methods, hip]
+description: >
+  Methods dataset comparing hip kinematics from two pelvis tracking-marker
+  configurations (trochanter-based TTM vs. virtual-marker VPTM, CODA pelvis)
+  while 7 participants mimicked standing and kneeling roofing tasks. Useful
+  for marker-set selection and occlusion-robust pelvis tracking in
+  occupational motion capture. Public-domain NIOSH research dataset
+  RD-1062-2023-0 on CDC STACKS.
+added: 2026-08-17

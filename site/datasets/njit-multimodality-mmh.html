@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Egocentric Multimodal Box-Lifting Dataset — OccBiomechanics</title>
-<meta name="description" content="Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned." />
-<link rel="canonical" href="https://occbiomechanics.org/datasets/njit-egocentric-boxlifting.html" />
+<title>Multimodality Manual Material Handling Dataset — OccBiomechanics</title>
+<meta name="description" content="Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of manual material handling performed at different box weights, lift heights, and asymmetry angles. Release planned." />
+<link rel="canonical" href="https://occbiomechanics.org/datasets/njit-multimodality-mmh.html" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260812" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
-<meta property="og:title" content="Egocentric Multimodal Box-Lifting Dataset" />
-<meta property="og:description" content="Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned." />
-<meta property="og:url" content="https://occbiomechanics.org/datasets/njit-egocentric-boxlifting.html" />
+<meta property="og:title" content="Multimodality Manual Material Handling Dataset" />
+<meta property="og:description" content="Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of manual material handling performed at different box weights, lift heights, and asymmetry angles. Release planned." />
+<meta property="og:url" content="https://occbiomechanics.org/datasets/njit-multimodality-mmh.html" />
 <meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Egocentric Multimodal Box-Lifting Dataset" />
-<meta name="twitter:description" content="Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned." />
+<meta name="twitter:title" content="Multimodality Manual Material Handling Dataset" />
+<meta name="twitter:description" content="Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of manual material handling performed at different box weights, lift heights, and asymmetry angles. Release planned." />
 <meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20260812" />
+<link rel="stylesheet" href="/style.css?v=20260819" />
 <script src="/nav.js" defer></script>
 </head>
 <body>
@@ -39,6 +39,8 @@
         <div class="dropdown-menu">
           <a href="/datasets.html" class="active">All Datasets</a>
           <a href="/exoskeletons.html">Exoskeleton Studies</a>
+          <a href="/models.html">Models</a>
+          <a href="/tools.html">Tools</a>
         </div>
       </div>
       <a href="/docs.html">Docs</a>
@@ -53,41 +55,32 @@
   <p class="crumb"><a href="/datasets.html">← All datasets</a></p>
 
   <div class="detail-head">
-    <div class="dmeta"><span class="cid">njit-egocentric-boxlifting</span> <span class="badge coming_soon">Coming soon</span> <span class="badge exo">Exo-control data</span></div>
-    <h1>Egocentric Multimodal Box-Lifting Dataset</h1>
+    <div class="dmeta"><span class="cid">njit-multimodality-mmh</span> <span class="badge coming_soon">Coming soon</span></div>
+    <h1>Multimodality Manual Material Handling Dataset</h1>
     <p class="src">NJIT Occupational Biomechanics Lab</p>
     <p class="src">New Jersey Institute of Technology (AnyMotion Lab) · 2026</p>
   </div>
 
-  <p class="desc">Synchronized optical motion capture, first-person 360 video, and physiological signals from simulated lifting tasks, collected to support fatigue-aware and vision-driven control of an active low-back exoskeleton. Release planned.</p>
-  <div class="tags"><span class="tag mod">Mocap</span><span class="tag mod">Egocentric video</span><span class="tag mod">Physio</span><span class="tag">Lifting</span><span class="tag">Lowering</span><span class="tag">Carrying</span><span class="tag">Walking</span><span class="tag">MMH</span></div>
+  <p class="desc">Synchronized optical motion capture, video, IMU, surface EMG, and pressure-insole recordings of manual material handling performed at different box weights, lift heights, and asymmetry angles. Release planned.</p>
+  <div class="tags"><span class="tag mod">Mocap</span><span class="tag mod">Video</span><span class="tag mod">IMU</span><span class="tag mod">EMG</span><span class="tag mod">Insole</span><span class="tag">Lifting</span><span class="tag">Lowering</span><span class="tag">MMH</span></div>
   <div class="cta-row"><span class="pending">Release pending</span></div>
 
   <h2>Details</h2>
   <dl class="detail-table">
-  <dt>Protocol / load</dt><dd>Boxes at multiple weights, walking and carrying in confined space</dd>
-  <dt>Equipment</dt><dd>OptiTrack optical mocap, helmet-mounted GoPro MAX 360 (Gen 2), physiological sensors</dd>
-  <dt>Sampling</dt><dd>mocap 120&nbsp;Hz · video 60&nbsp;Hz</dd>
+  <dt>Protocol / load</dt><dd>Manual material handling across different box weights, lift heights, and asymmetry angles</dd>
+  <dt>Equipment</dt><dd>Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles</dd>
   <dt>Formats</dt><dd><code>c3d</code>, <code>mp4</code>, <code>csv</code></dd>
   <dt>License</dt><dd>TBD</dd>
-  <dt>Keywords</dt><dd>egocentric, fatigue-aware, vision-driven-control, low-back-exoskeleton</dd>
-  <dt>Added to catalog</dt><dd>2026-01-01</dd>
+  <dt>Keywords</dt><dd>manual-material-handling, multimodal, lifting-height, asymmetry</dd>
+  <dt>Added to catalog</dt><dd>2026-08-12</dd>
   </dl>
-
-  <h2>Exoskeleton</h2>
-  <dl class="detail-table">
-  <dt>Record type</dt><dd>Exoskeleton-control data</dd>
-  <dt>Body region</dt><dd>Back</dd>
-  <dt>Study design</dt><dd>No device worn; collected for fatigue-aware, vision-driven control of an active low-back exoskeleton</dd>
-  </dl>
-  <p class="gov">This record is part of the <a href="/exoskeletons.html">exoskeleton collection</a>.</p>
 
   <h2>Cite</h2>
   <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
   <div class="citebox">
-    <pre id="bibtex">@misc{njit-egocentric-boxlifting,
+    <pre id="bibtex">@misc{njit-multimodality-mmh,
   author = {{NJIT Occupational Biomechanics Lab}},
-  title  = {{Egocentric Multimodal Box-Lifting Dataset}},
+  title  = {{Multimodality Manual Material Handling Dataset}},
   year   = {2026},
 }</pre>
     <button class="btn" id="copybib" type="button">Copy BibTeX</button>

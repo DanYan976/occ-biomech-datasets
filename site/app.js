@@ -24,7 +24,8 @@
   var MOD_LABEL = {
     mocap: "Mocap", imu: "IMU", emg: "EMG", force_plate: "Force plate",
     grf: "GRF", video: "Video", egocentric_video: "Egocentric video",
-    pose_estimation: "Pose est.", pressure_insole: "Insole", physiological: "Physio"
+    pose_estimation: "Pose est.", pressure_insole: "Insole", physiological: "Physio",
+    survey: "Survey"
   };
   var STATUS_LABEL = { open: "Open", coming_soon: "Coming soon", restricted: "Restricted" };
 
@@ -314,7 +315,7 @@
 
   var state = {
     q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set(),
-    exoRole: new Set(), exoRegion: new Set(), exoActuation: new Set()
+    exoRegion: new Set(), exoActuation: new Set()
   };
   var sortKey = "added-desc";
   var view = "cards";
@@ -378,14 +379,10 @@
     });
     if (present.has("other")) makeChip(licBox, "other", "Other", state.lic, false);
 
-    var roles = ["evaluation", "control_input"].filter(function (r) {
-      return EXO_DATA.some(function (d) { return exoRole(d) === r; });
-    });
     var regions = REGION_ORDER.filter(function (r) { return uniqueExo("body_region").indexOf(r) !== -1; });
     var actuations = ["passive", "active", "quasi_passive"].filter(function (a) {
       return uniqueExo("actuation").indexOf(a) !== -1;
     });
-    fillRow("exo-filter-row", "exo-role-chips", roles, EXO_ROLE_LABEL, state.exoRole);
     fillRow("exo-region-row", "exo-region-chips", regions, EXO_REGION_LABEL, state.exoRegion);
     fillRow("exo-actuation-row", "exo-actuation-chips", actuations, EXO_ACTUATION_LABEL, state.exoActuation);
   }
@@ -396,7 +393,6 @@
     if (state.lic.size && !state.lic.has(licenseBucket(d))) return false;
     if (state.tasks.size && !(d.tasks || []).some(function (t) { return state.tasks.has(t); })) return false;
     if (state.mods.size && !(d.modalities || []).some(function (m) { return state.mods.has(m); })) return false;
-    if (state.exoRole.size && !state.exoRole.has(exoRole(d))) return false;
     if (state.exoRegion.size && !exoList(d, "body_region").some(function (r) { return state.exoRegion.has(r); })) return false;
     if (state.exoActuation.size && !exoList(d, "actuation").some(function (a) { return state.exoActuation.has(a); })) return false;
     if (state.q) {
@@ -484,17 +480,6 @@
     if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  // A link like datasets.html?exo=evaluation lands with that filter applied,
-  // which is how the exoskeleton pages hand off to the full catalog.
-  function applyQueryFilters() {
-    var role = new URLSearchParams(location.search).get("exo");
-    if (!role || !EXO_ROLE_LABEL[role]) return;
-    var chips = document.querySelectorAll("#exo-role-chips .chip");
-    for (var i = 0; i < chips.length; i++) {
-      if (chips[i].textContent === EXO_ROLE_LABEL[role]) { chips[i].click(); return; }
-    }
-  }
-
   // ---- wiring -----------------------------------------------------------
   document.getElementById("search").addEventListener("input", function (e) {
     state.q = e.target.value.trim().toLowerCase();
@@ -509,7 +494,7 @@
   document.getElementById("clear").addEventListener("click", function () {
     state.q = "";
     [state.tasks, state.mods, state.status, state.lic,
-     state.exoRole, state.exoRegion, state.exoActuation].forEach(function (s) { s.clear(); });
+     state.exoRegion, state.exoActuation].forEach(function (s) { s.clear(); });
     document.getElementById("search").value = "";
     document.querySelectorAll(".chip[aria-pressed='true']").forEach(function (b) {
       b.setAttribute("aria-pressed", "false");
@@ -522,6 +507,5 @@
   buildFilters();
   setView(view);
   render();
-  applyQueryFilters();
   focusHash();
 })();

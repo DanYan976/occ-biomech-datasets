@@ -1,0 +1,36 @@
+id: dara-warehousing-har
+title: "DaRA: Multi-Sensor Human Activity & Context Recognition in Warehousing"
+status: open
+sample: false
+
+source:
+  authors: "Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A."
+  institution: "TU Dortmund University / Fraunhofer IML"
+  year: 2026
+
+access:
+  url: "https://doi.org/10.5281/zenodo.10468175"
+  doi: "10.5281/zenodo.10468175"
+  license: "CC-BY-NC-4.0"          # non-commercial only
+
+tasks: [carrying, reaching, mmh, walking]
+modalities: [imu, video, egocentric_video]
+
+subjects:
+  n: 18
+
+load: "Order picking, packaging, unpacking and storage scenarios in a simulated warehouse; 32 h of egocentric and 109 h of fixed-camera video"
+equipment: "MotionMiners IMU sets (6 IMUs per subject, 100 Hz); 57 BLE beacons for indoor localization; GoPro first-person cameras; 6 fixed Mevo cameras; warehouse-management-system scan events"
+sampling:
+  imu: 100
+  video: 30
+formats: [csv, mp4]
+tags: [logistics, warehousing, activity-recognition, har, picking, packaging, localization, non-commercial]
+description: >
+  Successor to LARa from the same Dortmund group: 18 subjects performed
+  order-picking, packaging, unpacking and storage scenarios in the Fraunhofer
+  IML research warehouse, captured with body-worn IMUs, first-person GoPro and
+  six fixed cameras, BLE indoor localization and warehouse-management-system
+  scan events. Annotated across 12 class categories (207 labels) spanning
+  activities, sub-activities per limb, processes and locations.
+added: 2026-08-17

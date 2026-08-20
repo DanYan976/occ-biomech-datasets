@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tool Library — OccBiomechanics</title>
+<meta name="description" content="Analysis software and tools for occupational biomechanics — video task analysis, computer-vision exposure assessment, and more. Each entry links to its vendor and the published methods behind it; commercial and free tools alike." />
+<link rel="canonical" href="https://occbiomechanics.org/tools.html" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260812" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Tool Library — OccBiomechanics" />
+<meta property="og:description" content="Analysis software and tools for occupational biomechanics, indexed with their vendors, licensing, and the published methods behind them." />
+<meta property="og:url" content="https://occbiomechanics.org/tools.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tool Library — OccBiomechanics" />
+<meta name="twitter:description" content="Analysis software and tools for occupational biomechanics, indexed with their vendors, licensing, and the published methods behind them." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=20260819" />
+<script src="nav.js" defer></script>
+<!-- TOOLS_JSONLD:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://occbiomechanics.org/tools.html#tool-mvta",
+      "name": "MVTA - Multimedia Video Task Analysis",
+      "url": "http://www.nexgenergo.com/ergonomics/mvta.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "NexGen Ergonomics"
+      },
+      "applicationCategory": "Video task analysis",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        },
+        {
+          "@type": "Person",
+          "name": "Yen T.Y."
+        }
+      ],
+      "description": "Video task analysis software developed by Radwin and Yen at UW-Madison and distributed commercially by NexGen Ergonomics: analysts mark event breakpoints in video played at any speed or direction, and MVTA computes time studies, event frequencies, duty cycles and postural analyses. With its companion single-frame duty-cycle tool (SVDA) it supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.",
+      "keywords": [
+        "duty-cycle",
+        "hand-activity-level",
+        "time-study",
+        "upper-extremity",
+        "video-analysis"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://occbiomechanics.org/tools.html#tool-kinevid",
+      "name": "KineVid Computer-Vision HAL & Lifting Monitor",
+      "url": "https://www.kinevid.com/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "KineVid LLC"
+      },
+      "applicationCategory": "AI video ergonomics analysis",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu Y.H."
+        },
+        {
+          "@type": "Person",
+          "name": "Chen C.-H."
+        },
+        {
+          "@type": "Person",
+          "name": "Yen T.Y."
+        },
+        {
+          "@type": "Person",
+          "name": "Wang X."
+        }
+      ],
+      "description": "UW-Madison spin-off commercializing Radwin's computer-vision exposure assessment: automatic ACGIH hand activity level from tracked hand motion in ordinary video, and a single-camera monitor that extracts lifting risk parameters aligned with the NIOSH lifting equation. Both are patent-protected (US 9,566,004 assigned to KineVid; US 11,450,148 assigned to WARF) and build on the hand speed-duty cycle HAL equation.",
+      "sameAs": [
+        "https://patents.google.com/patent/US9566004B1/en",
+        "https://patents.google.com/patent/US11450148B2/en"
+      ],
+      "keywords": [
+        "computer-vision",
+        "deep-learning",
+        "hand-activity-level",
+        "lifting",
+        "markerless"
+      ]
+    }
+  ]
+}
+</script>
+<!-- TOOLS_JSONLD:END -->
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/logo.svg" alt="" />
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="datasets.html">All Datasets</a>
+          <a href="exoskeletons.html">Exoskeleton Studies</a>
+          <a href="models.html">Models</a>
+          <a href="tools.html" class="active">Tools</a>
+        </div>
+      </div>
+      <a href="docs.html">Docs</a>
+      <a href="contribute.html">Contribute</a>
+      <a href="community.html">Community</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehead">
+  <div class="wrap">
+    <span class="eyebrow">Library</span>
+    <h1>Tools</h1>
+    <p class="lede">Usable analysis software and tools for occupational biomechanics — commercial and free alike. Where the Models library indexes published methods, this library indexes the products you can actually run: each entry records the vendor, how it is licensed, the patents behind it, and the published models it implements. Listing is descriptive and is not an endorsement. Looking for methods or code instead? Browse the <a href="models.html">model library</a>.</p>
+  </div>
+</section>
+
+<main class="wrap" id="tools">
+  <!-- The build script (scripts/build_catalog.py) replaces everything between
+       these markers with cards compiled from tools/*.yaml. -->
+  <!-- TOOLS:START -->
+<section class="exo-group">
+  <div class="section-head"><h2>All tools</h2><span class="count-note">2 tools</span></div>
+  <div class="grid">
+<article class="card" id="tool-mvta">
+  <div class="card-top">
+    <div><span class="cid">mvta</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Commercial</span></div>
+  </div>
+  <h3><a class="title-link" href="http://www.nexgenergo.com/ergonomics/mvta.html" target="_blank" rel="noopener">MVTA - Multimedia Video Task Analysis</a></h3>
+  <div class="src">University of Wisconsin-Madison</div>
+  <p class="desc">Video task analysis software developed by Radwin and Yen at UW-Madison and distributed commercially by NexGen Ergonomics: analysts mark event breakpoints in video played at any speed or direction, and MVTA computes time studies, event frequencies, duty cycles and postural analyses. With its companion single-frame duty-cycle tool (SVDA) it supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.</p>
+  <div class="tags"><span class="tag">video-analysis</span><span class="tag">time-study</span><span class="tag">duty-cycle</span><span class="tag">hand-activity-level</span><span class="tag">upper-extremity</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Vendor</span><span class="v" title="NexGen Ergonomics">NexGen Ergonomics</span></div><div class="metric"><span class="k">Input</span><span class="v" title="Task video, annotated interactively with event breakpoints">Task video, annotated interactively with event breakpoints</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Time-study reports, event frequency, duty cycle, postural analysis">Time-study reports, event frequency, duty cycle, postural analysis</span></div><div class="metric"><span class="k">Category</span><span class="v" title="Video task analysis">Video task analysis</span></div></div>
+  <div class="src">Built on: <a href="models.html#model-radwin-frequency-duty-cycle-hal">radwin-frequency-duty-cycle-hal</a>, <a href="models.html#model-akkas-hand-speed-duty-cycle-hal">akkas-hand-speed-duty-cycle-hal</a></div>
+  <div class="card-foot">
+    <span class="lic">Licensed via NexGen Ergonomics; ~$10k/yr University of Wisconsin consortium option</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="http://www.nexgenergo.com/ergonomics/mvta.html" target="_blank" rel="noopener">Website ↗</a><a class="out" href="http://www.nexgenergo.com/ergonomics/mvtafaq.html" target="_blank" rel="noopener">Docs ↗</a><a class="out" href="https://mvta.engr.wisc.edu/" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="tool-kinevid">
+  <div class="card-top">
+    <div><span class="cid">kinevid</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Commercial</span></div>
+  </div>
+  <h3><a class="title-link" href="https://www.kinevid.com/" target="_blank" rel="noopener">KineVid Computer-Vision HAL &amp; Lifting Monitor</a></h3>
+  <div class="src">University of Wisconsin-Madison</div>
+  <p class="desc">UW-Madison spin-off commercializing Radwin&#x27;s computer-vision exposure assessment: automatic ACGIH hand activity level from tracked hand motion in ordinary video, and a single-camera monitor that extracts lifting risk parameters aligned with the NIOSH lifting equation. Both are patent-protected (US 9,566,004 assigned to KineVid; US 11,450,148 assigned to WARF) and build on the hand speed-duty cycle HAL equation.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">hand-activity-level</span><span class="tag">lifting</span><span class="tag">markerless</span><span class="tag">deep-learning</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Vendor</span><span class="v" title="KineVid LLC">KineVid LLC</span></div><div class="metric"><span class="k">Input</span><span class="v" title="Conventional workplace video, markerless (no sensors on the worker)">Conventional workplace video, markerless (no sensors on the worker)</span></div><div class="metric"><span class="k">Output</span><span class="v" title="ACGIH hand activity level; lifting-task risk parameters (posture, hand/feet location, movement frequency)">ACGIH hand activity level; lifting-task risk parameters (posture, hand/feet location, movement frequency)</span></div><div class="metric"><span class="k">Category</span><span class="v" title="AI video ergonomics analysis">AI video ergonomics analysis</span></div></div>
+  <div class="src">Built on: <a href="models.html#model-akkas-hand-speed-duty-cycle-hal">akkas-hand-speed-duty-cycle-hal</a>, <a href="models.html#model-radwin-frequency-duty-cycle-hal">radwin-frequency-duty-cycle-hal</a></div>
+  <div class="card-foot">
+    <span class="lic">Patent-protected; licensed through WARF</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Website ↗</a><a class="out" href="https://patents.google.com/patent/US9566004B1/en" target="_blank" rel="noopener" title="Apparatus, method and system for measuring repetitive motion activity">US 9,566,004 ↗</a><a class="out" href="https://patents.google.com/patent/US11450148B2/en" target="_blank" rel="noopener" title="Movement monitoring system">US 11,450,148 ↗</a></span>
+  </div>
+</article>
+  </div>
+</section>
+<!-- TOOLS:END -->
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p id="contribute">Know a dataset, model, or tool we should list — or want to work together? See <a href="contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="models.json">models.json</a> · <a href="tools.json">tools.json</a> · <a href="docs.html">schema &amp; API docs</a></p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

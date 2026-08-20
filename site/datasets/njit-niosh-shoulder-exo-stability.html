@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset — OccBiomechanics</title>
+<meta name="description" content="Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned." />
+<link rel="canonical" href="https://occbiomechanics.org/datasets/njit-niosh-shoulder-exo-stability.html" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260812" />
+<meta name="theme-color" content="#0F766E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OccBiomechanics" />
+<meta property="og:title" content="Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset" />
+<meta property="og:description" content="Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned." />
+<meta property="og:url" content="https://occbiomechanics.org/datasets/njit-niosh-shoulder-exo-stability.html" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset" />
+<meta name="twitter:description" content="Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned." />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/style.css?v=20260819" />
+<script src="/nav.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img class="mark" src="/assets/logo.svg" alt="" />
+      <span class="name">OccBiomechanics</span>
+    </a>
+    <nav class="nav">
+      <a href="/index.html">Home</a>
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">Libraries</button>
+        <div class="dropdown-menu">
+          <a href="/datasets.html" class="active">All Datasets</a>
+          <a href="/exoskeletons.html">Exoskeleton Studies</a>
+          <a href="/models.html">Models</a>
+          <a href="/tools.html">Tools</a>
+        </div>
+      </div>
+      <a href="/docs.html">Docs</a>
+      <a href="/contribute.html">Contribute</a>
+      <a href="/community.html">Community</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap detail">
+  <p class="crumb"><a href="/datasets.html">← All datasets</a></p>
+
+  <div class="detail-head">
+    <div class="dmeta"><span class="cid">njit-niosh-shoulder-exo-stability</span> <span class="badge coming_soon">Coming soon</span> <span class="badge exo">Exo evaluation</span></div>
+    <h1>Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset</h1>
+    <p class="src">Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W.</p>
+    <p class="src">New Jersey Institute of Technology (AnyMotion Lab) / NIOSH · 2026</p>
+  </div>
+
+  <p class="desc">Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned.</p>
+  <div class="tags"><span class="tag mod">Mocap</span><span class="tag mod">Force plate</span><span class="tag mod">GRF</span><span class="tag">Lifting</span><span class="tag">Carrying</span><span class="tag">Walking</span><span class="tag">Lowering</span><span class="tag">MMH</span></div>
+  <div class="cta-row"><span class="pending">Release pending</span></div>
+
+  <h2>Details</h2>
+  <dl class="detail-table">
+  <dt>Subjects</dt><dd>n = 11 · 30.2 ± 3.9 yr</dd>
+  <dt>Protocol / load</dt><dd>Rigid 13.6 kg (30 lb) box, 14 x 10 x 6 in, floor-to-shelf transfer; 5 consecutive lift-walk-place cycles per trial, 2 trials per condition, 4 randomized conditions (8 trials per participant)</dd>
+  <dt>Equipment</dt><dd>OptiTrack 12-camera motion capture (Motive 3), two AMTI BMS464508 force plates with OPTIMA amplifiers; OpenSim v4.4 and MATLAB processing</dd>
+  <dt>Sampling</dt><dd>mocap 100&nbsp;Hz · force_plate 1000&nbsp;Hz</dd>
+  <dt>Formats</dt><dd><code>csv</code>, <code>trc</code>, <code>mot</code>, <code>mat</code></dd>
+  <dt>License</dt><dd>TBD</dd>
+  <dt>Keywords</dt><dd>exoskeleton, shoulder, balance, stability, margin-of-stability, sample-entropy, center-of-pressure, load-carrying, opensim</dd>
+  <dt>Added to catalog</dt><dd>2026-08-20</dd>
+  </dl>
+
+  <h2>Exoskeleton</h2>
+  <dl class="detail-table">
+  <dt>Record type</dt><dd>Device evaluation</dd>
+  <dt>Device(s)</dt><dd>EXO1 (4.9 kg), EXO2 (6.7 kg), EXO3 (8.6 kg)</dd>
+  <dt>Body region</dt><dd>Shoulder</dd>
+  <dt>Actuation</dt><dd>Passive</dd>
+  <dt>Study design</dt><dd>No-exoskeleton baseline vs. each of three passive shoulder-assist exoskeletons, within-subject repeated measures, condition order randomized</dd>
+  <dt>Outcomes</dt><dd>Kinematics, Kinetics / assistive forces</dd>
+  </dl>
+  <p class="gov">This record is part of the <a href="/exoskeletons.html">exoskeleton collection</a>.</p>
+
+  <h2>Cite</h2>
+  <p class="gov">Cite the dataset as its authors request (check the source page for an official citation); this BibTeX is a convenience starting point.</p>
+  <div class="citebox">
+    <pre id="bibtex">@misc{njit-niosh-shoulder-exo-stability,
+  author = {Chen, Y. and Ratnakumar, N. and Rodriguez, M. and Tohfafarosh, M. and Zheng, L. and Pan, C. and Zhou, X. and Yin, W.},
+  title  = {{Shoulder-Assist Exoskeleton Load-Carrying Walking and Lifting Stability Dataset}},
+  year   = {2026},
+}</pre>
+    <button class="btn" id="copybib" type="button">Copy BibTeX</button>
+  </div>
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="wrap">
+    <div class="eyebrow">About this catalog</div>
+    <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
+    <p>Know a dataset, model, or tool we should list — or want to work together? See <a href="/contribute.html">how to contribute</a>, or email the link and a short description and we will add it.</p>
+    <p>Machine-readable: <a href="/catalog.json">catalog.json</a> · <a href="/docs.html">schema &amp; API docs</a></p>
+    <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
+    <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("copybib").addEventListener("click", function () {
+  var btn = this;
+  navigator.clipboard.writeText(document.getElementById("bibtex").textContent).then(function () {
+    btn.textContent = "Copied ✓";
+    setTimeout(function () { btn.textContent = "Copy BibTeX"; }, 1600);
+  });
+});
+</script>
+</body>
+</html>
