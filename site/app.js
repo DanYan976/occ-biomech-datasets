@@ -29,7 +29,7 @@
   };
   var STATUS_LABEL = { open: "Open", coming_soon: "Coming soon", restricted: "Restricted" };
 
-  var EXO_ROLE_LABEL = { evaluation: "Device evaluation", control_input: "Exoskeleton-control data" };
+  var EXO_ROLE_LABEL = { evaluation: "Device evaluation", control_input: "Controller training data" };
   var EXO_ROLE_BADGE = { evaluation: "Exo evaluation" }; // control-input records carry no card badge
   var EXO_REGION_LABEL = {
     back: "Back", shoulder: "Shoulder", knee: "Knee", hip: "Hip",
@@ -287,7 +287,7 @@
       if (other) exoGroups.appendChild(other);
 
       var ctrl = group(
-        "Datasets for exoskeleton control",
+        "Training data for exoskeleton controllers",
         "No device was worn during capture. These recordings exist to train and validate the " +
         "intent detection, payload estimation, and joint-load models an exoskeleton controller needs.",
         controls

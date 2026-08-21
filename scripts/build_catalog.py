@@ -104,7 +104,7 @@ MOD_LABEL = {
     "pose_estimation": "Pose est.", "pressure_insole": "Insole", "physiological": "Physio",
     "survey": "Survey",
 }
-EXO_ROLE_LABEL = {"evaluation": "Device evaluation", "control_input": "Exoskeleton-control data"}
+EXO_ROLE_LABEL = {"evaluation": "Device evaluation", "control_input": "Controller training data"}
 EXO_REGION_LABEL = {
     "back": "Back", "shoulder": "Shoulder", "knee": "Knee", "hip": "Hip",
     "ankle": "Ankle", "neck": "Neck", "wrist": "Wrist", "full_body": "Full body",
