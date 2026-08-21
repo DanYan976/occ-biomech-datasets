@@ -1,7 +1,9 @@
-# Contributing a dataset
+# Contributing
 
-Thanks for helping build the catalog. Each dataset is one YAML file in
-`datasets/`. Adding or editing one is a pull request.
+Thanks for helping build the catalog. Each record is one YAML file — datasets
+in `datasets/`, models in `models/`, analysis tools in `tools/`. Adding or
+editing one is a pull request. The steps below are written for datasets; the
+[Models and tools](#models-and-tools) section covers what differs.
 
 ## Steps
 
@@ -21,6 +23,26 @@ Thanks for helping build the catalog. Each dataset is one YAML file in
    outside the controlled vocabulary.
 4. Commit the YAML (and the regenerated `site/index.html` / `site/catalog.json`)
    and open a pull request.
+
+## Models and tools
+
+Same workflow, different folder and schema:
+
+| Library | Copy                   | Validate against           | Required fields                   |
+|---------|------------------------|----------------------------|-----------------------------------|
+| Models  | `models/_template.yaml` | `schema/model.schema.json` | `id`, `title`, `source`, `links`  |
+| Tools   | `tools/_template.yaml`  | `schema/tool.schema.json`  | `id`, `title`, `vendor`, `links`  |
+
+A **model** is a published method — a pose estimator, an exposure equation, a
+biomechanical model — with a paper landing page in `links.paper` and, when
+released, code in `links.code` plus its `code_license`. A **tool** is software
+someone can actually obtain and run; set `licensing` to `commercial`, `free`, or
+`open_source` and use `pricing_note` for the one-line terms. Link tools to the
+models they implement with `related_models`, and either to catalog datasets with
+`related_datasets` (use the dataset `id`s). `python scripts/build_catalog.py`
+validates all three libraries at once and regenerates `site/models.json`,
+`site/tools.json`, `site/models.html`, and `site/tools.html`; commit those with
+your YAML.
 
 ## Controlled vocabularies
 

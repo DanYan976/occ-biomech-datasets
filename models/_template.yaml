@@ -1,0 +1,30 @@
+# Copy this file to a new name (e.g. models/my-model.yaml) and fill it in.
+# Files starting with "_" are ignored by the build. See schema/model.schema.json
+# for the full field list. Required: id, title, source, links (at least one URL).
+
+id: my-model                          # lowercase-hyphenated slug, same as the filename
+title: "Human-readable model name"
+sample: false
+
+source:
+  authors: "Last F., Last F., et al."
+  institution: "Lab / University"
+  year: 2025
+
+links:                                # at least one; paper is the canonical landing page
+  paper: "https://doi.org/10.xxxx/xxxxx"
+  doi: "10.xxxx/xxxxx"
+  code: "https://github.com/org/repo"  # omit if no code is released
+  # preprint: "https://arxiv.org/abs/xxxx.xxxxx"
+  # record: "https://stacks.cdc.gov/..."
+
+code_license: "MIT"                   # SPDX-style; omit when no code is released
+domain: "Occupational context the model was built for"
+inputs: "What the model consumes, e.g. multi-view RGB images"
+outputs: "What the model produces, e.g. whole-body joint angles"
+related_datasets: []                  # ids of catalog datasets it was trained on / tied to
+tags: [pose-estimation, markerless]
+description: >
+  One or two sentences: what the model does, what it was validated on, and
+  where the code lives. Keep it under ~600 characters.
+added: 2025-01-01
