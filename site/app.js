@@ -30,12 +30,11 @@
   var STATUS_LABEL = { open: "Open", coming_soon: "Coming soon", restricted: "Restricted" };
 
   var EXO_ROLE_LABEL = { evaluation: "Device evaluation", control_input: "Exoskeleton-control data" };
-  var EXO_ROLE_BADGE = { evaluation: "Exo evaluation", control_input: "Exo-control data" };
+  var EXO_ROLE_BADGE = { evaluation: "Exo evaluation" }; // control-input records carry no card badge
   var EXO_REGION_LABEL = {
     back: "Back", shoulder: "Shoulder", knee: "Knee", hip: "Hip",
     ankle: "Ankle", neck: "Neck", wrist: "Wrist", full_body: "Full body"
   };
-  var EXO_ACTUATION_LABEL = { passive: "Passive", active: "Active", quasi_passive: "Quasi-passive" };
   var REGION_ORDER = ["back", "shoulder", "knee", "hip", "ankle", "neck", "wrist", "full_body"];
 
   // License strings are free text; bucket them for filtering.
@@ -135,7 +134,7 @@
     var badges = el("div");
     badges.style.cssText = "display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end";
     badges.appendChild(el("span", "badge " + d.status, STATUS_LABEL[d.status] || d.status));
-    if (exoRole(d)) badges.appendChild(el("span", "badge exo", EXO_ROLE_BADGE[exoRole(d)]));
+    if (EXO_ROLE_BADGE[exoRole(d)]) badges.appendChild(el("span", "badge exo", EXO_ROLE_BADGE[exoRole(d)]));
     if (d.sample) badges.appendChild(el("span", "badge sample", "sample"));
     top.appendChild(left);
     top.appendChild(badges);
@@ -313,10 +312,7 @@
   var taskBox = document.getElementById("task-chips");
   if (!grid || !taskBox) return;
 
-  var state = {
-    q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set(),
-    exoRegion: new Set(), exoActuation: new Set()
-  };
+  var state = { q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set() };
   var sortKey = "added-desc";
   var view = "cards";
   try { view = localStorage.getItem("ob-view") || "cards"; } catch (e) {}
@@ -328,12 +324,6 @@
     var s = new Set();
     DATA.forEach(function (d) { (d[key] || []).forEach(function (v) { s.add(v); }); });
     return Array.from(s).sort();
-  }
-
-  function uniqueExo(key) {
-    var s = new Set();
-    EXO_DATA.forEach(function (d) { exoList(d, key).forEach(function (v) { s.add(v); }); });
-    return Array.from(s);
   }
 
   function makeChip(container, value, label, bucket, statusClass) {
@@ -349,15 +339,6 @@
       render();
     });
     container.appendChild(b);
-  }
-
-  // An exoskeleton row is only shown when the catalog holds those values.
-  function fillRow(rowId, boxId, values, labels, bucket) {
-    var row = document.getElementById(rowId);
-    var box = document.getElementById(boxId);
-    if (!row || !box || !values.length) return;
-    values.forEach(function (v) { makeChip(box, v, labels[v] || v, bucket, false); });
-    row.hidden = false;
   }
 
   function buildFilters() {
@@ -378,13 +359,6 @@
       if (present.has(b.key)) makeChip(licBox, b.key, b.label, state.lic, false);
     });
     if (present.has("other")) makeChip(licBox, "other", "Other", state.lic, false);
-
-    var regions = REGION_ORDER.filter(function (r) { return uniqueExo("body_region").indexOf(r) !== -1; });
-    var actuations = ["passive", "active", "quasi_passive"].filter(function (a) {
-      return uniqueExo("actuation").indexOf(a) !== -1;
-    });
-    fillRow("exo-region-row", "exo-region-chips", regions, EXO_REGION_LABEL, state.exoRegion);
-    fillRow("exo-actuation-row", "exo-actuation-chips", actuations, EXO_ACTUATION_LABEL, state.exoActuation);
   }
 
   // ---- filtering + sorting ---------------------------------------------
@@ -393,8 +367,6 @@
     if (state.lic.size && !state.lic.has(licenseBucket(d))) return false;
     if (state.tasks.size && !(d.tasks || []).some(function (t) { return state.tasks.has(t); })) return false;
     if (state.mods.size && !(d.modalities || []).some(function (m) { return state.mods.has(m); })) return false;
-    if (state.exoRegion.size && !exoList(d, "body_region").some(function (r) { return state.exoRegion.has(r); })) return false;
-    if (state.exoActuation.size && !exoList(d, "actuation").some(function (a) { return state.exoActuation.has(a); })) return false;
     if (state.q) {
       var hay = [
         d.title, d.id, (d.source && d.source.institution), (d.source && d.source.authors),
@@ -493,8 +465,7 @@
   document.getElementById("view-table").addEventListener("click", function () { setView("table"); });
   document.getElementById("clear").addEventListener("click", function () {
     state.q = "";
-    [state.tasks, state.mods, state.status, state.lic,
-     state.exoRegion, state.exoActuation].forEach(function (s) { s.clear(); });
+    [state.tasks, state.mods, state.status, state.lic].forEach(function (s) { s.clear(); });
     document.getElementById("search").value = "";
     document.querySelectorAll(".chip[aria-pressed='true']").forEach(function (b) {
       b.setAttribute("aria-pressed", "false");

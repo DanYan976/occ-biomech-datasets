@@ -424,8 +424,8 @@ def _detail_page(entry: dict) -> str:
                        + "\n".join(exo_rows)
                        + '\n  </dl>\n  <p class="gov">This record is part of the '
                          '<a href="/exoskeletons.html">exoskeleton collection</a>.</p>\n\n  ')
-        label = "Exo evaluation" if exo.get("role") == "evaluation" else "Exo-control data"
-        exo_badge = f' <span class="badge exo">{label}</span>'
+        if exo.get("role") == "evaluation":  # control-input records carry no badge
+            exo_badge = ' <span class="badge exo">Exo evaluation</span>'
 
     row("Subjects", " · ".join(subj_bits))
     row("Protocol / load", e(entry.get("load", "")))
@@ -479,8 +479,8 @@ def _detail_page(entry: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20260819" />
-<script src="/nav.js" defer></script>
+<link rel="stylesheet" href="/style.css?v=20260821" />
+<script src="/nav.js?v=20260821" defer></script>
 {jsonld}</head>
 <body>
 
