@@ -22,7 +22,7 @@ Run from the repo root:  python scripts/build_catalog.py
 Requires: pyyaml, jsonschema  (pip install -r scripts/requirements.txt)
 
 Set SITE_URL to the canonical origin when building for a different host, e.g.
-  SITE_URL=https://occbiomechanics.netlify.app python scripts/build_catalog.py
+  SITE_URL=https://preview.example.org python scripts/build_catalog.py
 """
 from __future__ import annotations
 import datetime as _dt

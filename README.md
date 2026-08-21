@@ -90,10 +90,9 @@ occ-biomech-datasets/
 │   ├── catalog.json          # generated
 │   ├── models.json           # generated
 │   └── tools.json            # generated
-├── .github/workflows/
-│   ├── deploy.yml            # build + deploy to GitHub Pages on every push to main
-│   └── link-check.yml        # monthly dead-link check; opens an issue if any fail
-└── netlify.toml              # legacy (site moved to GitHub Pages); kept only until the old Netlify site is unlinked
+└── .github/workflows/
+    ├── deploy.yml            # build + deploy to GitHub Pages on every push to main
+    └── link-check.yml        # monthly dead-link check; opens an issue if any fail
 ```
 
 ## Add a dataset
