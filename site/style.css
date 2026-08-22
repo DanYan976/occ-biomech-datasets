@@ -75,8 +75,8 @@ a.brand { color: inherit; }
 a.brand:hover { text-decoration: none; }
 .brand .mark {
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
 }
 .brand .name { font-weight: 600; letter-spacing: -.01em; }
 .nav { display: flex; align-items: center; gap: 22px; }
