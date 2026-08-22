@@ -6,26 +6,24 @@ is shared (Open Graph / Twitter cards).
 This is NOT part of the normal build: run it only when the brand, headline, or
 subtitle changes, then commit the resulting PNG.
 
-    pip install pillow cairosvg
+    pip install pillow
     python scripts/make_og_image.py
 
-It draws in the site's own palette, rasterizes site/favicon.svg for the mark so
-the lockup can never drift from the favicon, and pulls IBM Plex from Google
+It draws in the site's own palette, uses site/assets/logo.png for the mark so
+the lockup can never drift from the header logo, and pulls IBM Plex from Google
 Fonts (needs network) so the type matches the pages.
 """
 from __future__ import annotations
 
-import io
 import re
 import sys
 import urllib.request
 from pathlib import Path
 
 try:
-    import cairosvg
     from PIL import Image, ImageDraw, ImageFont
 except ImportError:
-    sys.exit("Missing dependency. Run: pip install pillow cairosvg")
+    sys.exit("Missing dependency. Run: pip install pillow")
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "site"
@@ -75,9 +73,7 @@ def fonts() -> dict[str, Path]:
 
 
 def paste_mark(img: Image.Image, x: int, y: int, size: int) -> None:
-    png = cairosvg.svg2png(url=str(SITE / "favicon.svg"),
-                           output_width=size * 4, output_height=size * 4)
-    mark = Image.open(io.BytesIO(png)).convert("RGBA").resize((size, size), Image.LANCZOS)
+    mark = Image.open(SITE / "assets" / "logo.png").convert("RGBA").resize((size, size), Image.LANCZOS)
     img.paste(mark, (x, y), mark)
 
 
