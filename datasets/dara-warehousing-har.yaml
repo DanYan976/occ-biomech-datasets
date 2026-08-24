@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A."
   institution: "TU Dortmund University / Fraunhofer IML"
+  country: [DE]
   year: 2026
 
 access:

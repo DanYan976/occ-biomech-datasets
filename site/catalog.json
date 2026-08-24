@@ -10,6 +10,10 @@
       "source": {
         "authors": "Maurice P., Malaisé A., Ivaldi S., Rochel O., Amiot C., Paris N., Richard G.-J., Fritzsche L.",
         "institution": "Inria / DFKI (AnDy project)",
+        "country": [
+          "FR",
+          "DE"
+        ],
         "year": 2019
       },
       "access": {
@@ -26,6 +30,7 @@
       "modalities": [
         "mocap",
         "imu",
+        "pressure",
         "video"
       ],
       "subjects": {
@@ -56,6 +61,9 @@
       "source": {
         "authors": "Niemann F., Reining C., Moya Rueda F., Altermann E., Nair N.R., Steffens J.A., Fink G.A., ten Hompel M.",
         "institution": "TU Dortmund University",
+        "country": [
+          "DE"
+        ],
         "year": 2020
       },
       "access": {
@@ -102,6 +110,9 @@
       "source": {
         "authors": "Li L., Xie Z., Xu X.",
         "institution": "NC State University (Biomechanics Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2020
       },
       "access": {
@@ -150,6 +161,9 @@
       "source": {
         "authors": "Northwestern University",
         "institution": "Northwestern University",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -192,6 +206,9 @@
       "source": {
         "authors": "Yoshimura N., Morales J., Maekawa T., Hara T.",
         "institution": "Osaka University",
+        "country": [
+          "JP"
+        ],
         "year": 2024
       },
       "access": {
@@ -206,7 +223,7 @@
       "modalities": [
         "imu",
         "physiological",
-        "pose_estimation",
+        "depth",
         "video"
       ],
       "subjects": {
@@ -238,6 +255,9 @@
       "source": {
         "authors": "Pesenti M.",
         "institution": "Politecnico di Milano",
+        "country": [
+          "IT"
+        ],
         "year": 2022
       },
       "access": {
@@ -290,6 +310,9 @@
       "source": {
         "authors": "Casey R., Nuesslein C., Davenport F., Wheeler J., Mazumdar A., Sawicki G.S., Young A.J.",
         "institution": "EPIC Lab, Georgia Institute of Technology",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -310,11 +333,10 @@
       ],
       "modalities": [
         "imu",
-        "pressure_insole",
+        "pressure",
         "emg",
         "mocap",
-        "force_plate",
-        "grf"
+        "force_plate"
       ],
       "subjects": {
         "n": 10,
@@ -333,7 +355,7 @@
       "equipment": "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells",
       "sampling": {
         "imu": 200,
-        "pressure_insole": 80,
+        "pressure": 80,
         "mocap": 200,
         "force_plate": 2000
       },
@@ -360,6 +382,10 @@
       "source": {
         "authors": "Maurice P., Camernik J., Gorjan D., Babic J., Schirrmeister B., Bornmann J., Ivaldi S., Tagliapietra L., Latella C., Pucci D.",
         "institution": "Inria / Jozef Stefan Institute (AnDy project)",
+        "country": [
+          "FR",
+          "SI"
+        ],
         "year": 2018
       },
       "access": {
@@ -373,7 +399,7 @@
       ],
       "modalities": [
         "mocap",
-        "grf",
+        "force_plate",
         "emg",
         "physiological",
         "video"
@@ -427,6 +453,9 @@
       "source": {
         "authors": "Divekar N., Thomas G., Yerva A., Frame H., Gregg R.",
         "institution": "University of Michigan",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -443,7 +472,7 @@
       ],
       "modalities": [
         "emg",
-        "grf",
+        "pressure",
         "imu"
       ],
       "subjects": {
@@ -470,7 +499,7 @@
         ]
       },
       "load": "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons",
-      "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors",
+      "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, pressure insoles (foot force)",
       "formats": [
         "mat"
       ],
@@ -492,6 +521,9 @@
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -504,6 +536,7 @@
         "holding"
       ],
       "modalities": [
+        "mocap",
         "emg",
         "physiological"
       ],
@@ -530,7 +563,7 @@
         ]
       },
       "load": "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations",
-      "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, optical motion capture for trunk/hip angles, heart-rate monitor",
       "tags": [
         "exoskeleton",
         "back",
@@ -549,6 +582,9 @@
       "source": {
         "authors": "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M.",
         "institution": "University of Twente",
+        "country": [
+          "NL"
+        ],
         "year": 2024
       },
       "access": {
@@ -611,6 +647,9 @@
       "source": {
         "authors": "Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A.",
         "institution": "TU Dortmund University / Fraunhofer IML",
+        "country": [
+          "DE"
+        ],
         "year": 2026
       },
       "access": {
@@ -663,6 +702,9 @@
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -676,6 +718,7 @@
         "pulling"
       ],
       "modalities": [
+        "mocap",
         "emg",
         "physiological"
       ],
@@ -701,7 +744,7 @@
         ]
       },
       "load": "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer",
-      "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, trunk/hip angle measurement, heart-rate monitor",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, optical motion capture for trunk/hip angles, heart-rate monitor",
       "tags": [
         "exoskeleton",
         "back",
@@ -720,6 +763,9 @@
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2023
       },
       "access": {
@@ -758,6 +804,9 @@
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -797,6 +846,9 @@
       "source": {
         "authors": "Mayer D., Siebert T., Hasenmaier J., Stutzig N.",
         "institution": "University of Stuttgart",
+        "country": [
+          "DE"
+        ],
         "year": 2025
       },
       "access": {
@@ -851,6 +903,9 @@
       "source": {
         "authors": "Mitterlehner L., Li Y.X., Wolf M.",
         "institution": "Graz University of Technology",
+        "country": [
+          "AT"
+        ],
         "year": 2023
       },
       "access": {
@@ -918,6 +973,9 @@
       "source": {
         "authors": "Reimeir B., Calisti M., Mittermeier R., Ralfs L., Weidner R.",
         "institution": "University of Innsbruck",
+        "country": [
+          "AT"
+        ],
         "year": 2023
       },
       "access": {
@@ -980,6 +1038,9 @@
       "source": {
         "authors": "Kim S., Nussbaum M.A., Smets M., Ranganathan S.",
         "institution": "Virginia Tech / Ford Motor Company",
+        "country": [
+          "US"
+        ],
         "year": 2021
       },
       "access": {
@@ -1049,6 +1110,9 @@
       "source": {
         "authors": "NJIT Occupational Biomechanics Lab",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1098,6 +1162,9 @@
       "source": {
         "authors": "NJIT Occupational Biomechanics Lab",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1110,7 +1177,7 @@
         "video",
         "imu",
         "emg",
-        "pressure_insole"
+        "pressure"
       ],
       "load": "Manual material handling across different box weights, lift heights, and asymmetry angles",
       "equipment": "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles",
@@ -1136,6 +1203,9 @@
       "source": {
         "authors": "Chen, Y., Santos, H., Tao, J., Ding, Y., Zhang, X.",
         "institution": "Texas A&M University / Georgia Institute of Technology",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "tasks": [
@@ -1145,8 +1215,7 @@
       "modalities": [
         "mocap",
         "imu",
-        "video",
-        "pose_estimation"
+        "video"
       ],
       "subjects": {
         "n": 24
@@ -1175,6 +1244,9 @@
       "source": {
         "authors": "Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W.",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab) / NIOSH",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1186,8 +1258,7 @@
       ],
       "modalities": [
         "mocap",
-        "force_plate",
-        "grf"
+        "force_plate"
       ],
       "subjects": {
         "n": 11,

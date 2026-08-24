@@ -9,8 +9,9 @@ subtitle changes, then commit the resulting PNG.
     pip install pillow
     python scripts/make_og_image.py
 
-It draws in the site's own palette, uses site/assets/logo.png for the mark so
-the lockup can never drift from the header logo, and pulls IBM Plex from Google
+It draws in the site's own palette, uses site/assets/logo-source.png for the
+mark (the header logo's own artwork, minus its baked-in white square, so it
+blends into the card background), and pulls IBM Plex from Google
 Fonts (needs network) so the type matches the pages.
 """
 from __future__ import annotations
@@ -73,8 +74,12 @@ def fonts() -> dict[str, Path]:
 
 
 def paste_mark(img: Image.Image, x: int, y: int, size: int) -> None:
-    mark = Image.open(SITE / "assets" / "logo.png").convert("RGBA").resize((size, size), Image.LANCZOS)
-    img.paste(mark, (x, y), mark)
+    # logo.png bakes in a white square; the transparent source blends into PAPER.
+    mark = Image.open(SITE / "assets" / "logo-source.png").convert("RGBA")
+    mark = mark.crop(mark.getchannel("A").getbbox())
+    scale = size / max(mark.size)
+    mark = mark.resize((round(mark.width * scale), round(mark.height * scale)), Image.LANCZOS)
+    img.paste(mark, (x + (size - mark.width) // 2, y + (size - mark.height) // 2), mark)
 
 
 def wrap(draw: ImageDraw.ImageDraw, words: list, font, max_width: int) -> list[list]:

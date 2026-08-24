@@ -1,0 +1,28 @@
+id: wang-2d-video-lifting-monitor
+title: "2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation"
+sample: false
+
+source:
+  authors: "Wang X., Hu Y.H., Lu M.-L., Radwin R.G."
+  institution: "University of Wisconsin-Madison / NIOSH"
+  year: 2019
+
+links:
+  paper: "https://doi.org/10.1080/00140139.2019.1618500"
+  doi: "10.1080/00140139.2019.1618500"
+  record: "https://stacks.cdc.gov/view/cdc/213608"
+  website: "https://www.kinevid.com/"
+
+domain: "Manual lifting — Revised NIOSH Lifting Equation risk assessment"
+inputs: "Single sagittal-plane video camera, no sensors on the worker"
+outputs: "Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit"
+tags: [computer-vision, lifting, niosh-lifting-equation, markerless, deep-learning]
+description: >
+  Single-camera computer-vision method that detects lifting instances with a
+  motion "ghosting" effect and predicts hand and feet locations to extract the
+  spatial and temporal factors of the revised NIOSH lifting equation
+  (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were
+  within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture
+  classification (Greene et al., Human Factors, 2019); patented as US 11,450,148
+  (WARF) and commercialized by KineVid LLC.
+added: 2026-08-22

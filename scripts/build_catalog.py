@@ -53,20 +53,16 @@ except ImportError:
 ROOT = Path(__file__).resolve().parents[1]
 DATASETS_DIR = ROOT / "datasets"
 MODELS_DIR = ROOT / "models"
-TOOLS_DIR = ROOT / "tools"
 SCHEMA_PATH = ROOT / "schema" / "dataset.schema.json"
 MODEL_SCHEMA_PATH = ROOT / "schema" / "model.schema.json"
-TOOL_SCHEMA_PATH = ROOT / "schema" / "tool.schema.json"
 SITE_DIR = ROOT / "site"
 INDEX_HTML = SITE_DIR / "index.html"
 DATASETS_HTML = SITE_DIR / "datasets.html"
 EXOS_HTML = SITE_DIR / "exoskeletons.html"
 MODELS_HTML = SITE_DIR / "models.html"
-TOOLS_HTML = SITE_DIR / "tools.html"
 DOCS_HTML = SITE_DIR / "docs.html"
 CATALOG_JSON = SITE_DIR / "catalog.json"
 MODELS_JSON = SITE_DIR / "models.json"
-TOOLS_JSON = SITE_DIR / "tools.json"
 DETAIL_DIR = SITE_DIR / "datasets"
 SITEMAP_XML = SITE_DIR / "sitemap.xml"
 
@@ -80,10 +76,6 @@ MODELS_START = "<!-- MODELS:START -->"
 MODELS_END = "<!-- MODELS:END -->"
 MODELS_JSONLD_START = "<!-- MODELS_JSONLD:START -->"
 MODELS_JSONLD_END = "<!-- MODELS_JSONLD:END -->"
-TOOLS_START = "<!-- TOOLS:START -->"
-TOOLS_END = "<!-- TOOLS:END -->"
-TOOLS_JSONLD_START = "<!-- TOOLS_JSONLD:START -->"
-TOOLS_JSONLD_END = "<!-- TOOLS_JSONLD:END -->"
 
 # Canonical origin, used to mint stable @id values in the JSON-LD.
 SITE_URL = os.environ.get("SITE_URL", "https://occbiomechanics.org").rstrip("/")
@@ -99,9 +91,9 @@ TASK_LABEL = {
     "assembly": "Assembly", "mmh": "MMH",
 }
 MOD_LABEL = {
-    "mocap": "Mocap", "imu": "IMU", "emg": "EMG", "force_plate": "Force plate",
-    "grf": "GRF", "video": "Video", "egocentric_video": "Egocentric video",
-    "pose_estimation": "Pose est.", "pressure_insole": "Insole", "physiological": "Physio",
+    "mocap": "Optical mocap", "imu": "IMU", "force_plate": "Force plate",
+    "pressure": "Pressure insole / glove", "emg": "EMG", "physiological": "Physiological",
+    "video": "Video", "egocentric_video": "Egocentric video", "depth": "Depth / LiDAR",
     "survey": "Survey",
 }
 EXO_ROLE_LABEL = {"evaluation": "Device evaluation", "control_input": "Controller training data"}
@@ -110,6 +102,15 @@ EXO_REGION_LABEL = {
     "ankle": "Ankle", "neck": "Neck", "wrist": "Wrist", "full_body": "Full body",
 }
 EXO_ACTUATION_LABEL = {"passive": "Passive", "active": "Active", "quasi_passive": "Quasi-passive"}
+# ISO 3166-1 alpha-2 → display name for source.country (mirror of COUNTRY_LABEL in site/app.js).
+COUNTRY_LABEL = {
+    "AT": "Austria", "AU": "Australia", "BE": "Belgium", "BR": "Brazil", "CA": "Canada", "CH": "Switzerland",
+    "CN": "China", "CZ": "Czechia", "DE": "Germany", "DK": "Denmark", "ES": "Spain", "FI": "Finland",
+    "FR": "France", "GB": "United Kingdom", "GR": "Greece", "HK": "Hong Kong", "IE": "Ireland", "IL": "Israel",
+    "IN": "India", "IT": "Italy", "JP": "Japan", "KR": "South Korea", "MX": "Mexico", "NL": "Netherlands",
+    "NO": "Norway", "NZ": "New Zealand", "PL": "Poland", "PT": "Portugal", "SE": "Sweden", "SG": "Singapore",
+    "SI": "Slovenia", "TR": "Türkiye", "TW": "Taiwan", "US": "United States",
+}
 EXO_OUTCOME_LABEL = {
     "muscle_activity": "Muscle activity (EMG)", "kinematics": "Kinematics",
     "kinetics": "Kinetics / assistive forces", "metabolic": "Metabolic cost",
@@ -454,7 +455,8 @@ def _detail_page(entry: dict) -> str:
                         + '\n  </ul>\n\n  ')
 
     authors_line = f'<p class="src">{e(source.get("authors", ""))}</p>' if source.get("authors") else ""
-    inst_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
+    country_line = ", ".join(COUNTRY_LABEL.get(c, c) for c in (source.get("country") or []))
+    inst_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year"), country_line] if x)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -464,18 +466,18 @@ def _detail_page(entry: dict) -> str:
 <title>{e(entry['title'])} — OccBiomechanics</title>
 <meta name="description" content="{e(desc)}" />
 <link rel="canonical" href="{e(url)}" />
-<link rel="icon" type="image/png" href="/favicon.png?v=20260822" />
+<link rel="icon" type="image/png" href="/favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="{e(entry['title'])}" />
 <meta property="og:description" content="{e(desc)}" />
 <meta property="og:url" content="{e(url)}" />
-<meta property="og:image" content="{SITE_URL}/og-image.png" />
+<meta property="og:image" content="{SITE_URL}/og-image.png?v=20260824" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{e(entry['title'])}" />
 <meta name="twitter:description" content="{e(desc)}" />
-<meta name="twitter:image" content="{SITE_URL}/og-image.png" />
+<meta name="twitter:image" content="{SITE_URL}/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -487,7 +489,7 @@ def _detail_page(entry: dict) -> str:
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img class="mark" src="/assets/logo.png" alt="" />
+      <img class="mark" src="/assets/logo.png?v=20260824" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
@@ -498,7 +500,6 @@ def _detail_page(entry: dict) -> str:
           <a href="/datasets.html" class="active">All Datasets</a>
           <a href="/exoskeletons.html">Exoskeleton Studies</a>
           <a href="/models.html">Models</a>
-          <a href="/tools.html">Tools</a>
         </div>
       </div>
       <a href="/docs.html">Docs</a>
@@ -589,6 +590,8 @@ def _model_link_row(links: dict) -> str:
         parts.append(f'<a class="out" href="{e(links["preprint"])}" target="_blank" rel="noopener">Preprint ↗</a>')
     if links.get("record"):
         parts.append(f'<a class="out" href="{e(links["record"])}" target="_blank" rel="noopener">Record ↗</a>')
+    if links.get("website"):
+        parts.append(f'<a class="out" href="{e(links["website"])}" target="_blank" rel="noopener">Software ↗</a>')
     return '<span style="display:flex;gap:14px;flex-wrap:wrap">' + "".join(parts) + "</span>"
 
 
@@ -596,8 +599,12 @@ def _model_card(m: dict) -> str:
     e = html.escape
     source = m.get("source") or {}
     links = m.get("links") or {}
+    coming = m.get("status") == "coming_soon"
     has_code = bool(links.get("code"))
-    badge = ('<span class="badge open">Code</span>' if has_code
+    has_software = bool(links.get("website"))
+    badge = ('<span class="badge coming_soon">Coming soon</span>' if coming
+             else '<span class="badge open">Code</span>' if has_code
+             else '<span class="badge restricted">Software</span>' if has_software
              else '<span class="badge restricted">Paper only</span>')
     primary = links.get("code") or links.get("paper") or links.get("record") or ""
     src_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
@@ -611,21 +618,29 @@ def _model_card(m: dict) -> str:
             metrics.append(f'<div class="metric"><span class="k">{label}</span>'
                            f'<span class="v" title="{e(value)}">{e(value)}</span></div>')
 
-    lic = m.get("code_license") or ("—" if has_code else "No code released")
+    lic = m.get("code_license") or ("—" if has_code
+                                    else "Available as software" if has_software
+                                    else "Release pending" if coming
+                                    else "No code released")
 
-    return f"""<article class="card" id="model-{e(m['id'])}">
+    title = (f'<a class="title-link" href="{e(primary)}" target="_blank" rel="noopener">{e(m["title"])}</a>'
+             if primary else e(m["title"]))
+    foot_links = (_model_link_row(links) if links
+                  else '<span class="pending">Paper pending</span>' if coming else "")
+
+    return f"""<article class="card{' is-coming' if coming else ''}" id="model-{e(m['id'])}">
   <div class="card-top">
     <div><span class="cid">{e(m['id'])}</span></div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">{badge}</div>
   </div>
-  <h3><a class="title-link" href="{e(primary)}" target="_blank" rel="noopener">{e(m['title'])}</a></h3>
+  <h3>{title}</h3>
   <div class="src">{e(src_line)}</div>
   <p class="desc">{e(desc)}</p>
   <div class="tags">{tags}</div>
   <div class="metrics">{''.join(metrics)}</div>
   <div class="card-foot">
     <span class="lic">{e(lic)}</span>
-    {_model_link_row(links)}
+    {foot_links}
   </div>
 </article>"""
 
@@ -635,7 +650,8 @@ def models_jsonld(models: list[dict]) -> dict:
     ScholarlyArticle — so Google indexes each for what it actually is."""
     nodes = []
     for m in models:
-        if m.get("sample"):
+        # coming_soon entries have no public URL yet, so nothing to index
+        if m.get("sample") or m.get("status") == "coming_soon":
             continue
         source = m.get("source") or {}
         links = m.get("links") or {}
@@ -690,138 +706,12 @@ def build_models(models: list[dict]) -> None:
     print(f"  -> {MODELS_JSON.relative_to(ROOT)}; {n} model cards + JSON-LD injected into models.html")
 
 
-# ------------------------------------------------------------- tool library ----
-
-LICENSING_LABEL = {"commercial": "Commercial", "free": "Free", "open_source": "Open source"}
-
-
-def _tool_link_row(links: dict, patents: list[dict]) -> str:
-    """Outbound links for a tool card: vendor page first, then patents."""
-    e = html.escape
-    parts = []
-    if links.get("website"):
-        parts.append(f'<a class="out" href="{e(links["website"])}" target="_blank" rel="noopener">Website ↗</a>')
-    if links.get("docs"):
-        parts.append(f'<a class="out" href="{e(links["docs"])}" target="_blank" rel="noopener">Docs ↗</a>')
-    if links.get("paper"):
-        parts.append(f'<a class="out" href="{e(links["paper"])}" target="_blank" rel="noopener">Paper ↗</a>')
-    if links.get("record"):
-        parts.append(f'<a class="out" href="{e(links["record"])}" target="_blank" rel="noopener">Record ↗</a>')
-    for p in patents:
-        label = e(p["number"])
-        if p.get("url"):
-            parts.append(f'<a class="out" href="{e(p["url"])}" target="_blank" rel="noopener" title="{e(p.get("title", ""))}">{label} ↗</a>')
-        else:
-            parts.append(f'<span class="lic" title="{e(p.get("title", ""))}">{label}</span>')
-    return '<span style="display:flex;gap:14px;flex-wrap:wrap">' + "".join(parts) + "</span>"
-
-
-def _tool_card(t: dict) -> str:
-    e = html.escape
-    source = t.get("source") or {}
-    links = t.get("links") or {}
-    licensing = t.get("licensing", "")
-    badge_cls = "open" if licensing in ("free", "open_source") else "restricted"
-    badge = f'<span class="badge {badge_cls}">{e(LICENSING_LABEL.get(licensing, licensing) or "Tool")}</span>'
-    primary = links.get("website") or links.get("record") or links.get("paper") or ""
-    src_line = " · ".join(str(x) for x in [source.get("institution"), source.get("year")] if x)
-    desc = " ".join((t.get("description") or "").split())
-
-    tags = "".join(f'<span class="tag">{e(x)}</span>' for x in t.get("tags", []))
-
-    metrics = []
-    for label, value in (("Vendor", t.get("vendor")), ("Input", t.get("inputs")),
-                         ("Output", t.get("outputs")), ("Category", t.get("category"))):
-        if value:
-            metrics.append(f'<div class="metric"><span class="k">{label}</span>'
-                           f'<span class="v" title="{e(value)}">{e(value)}</span></div>')
-
-    related = ""
-    if t.get("related_models"):
-        rel_links = ", ".join(f'<a href="models.html#model-{e(r)}">{e(r)}</a>' for r in t["related_models"])
-        related = f'<div class="src">Built on: {rel_links}</div>'
-
-    lic = t.get("pricing_note") or LICENSING_LABEL.get(licensing, "")
-
-    return f"""<article class="card" id="tool-{e(t['id'])}">
-  <div class="card-top">
-    <div><span class="cid">{e(t['id'])}</span></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">{badge}</div>
-  </div>
-  <h3><a class="title-link" href="{e(primary)}" target="_blank" rel="noopener">{e(t['title'])}</a></h3>
-  <div class="src">{e(src_line)}</div>
-  <p class="desc">{e(desc)}</p>
-  <div class="tags">{tags}</div>
-  <div class="metrics">{''.join(metrics)}</div>
-  {related}
-  <div class="card-foot">
-    <span class="lic">{e(lic)}</span>
-    {_tool_link_row(links, t.get("patents", []))}
-  </div>
-</article>"""
-
-
-def tools_jsonld(tools: list[dict]) -> dict:
-    """One SoftwareApplication node per tool — the schema.org type for a
-    product you obtain and run, as opposed to a published method."""
-    nodes = []
-    for t in tools:
-        if t.get("sample"):
-            continue
-        source = t.get("source") or {}
-        links = t.get("links") or {}
-        node = {
-            "@type": "SoftwareApplication",
-            "@id": f"{SITE_URL}/tools.html#tool-{t['id']}",
-            "name": t["title"],
-            "url": links.get("website") or links.get("record") or links.get("paper"),
-            "publisher": {"@type": "Organization", "name": t["vendor"]},
-            "applicationCategory": t.get("category") or "Ergonomics analysis software",
-        }
-        if source.get("authors"):
-            node["creator"] = _creators(source["authors"])
-        if t.get("description"):
-            node["description"] = " ".join(t["description"].split())
-        if links.get("doi"):
-            node["identifier"] = f"https://doi.org/{links['doi']}"
-        same_as = [p["url"] for p in t.get("patents", []) if p.get("url")]
-        if same_as:
-            node["sameAs"] = same_as
-        if t.get("tags"):
-            node["keywords"] = sorted(set(t["tags"]))
-        nodes.append(node)
-    return {"@context": "https://schema.org", "@graph": nodes}
-
-
-def build_tools(tools: list[dict]) -> None:
-    tools = sorted(tools, key=lambda t: (str(t.get("added", "")), t["id"]), reverse=True)
-    clean = [{k: v for k, v in t.items() if not k.startswith("_")} for t in tools]
-    TOOLS_JSON.write_text(
-        json.dumps({"generated_from": "tools/*.yaml", "count": len(clean), "tools": clean},
-                   ensure_ascii=False, indent=2),
-        encoding="utf-8")
-
-    n = len(tools)
-    cards = "\n".join(_tool_card(t) for t in tools)
-    block = (f'<section class="exo-group">\n'
-             f'  <div class="section-head"><h2>All tools</h2>'
-             f'<span class="count-note">{n} {"tool" if n == 1 else "tools"}</span></div>\n'
-             f'  <div class="grid">\n{cards}\n  </div>\n'
-             f'</section>')
-    _inject(TOOLS_HTML, TOOLS_START, TOOLS_END, block)
-
-    jsonld = json.dumps(tools_jsonld(tools), ensure_ascii=False, indent=2)
-    _inject(TOOLS_HTML, TOOLS_JSONLD_START, TOOLS_JSONLD_END,
-            f'<script type="application/ld+json">\n{jsonld}\n</script>')
-    print(f"  -> {TOOLS_JSON.relative_to(ROOT)}; {n} tool cards + JSON-LD injected into tools.html")
-
-
 # ---------------------------------------------------------------- sitemap ----
 
 def build_sitemap(catalog: dict) -> None:
     urls = [(f"{SITE_URL}/", None), (f"{SITE_URL}/datasets.html", None),
             (f"{SITE_URL}/exoskeletons.html", None), (f"{SITE_URL}/models.html", None),
-            (f"{SITE_URL}/tools.html", None), (f"{SITE_URL}/docs.html", None),
+            (f"{SITE_URL}/docs.html", None),
             (f"{SITE_URL}/contribute.html", None),
             (f"{SITE_URL}/community.html", None)]
     for entry in catalog["datasets"]:
@@ -858,10 +748,6 @@ def main() -> None:
     if models:
         validate(models, MODEL_SCHEMA_PATH)
         build_models(models)
-    tools = load_entries(TOOLS_DIR) if TOOLS_DIR.exists() else []
-    if tools:
-        validate(tools, TOOL_SCHEMA_PATH)
-        build_tools(tools)
     n = catalog["count"]
     by_status = {}
     for d in catalog["datasets"]:

@@ -1,0 +1,26 @@
+id: chen-video-hand-activity-level
+title: "Automated Video Exposure Assessment of the ACGIH Hand Activity Level"
+sample: false
+
+source:
+  authors: "Chen C.-H., Hu Y.H., Yen T.Y., Radwin R.G."
+  institution: "University of Wisconsin-Madison"
+  year: 2013
+
+links:
+  paper: "https://doi.org/10.1177/0018720812458121"
+  doi: "10.1177/0018720812458121"
+  website: "https://www.kinevid.com/"
+
+domain: "Repetitive hand-intensive work (upper-extremity exposure assessment)"
+inputs: "Conventional 2D workplace video; marker-less hand tracking"
+outputs: "Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level"
+tags: [computer-vision, hand-activity-level, markerless, duty-cycle, upper-extremity]
+description: >
+  Marker-less digital video processing that tracks hand motion in ordinary
+  workplace video and quantifies repetitive hand activity automatically (Human
+  Factors, 2013), later extended to fully automated elemental-time and
+  duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the
+  hand speed-duty cycle equation it forms Radwin's video HAL pipeline, patented
+  as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.
+added: 2026-08-22

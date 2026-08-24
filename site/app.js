@@ -21,13 +21,26 @@
     reaching: "Reaching", squatting: "Squatting", walking: "Walking",
     assembly: "Assembly", mmh: "MMH"
   };
+  // Modalities = what was captured, grouped kinematics / kinetics / EMG / physio / vision / self-report.
   var MOD_LABEL = {
-    mocap: "Mocap", imu: "IMU", emg: "EMG", force_plate: "Force plate",
-    grf: "GRF", video: "Video", egocentric_video: "Egocentric video",
-    pose_estimation: "Pose est.", pressure_insole: "Insole", physiological: "Physio",
-    survey: "Survey"
+    mocap: "Optical mocap", imu: "IMU", force_plate: "Force plate",
+    pressure: "Pressure insole / glove", emg: "EMG", physiological: "Physiological",
+    video: "Video", egocentric_video: "Egocentric video", depth: "Depth / LiDAR", survey: "Survey"
   };
+  var MOD_ORDER = ["mocap", "imu", "force_plate", "pressure", "emg", "physiological",
+                   "video", "egocentric_video", "depth", "survey"];
   var STATUS_LABEL = { open: "Open", coming_soon: "Coming soon", restricted: "Restricted" };
+  // source.country holds ISO 3166-1 alpha-2 codes; unknown codes fall back to the code itself.
+  var COUNTRY_LABEL = {
+    AT: "Austria", AU: "Australia", BE: "Belgium", BR: "Brazil", CA: "Canada", CH: "Switzerland",
+    CN: "China", CZ: "Czechia", DE: "Germany", DK: "Denmark", ES: "Spain", FI: "Finland",
+    FR: "France", GB: "United Kingdom", GR: "Greece", HK: "Hong Kong", IE: "Ireland", IL: "Israel",
+    IN: "India", IT: "Italy", JP: "Japan", KR: "South Korea", MX: "Mexico", NL: "Netherlands",
+    NO: "Norway", NZ: "New Zealand", PL: "Poland", PT: "Portugal", SE: "Sweden", SG: "Singapore",
+    SI: "Slovenia", TR: "Türkiye", TW: "Taiwan", US: "United States"
+  };
+  function countryName(c) { return COUNTRY_LABEL[c] || c; }
+  function countries(d) { return (d.source && d.source.country) || []; }
 
   var EXO_ROLE_LABEL = { evaluation: "Device evaluation", control_input: "Controller training data" };
   var EXO_ROLE_BADGE = { evaluation: "Exo evaluation" }; // control-input records carry no card badge
@@ -36,6 +49,8 @@
     ankle: "Ankle", neck: "Neck", wrist: "Wrist", full_body: "Full body"
   };
   var REGION_ORDER = ["back", "shoulder", "knee", "hip", "ankle", "neck", "wrist", "full_body"];
+  var EXO_ACTUATION_LABEL = { passive: "Passive", active: "Active", quasi_passive: "Quasi-passive" };
+  var ACTUATION_ORDER = ["passive", "active", "quasi_passive"];
 
   // License strings are free text; bucket them for filtering.
   var LICENSE_BUCKETS = [
@@ -58,6 +73,10 @@
   function exo(d) { return d.exoskeleton || null; }
   function exoRole(d) { return exo(d) ? d.exoskeleton.role : null; }
   function exoList(d, key) { return (exo(d) && d.exoskeleton[key]) || []; }
+  function exoActuations(d) {
+    var a = exoList(d, "actuation");
+    return ACTUATION_ORDER.filter(function (k) { return a.indexOf(k) !== -1; });
+  }
   var EXO_DATA = DATA.filter(exo);
 
   function setExoStats() {
@@ -90,16 +109,19 @@
   function setStats() {
     var totalEl = document.getElementById("stat-total");
     if (!totalEl) return;
-    var open = 0, soon = 0, mods = new Set();
+    var open = 0, soon = 0, mods = new Set(), ctry = new Set();
     DATA.forEach(function (d) {
       if (d.status === "open") open++;
       if (d.status === "coming_soon") soon++;
       (d.modalities || []).forEach(function (m) { mods.add(m); });
+      countries(d).forEach(function (c) { ctry.add(c); });
     });
     totalEl.textContent = DATA.length;
     document.getElementById("stat-open").textContent = open;
     document.getElementById("stat-soon").textContent = soon;
     document.getElementById("stat-mod").textContent = mods.size;
+    var ctryEl = document.getElementById("stat-countries");
+    if (ctryEl) ctryEl.textContent = ctry.size;
   }
 
   function metric(k, v, title) {
@@ -135,6 +157,11 @@
     badges.style.cssText = "display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end";
     badges.appendChild(el("span", "badge " + d.status, STATUS_LABEL[d.status] || d.status));
     if (EXO_ROLE_BADGE[exoRole(d)]) badges.appendChild(el("span", "badge exo", EXO_ROLE_BADGE[exoRole(d)]));
+    var acts = exoActuations(d);
+    if (acts.length) {
+      badges.appendChild(el("span", "badge actuation " + acts.join(" "),
+        acts.map(function (a) { return EXO_ACTUATION_LABEL[a] || a; }).join(" + ")));
+    }
     if (d.sample) badges.appendChild(el("span", "badge sample", "sample"));
     top.appendChild(left);
     top.appendChild(badges);
@@ -205,24 +232,53 @@
   if (exoGroups) {
     setExoStats();
 
-    var deviceFilter = null;   // null = show every record
+    var deviceFilter = null;      // null = show every record
+    var actuationFilter = null;   // null | "passive" | "active" | "quasi_passive"
 
+    var inActuation = function (d) {
+      return !actuationFilter || exoList(d, "actuation").indexOf(actuationFilter) !== -1;
+    };
     var inFilter = function (d) {
-      return !deviceFilter || exoList(d, "devices").indexOf(deviceFilter) !== -1;
+      return inActuation(d) && (!deviceFilter || exoList(d, "devices").indexOf(deviceFilter) !== -1);
+    };
+
+    // Actuation toggle: All / Passive / Active (quasi-passive only once the catalog has one)
+    var actuationToggle = function () {
+      var box = document.getElementById("actuation-toggle");
+      if (!box) return;
+      var present = ACTUATION_ORDER.filter(function (a) {
+        return EXO_DATA.some(function (d) { return exoList(d, "actuation").indexOf(a) !== -1; });
+      });
+      box.innerHTML = "";
+      if (!present.length) { box.parentNode.hidden = true; return; }
+      [null].concat(present).forEach(function (a) {
+        var b = document.createElement("button");
+        b.className = "tbtn";
+        b.type = "button";
+        b.textContent = a ? EXO_ACTUATION_LABEL[a] : "All";
+        b.setAttribute("aria-pressed", actuationFilter === a ? "true" : "false");
+        b.addEventListener("click", function () {
+          actuationFilter = a;
+          renderCollection();
+        });
+        box.appendChild(b);
+      });
     };
 
     var deviceIndex = function () {
       var box = document.getElementById("device-index");
       if (!box) return;
       var counts = new Map();
-      EXO_DATA.forEach(function (d) {
+      EXO_DATA.filter(inActuation).forEach(function (d) {
         exoList(d, "devices").forEach(function (name) {
           counts.set(name, (counts.get(name) || 0) + 1);
         });
       });
       box.innerHTML = "";
       if (!counts.size) {
-        box.appendChild(el("p", "gov", "No devices indexed yet."));
+        box.appendChild(el("p", "gov", actuationFilter
+          ? "No " + EXO_ACTUATION_LABEL[actuationFilter].toLowerCase() + " devices indexed yet."
+          : "No devices indexed yet."));
         return;
       }
       Array.from(counts.keys()).sort().forEach(function (name) {
@@ -255,6 +311,11 @@
     };
 
     var renderCollection = function () {
+      // a device that vanished under the new actuation filter can't stay selected
+      if (deviceFilter && !EXO_DATA.some(function (d) {
+        return inActuation(d) && exoList(d, "devices").indexOf(deviceFilter) !== -1;
+      })) deviceFilter = null;
+      actuationToggle();
       deviceIndex();
       exoGroups.innerHTML = "";
 
@@ -262,14 +323,18 @@
       var evaluations = shown.filter(function (d) { return exoRole(d) === "evaluation"; });
       var controls = shown.filter(function (d) { return exoRole(d) === "control_input"; });
 
-      if (deviceFilter) {
+      if (deviceFilter || actuationFilter) {
         var bar = el("div", "filter-note");
-        bar.appendChild(el("span", null, "Showing studies of " + deviceFilter + "."));
+        var what = actuationFilter ? EXO_ACTUATION_LABEL[actuationFilter].toLowerCase() + "-device studies" : "studies";
+        bar.appendChild(el("span", null,
+          "Showing " + what + (deviceFilter ? " of " + deviceFilter : "") + "."));
         var clear = document.createElement("button");
         clear.className = "linkbtn";
         clear.type = "button";
-        clear.textContent = "Show all devices";
-        clear.addEventListener("click", function () { deviceFilter = null; renderCollection(); });
+        clear.textContent = "Show all";
+        clear.addEventListener("click", function () {
+          deviceFilter = null; actuationFilter = null; renderCollection();
+        });
         bar.appendChild(clear);
         exoGroups.appendChild(bar);
       }
@@ -297,7 +362,7 @@
       if (!shown.length) {
         var e = el("div", "empty");
         e.appendChild(el("b", null, "Nothing to show."));
-        e.appendChild(el("span", null, "No exoskeleton record matches this device."));
+        e.appendChild(el("span", null, "No exoskeleton record matches this selection."));
         exoGroups.appendChild(e);
       }
     };
@@ -312,7 +377,7 @@
   var taskBox = document.getElementById("task-chips");
   if (!grid || !taskBox) return;
 
-  var state = { q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set() };
+  var state = { q: "", tasks: new Set(), mods: new Set(), status: new Set(), lic: new Set(), country: new Set() };
   var sortKey = "added-desc";
   var view = "cards";
   try { view = localStorage.getItem("ob-view") || "cards"; } catch (e) {}
@@ -348,9 +413,10 @@
     uniqueSorted("tasks").forEach(function (t) {
       makeChip(taskBox, t, TASK_LABEL[t] || t, state.tasks, false);
     });
-    uniqueSorted("modalities").forEach(function (m) {
-      makeChip(modBox, m, MOD_LABEL[m] || m, state.mods, false);
-    });
+    var presentMods = new Set(uniqueSorted("modalities"));
+    MOD_ORDER.concat(Array.from(presentMods).filter(function (m) { return MOD_ORDER.indexOf(m) === -1; }))
+      .filter(function (m) { return presentMods.has(m); })
+      .forEach(function (m) { makeChip(modBox, m, MOD_LABEL[m] || m, state.mods, false); });
     ["open", "coming_soon", "restricted"].forEach(function (s) {
       makeChip(statBox, s, STATUS_LABEL[s], state.status, true);
     });
@@ -359,6 +425,18 @@
       if (present.has(b.key)) makeChip(licBox, b.key, b.label, state.lic, false);
     });
     if (present.has("other")) makeChip(licBox, "other", "Other", state.lic, false);
+
+    // Country chips, most records first so the catalog's footprint reads at a glance.
+    var ctryBox = document.getElementById("country-chips");
+    if (ctryBox) {
+      var counts = {};
+      DATA.forEach(function (d) { countries(d).forEach(function (c) { counts[c] = (counts[c] || 0) + 1; }); });
+      Object.keys(counts).sort(function (a, b) {
+        return (counts[b] - counts[a]) || countryName(a).localeCompare(countryName(b));
+      }).forEach(function (c) {
+        makeChip(ctryBox, c, countryName(c) + " (" + counts[c] + ")", state.country, false);
+      });
+    }
   }
 
   // ---- filtering + sorting ---------------------------------------------
@@ -367,9 +445,11 @@
     if (state.lic.size && !state.lic.has(licenseBucket(d))) return false;
     if (state.tasks.size && !(d.tasks || []).some(function (t) { return state.tasks.has(t); })) return false;
     if (state.mods.size && !(d.modalities || []).some(function (m) { return state.mods.has(m); })) return false;
+    if (state.country.size && !countries(d).some(function (c) { return state.country.has(c); })) return false;
     if (state.q) {
       var hay = [
         d.title, d.id, (d.source && d.source.institution), (d.source && d.source.authors),
+        countries(d).map(countryName).join(" "),
         (d.tasks || []).join(" "), (d.tags || []).join(" "), d.description,
         exoList(d, "devices").join(" ")
       ].join(" ").toLowerCase();
@@ -398,7 +478,9 @@
     tdName.appendChild(el("div", "cid", d.id));
     tr.appendChild(tdName);
 
-    tr.appendChild(el("td", null, src.institution || "—"));
+    var tdInst = el("td", null, src.institution || "—");
+    if (countries(d).length) tdInst.appendChild(el("div", "cid", countries(d).map(countryName).join(", ")));
+    tr.appendChild(tdInst);
     tr.appendChild(el("td", "mono", src.year ? String(src.year) : "—"));
     tr.appendChild(el("td", "mono", subj.n ? String(subj.n) : "—"));
     tr.appendChild(el("td", "mono", (d.modalities || []).map(function (m) { return MOD_LABEL[m] || m; }).join(", ")));
@@ -465,7 +547,7 @@
   document.getElementById("view-table").addEventListener("click", function () { setView("table"); });
   document.getElementById("clear").addEventListener("click", function () {
     state.q = "";
-    [state.tasks, state.mods, state.status, state.lic].forEach(function (s) { s.clear(); });
+    [state.tasks, state.mods, state.status, state.lic, state.country].forEach(function (s) { s.clear(); });
     document.getElementById("search").value = "";
     document.querySelectorAll(".chip[aria-pressed='true']").forEach(function (b) {
       b.setAttribute("aria-pressed", "false");

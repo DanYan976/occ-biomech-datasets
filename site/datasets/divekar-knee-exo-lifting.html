@@ -6,18 +6,18 @@
 <title>Versatile Knee Exoskeleton: Lifting, Lowering &amp; Carrying Fatigue Dataset — OccBiomechanics</title>
 <meta name="description" content="Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects performed lifting, lowering, carrying, walking, ramp and stair tasks with and without a backdrivable knee exoskeleton. Includes normalized quadriceps and hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction forces, task performance and perceptual ratings." />
 <link rel="canonical" href="https://occbiomechanics.org/datasets/divekar-knee-exo-lifting.html" />
-<link rel="icon" type="image/png" href="/favicon.png?v=20260822" />
+<link rel="icon" type="image/png" href="/favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="Versatile Knee Exoskeleton: Lifting, Lowering &amp; Carrying Fatigue Dataset" />
 <meta property="og:description" content="Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects performed lifting, lowering, carrying, walking, ramp and stair tasks with and without a backdrivable knee exoskeleton. Includes normalized quadriceps and hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction forces, task performance and perceptual ratings." />
 <meta property="og:url" content="https://occbiomechanics.org/datasets/divekar-knee-exo-lifting.html" />
-<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Versatile Knee Exoskeleton: Lifting, Lowering &amp; Carrying Fatigue Dataset" />
 <meta name="twitter:description" content="Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects performed lifting, lowering, carrying, walking, ramp and stair tasks with and without a backdrivable knee exoskeleton. Includes normalized quadriceps and hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction forces, task performance and perceptual ratings." />
-<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -70,11 +70,11 @@
     "emg",
     "exoskeleton",
     "fatigue",
-    "grf",
     "imu",
     "knee",
     "lifting",
     "lowering",
+    "pressure",
     "quadriceps",
     "squatting",
     "task-adaptive-control",
@@ -82,7 +82,7 @@
   ],
   "measurementTechnique": [
     "emg",
-    "grf",
+    "pressure",
     "imu"
   ],
   "encodingFormat": [
@@ -97,7 +97,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <img class="mark" src="/assets/logo.png" alt="" />
+      <img class="mark" src="/assets/logo.png?v=20260824" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
@@ -108,7 +108,6 @@
           <a href="/datasets.html" class="active">All Datasets</a>
           <a href="/exoskeletons.html">Exoskeleton Studies</a>
           <a href="/models.html">Models</a>
-          <a href="/tools.html">Tools</a>
         </div>
       </div>
       <a href="/docs.html">Docs</a>
@@ -126,18 +125,18 @@
     <div class="dmeta"><span class="cid">divekar-knee-exo-lifting</span> <span class="badge open">Open</span> <span class="badge exo">Exo evaluation</span></div>
     <h1>Versatile Knee Exoskeleton: Lifting, Lowering &amp; Carrying Fatigue Dataset</h1>
     <p class="src">Divekar N., Thomas G., Yerva A., Frame H., Gregg R.</p>
-    <p class="src">University of Michigan · 2024</p>
+    <p class="src">University of Michigan · 2024 · United States</p>
   </div>
 
   <p class="desc">Data behind Divekar et al. (2024, Science Robotics): 10 able-bodied subjects performed lifting, lowering, carrying, walking, ramp and stair tasks with and without a backdrivable knee exoskeleton. Includes normalized quadriceps and hamstring EMG, leg/knee kinematics, exoskeleton torque, ground reaction forces, task performance and perceptual ratings.</p>
-  <div class="tags"><span class="tag mod">EMG</span><span class="tag mod">GRF</span><span class="tag mod">IMU</span><span class="tag">Lifting</span><span class="tag">Lowering</span><span class="tag">Carrying</span><span class="tag">Squatting</span><span class="tag">Walking</span></div>
+  <div class="tags"><span class="tag mod">EMG</span><span class="tag mod">Pressure insole / glove</span><span class="tag mod">IMU</span><span class="tag">Lifting</span><span class="tag">Lowering</span><span class="tag">Carrying</span><span class="tag">Squatting</span><span class="tag">Walking</span></div>
   <div class="cta-row"><a class="btn primary" href="https://doi.org/10.5061/dryad.z34tmpgks" target="_blank" rel="noopener">View source ↗</a><span class="lic">DOI: <a href="https://doi.org/10.5061/dryad.z34tmpgks" target="_blank" rel="noopener">10.5061/dryad.z34tmpgks</a></span></div>
 
   <h2>Details</h2>
   <dl class="detail-table">
   <dt>Subjects</dt><dd>n = 10</dd>
   <dt>Protocol / load</dt><dd>Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons</dd>
-  <dt>Equipment</dt><dd>Backdrivable knee exoskeletons with task-adaptive controller, quadriceps &amp; hamstring EMG, foot force sensors</dd>
+  <dt>Equipment</dt><dd>Backdrivable knee exoskeletons with task-adaptive controller, quadriceps &amp; hamstring EMG, pressure insoles (foot force)</dd>
   <dt>Formats</dt><dd><code>mat</code></dd>
   <dt>License</dt><dd>CC0-1.0</dd>
   <dt>Keywords</dt><dd>exoskeleton, knee, fatigue, quadriceps, task-adaptive-control</dd>

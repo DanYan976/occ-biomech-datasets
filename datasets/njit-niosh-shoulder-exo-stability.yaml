@@ -7,10 +7,11 @@ sample: false
 source:
   authors: "Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W."
   institution: "New Jersey Institute of Technology (AnyMotion Lab) / NIOSH"
+  country: [US]
   year: 2026
 
 tasks: [lifting, carrying, walking, lowering, mmh]
-modalities: [mocap, force_plate, grf]
+modalities: [mocap, force_plate]
 
 subjects:
   n: 11

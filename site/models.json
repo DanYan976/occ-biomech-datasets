@@ -1,7 +1,120 @@
 {
   "generated_from": "models/*.yaml",
-  "count": 4,
+  "count": 8,
   "models": [
+    {
+      "id": "yen-radwin-mvta-video-task-analysis",
+      "title": "Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition",
+      "sample": false,
+      "source": {
+        "authors": "Yen T.Y., Radwin R.G.",
+        "institution": "University of Wisconsin-Madison",
+        "year": 1995
+      },
+      "links": {
+        "paper": "https://doi.org/10.1109/10.412663",
+        "doi": "10.1109/10.412663",
+        "record": "https://stacks.cdc.gov/view/cdc/197950",
+        "website": "https://mvta.engr.wisc.edu/"
+      },
+      "domain": "Repetitive manual work — time study and exposure assessment from task video",
+      "inputs": "Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)",
+      "outputs": "Elemental times, event frequency, duty cycle, postural analysis",
+      "tags": [
+        "video-analysis",
+        "time-study",
+        "duty-cycle",
+        "hand-activity-level",
+        "upper-extremity"
+      ],
+      "description": "Video-based data acquisition and interactive data-extraction method (IEEE Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in synchrony with task video, and analysts mark event breakpoints while the video plays at any speed or direction to obtain elemental times, event frequencies, duty cycles and postures. Implemented as the MVTA software, distributed commercially by NexGen Ergonomics, which supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.\n",
+      "added": "2026-08-22"
+    },
+    {
+      "id": "wang-2d-video-lifting-monitor",
+      "title": "2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation",
+      "sample": false,
+      "source": {
+        "authors": "Wang X., Hu Y.H., Lu M.-L., Radwin R.G.",
+        "institution": "University of Wisconsin-Madison / NIOSH",
+        "year": 2019
+      },
+      "links": {
+        "paper": "https://doi.org/10.1080/00140139.2019.1618500",
+        "doi": "10.1080/00140139.2019.1618500",
+        "record": "https://stacks.cdc.gov/view/cdc/213608",
+        "website": "https://www.kinevid.com/"
+      },
+      "domain": "Manual lifting — Revised NIOSH Lifting Equation risk assessment",
+      "inputs": "Single sagittal-plane video camera, no sensors on the worker",
+      "outputs": "Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit",
+      "tags": [
+        "computer-vision",
+        "lifting",
+        "niosh-lifting-equation",
+        "markerless",
+        "deep-learning"
+      ],
+      "description": "Single-camera computer-vision method that detects lifting instances with a motion \"ghosting\" effect and predicts hand and feet locations to extract the spatial and temporal factors of the revised NIOSH lifting equation (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture classification (Greene et al., Human Factors, 2019); patented as US 11,450,148 (WARF) and commercialized by KineVid LLC.\n",
+      "added": "2026-08-22"
+    },
+    {
+      "id": "gnn-mtnet-imu-video-kinematics",
+      "title": "GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "Yan D., Zhu G., Chen Y., Tao J., Ding Y., Zhang X., Yuan C., Yin W.",
+        "institution": "New Jersey Institute of Technology / Texas A&M University / Georgia Institute of Technology",
+        "year": 2026
+      },
+      "domain": "Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)",
+      "inputs": "11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos",
+      "outputs": "16 lower-limb, lumbar, and arm joint angles over time",
+      "related_datasets": [
+        "tamu-offshore-wind-mocap"
+      ],
+      "tags": [
+        "kinematics",
+        "imu",
+        "video",
+        "sensor-fusion",
+        "graph-neural-network",
+        "deep-learning",
+        "pytorch",
+        "wind-energy",
+        "ladder-climbing"
+      ],
+      "description": "Graph-enhanced multimodal deep-learning model that fuses wearable IMU signals with 2-D keypoints from dual-view smartphone video to predict 16 full-body joint angles during occupational tasks. Per-channel bidirectional LSTM/GRU encoders with temporal attention feed a 40-node anatomical graph (GATv2), so accuracy degrades gracefully when sensors are occluded or missing, and a single-step autoregressive feedback keeps predictions temporally coherent. Developed on the offshore wind turbine maintenance dataset; paper and code release pending.\n",
+      "added": "2026-08-22"
+    },
+    {
+      "id": "chen-video-hand-activity-level",
+      "title": "Automated Video Exposure Assessment of the ACGIH Hand Activity Level",
+      "sample": false,
+      "source": {
+        "authors": "Chen C.-H., Hu Y.H., Yen T.Y., Radwin R.G.",
+        "institution": "University of Wisconsin-Madison",
+        "year": 2013
+      },
+      "links": {
+        "paper": "https://doi.org/10.1177/0018720812458121",
+        "doi": "10.1177/0018720812458121",
+        "website": "https://www.kinevid.com/"
+      },
+      "domain": "Repetitive hand-intensive work (upper-extremity exposure assessment)",
+      "inputs": "Conventional 2D workplace video; marker-less hand tracking",
+      "outputs": "Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level",
+      "tags": [
+        "computer-vision",
+        "hand-activity-level",
+        "markerless",
+        "duty-cycle",
+        "upper-extremity"
+      ],
+      "description": "Marker-less digital video processing that tracks hand motion in ordinary workplace video and quantifies repetitive hand activity automatically (Human Factors, 2013), later extended to fully automated elemental-time and duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the hand speed-duty cycle equation it forms Radwin's video HAL pipeline, patented as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.\n",
+      "added": "2026-08-22"
+    },
     {
       "id": "radwin-frequency-duty-cycle-hal",
       "title": "Frequency-Duty Cycle Equation for the ACGIH Hand Activity Level",

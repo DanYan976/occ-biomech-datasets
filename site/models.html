@@ -6,18 +6,18 @@
 <title>Model Library — OccBiomechanics</title>
 <meta name="description" content="Published models, methods, and open-source code for occupational biomechanics: markerless pose and kinematics estimation for workplace tasks. Each entry links to its paper and source code." />
 <link rel="canonical" href="https://occbiomechanics.org/models.html" />
-<link rel="icon" type="image/png" href="favicon.png?v=20260822" />
+<link rel="icon" type="image/png" href="favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="Model Library — OccBiomechanics" />
 <meta property="og:description" content="Published models, methods, and open-source code for occupational biomechanics." />
 <meta property="og:url" content="https://occbiomechanics.org/models.html" />
-<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Model Library — OccBiomechanics" />
 <meta name="twitter:description" content="Published models, methods, and open-source code for occupational biomechanics." />
-<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -28,6 +28,102 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-yen-radwin-mvta-video-task-analysis",
+      "name": "Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition",
+      "url": "https://doi.org/10.1109/10.412663",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Yen T.Y."
+        },
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        }
+      ],
+      "description": "Video-based data acquisition and interactive data-extraction method (IEEE Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in synchrony with task video, and analysts mark event breakpoints while the video plays at any speed or direction to obtain elemental times, event frequencies, duty cycles and postures. Implemented as the MVTA software, distributed commercially by NexGen Ergonomics, which supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.",
+      "datePublished": "1995",
+      "identifier": "https://doi.org/10.1109/10.412663",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/197950",
+      "keywords": [
+        "duty-cycle",
+        "hand-activity-level",
+        "time-study",
+        "upper-extremity",
+        "video-analysis"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-wang-2d-video-lifting-monitor",
+      "name": "2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation",
+      "url": "https://doi.org/10.1080/00140139.2019.1618500",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Wang X."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu Y.H."
+        },
+        {
+          "@type": "Person",
+          "name": "Lu M.-L."
+        },
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        }
+      ],
+      "description": "Single-camera computer-vision method that detects lifting instances with a motion \"ghosting\" effect and predicts hand and feet locations to extract the spatial and temporal factors of the revised NIOSH lifting equation (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture classification (Greene et al., Human Factors, 2019); patented as US 11,450,148 (WARF) and commercialized by KineVid LLC.",
+      "datePublished": "2019",
+      "identifier": "https://doi.org/10.1080/00140139.2019.1618500",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/213608",
+      "keywords": [
+        "computer-vision",
+        "deep-learning",
+        "lifting",
+        "markerless",
+        "niosh-lifting-equation"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-chen-video-hand-activity-level",
+      "name": "Automated Video Exposure Assessment of the ACGIH Hand Activity Level",
+      "url": "https://doi.org/10.1177/0018720812458121",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Chen C.-H."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu Y.H."
+        },
+        {
+          "@type": "Person",
+          "name": "Yen T.Y."
+        },
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        }
+      ],
+      "description": "Marker-less digital video processing that tracks hand motion in ordinary workplace video and quantifies repetitive hand activity automatically (Human Factors, 2013), later extended to fully automated elemental-time and duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the hand speed-duty cycle equation it forms Radwin's video HAL pipeline, patented as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.",
+      "datePublished": "2013",
+      "identifier": "https://doi.org/10.1177/0018720812458121",
+      "keywords": [
+        "computer-vision",
+        "duty-cycle",
+        "hand-activity-level",
+        "markerless",
+        "upper-extremity"
+      ]
+    },
     {
       "@type": "ScholarlyArticle",
       "@id": "https://occbiomechanics.org/models.html#model-radwin-frequency-duty-cycle-hal",
@@ -233,7 +329,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img class="mark" src="assets/logo.png" alt="" />
+      <img class="mark" src="assets/logo.png?v=20260824" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
@@ -244,7 +340,6 @@
           <a href="datasets.html">All Datasets</a>
           <a href="exoskeletons.html">Exoskeleton Studies</a>
           <a href="models.html" class="active">Models</a>
-          <a href="tools.html">Tools</a>
         </div>
       </div>
       <a href="docs.html">Docs</a>
@@ -259,7 +354,7 @@
   <div class="wrap">
     <span class="eyebrow">Library</span>
     <h1>Models</h1>
-    <p class="lede">Published models, methods, and open-source code for occupational biomechanics — markerless pose and kinematics estimation for workplace tasks today, with musculoskeletal models and analysis tools to follow. Each entry links to its paper and, where released, its source code. Looking for data instead? Browse the <a href="datasets.html">dataset library</a>.</p>
+    <p class="lede">Published models, methods, and open-source code for occupational biomechanics — markerless pose and kinematics estimation, video-based exposure assessment, and the ACGIH hand activity level equations today, with musculoskeletal models to follow. Each entry links to its paper, its source code where released, and the software that implements it where one exists. Looking for data instead? Browse the <a href="datasets.html">dataset library</a>.</p>
   </div>
 </section>
 
@@ -268,8 +363,68 @@
        these markers with cards compiled from models/*.yaml. -->
   <!-- MODELS:START -->
 <section class="exo-group">
-  <div class="section-head"><h2>All models</h2><span class="count-note">4 models</span></div>
+  <div class="section-head"><h2>All models</h2><span class="count-note">8 models</span></div>
   <div class="grid">
+<article class="card" id="model-yen-radwin-mvta-video-task-analysis">
+  <div class="card-top">
+    <div><span class="cid">yen-radwin-mvta-video-task-analysis</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition</a></h3>
+  <div class="src">University of Wisconsin-Madison · 1995</div>
+  <p class="desc">Video-based data acquisition and interactive data-extraction method (IEEE Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in synchrony with task video, and analysts mark event breakpoints while the video plays at any speed or direction to obtain elemental times, event frequencies, duty cycles and postures. Implemented as the MVTA software, distributed commercially by NexGen Ergonomics, which supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.</p>
+  <div class="tags"><span class="tag">video-analysis</span><span class="tag">time-study</span><span class="tag">duty-cycle</span><span class="tag">hand-activity-level</span><span class="tag">upper-extremity</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)">Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Elemental times, event frequency, duty cycle, postural analysis">Elemental times, event frequency, duty cycle, postural analysis</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive manual work — time study and exposure assessment from task video">Repetitive manual work — time study and exposure assessment from task video</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/197950" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://mvta.engr.wisc.edu/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-wang-2d-video-lifting-monitor">
+  <div class="card-top">
+    <div><span class="cid">wang-2d-video-lifting-monitor</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation</a></h3>
+  <div class="src">University of Wisconsin-Madison / NIOSH · 2019</div>
+  <p class="desc">Single-camera computer-vision method that detects lifting instances with a motion &quot;ghosting&quot; effect and predicts hand and feet locations to extract the spatial and temporal factors of the revised NIOSH lifting equation (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture classification (Greene et al., Human Factors, 2019); patented as US 11,450,148 (WARF) and commercialized by KineVid LLC.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">markerless</span><span class="tag">deep-learning</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Single sagittal-plane video camera, no sensors on the worker">Single sagittal-plane video camera, no sensors on the worker</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit">Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — Revised NIOSH Lifting Equation risk assessment">Manual lifting — Revised NIOSH Lifting Equation risk assessment</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/213608" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card is-coming" id="model-gnn-mtnet-imu-video-kinematics">
+  <div class="card-top">
+    <div><span class="cid">gnn-mtnet-imu-video-kinematics</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge coming_soon">Coming soon</span></div>
+  </div>
+  <h3>GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics</h3>
+  <div class="src">New Jersey Institute of Technology / Texas A&amp;M University / Georgia Institute of Technology · 2026</div>
+  <p class="desc">Graph-enhanced multimodal deep-learning model that fuses wearable IMU signals with 2-D keypoints from dual-view smartphone video to predict 16 full-body joint angles during occupational tasks. Per-channel bidirectional LSTM/GRU encoders with temporal attention feed a 40-node anatomical graph (GATv2), so accuracy degrades gracefully when sensors are occluded or missing, and a single-step autoregressive feedback keeps predictions temporally coherent. Developed on the offshore wind turbine maintenance dataset; paper and code release pending.</p>
+  <div class="tags"><span class="tag">kinematics</span><span class="tag">imu</span><span class="tag">video</span><span class="tag">sensor-fusion</span><span class="tag">graph-neural-network</span><span class="tag">deep-learning</span><span class="tag">pytorch</span><span class="tag">wind-energy</span><span class="tag">ladder-climbing</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos">11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos</span></div><div class="metric"><span class="k">Output</span><span class="v" title="16 lower-limb, lumbar, and arm joint angles over time">16 lower-limb, lumbar, and arm joint angles over time</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)">Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Release pending</span>
+    <span class="pending">Paper pending</span>
+  </div>
+</article>
+<article class="card" id="model-chen-video-hand-activity-level">
+  <div class="card-top">
+    <div><span class="cid">chen-video-hand-activity-level</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Automated Video Exposure Assessment of the ACGIH Hand Activity Level</a></h3>
+  <div class="src">University of Wisconsin-Madison · 2013</div>
+  <p class="desc">Marker-less digital video processing that tracks hand motion in ordinary workplace video and quantifies repetitive hand activity automatically (Human Factors, 2013), later extended to fully automated elemental-time and duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the hand speed-duty cycle equation it forms Radwin&#x27;s video HAL pipeline, patented as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">hand-activity-level</span><span class="tag">markerless</span><span class="tag">duty-cycle</span><span class="tag">upper-extremity</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Conventional 2D workplace video; marker-less hand tracking">Conventional 2D workplace video; marker-less hand tracking</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level">Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive hand-intensive work (upper-extremity exposure assessment)">Repetitive hand-intensive work (upper-extremity exposure assessment)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
 <article class="card" id="model-radwin-frequency-duty-cycle-hal">
   <div class="card-top">
     <div><span class="cid">radwin-frequency-duty-cycle-hal</span></div>

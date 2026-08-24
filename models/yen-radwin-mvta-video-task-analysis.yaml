@@ -1,0 +1,28 @@
+id: yen-radwin-mvta-video-task-analysis
+title: "Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition"
+sample: false
+
+source:
+  authors: "Yen T.Y., Radwin R.G."
+  institution: "University of Wisconsin-Madison"
+  year: 1995
+
+links:
+  paper: "https://doi.org/10.1109/10.412663"
+  doi: "10.1109/10.412663"
+  record: "https://stacks.cdc.gov/view/cdc/197950"
+  website: "https://mvta.engr.wisc.edu/"
+
+domain: "Repetitive manual work — time study and exposure assessment from task video"
+inputs: "Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)"
+outputs: "Elemental times, event frequency, duty cycle, postural analysis"
+tags: [video-analysis, time-study, duty-cycle, hand-activity-level, upper-extremity]
+description: >
+  Video-based data acquisition and interactive data-extraction method (IEEE
+  Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in
+  synchrony with task video, and analysts mark event breakpoints while the video
+  plays at any speed or direction to obtain elemental times, event frequencies,
+  duty cycles and postures. Implemented as the MVTA software, distributed
+  commercially by NexGen Ergonomics, which supplied the duty-cycle measurements
+  behind the frequency- and hand-speed-based ACGIH HAL equations.
+added: 2026-08-22

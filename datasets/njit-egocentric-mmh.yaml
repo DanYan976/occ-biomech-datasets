@@ -7,6 +7,7 @@ sample: false
 source:
   authors: "NJIT Occupational Biomechanics Lab"
   institution: "New Jersey Institute of Technology (AnyMotion Lab)"
+  country: [US]
   year: 2026
 
 tasks: [lifting, lowering, carrying, walking, mmh]

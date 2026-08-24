@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Yoshimura N., Morales J., Maekawa T., Hara T."
   institution: "Osaka University"
+  country: [JP]
   year: 2024
 
 access:
@@ -13,7 +14,7 @@ access:
   license: "CC-BY-NC-SA-4.0 (non-RGB); RGB under restrictive academic-only license"
 
 tasks: [assembly, reaching, mmh]
-modalities: [imu, physiological, pose_estimation, video]
+modalities: [imu, physiological, depth, video]
 
 subjects:
   n: 16

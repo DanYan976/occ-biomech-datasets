@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Mayer D., Siebert T., Hasenmaier J., Stutzig N."
   institution: "University of Stuttgart"
+  country: [DE]
   year: 2025
 
 access:

@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "National Institute for Occupational Safety and Health (NIOSH)"
   institution: "NIOSH / CDC"
+  country: [US]
   year: 2025
 
 access:
@@ -14,7 +15,7 @@ access:
   license: "Public domain (U.S. Government work)"
 
 tasks: [lifting, holding, pulling]
-modalities: [emg, physiological]
+modalities: [mocap, emg, physiological]
 
 subjects:
   n: 8
@@ -28,7 +29,7 @@ exoskeleton:
   outcomes: [muscle_activity, kinematics, cardiovascular]
 
 load: "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer"
-equipment: "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, trunk/hip angle measurement, heart-rate monitor"
+equipment: "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, optical motion capture for trunk/hip angles, heart-rate monitor"
 tags: [exoskeleton, back, patient-handling, healthcare, laevo]
 description: >
   NIOSH evaluation of the Laevo V2.5 passive back-support exoskeleton in

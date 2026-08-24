@@ -6,20 +6,20 @@
 <title>OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem</title>
 <meta name="description" content="Human-motion datasets, models, and analysis tools for occupational tasks, indexed in one place — including a dedicated collection of exoskeleton evaluation studies. We index and link to original sources; we do not rehost data." />
 <link rel="canonical" href="https://occbiomechanics.org/" />
-<link rel="icon" type="image/png" href="favicon.png?v=20260822" />
+<link rel="icon" type="image/png" href="favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem" />
 <meta property="og:description" content="Human-motion datasets, models, and analysis tools for occupational tasks — indexed in one place, with a dedicated exoskeleton evaluation collection." />
 <meta property="og:url" content="https://occbiomechanics.org/" />
-<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="OccBiomechanics — Occupational Biomechanics Open-Source Ecosystem" />
 <meta name="twitter:description" content="Human-motion datasets, models, and analysis tools for occupational tasks — indexed in one place, with a dedicated exoskeleton evaluation collection." />
-<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -38,7 +38,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img class="mark" src="assets/logo.png" alt="" />
+      <img class="mark" src="assets/logo.png?v=20260824" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
@@ -49,7 +49,6 @@ if (location.hash.indexOf("#dataset-") === 0) {
           <a href="datasets.html">All Datasets</a>
           <a href="exoskeletons.html">Exoskeleton Studies</a>
           <a href="models.html">Models</a>
-          <a href="tools.html">Tools</a>
         </div>
       </div>
       <a href="docs.html">Docs</a>
@@ -76,6 +75,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       <div class="cell"><div class="num amber" id="stat-soon">0</div><div class="lbl">Coming&nbsp;soon</div></div>
       <div class="cell"><div class="num" id="stat-exo">0</div><div class="lbl">Exoskeleton&nbsp;records</div></div>
       <div class="cell"><div class="num" id="stat-mod">0</div><div class="lbl">Modalities</div></div>
+      <div class="cell"><div class="num" id="stat-countries">0</div><div class="lbl">Countries</div></div>
     </div>
   </div>
 </section>
@@ -184,6 +184,10 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Maurice P., Malaisé A., Ivaldi S., Rochel O., Amiot C., Paris N., Richard G.-J., Fritzsche L.",
         "institution": "Inria / DFKI (AnDy project)",
+        "country": [
+          "FR",
+          "DE"
+        ],
         "year": 2019
       },
       "access": {
@@ -200,6 +204,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "modalities": [
         "mocap",
         "imu",
+        "pressure",
         "video"
       ],
       "subjects": {
@@ -230,6 +235,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Niemann F., Reining C., Moya Rueda F., Altermann E., Nair N.R., Steffens J.A., Fink G.A., ten Hompel M.",
         "institution": "TU Dortmund University",
+        "country": [
+          "DE"
+        ],
         "year": 2020
       },
       "access": {
@@ -276,6 +284,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Li L., Xie Z., Xu X.",
         "institution": "NC State University (Biomechanics Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2020
       },
       "access": {
@@ -324,6 +335,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Northwestern University",
         "institution": "Northwestern University",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -366,6 +380,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Yoshimura N., Morales J., Maekawa T., Hara T.",
         "institution": "Osaka University",
+        "country": [
+          "JP"
+        ],
         "year": 2024
       },
       "access": {
@@ -380,7 +397,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "modalities": [
         "imu",
         "physiological",
-        "pose_estimation",
+        "depth",
         "video"
       ],
       "subjects": {
@@ -412,6 +429,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Pesenti M.",
         "institution": "Politecnico di Milano",
+        "country": [
+          "IT"
+        ],
         "year": 2022
       },
       "access": {
@@ -464,6 +484,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Casey R., Nuesslein C., Davenport F., Wheeler J., Mazumdar A., Sawicki G.S., Young A.J.",
         "institution": "EPIC Lab, Georgia Institute of Technology",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -484,11 +507,10 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "modalities": [
         "imu",
-        "pressure_insole",
+        "pressure",
         "emg",
         "mocap",
-        "force_plate",
-        "grf"
+        "force_plate"
       ],
       "subjects": {
         "n": 10,
@@ -507,7 +529,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "equipment": "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells",
       "sampling": {
         "imu": 200,
-        "pressure_insole": 80,
+        "pressure": 80,
         "mocap": 200,
         "force_plate": 2000
       },
@@ -534,6 +556,10 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Maurice P., Camernik J., Gorjan D., Babic J., Schirrmeister B., Bornmann J., Ivaldi S., Tagliapietra L., Latella C., Pucci D.",
         "institution": "Inria / Jozef Stefan Institute (AnDy project)",
+        "country": [
+          "FR",
+          "SI"
+        ],
         "year": 2018
       },
       "access": {
@@ -547,7 +573,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "modalities": [
         "mocap",
-        "grf",
+        "force_plate",
         "emg",
         "physiological",
         "video"
@@ -601,6 +627,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Divekar N., Thomas G., Yerva A., Frame H., Gregg R.",
         "institution": "University of Michigan",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -617,7 +646,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "modalities": [
         "emg",
-        "grf",
+        "pressure",
         "imu"
       ],
       "subjects": {
@@ -644,7 +673,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         ]
       },
       "load": "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons",
-      "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors",
+      "equipment": "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, pressure insoles (foot force)",
       "formats": [
         "mat"
       ],
@@ -666,6 +695,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2024
       },
       "access": {
@@ -678,6 +710,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "holding"
       ],
       "modalities": [
+        "mocap",
         "emg",
         "physiological"
       ],
@@ -704,7 +737,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         ]
       },
       "load": "Four in-bed patient-care tasks: sit-to-lie, repositioning toward the caregiver, and two turning variations",
-      "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, trunk/hip angle measurement, heart-rate monitor",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; low-back EMG, optical motion capture for trunk/hip angles, heart-rate monitor",
       "tags": [
         "exoskeleton",
         "back",
@@ -723,6 +756,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Mohamed Refai M.I., Moya-Esteban A., van Zijl L., van der Kooij H., Sartori M.",
         "institution": "University of Twente",
+        "country": [
+          "NL"
+        ],
         "year": 2024
       },
       "access": {
@@ -785,6 +821,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Niemann F., Moya Rueda F., Nair N.R., Orth A., Al Kfari M.K., Frichert M., Abdulaal A., Abu Seer M., Almatalka H., Asskar H., Bork E., Dobariya B., Ghroubi E., Kersting F.F., König F., Qadri S.A.H., Reining C., Riedel T., Schauten D., Seval K., Youssef M., Zurkuhl K., Grzeszick R., Lüdtke S., Kirchheim A.",
         "institution": "TU Dortmund University / Fraunhofer IML",
+        "country": [
+          "DE"
+        ],
         "year": 2026
       },
       "access": {
@@ -837,6 +876,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -850,6 +892,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "pulling"
       ],
       "modalities": [
+        "mocap",
         "emg",
         "physiological"
       ],
@@ -875,7 +918,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         ]
       },
       "load": "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer",
-      "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, trunk/hip angle measurement, heart-rate monitor",
+      "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, optical motion capture for trunk/hip angles, heart-rate monitor",
       "tags": [
         "exoskeleton",
         "back",
@@ -894,6 +937,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2023
       },
       "access": {
@@ -932,6 +978,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "National Institute for Occupational Safety and Health (NIOSH)",
         "institution": "NIOSH / CDC",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "access": {
@@ -971,6 +1020,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Mayer D., Siebert T., Hasenmaier J., Stutzig N.",
         "institution": "University of Stuttgart",
+        "country": [
+          "DE"
+        ],
         "year": 2025
       },
       "access": {
@@ -1025,6 +1077,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Mitterlehner L., Li Y.X., Wolf M.",
         "institution": "Graz University of Technology",
+        "country": [
+          "AT"
+        ],
         "year": 2023
       },
       "access": {
@@ -1092,6 +1147,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Reimeir B., Calisti M., Mittermeier R., Ralfs L., Weidner R.",
         "institution": "University of Innsbruck",
+        "country": [
+          "AT"
+        ],
         "year": 2023
       },
       "access": {
@@ -1154,6 +1212,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Kim S., Nussbaum M.A., Smets M., Ranganathan S.",
         "institution": "Virginia Tech / Ford Motor Company",
+        "country": [
+          "US"
+        ],
         "year": 2021
       },
       "access": {
@@ -1223,6 +1284,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "NJIT Occupational Biomechanics Lab",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1272,6 +1336,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "NJIT Occupational Biomechanics Lab",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab)",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1284,7 +1351,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "video",
         "imu",
         "emg",
-        "pressure_insole"
+        "pressure"
       ],
       "load": "Manual material handling across different box weights, lift heights, and asymmetry angles",
       "equipment": "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles",
@@ -1310,6 +1377,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Chen, Y., Santos, H., Tao, J., Ding, Y., Zhang, X.",
         "institution": "Texas A&M University / Georgia Institute of Technology",
+        "country": [
+          "US"
+        ],
         "year": 2025
       },
       "tasks": [
@@ -1319,8 +1389,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "modalities": [
         "mocap",
         "imu",
-        "video",
-        "pose_estimation"
+        "video"
       ],
       "subjects": {
         "n": 24
@@ -1349,6 +1418,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "source": {
         "authors": "Chen Y., Ratnakumar N., Rodriguez M., Tohfafarosh M., Zheng L., Pan C., Zhou X., Yin W.",
         "institution": "New Jersey Institute of Technology (AnyMotion Lab) / NIOSH",
+        "country": [
+          "US"
+        ],
         "year": 2026
       },
       "tasks": [
@@ -1360,8 +1432,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "modalities": [
         "mocap",
-        "force_plate",
-        "grf"
+        "force_plate"
       ],
       "subjects": {
         "n": 11,
@@ -1416,6 +1487,6 @@ if (location.hash.indexOf("#dataset-") === 0) {
 }
 </script>
 <!-- CATALOG:END -->
-<script src="app.js?v=20260821"></script>
+<script src="app.js?v=20260822b"></script>
 </body>
 </html>

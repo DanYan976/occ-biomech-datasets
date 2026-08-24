@@ -1,9 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Occupational Biomechanics Model Entry",
-  "description": "Metadata record for one model/method in the Models library: a published method, trained model, or analysis tool. Aligned with schema.org/SoftwareSourceCode and ScholarlyArticle where possible. The library links out; it does not rehost code or weights.",
+  "description": "Metadata record for one model/method in the Models library: a published method, trained model, or the paper behind an analysis tool. Aligned with schema.org/SoftwareSourceCode and ScholarlyArticle where possible. The library links out; it does not rehost code or weights.",
   "type": "object",
-  "required": ["id", "title", "source", "links"],
+  "required": ["id", "title", "source"],
+  "anyOf": [
+    { "required": ["links"] },
+    { "required": ["status"], "properties": { "status": { "const": "coming_soon" } } }
+  ],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -17,6 +21,12 @@
       "description": "true for placeholder/example entries. Remove or set false for real records.",
       "default": false
     },
+    "status": {
+      "type": "string",
+      "enum": ["released", "coming_soon"],
+      "default": "released",
+      "description": "released = the paper and/or code is public (default); coming_soon = the method is announced but the paper is not yet published, so no public link exists. Only coming_soon entries may omit links."
+    },
     "source": {
       "type": "object",
       "required": ["authors", "institution"],
@@ -29,7 +39,7 @@
     },
     "links": {
       "type": "object",
-      "description": "At least one outbound link. paper is the canonical landing page (usually the DOI resolver).",
+      "description": "At least one outbound link (required unless status is coming_soon). paper is the canonical landing page (usually the DOI resolver).",
       "minProperties": 1,
       "additionalProperties": false,
       "properties": {
@@ -37,7 +47,8 @@
         "doi": { "type": "string" },
         "code": { "type": "string", "description": "Source-code repository, when released." },
         "preprint": { "type": "string", "description": "Open preprint (e.g. arXiv), when the paper is paywalled." },
-        "record": { "type": "string", "description": "Institutional record, e.g. a CDC STACKS page." }
+        "record": { "type": "string", "description": "Institutional record, e.g. a CDC STACKS page." },
+        "website": { "type": "string", "description": "Vendor or project page when the method is available as software (commercial or free)." }
       }
     },
     "code_license": {

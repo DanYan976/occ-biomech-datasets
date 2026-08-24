@@ -6,18 +6,18 @@
 <title>Schema &amp; API — OccBiomechanics</title>
 <meta name="description" content="How OccBiomechanics dataset metadata is structured (fields and controlled vocabularies) and how to consume the catalog programmatically via catalog.json." />
 <link rel="canonical" href="https://occbiomechanics.org/docs.html" />
-<link rel="icon" type="image/png" href="favicon.png?v=20260822" />
+<link rel="icon" type="image/png" href="favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="Schema &amp; API — OccBiomechanics" />
 <meta property="og:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
 <meta property="og:url" content="https://occbiomechanics.org/docs.html" />
-<meta property="og:image" content="https://occbiomechanics.org/og-image.png" />
+<meta property="og:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Schema &amp; API — OccBiomechanics" />
 <meta name="twitter:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
-<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png" />
+<meta name="twitter:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -29,7 +29,7 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <img class="mark" src="assets/logo.png" alt="" />
+      <img class="mark" src="assets/logo.png?v=20260824" alt="" />
       <span class="name">OccBiomechanics</span>
     </a>
     <nav class="nav">
@@ -40,7 +40,6 @@
           <a href="datasets.html">All Datasets</a>
           <a href="exoskeletons.html">Exoskeleton Studies</a>
           <a href="models.html">Models</a>
-          <a href="tools.html">Tools</a>
         </div>
       </div>
       <a href="docs.html" class="active">Docs</a>
@@ -68,10 +67,10 @@
     <dt><code>id</code></dt><dd>Unique lowercase-hyphenated slug; also the URL of the dataset's page (<code>/datasets/&lt;id&gt;.html</code>).</dd>
     <dt><code>title</code></dt><dd>Human-readable dataset title.</dd>
     <dt><code>status</code></dt><dd><code>open</code> = publicly downloadable · <code>restricted</code> = available on request or under a data-use agreement · <code>coming_soon</code> = announced, not yet released.</dd>
-    <dt><code>source</code></dt><dd>Authors, institution, and publication year of the dataset.</dd>
+    <dt><code>source</code></dt><dd>Authors, institution, publication year, and <code>country</code> — ISO 3166-1 alpha-2 codes of where the data was collected (e.g. <code>[US]</code>, <code>[FR, DE]</code>); drives the country filter and the Countries count.</dd>
     <dt><code>access</code></dt><dd>Canonical landing page URL, DOI, and license. The catalog links out; it does not rehost. Datasets keep their own licenses.</dd>
     <dt><code>tasks</code></dt><dd>Occupational tasks performed, from a controlled vocabulary (below). <code>mmh</code> is the umbrella term for manual materials handling.</dd>
-    <dt><code>modalities</code></dt><dd>Sensor/data modalities captured, from a controlled vocabulary (below).</dd>
+    <dt><code>modalities</code></dt><dd>What was captured — sensors and data streams, from a controlled vocabulary (below). Derived outputs (pose keypoints, joint angles, activity labels) are not modalities; describe them in <code>description</code>.</dd>
     <dt><code>subjects</code></dt><dd>Participant count <code>n</code>, sex split, and age range as reported by the source.</dd>
     <dt><code>exoskeleton</code></dt><dd>Present only on exoskeleton-relevant records. Detailed <a href="#exoskeleton-fields">below</a>.</dd>
     <dt><code>load</code></dt><dd>Free-text protocol summary: handled loads, task intensity, conditions.</dd>
@@ -113,7 +112,7 @@
 <dl class="detail-table">
   <dt>status</dt><dd><code>open</code> <code>coming_soon</code> <code>restricted</code></dd>
   <dt>tasks</dt><dd><code>lifting</code> <code>lowering</code> <code>carrying</code> <code>pushing</code> <code>pulling</code> <code>holding</code> <code>reaching</code> <code>squatting</code> <code>walking</code> <code>assembly</code> <code>mmh</code></dd>
-  <dt>modalities</dt><dd><code>mocap</code> <code>imu</code> <code>emg</code> <code>force_plate</code> <code>grf</code> <code>video</code> <code>egocentric_video</code> <code>pose_estimation</code> <code>pressure_insole</code> <code>physiological</code> <code>survey</code></dd>
+  <dt>modalities</dt><dd><code>mocap</code> <code>imu</code> <code>force_plate</code> <code>pressure</code> <code>emg</code> <code>physiological</code> <code>video</code> <code>egocentric_video</code> <code>depth</code> <code>survey</code></dd>
   <dt>formats</dt><dd><code>c3d</code> <code>trc</code> <code>mot</code> <code>sto</code> <code>csv</code> <code>json</code> <code>mp4</code> <code>mat</code> <code>edf</code> <code>bag</code> <code>npz</code></dd>
   <dt>exoskeleton.role</dt><dd><code>evaluation</code> <code>control_input</code></dd>
   <dt>exoskeleton.body_region</dt><dd><code>back</code> <code>shoulder</code> <code>knee</code> <code>hip</code> <code>ankle</code> <code>neck</code> <code>wrist</code> <code>full_body</code></dd>

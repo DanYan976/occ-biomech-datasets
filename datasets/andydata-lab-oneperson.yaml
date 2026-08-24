@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Maurice P., Malaisé A., Ivaldi S., Rochel O., Amiot C., Paris N., Richard G.-J., Fritzsche L."
   institution: "Inria / DFKI (AnDy project)"
+  country: [FR, DE]
   year: 2019
 
 access:
@@ -14,7 +15,7 @@ access:
   license: "CC-BY-4.0"
 
 tasks: [reaching, carrying, assembly, mmh]
-modalities: [mocap, imu, video]
+modalities: [mocap, imu, pressure, video]
 
 subjects:
   n: 13

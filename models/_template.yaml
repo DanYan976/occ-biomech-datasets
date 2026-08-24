@@ -1,10 +1,12 @@
 # Copy this file to a new name (e.g. models/my-model.yaml) and fill it in.
 # Files starting with "_" are ignored by the build. See schema/model.schema.json
-# for the full field list. Required: id, title, source, links (at least one URL).
+# for the full field list. Required: id, title, source, links (at least one URL;
+# may be omitted only when status is coming_soon).
 
 id: my-model                          # lowercase-hyphenated slug, same as the filename
 title: "Human-readable model name"
 sample: false
+# status: coming_soon             # only for announced-but-unpublished methods; lets you omit links
 
 source:
   authors: "Last F., Last F., et al."
@@ -17,6 +19,7 @@ links:                                # at least one; paper is the canonical lan
   code: "https://github.com/org/repo"  # omit if no code is released
   # preprint: "https://arxiv.org/abs/xxxx.xxxxx"
   # record: "https://stacks.cdc.gov/..."
+  # website: "https://vendor.example/"   # when the method ships as software
 
 code_license: "MIT"                   # SPDX-style; omit when no code is released
 domain: "Occupational context the model was built for"

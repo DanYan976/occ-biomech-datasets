@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Kim S., Nussbaum M.A., Smets M., Ranganathan S."
   institution: "Virginia Tech / Ford Motor Company"
+  country: [US]
   year: 2021
 
 access:

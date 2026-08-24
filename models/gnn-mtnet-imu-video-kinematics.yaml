@@ -1,0 +1,26 @@
+# Coming-soon entry: the paper is under review and not yet public, so no links.
+id: gnn-mtnet-imu-video-kinematics
+title: "GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics"
+status: coming_soon
+sample: false
+
+source:
+  authors: "Yan D., Zhu G., Chen Y., Tao J., Ding Y., Zhang X., Yuan C., Yin W."
+  institution: "New Jersey Institute of Technology / Texas A&M University / Georgia Institute of Technology"
+  year: 2026
+
+domain: "Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)"
+inputs: "11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos"
+outputs: "16 lower-limb, lumbar, and arm joint angles over time"
+related_datasets: [tamu-offshore-wind-mocap]
+tags: [kinematics, imu, video, sensor-fusion, graph-neural-network, deep-learning, pytorch, wind-energy, ladder-climbing]
+description: >
+  Graph-enhanced multimodal deep-learning model that fuses wearable IMU
+  signals with 2-D keypoints from dual-view smartphone video to predict 16
+  full-body joint angles during occupational tasks. Per-channel bidirectional
+  LSTM/GRU encoders with temporal attention feed a 40-node anatomical graph
+  (GATv2), so accuracy degrades gracefully when sensors are occluded or
+  missing, and a single-step autoregressive feedback keeps predictions
+  temporally coherent. Developed on the offshore wind turbine maintenance
+  dataset; paper and code release pending.
+added: 2026-08-22

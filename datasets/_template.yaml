@@ -11,6 +11,7 @@ sample: false
 source:
   authors: "Last F., Last F., et al."
   institution: "Lab / University"
+  country: [US]                       # ISO 3166-1 alpha-2; list every country the data was collected in
   year: 2025
 
 access:                               # omit entirely for coming_soon entries with no page yet
@@ -19,7 +20,7 @@ access:                               # omit entirely for coming_soon entries wi
   license: "CC-BY-4.0"                # datasets keep their own license
 
 tasks: [lifting, mmh]                 # controlled vocab (see schema)
-modalities: [mocap, video, emg]       # controlled vocab (see schema)
+modalities: [mocap, video, emg]       # what was captured (sensors/data streams), not derived outputs — see schema
 
 subjects:
   n: 24

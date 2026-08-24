@@ -29,6 +29,13 @@
       "properties": {
         "authors": { "type": "string" },
         "institution": { "type": "string" },
+        "country": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "description": "ISO 3166-1 alpha-2 codes of the countries where the data was collected (one per contributing institution), e.g. [\"US\"] or [\"FR\", \"DE\"]. Drives the country filter and the Countries count."
+        },
         "year": { "type": "integer", "minimum": 1980, "maximum": 2100 }
       }
     },
@@ -55,7 +62,7 @@
       "minItems": 1,
       "items": {
         "type": "string",
-        "enum": ["mocap", "imu", "emg", "force_plate", "grf", "video", "egocentric_video", "pose_estimation", "pressure_insole", "physiological", "survey"]
+        "enum": ["mocap", "imu", "force_plate", "pressure", "emg", "physiological", "video", "egocentric_video", "depth", "survey"]
       }
     },
     "subjects": {

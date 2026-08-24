@@ -24,25 +24,22 @@ editing one is a pull request. The steps below are written for datasets; the
 4. Commit the YAML (and the regenerated `site/index.html` / `site/catalog.json`)
    and open a pull request.
 
-## Models and tools
+## Models
 
-Same workflow, different folder and schema:
-
-| Library | Copy                   | Validate against           | Required fields                   |
-|---------|------------------------|----------------------------|-----------------------------------|
-| Models  | `models/_template.yaml` | `schema/model.schema.json` | `id`, `title`, `source`, `links`  |
-| Tools   | `tools/_template.yaml`  | `schema/tool.schema.json`  | `id`, `title`, `vendor`, `links`  |
-
-A **model** is a published method — a pose estimator, an exposure equation, a
-biomechanical model — with a paper landing page in `links.paper` and, when
-released, code in `links.code` plus its `code_license`. A **tool** is software
-someone can actually obtain and run; set `licensing` to `commercial`, `free`, or
-`open_source` and use `pricing_note` for the one-line terms. Link tools to the
-models they implement with `related_models`, and either to catalog datasets with
-`related_datasets` (use the dataset `id`s). `python scripts/build_catalog.py`
-validates all three libraries at once and regenerates `site/models.json`,
-`site/tools.json`, `site/models.html`, and `site/tools.html`; commit those with
-your YAML.
+Same workflow, different folder and schema: copy `models/_template.yaml` and
+validate against `schema/model.schema.json` (required: `id`, `title`, `source`,
+`links`). A **model** is a published method — a pose estimator, an exposure
+equation, a biomechanical model — with a paper landing page in `links.paper`
+and, when released, code in `links.code` plus its `code_license`. If the method
+is available as software (commercial or free), put the vendor or project page in
+`links.website`; the card shows it as a "Software" link. Link models to catalog
+datasets with `related_datasets` (use the dataset `id`s). A method that is
+announced but whose paper is not yet public can be listed with
+`status: coming_soon`; that is the only case where `links` may be omitted, and
+the card then shows a "Coming soon" badge with no outbound link.
+`python scripts/build_catalog.py` validates both libraries at once and
+regenerates `site/models.json` and `site/models.html`; commit those with your
+YAML.
 
 ## Controlled vocabularies
 
@@ -52,8 +49,11 @@ your YAML.
 **tasks**: lifting, lowering, carrying, pushing, pulling, holding, reaching,
 squatting, walking, assembly, mmh.
 
-**modalities**: mocap, imu, emg, force_plate, grf, video, egocentric_video,
-pose_estimation, pressure_insole, physiological.
+**modalities** (what was captured — sensors and data streams, not derived
+outputs such as pose keypoints or joint angles): mocap (optical), imu,
+force_plate (incl. GRF), pressure (insoles or gloves), emg, physiological (HR,
+ECG, EDA, VO2…), video, egocentric_video, depth (depth cameras / LiDAR), survey
+(questionnaire-only studies).
 
 **exoskeleton.role**: `evaluation` (a device was worn and its effect measured),
 `control_input` (collected to develop or control an exoskeleton, no device worn).

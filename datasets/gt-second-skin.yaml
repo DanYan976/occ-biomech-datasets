@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Casey R., Nuesslein C., Davenport F., Wheeler J., Mazumdar A., Sawicki G.S., Young A.J."
   institution: "EPIC Lab, Georgia Institute of Technology"
+  country: [US]
   year: 2025
 
 access:
@@ -14,7 +15,7 @@ access:
   license: "CC-BY-4.0"
 
 tasks: [lifting, lowering, carrying, pushing, pulling, holding, squatting, walking, mmh]
-modalities: [imu, pressure_insole, emg, mocap, force_plate, grf]
+modalities: [imu, pressure, emg, mocap, force_plate]
 
 subjects:
   n: 10
@@ -30,7 +31,7 @@ load: "Lead blanket lifting, weighted and unweighted squats, loaded wagon push/p
 equipment: "Microstrain 6-axis IMUs (back, pelvis, thigh, shank, foot), XSENSOR X4 pressure insoles, EMG on right leg, optical motion capture, force plates, load cells"
 sampling:
   imu: 200
-  pressure_insole: 80
+  pressure: 80
   mocap: 200
   force_plate: 2000
 

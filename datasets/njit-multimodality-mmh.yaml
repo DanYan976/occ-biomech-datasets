@@ -7,10 +7,11 @@ sample: false
 source:
   authors: "NJIT Occupational Biomechanics Lab"
   institution: "New Jersey Institute of Technology (AnyMotion Lab)"
+  country: [US]
   year: 2026
 
 tasks: [lifting, lowering, mmh]
-modalities: [mocap, video, imu, emg, pressure_insole]
+modalities: [mocap, video, imu, emg, pressure]
 
 load: "Manual material handling across different box weights, lift heights, and asymmetry angles"
 equipment: "Optical mocap, video cameras, body-worn IMUs, surface EMG, pressure insoles"

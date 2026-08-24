@@ -6,6 +6,7 @@ sample: false
 source:
   authors: "Divekar N., Thomas G., Yerva A., Frame H., Gregg R."
   institution: "University of Michigan"
+  country: [US]
   year: 2024
 
 access:
@@ -14,7 +15,7 @@ access:
   license: "CC0-1.0"
 
 tasks: [lifting, lowering, carrying, squatting, walking]
-modalities: [emg, grf, imu]
+modalities: [emg, pressure, imu]
 
 subjects:
   n: 10
@@ -28,7 +29,7 @@ exoskeleton:
   outcomes: [muscle_activity, kinematics, kinetics, task_performance, subjective]
 
 load: "Squat lifting/lowering and carrying, plus level walking, 15-deg ramps and stairs, with vs. without bilateral knee exoskeletons"
-equipment: "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, foot force sensors"
+equipment: "Backdrivable knee exoskeletons with task-adaptive controller, quadriceps & hamstring EMG, pressure insoles (foot force)"
 formats: [mat]
 tags: [exoskeleton, knee, fatigue, quadriceps, task-adaptive-control]
 description: >
