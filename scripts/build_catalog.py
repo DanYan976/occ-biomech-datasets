@@ -76,6 +76,12 @@ MODELS_START = "<!-- MODELS:START -->"
 MODELS_END = "<!-- MODELS:END -->"
 MODELS_JSONLD_START = "<!-- MODELS_JSONLD:START -->"
 MODELS_JSONLD_END = "<!-- MODELS_JSONLD:END -->"
+MODELS_STATS_START = "<!-- MODELS_STATS:START -->"
+MODELS_STATS_END = "<!-- MODELS_STATS:END -->"
+MODELS_COUNT_START = "<!-- MODELS_COUNT:START -->"
+MODELS_COUNT_END = "<!-- MODELS_COUNT:END -->"
+MODELS_HOME_STATS_START = "<!-- MODELS_HOME_STATS:START -->"
+MODELS_HOME_STATS_END = "<!-- MODELS_HOME_STATS:END -->"
 
 # Canonical origin, used to mint stable @id values in the JSON-LD.
 SITE_URL = os.environ.get("SITE_URL", "https://occbiomechanics.org").rstrip("/")
@@ -300,6 +306,7 @@ def inject_vocab() -> None:
         return
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     props = schema["properties"]
+    mprops = json.loads(MODEL_SCHEMA_PATH.read_text(encoding="utf-8"))["properties"]
     tasks = props["tasks"]["items"]["enum"]
     mods = props["modalities"]["items"]["enum"]
     formats = props["formats"]["items"]["enum"]
@@ -319,6 +326,8 @@ def inject_vocab() -> None:
         f'  <dt>exoskeleton.body_region</dt><dd>{codes(exo["body_region"]["items"]["enum"])}</dd>\n'
         f'  <dt>exoskeleton.actuation</dt><dd>{codes(exo["actuation"]["items"]["enum"])}</dd>\n'
         f'  <dt>exoskeleton.outcomes</dt><dd>{codes(exo["outcomes"]["items"]["enum"])}</dd>\n'
+        f'  <dt>model.category</dt><dd>{codes(mprops["category"]["enum"])}</dd>\n'
+        f'  <dt>model.status</dt><dd>{codes(mprops["status"]["enum"])}</dd>\n'
         f'</dl>'
     )
     _inject(DOCS_HTML, VOCAB_START, VOCAB_END, block)
@@ -481,7 +490,7 @@ def _detail_page(entry: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20260822b" />
+<link rel="stylesheet" href="/style.css?v=20260824" />
 <script src="/nav.js?v=20260821" defer></script>
 {jsonld}</head>
 <body>
@@ -683,6 +692,18 @@ def models_jsonld(models: list[dict]) -> dict:
     return {"@context": "https://schema.org", "@graph": nodes}
 
 
+MODEL_CATEGORIES = [
+    ("assessment-method", "Assessment methods & indices",
+     "Published observational methods, psychophysical tables, and exposure equations."),
+    ("biomechanical", "Biomechanical & physiological models",
+     "Predictive models with explicit physical or physiological structure: spine loading, muscle fatigue, metabolic cost."),
+    ("vision", "Video & vision models",
+     "Models that estimate posture, activity, or ergonomic risk from video, images, or skeleton sequences."),
+    ("wearable", "Wearable-sensor models",
+     "Estimation models driven by IMUs, pressure insoles, and body-worn biosensors."),
+]
+
+
 def build_models(models: list[dict]) -> None:
     models = sorted(models, key=lambda m: (str(m.get("added", "")), m["id"]), reverse=True)
     clean = [{k: v for k, v in m.items() if not k.startswith("_")} for m in models]
@@ -692,13 +713,53 @@ def build_models(models: list[dict]) -> None:
         encoding="utf-8")
 
     n = len(models)
-    cards = "\n".join(_model_card(m) for m in models)
-    block = (f'<section class="exo-group">\n'
-             f'  <div class="section-head"><h2>All models</h2>'
-             f'<span class="count-note">{n} {"model" if n == 1 else "models"}</span></div>\n'
-             f'  <div class="grid">\n{cards}\n  </div>\n'
-             f'</section>')
-    _inject(MODELS_HTML, MODELS_START, MODELS_END, block)
+    e = html.escape
+
+    with_code = sum(1 for m in models if (m.get("links") or {}).get("code"))
+    software = sum(1 for m in models
+                   if (m.get("links") or {}).get("website") and not (m.get("links") or {}).get("code"))
+    coming = sum(1 for m in models if m.get("status") == "coming_soon")
+    readout = (
+        f'<div class="readout" aria-label="Library summary">\n'
+        f'      <div class="cell"><div class="num accent">{n}</div><div class="lbl">Models</div></div>\n'
+        f'      <div class="cell"><div class="num">{len(MODEL_CATEGORIES)}</div><div class="lbl">Categories</div></div>\n'
+        f'      <div class="cell"><div class="num">{with_code}</div><div class="lbl">With&nbsp;code</div></div>\n'
+        f'      <div class="cell"><div class="num">{software}</div><div class="lbl">As&nbsp;software</div></div>\n'
+        f'      <div class="cell"><div class="num amber">{coming}</div><div class="lbl">Coming&nbsp;soon</div></div>\n'
+        f'    </div>'
+    )
+    _inject(MODELS_HTML, MODELS_STATS_START, MODELS_STATS_END, readout)
+
+    _inject(INDEX_HTML, MODELS_COUNT_START, MODELS_COUNT_END, str(n))
+    home_stats = (
+        f'<li><span class="num">{n}</span> <span class="lbl">Models indexed</span></li>\n'
+        f'        <li><span class="num">{len(MODEL_CATEGORIES)}</span> <span class="lbl">Categories</span></li>\n'
+        f'        <li><span class="num">{with_code}</span> <span class="lbl">With released code</span></li>\n'
+        f'        <li><span class="num">{software}</span> <span class="lbl">Available as software</span></li>'
+    )
+    _inject(INDEX_HTML, MODELS_HOME_STATS_START, MODELS_HOME_STATS_END, home_stats)
+
+    jump = " · ".join(
+        f'<a href="#cat-{slug}">{e(title)}</a> ({sum(1 for m in models if m.get("category") == slug)})'
+        for slug, title, _ in MODEL_CATEGORIES)
+    sections = [f'<p class="desc" id="model-cats">{jump}</p>']
+    for slug, title, blurb in MODEL_CATEGORIES:
+        group = [m for m in models if m.get("category") == slug]
+        if not group:
+            continue
+        cards = "\n".join(_model_card(m) for m in group)
+        k = len(group)
+        sections.append(
+            f'<section class="exo-group" id="cat-{slug}">\n'
+            f'  <div class="section-head"><h2>{e(title)}</h2>'
+            f'<span class="count-note">{k} {"model" if k == 1 else "models"}</span></div>\n'
+            f'  <p class="desc">{e(blurb)}</p>\n'
+            f'  <div class="grid">\n{cards}\n  </div>\n'
+            f'</section>')
+    stray = [m["id"] for m in models if m.get("category") not in {c[0] for c in MODEL_CATEGORIES}]
+    if stray:
+        raise SystemExit(f"models without a known category: {stray}")
+    _inject(MODELS_HTML, MODELS_START, MODELS_END, "\n".join(sections))
 
     jsonld = json.dumps(models_jsonld(models), ensure_ascii=False, indent=2)
     _inject(MODELS_HTML, MODELS_JSONLD_START, MODELS_JSONLD_END,

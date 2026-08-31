@@ -1,6 +1,7 @@
 id: chen-video-hand-activity-level
 title: "Automated Video Exposure Assessment of the ACGIH Hand Activity Level"
 sample: false
+category: vision
 
 source:
   authors: "Chen C.-H., Hu Y.H., Yen T.Y., Radwin R.G."

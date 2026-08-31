@@ -1,0 +1,26 @@
+id: lee-scaffolding-3d-pose-risk
+title: "Real-Time Monocular 3D Pose Risk Assessment for Scaffolding Workers"
+sample: false
+category: vision
+
+source:
+  authors: "Lee S., Kim K., Jang J., Park M., Chun G., Park S."
+  institution: "Sungkyunkwan University / Gangneung-Wonju National University / KAIST"
+  year: 2026
+
+links:
+  paper: "https://www.iaarc.org/publications/fulltext/ISARC2026_1279.pdf"
+
+domain: "Construction scaffolding work — continuous WMSD risk monitoring of high-risk postures"
+inputs: "Monocular RGB camera video of scaffolding workers, no wearable sensors"
+outputs: "3D joint angles, construction-specific hazardous posture classes, and time-weighted cumulative REBA scores"
+tags: [pose-estimation, monocular, construction, scaffolding, reba, real-time, computer-vision]
+description: >
+  Vision-based framework estimating 3D joint angles from a single RGB camera,
+  classifying construction-specific hazardous postures, and computing
+  time-weighted cumulative REBA scores in real time for scaffolding work
+  (ISARC 2026). Validation showed strong agreement with expert assessments,
+  with stable detection of squatting postures and higher misclassification
+  for overhead work due to depth ambiguity and self-occlusion. No code
+  release.
+added: 2026-08-25

@@ -1,0 +1,29 @@
+id: cp3d-construction-pose-risk
+title: "CP3D: Construction 3D Pose Dataset and Deep-Learning Ergonomic Risk Assessment"
+sample: false
+category: vision
+
+source:
+  authors: "Fan C., Mei Q., Li X."
+  institution: "University of Alberta"
+  year: 2024
+
+links:
+  paper: "https://doi.org/10.1016/j.autcon.2024.105452"
+  doi: "10.1016/j.autcon.2024.105452"
+  code: "https://github.com/xinmingliUofA/CP3D"
+
+domain: "Construction work — 3D pose estimation and ergonomic risk assessment"
+inputs: "RGB images of construction workers with bounding-box and root-depth information"
+outputs: "3D joint coordinates on a biomechanical skeleton covering all REBA/RULA joint angles, plus REBA and RULA risk scores"
+tags: [pose-estimation, construction, reba, rula, risk-assessment, deep-learning, pytorch, mocap]
+description: >
+  Construction-specific 3D pose resource and model (Automation in Construction,
+  2024, open access): ~420k Vicon-captured 3D poses of 7 actors across 14
+  common construction activities, on a purpose-built skeletal model that
+  supplies every joint angle REBA and RULA require, plus a PyTorch multi-person
+  pipeline scoring worker ergonomic risk from RGB images. Models trained with
+  CP3D outperform those trained without it. The GitHub repo carries a REBA
+  demo (no license stated); the dataset itself is requested via a link in the
+  README.
+added: 2026-08-24

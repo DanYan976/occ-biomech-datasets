@@ -1,0 +1,28 @@
+id: lin-auto-method-selection-posture
+title: "Real-Time Posture Evaluation With Automatic Ergonomic Method Selection"
+sample: false
+category: vision
+
+source:
+  authors: "Lin P.-C., Chen Y.-J., Chen W.-S., Lee Y.-J."
+  institution: "National Tsing Hua University"
+  year: 2022
+
+links:
+  paper: "https://doi.org/10.1038/s41598-022-05812-9"
+  doi: "10.1038/s41598-022-05812-9"
+  record: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8825815/"
+
+domain: "General occupational tasks — automated observational posture assessment from workplace video"
+inputs: "RGB video of work tasks, processed to OpenPose joint keypoints, no body-worn sensors"
+outputs: "Automatically selected assessment method (REBA, RULA, or OWAS), its risk score, and flagged high-risk frames"
+tags: [posture-assessment, openpose, reba, rula, owas, decision-tree, computer-vision]
+description: >
+  Computes joint angles from workplace video via OpenPose, then a decision tree
+  picks the most appropriate observational method (REBA, RULA, or OWAS) from
+  task repetitiveness and upper/lower-limb activity and scores MSD risk
+  (Sci. Rep., 2022, open access). Tested on 15 operation videos spanning six
+  occupational categories (assembly, maintenance, manual handling, cleaning,
+  office work, driving), isolating the ~10% of frames that are high risk and
+  cutting expert evaluation time by roughly 90%. No code release.
+added: 2026-08-25

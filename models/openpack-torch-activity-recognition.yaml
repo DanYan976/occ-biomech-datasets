@@ -1,0 +1,31 @@
+id: openpack-torch-activity-recognition
+title: "OpenPack Baseline Models for Packaging Work Recognition (openpack-torch)"
+sample: false
+category: wearable
+
+source:
+  authors: "Yoshimura N., Morales J., Maekawa T., Hara T."
+  institution: "Osaka University"
+  year: 2024
+
+links:
+  paper: "https://ieeexplore.ieee.org/document/10494448"
+  preprint: "https://arxiv.org/abs/2212.11152"
+  code: "https://github.com/open-pack/openpack-torch"
+  website: "https://open-pack.github.io/"
+
+code_license: "MIT"
+domain: "Logistics packaging work — operation recognition for IoT-enabled warehouses"
+inputs: "Wearable IMU acceleration streams and skeleton keypoints from the OpenPack dataset"
+outputs: "Frame-wise labels over 10 packaging work operations (semantic segmentation of the work period)"
+related_datasets: [openpack]
+tags: [activity-recognition, deep-learning, imu, skeleton, logistics, packaging, baselines]
+description: >
+  Official PyTorch baselines accompanying the OpenPack dataset (IEEE PerCom
+  2024): U-Net and DeepConvLSTM models on IMU acceleration and ST-GCN on
+  skeleton keypoints, framing packaging-operation recognition as frame-wise
+  semantic segmentation over 10 operation classes. Ships as the pip-installable
+  openpack-torch package (MIT) with tutorials and the companion
+  openpack-toolkit for data loading; served as the reference implementation
+  for the OpenPack Challenge 2022.
+added: 2026-08-25

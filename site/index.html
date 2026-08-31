@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260822b" />
+<link rel="stylesheet" href="style.css?v=20260824" />
 <script src="nav.js?v=20260821" defer></script>
 <script>
 /* Old permalinks pointed at anchors on this page; cards now live on
@@ -66,15 +66,16 @@ if (location.hash.indexOf("#dataset-") === 0) {
     <p class="lede">A discovery catalog for occupational biomechanics: motion datasets from optical motion capture, video, and wearable sensors, plus AI and musculoskeletal models and open-source tools for motion analysis. We index and link to original sources.</p>
     <div class="cta-row">
       <a class="btn primary" href="datasets.html">Browse the catalog →</a>
+      <a class="btn" href="models.html">Model library</a>
       <a class="btn" href="exoskeletons.html">Exoskeleton studies</a>
       <a class="btn" href="docs.html">Schema &amp; API</a>
     </div>
     <div class="readout" id="readout" aria-label="Catalog summary">
       <div class="cell"><div class="num" id="stat-total">0</div><div class="lbl">Datasets</div></div>
-      <div class="cell"><div class="num accent" id="stat-open">0</div><div class="lbl">Open</div></div>
-      <div class="cell"><div class="num amber" id="stat-soon">0</div><div class="lbl">Coming&nbsp;soon</div></div>
+      <div class="cell"><div class="num"><!-- MODELS_COUNT:START -->
+49
+<!-- MODELS_COUNT:END --></div><div class="lbl">Models</div></div>
       <div class="cell"><div class="num" id="stat-exo">0</div><div class="lbl">Exoskeleton&nbsp;records</div></div>
-      <div class="cell"><div class="num" id="stat-mod">0</div><div class="lbl">Modalities</div></div>
       <div class="cell"><div class="num" id="stat-countries">0</div><div class="lbl">Countries</div></div>
     </div>
   </div>
@@ -105,6 +106,28 @@ if (location.hash.indexOf("#dataset-") === 0) {
         <li><span class="num" id="exo-device-count">0</span> <span class="lbl">Devices covered</span></li>
         <li><span class="num" id="exo-region-count">0</span> <span class="lbl">Body regions</span></li>
         <li><span class="num" id="exo-control-count">0</span> <span class="lbl">Controller-training datasets</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="feature">
+      <div class="feature-body">
+        <div class="eyebrow">Model library</div>
+        <h2>The models and methods of the field, indexed the same way</h2>
+        <p>From the classic assessment methods — the NIOSH lifting equation, RULA, REBA, the strain index — to biomechanical models of spine loading and fatigue, vision models that read posture and risk from video, and wearable-sensor models driven by IMUs, insoles, and biosensors. Each entry links to its paper, its source code where released, and the software that implements it where one exists.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="models.html">Browse the model library →</a>
+          <a class="btn" href="docs.html#model-schema">Model schema</a>
+        </div>
+      </div>
+      <ul class="feature-stats" id="models-readout">
+        <!-- MODELS_HOME_STATS:START -->
+<li><span class="num">49</span> <span class="lbl">Models indexed</span></li>
+        <li><span class="num">4</span> <span class="lbl">Categories</span></li>
+        <li><span class="num">9</span> <span class="lbl">With released code</span></li>
+        <li><span class="num">9</span> <span class="lbl">Available as software</span></li>
+<!-- MODELS_HOME_STATS:END -->
       </ul>
     </div>
   </section>
@@ -143,7 +166,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       </div>
       <div class="how-cell">
         <div class="eyebrow">Machine-readable</div>
-        <p>The whole catalog is one JSON file — <a href="catalog.json">catalog.json</a> — plus schema.org markup for Google Dataset Search. <a href="docs.html">Read the docs</a>.</p>
+        <p>Each library is one JSON file — <a href="catalog.json">catalog.json</a> and <a href="models.json">models.json</a> — plus schema.org markup for Google Dataset Search. <a href="docs.html">Read the docs</a>.</p>
       </div>
     </div>
   </section>
@@ -174,7 +197,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
-  "count": 23,
+  "count": 26,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -333,8 +356,8 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "status": "open",
       "sample": false,
       "source": {
-        "authors": "Northwestern University",
-        "institution": "Northwestern University",
+        "authors": "Mohapatra P., Aravind V., Bisram M., et al.",
+        "institution": "Northwestern University / Boeing / Deere & Co. / University at Buffalo",
         "country": [
           "US"
         ],
@@ -358,7 +381,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "n": 43
       },
       "load": "Composite sheet layup and wire harnessing simulations with weighted vest",
-      "equipment": "Flexible wearable sensors: ANNE vitals (heart rate, ECG, chest temperature) + chest accelerometer/gyroscope; Borg RPE scale",
+      "equipment": "Six wearable sensing locations: chest-mounted ANNE soft biosensor (ECG-derived heart rate, HRV, skin temperature) + five IMU nodes across torso and arms; Borg RPE scale",
       "formats": [
         "csv"
       ],
@@ -369,7 +392,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "borg-scale",
         "physiological"
       ],
-      "description": "Wearable-sensor (heart rate, ECG, chest temperature, chest accelerometer/ gyroscope) and self-reported Borg data from 43 workers performing composite layup and wire-harnessing tasks with a weighted vest to induce fatigue, across five work segments plus rest, for multi-level fatigue prediction.\n",
+      "description": "Multimodal wearable data - a chest-mounted soft biosensor (ECG-derived heart rate, HRV, skin temperature) plus five torso/arm IMUs - with self-reported Borg ratings from 43 workers performing composite layup and wire-harnessing tasks with a weighted vest to induce fatigue, across five work segments plus rest, for multi-level fatigue prediction (PNAS Nexus, 2024).\n",
       "added": "2026-07-11"
     },
     {
@@ -1013,6 +1036,144 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "added": "2026-08-17"
     },
     {
+      "id": "uw-iom",
+      "title": "UW-IOM: University of Washington Indoor Object Manipulation Dataset",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Parsa B., Samani E.U., Hendrix R., Devine C., Singh S.M., Devasia S., Banerjee A.G.",
+        "institution": "University of Washington",
+        "country": [
+          "US"
+        ],
+        "year": 2019
+      },
+      "access": {
+        "url": "https://data.mendeley.com/datasets/xwzzkxtf9s/1",
+        "doi": "10.17632/xwzzkxtf9s.1",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "reaching",
+        "mmh"
+      ],
+      "modalities": [
+        "video"
+      ],
+      "subjects": {
+        "n": 20,
+        "age_range": "18-25"
+      },
+      "load": "Boxes and rods of varying weights picked and placed at multiple shelf heights",
+      "equipment": "Kinect for Xbox One (RGB video at ~12 fps plus Kinect skeletal tracking)",
+      "sampling": {
+        "video": 12
+      },
+      "tags": [
+        "action-recognition",
+        "ergonomic-risk",
+        "object-manipulation",
+        "warehouse",
+        "kinect"
+      ],
+      "description": "Warehouse-style object-manipulation dataset introduced with the spatiotemporal convolutional ergonomic-risk work (IEEE RA-L, 2019): 20 participants pick and place boxes and rods of varying weights at multiple heights in ~3-minute Kinect recordings with skeletal tracking. Every frame is annotated with one of 17 action labels on a four-tier hierarchy (object, motion, manipulation, surface height), of which 3 classes are low, 11 medium, and 3 high ergonomic risk - ground truth for the UW action-segmentation and REBA-prediction models.\n",
+      "added": "2026-08-24"
+    },
+    {
+      "id": "inhard",
+      "title": "InHARD: Industrial Human Action Recognition Dataset",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Dallel M., Havard V., Baudry D., Savatier X.",
+        "institution": "CESI LINEACT / ESIGELEC-IRSEEM",
+        "country": [
+          "FR"
+        ],
+        "year": 2020
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.4003541",
+        "doi": "10.5281/zenodo.4003541",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "assembly"
+      ],
+      "modalities": [
+        "mocap",
+        "video"
+      ],
+      "subjects": {
+        "n": 16
+      },
+      "load": "Industrial assembly actions in a human-robot collaboration cell; 13 action classes, 4,800+ action samples, 2M+ frames",
+      "equipment": "Perception Neuron 32 inertial mocap suit (17 joints, BVH skeletons); three Logitech C920 RGB cameras (two side views at ±45°, one top view)",
+      "sampling": {
+        "mocap": 120
+      },
+      "formats": [
+        "mp4",
+        "csv"
+      ],
+      "tags": [
+        "activity-recognition",
+        "har",
+        "human-robot-collaboration",
+        "assembly",
+        "skeleton",
+        "manufacturing"
+      ],
+      "description": "RGB+skeleton dataset for industrial human action recognition in a collaborative-robotics context: 16 subjects performing assembly actions alongside a robot, labeled into 13 action and 74 meta-action classes. Skeleton data from a Perception Neuron suit at 120 Hz plus three synchronized RGB views. Presented at IEEE ICHMS 2020 (doi:10.1109/ICHMS49158.2020.9209531).\n",
+      "added": "2026-08-25"
+    },
+    {
+      "id": "vtt-coniot",
+      "title": "VTT-ConIoT: Activity Recognition of Construction Workers with IMUs",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Makela S.-M., Lamsa A., Keranen J.S., Liikka J., Ronkainen J., Peltola J., Haikio J., Bordallo Lopez M.",
+        "institution": "VTT Technical Research Centre of Finland / University of Oulu",
+        "country": [
+          "FI"
+        ],
+        "year": 2021
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.4683703",
+        "doi": "10.5281/zenodo.4683703",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "assembly",
+        "walking",
+        "reaching"
+      ],
+      "modalities": [
+        "imu",
+        "video"
+      ],
+      "subjects": {
+        "n": 13
+      },
+      "load": "16 simulated construction-work activities (installation, painting, drilling, cleaning, climbing, walking) designed with building-industry stakeholders",
+      "equipment": "10-DOF wearable IMUs (accelerometer, gyroscope, magnetometer, barometer) at three body locations; body pose keypoints extracted from complementary video",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "construction",
+        "activity-recognition",
+        "har",
+        "wearable-sensors"
+      ],
+      "description": "Realistic human activity recognition dataset for professional construction work: 13 subjects performing 16 recommended or non-recommended work activities with 10-DOF IMUs at three body positions, plus video-derived pose keypoints. Designed with construction-industry stakeholders and validated against real site conditions (doi:10.3390/su14010220).\n",
+      "added": "2026-08-25"
+    },
+    {
       "id": "mayer-apogee-lifting-speeds",
       "title": "Apogee Active Back Exoskeleton: Box Lifting at Different Speeds",
       "status": "restricted",
@@ -1487,6 +1648,6 @@ if (location.hash.indexOf("#dataset-") === 0) {
 }
 </script>
 <!-- CATALOG:END -->
-<script src="app.js?v=20260822b"></script>
+<script src="app.js?v=20260825"></script>
 </body>
 </html>

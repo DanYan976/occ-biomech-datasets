@@ -1,0 +1,29 @@
+id: niosh-wearable-imu-lifting-risk
+title: "NIOSH Five-IMU Wearable System for Automatic Lifting Risk-Factor Assessment"
+sample: false
+category: wearable
+
+source:
+  authors: "Lu M., Barim M.S., Feng S., Hughes G., Hayden M., Werren D."
+  institution: "NIOSH / FocusMotion"
+  year: 2020
+
+links:
+  paper: "https://doi.org/10.1007/978-3-030-49904-4_15"
+  doi: "10.1007/978-3-030-49904-4_15"
+  record: "https://stacks.cdc.gov/view/cdc/224429"
+
+domain: "Manual lifting — Revised NIOSH Lifting Equation exposure assessment in the field"
+inputs: "Five body-worn IMUs (both wrists, dominant upper arm, upper back, dominant thigh), optionally with measured body-segment lengths"
+outputs: "Automatic lift detection plus the RNLE input variables: lifting duration, trunk flexion angle, and vertical/horizontal hand locations"
+tags: [imu, lifting, niosh-lifting-equation, wearables, machine-learning, exposure-assessment]
+description: >
+  NIOSH algorithm computing the Revised NIOSH Lifting Equation input variables
+  from five body-worn IMUs: a wrist-motion synchronization feature drives
+  machine-learning lift detection (85% training accuracy) and a
+  body-segment-length ratio model derives trunk flexion and hand locations
+  (HCII 2020, LNCS 12198). Validated against optical motion capture on 10
+  subjects and 360 lifting trials - duration within ~1 s, trunk angle within
+  ~2 degrees, and hand-location errors down to 14/2.2 cm with measured segment
+  lengths. Open copy on CDC STACKS; no code release.
+added: 2026-08-24

@@ -1,0 +1,27 @@
+id: robert-lachaine-imu-validation
+title: "Full-Body IMU Joint Angle Validation for Manual Material Handling"
+sample: false
+category: wearable
+
+source:
+  authors: "Robert-Lachaine X., Mecheri H., Larue C., Plamondon A."
+  institution: "IRSST (Montreal) / Ecole de technologie superieure"
+  year: 2017
+
+links:
+  paper: "https://doi.org/10.1007/s11517-016-1537-2"
+  doi: "10.1007/s11517-016-1537-2"
+
+domain: "Manual material handling — methodological basis for inertial motion capture in MMH ergonomics"
+inputs: "Full-body Xsens inertial motion capture suit during manual handling tasks"
+outputs: "Whole-body joint angles benchmarked against an optoelectronic reference system"
+tags: [imu, validation, joint-angles, mmh, methodology, motion-capture]
+description: >
+  Systematic validation of full-body inertial motion capture joint angles
+  against an optoelectronic reference during manual material handling
+  (Med. Biol. Eng. Comput., 2017, 55:609-619), quantifying agreement per
+  joint and plane and the drift accumulated over task duration. Widely cited
+  as the methodological basis for using IMU suits in MMH ergonomics studies,
+  including the IRSST force-plate-free L5/S1 model already in this library.
+  No code release.
+added: 2026-08-25

@@ -1,0 +1,28 @@
+id: cruciata-lightweight-vit-posture
+title: "Lightweight Vision Transformer for Frame-Level Posture Risk Classification"
+sample: false
+category: vision
+
+source:
+  authors: "Cruciata L., Contino S., Ciccarelli M., Mostarda L., Papetti A., Piangerelli M., Pirrone R."
+  institution: "University of Palermo / Polytechnic University of Marche / University of Perugia / University of Camerino"
+  year: 2025
+
+links:
+  paper: "https://doi.org/10.3390/s25154750"
+  doi: "10.3390/s25154750"
+  record: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12349185/"
+
+domain: "Manual manufacturing — WMSD risk monitoring on assembly, handling, and quality-control tasks"
+inputs: "Raw RGB video frames (224x224), no skeleton reconstruction or joint-angle estimation"
+outputs: "Binary ergonomic risk labels (acceptable vs. risky) for eight body regions per frame, from RULA-derived thresholds"
+tags: [posture-classification, vision-transformer, deep-learning, rula, wmsd, manufacturing, edge-computing]
+description: >
+  ~5M-parameter vision transformer (SPECTRE-ViT) that classifies ergonomic
+  risk for eight anatomical regions (neck, trunk, bilateral upper/lower arms,
+  wrists) directly from raw RGB frames in a single multi-label pass (Sensors,
+  2025, open access). Trained on synchronized RGB video and full-body inertial
+  motion capture with labels from RULA thresholds; reports F1 above 0.99 and
+  AUC above 0.996 per region with real-time inference on edge devices. Code
+  and data are available only on request to the authors.
+added: 2026-08-25

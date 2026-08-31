@@ -1,0 +1,28 @@
+id: garg-metabolic-energy-model
+title: "Garg Metabolic Energy Prediction Model for Manual Materials Handling"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Garg A., Chaffin D.B., Herrin G.D."
+  institution: "University of Michigan"
+  year: 1978
+
+links:
+  paper: "https://doi.org/10.1080/0002889778507831"
+  doi: "10.1080/0002889778507831"
+  website: "https://c4e.engin.umich.edu/tools-services/eepp-software/"
+
+domain: "Manual material handling — metabolic workload and work-rest design"
+inputs: "Job decomposed into task elements (lift, lower, carry, walk, hold) with posture, load, frequency, and worker body weight"
+outputs: "Predicted metabolic energy expenditure rate (kcal/min) for the job"
+tags: [metabolic-cost, energy-expenditure, mmh, fatigue, work-design]
+description: >
+  Additive model predicting the metabolic rate of manual-materials-handling
+  jobs (AIHA Journal, 1978): a job is decomposed into task elements whose
+  energy costs - functions of posture, load, frequency, and body weight - sum
+  with postural maintenance costs to give kcal/min, used for whole-body fatigue
+  criteria and work-rest scheduling. Implemented as the free University of
+  Michigan Energy Expenditure Prediction Program (EEPP), a legacy tool whose
+  page blocks automated link checkers but remains live.
+added: 2026-08-24

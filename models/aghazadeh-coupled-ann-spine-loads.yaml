@@ -1,0 +1,28 @@
+id: aghazadeh-coupled-ann-spine-loads
+title: "Coupled Neural Networks for Posture Prediction and Spinal Loads"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Aghazadeh F., Arjmand N., Nasrabadi A.M."
+  institution: "Sharif University of Technology / Shahed University"
+  year: 2020
+
+links:
+  paper: "https://doi.org/10.1016/j.jbiomech.2019.109332"
+  doi: "10.1016/j.jbiomech.2019.109332"
+
+domain: "Load-handling activities — spine-load estimation from a few easily measured inputs"
+inputs: "A small set of measurable task and subject parameters (load position in space, subject anthropometry), no motion capture"
+outputs: "Full-body 3D posture (segment orientations), then lumbosacral moments and L5/S1 compression and shear loads"
+tags: [neural-network, posture-prediction, spine-loading, low-back, mmh, sparse-input]
+description: >
+  Two coupled artificial neural networks trained on 15 subjects each
+  performing 135 load-handling activities (nine horizontal by five vertical
+  load locations): the first predicts full-body 3D posture from a few
+  measurable inputs, the second maps predicted posture to lumbosacral
+  moments and spinal loads (J. Biomech., 2020, vol. 102). Bypasses motion
+  capture and detailed biomechanical modeling for quick spine-load screening
+  of manual handling; extended by later work from the same group. No code
+  release.
+added: 2026-08-25

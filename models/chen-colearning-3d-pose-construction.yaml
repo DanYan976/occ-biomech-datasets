@@ -1,0 +1,26 @@
+id: chen-colearning-3d-pose-construction
+title: "Co-Learning 3D Pose Estimation for Real-Time Construction Ergonomics"
+sample: false
+category: vision
+
+source:
+  authors: "Chen W., Gu D., Ke J."
+  institution: "The University of Hong Kong"
+  year: 2024
+
+links:
+  paper: "https://doi.org/10.1111/mice.13139"
+  doi: "10.1111/mice.13139"
+
+domain: "Construction sites — continuous on-site ergonomic risk monitoring from a single camera"
+inputs: "Monocular RGB video of construction workers, no markers or wearable sensors"
+outputs: "Real-time 3D postures via pose tracking and ergonomic risk levels for monitored workers"
+tags: [pose-estimation, monocular, construction, deep-learning, real-time, computer-vision]
+description: >
+  Lightweight monocular 3D human pose estimation model with a residual
+  log-likelihood estimation head, trained with a co-learning scheme that
+  draws 2D and 3D features from multi-dimension datasets simultaneously
+  (Comput.-Aided Civ. Infrastruct. Eng., 2024). Combined with pose tracking,
+  it recognizes workers' 3D postures in real time for on-site ergonomic risk
+  assessment in construction. No code release.
+added: 2026-08-25

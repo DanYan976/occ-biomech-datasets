@@ -1,0 +1,27 @@
+id: matijevich-trunk-imu-insole-low-back-load
+title: "Trunk IMU + Pressure-Insole Estimation of Low-Back Loading in Manual Material Handling"
+sample: false
+category: wearable
+
+source:
+  authors: "Matijevich E.S., Volgyesi P., Zelik K.E."
+  institution: "Vanderbilt University"
+  year: 2021
+
+links:
+  paper: "https://doi.org/10.3390/s21020340"
+  doi: "10.3390/s21020340"
+
+domain: "Manual material handling — continuous low-back load monitoring"
+inputs: "One trunk-mounted IMU plus bilateral pressure-sensing insoles"
+outputs: "Continuous time-series L5/S1 lumbar extension moment"
+tags: [imu, pressure-insoles, spine-loading, lifting, machine-learning, wearables]
+description: >
+  Gradient-boosted decision-tree model estimating the time-series lumbar (L5/S1)
+  extension moment from a single trunk IMU and pressure-sensing insoles
+  (Sensors, 2021, open access). Trained and evaluated on 10 adults each
+  performing about 400 distinct manual-material-handling tasks against lab-based
+  ground truth: r-squared = 0.89 (RMSE ~20 Nm) with idealized signals and
+  r-squared = 0.80 with actual wearable sensors, with the insoles proving
+  irreplaceable among the sensor options tested. No public code or data release.
+added: 2026-08-24

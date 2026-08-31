@@ -1,0 +1,29 @@
+id: mehrizi-multiview-3d-lifting-pose
+title: "Deep Multi-View 3D Pose Estimation for Lifting Motions"
+sample: false
+category: vision
+
+source:
+  authors: "Mehrizi R., Peng X., Xu X., Zhang S., Li K."
+  institution: "Rutgers University / North Carolina State University / UNC Charlotte"
+  year: 2019
+
+links:
+  paper: "https://doi.org/10.1016/j.jbiomech.2018.12.022"
+  doi: "10.1016/j.jbiomech.2018.12.022"
+  preprint: "https://arxiv.org/abs/1802.01741"
+
+domain: "Manual lifting — markerless full-body 3D pose for biomechanical analysis"
+inputs: "RGB video frames from two synchronized camera views at 90 and 135 degrees, no markers or depth sensors"
+outputs: "Per-frame 3D coordinates of 14 body joints"
+tags: [pose-estimation, markerless, lifting, deep-learning, multi-view, computer-vision]
+description: >
+  Two-stage deep network estimating full-body 3D pose during lifting from two
+  ordinary camera views - an hourglass 2D module per view feeding a multi-view
+  3D pose generator (J. Biomech., 2019; the arXiv preprint is the FG 2018
+  conference version). Validated against synchronized marker-based motion
+  capture on 12 adults performing nine lifting variations (three heights,
+  three asymmetry angles): mean 3D joint error 14.7 +/- 3.0 mm, with larger
+  errors at 60-degree asymmetry and shoulder height. The lifting dataset and
+  code were not released.
+added: 2026-08-24

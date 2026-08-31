@@ -1,0 +1,28 @@
+id: moore-garg-strain-index
+title: "Strain Index and Revised Strain Index for Distal Upper-Extremity Risk"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Moore J.S., Garg A., Kapellusch J.M."
+  institution: "Medical College of Wisconsin / University of Wisconsin-Milwaukee"
+  year: 1995
+
+links:
+  paper: "https://doi.org/10.1080/15428119591016863"
+  doi: "10.1080/15428119591016863"
+  record: "https://doi.org/10.1080/00140139.2016.1237678"
+
+domain: "Hand-intensive repetitive work — distal upper-extremity MSD risk"
+inputs: "Six task variables: intensity of exertion, duration of exertion, efforts per minute, hand/wrist posture, speed of work, duration per day"
+outputs: "Strain Index score classifying jobs as safe or hazardous for distal upper-extremity disorders"
+tags: [upper-extremity, strain-index, repetitive-motion, risk-index, exposure-assessment]
+description: >
+  The Strain Index (AIHA Journal, 1995) multiplies six task-variable ratings
+  into a single score for risk of distal upper-extremity disorders in
+  hand-intensive work. The Revised Strain Index (Garg, Moore & Kapellusch,
+  Ergonomics, 2017 - linked as the record) replaces the categorical multipliers
+  with continuous functions of force, exertion frequency and duration, and
+  posture, and has been validated against carpal tunnel syndrome incidence in
+  prospective cohorts. Public method; both papers are paywalled.
+added: 2026-08-24

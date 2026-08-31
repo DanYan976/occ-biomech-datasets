@@ -1,0 +1,28 @@
+id: marras-lmm-lbd-risk-model
+title: "Marras Lumbar Motion Monitor Low-Back Disorder Risk Model"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Marras W.S., Lavender S.A., Leurgans S.E., et al."
+  institution: "The Ohio State University (Biodynamics Laboratory)"
+  year: 1993
+
+links:
+  paper: "https://doi.org/10.1097/00007632-199304000-00015"
+  doi: "10.1097/00007632-199304000-00015"
+  website: "https://spine.osu.edu/risk-exposure-quantification"
+
+domain: "Industrial lifting jobs — low-back disorder risk surveillance"
+inputs: "Trunk kinematics from the Lumbar Motion Monitor plus workplace measures: lift rate, maximum load moment, sagittal flexion, lateral velocity, twisting velocity"
+outputs: "Probability of membership in the high-risk group for occupational low-back disorders"
+tags: [low-back, lifting, risk-assessment, trunk-kinematics, epidemiology]
+description: >
+  Logistic risk model from a case-control study of 403 industrial lifting jobs
+  (Spine, 1993): five trunk-motion and workplace measures captured with the
+  Lumbar Motion Monitor - a wearable exoskeleton goniometer - combine into a
+  probability of high-risk group membership for low-back disorder. Ohio State
+  reports the model as two to three times more predictive of occupational LBD
+  rates than the NIOSH lifting guides; the LMM instrument is commercial and the
+  model lives on in the OSU Spine Research Institute's risk-exposure services.
+added: 2026-08-24

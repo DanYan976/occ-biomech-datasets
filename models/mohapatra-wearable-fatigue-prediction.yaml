@@ -1,0 +1,30 @@
+id: mohapatra-wearable-fatigue-prediction
+title: "Wearable Network for Multilevel Physical Fatigue Prediction in Manufacturing Workers"
+sample: false
+category: wearable
+
+source:
+  authors: "Mohapatra P., Aravind V., Bisram M., et al."
+  institution: "Northwestern University / Boeing / Deere & Co. / University at Buffalo"
+  year: 2024
+
+links:
+  paper: "https://doi.org/10.1093/pnasnexus/pgae421"
+  doi: "10.1093/pnasnexus/pgae421"
+  code: "https://github.com/payalmohapatra/WorkerFatigue"
+  record: "https://zenodo.org/records/12788571"
+
+domain: "Manufacturing (aerospace composite layup and wire harnessing) — physical fatigue monitoring"
+inputs: "Chest-mounted soft biosensor (heart rate, HRV, skin temperature) plus five torso/arm IMUs and worker attributes"
+outputs: "Continuous perceived physical fatigue on a modified Borg 0-10 scale"
+related_datasets: [nu-manufacturing-fatigue]
+tags: [fatigue, wearables, imu, biosensors, machine-learning, xgboost, manufacturing]
+description: >
+  Task-agnostic XGBoost regressor predicting continuous 0-10 Borg physical
+  fatigue from a six-location wearable network - one skin-interfaced chest
+  biosensor plus five IMUs (PNAS Nexus, 2024, open access). Developed on 43
+  participants replicating two strenuous aerospace-manufacturing tasks; an
+  asymmetric LINEX loss cut fatigue underprediction from 0.71 to 0.38 with
+  average MAE ~2.3 across tasks and unseen users. Code is on GitHub (no license
+  stated) and the full deidentified multimodal database is on Zenodo (CC BY 4.0).
+added: 2026-08-24

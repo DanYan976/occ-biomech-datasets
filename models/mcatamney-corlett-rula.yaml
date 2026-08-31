@@ -1,0 +1,29 @@
+id: mcatamney-corlett-rula
+title: "RULA: Rapid Upper Limb Assessment"
+sample: false
+category: assessment-method
+
+source:
+  authors: "McAtamney L., Corlett E.N."
+  institution: "University of Nottingham (Institute for Occupational Ergonomics)"
+  year: 1993
+
+links:
+  paper: "https://doi.org/10.1016/0003-6870(93)90080-S"
+  doi: "10.1016/0003-6870(93)90080-S"
+  code: "https://github.com/fhstp/auto_rula"
+
+code_license: "MIT with Commons Clause (non-commercial)"
+domain: "Seated and standing upper-limb-intensive work — observational postural risk screening"
+inputs: "Observed postures of upper arm, lower arm, wrist, neck, trunk and legs, plus muscle-use and force/load ratings"
+outputs: "Grand score (1-7) with an action level indicating how urgently the work needs investigation and change"
+tags: [rula, postural-assessment, upper-extremity, observational-method, risk-index]
+description: >
+  Rapid Upper Limb Assessment (Applied Ergonomics, 1993): a survey method
+  scoring observed upper-limb, neck, trunk, and leg postures with muscle-use
+  and force ratings into a 1-7 grand score and four action levels for
+  work-related upper-limb disorder risk. Public method requiring no equipment;
+  among many implementations, the linked auto_rula library (with the ergo4all
+  mobile app) scores RULA automatically from 3D pose data under a
+  non-commercial MIT/Commons Clause license.
+added: 2026-08-24

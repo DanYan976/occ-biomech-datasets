@@ -1,0 +1,26 @@
+id: rs9000-ergonomics-reba-library
+title: "rs9000/ergonomics: REBA Scoring Library From 3D Pose"
+sample: false
+category: vision
+
+source:
+  authors: "rs9000 (GitHub)"
+  institution: "Independent open-source project"
+
+links:
+  code: "https://github.com/rs9000/ergonomics"
+
+code_license: "MIT"
+domain: "Occupational posture-risk pipelines — automated REBA scoring behind any pose-estimation system"
+inputs: "3D pose keypoints (13+2 joints as X, Y, Z coordinates relative to the root joint): head, shoulders, elbows, wrists, hips, knees, ankles"
+outputs: "REBA scores computed from the joint configuration"
+tags: [reba, posture-assessment, open-source, python, skeleton, library]
+description: >
+  Python library computing REBA scores directly from 3D pose keypoints
+  (13+2 joints as root-relative X, Y, Z coordinates), released under the MIT
+  license. A community open-source implementation of the REBA method (see
+  the hignett-mcatamney-reba entry in this library) rather than a published
+  model of its own: it bolts onto the output of any pose-estimation system
+  to turn skeletons into postural risk scores, serving as a building block
+  for automated occupational posture-risk pipelines.
+added: 2026-08-25

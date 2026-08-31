@@ -1,6 +1,7 @@
 id: wang-2d-video-lifting-monitor
 title: "2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation"
 sample: false
+category: vision
 
 source:
   authors: "Wang X., Hu Y.H., Lu M.-L., Radwin R.G."

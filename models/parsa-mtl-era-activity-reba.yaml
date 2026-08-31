@@ -1,0 +1,30 @@
+id: parsa-mtl-era-activity-reba
+title: "MTL-ERA: Multi-Task Activity Segmentation and REBA Risk Assessment From 3D Skeletons"
+sample: false
+category: vision
+
+source:
+  authors: "Parsa B., Banerjee A.G."
+  institution: "University of Washington"
+  year: 2021
+
+links:
+  paper: "https://doi.org/10.1109/WACV48630.2021.00240"
+  doi: "10.1109/WACV48630.2021.00240"
+  preprint: "https://arxiv.org/abs/2008.03014"
+  code: "https://github.com/BehnooshParsa/MTL-ERA"
+
+domain: "Industrial object-manipulation work — activity recognition and postural risk scoring"
+inputs: "Sequences of 15-joint 3D skeleton keypoints from long task videos"
+outputs: "Frame-wise activity segmentation labels and continuous REBA ergonomic-risk scores"
+related_datasets: [uw-iom]
+tags: [activity-recognition, reba, risk-assessment, graph-neural-network, deep-learning, pytorch, skeleton]
+description: >
+  Multi-task graph convolutional network (WACV 2021) that jointly segments
+  worker activities and regresses frame-wise REBA ergonomic-risk scores from 3D
+  skeleton sequences: a shared GCN backbone feeds an encoder-decoder TCN
+  segmentation head and an LSTM risk head. On the UW-IOM dataset the best
+  variant reached 92% F1-overlap for segmentation with a REBA-score MSE of 0.61,
+  versus 1.68 for the single-task baseline. PyTorch code is on GitHub (no
+  license stated).
+added: 2026-08-24

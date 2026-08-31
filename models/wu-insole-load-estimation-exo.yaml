@@ -1,0 +1,29 @@
+id: wu-insole-load-estimation-exo
+title: "Insole-Pressure Load Estimation for Adaptive Lifting-Exoskeleton Control"
+sample: false
+category: wearable
+
+source:
+  authors: "Wu K., Xiang P., Lin C., Bai O."
+  institution: "Florida International University"
+  year: 2026
+
+links:
+  paper: "https://doi.org/10.1109/AIRC69745.2026.11631439"
+  doi: "10.1109/AIRC69745.2026.11631439"
+  preprint: "https://arxiv.org/abs/2503.07527"
+
+domain: "Industrial manual lifting — adaptive assistance control of upper-limb exoskeletons"
+inputs: "36-channel plantar pressure from a pair of low-cost instrumented insoles"
+outputs: "Estimated mass of the lifted load (2-10 kg) as a set-point for exoskeleton assistance torque"
+tags: [pressure-insoles, load-estimation, exoskeleton, lifting, machine-learning, svr]
+description: >
+  Machine-learning method estimating the mass of a manually lifted object from
+  low-cost 36-channel insole plantar-pressure data, so an upper-limb industrial
+  exoskeleton can scale its assistance to the actual load (IEEE AIRC 2026;
+  open preprint on arXiv). On five subjects lifting 2-10 kg, channel-based support vector
+  regression on differential pressure reached a mean absolute error of 0.55 kg
+  and extrapolated to held-out load levels; a MobileNetV2 pressure-map variant
+  was a within-subject feasibility study. The code repository cited in the
+  paper is empty as of August 2026.
+added: 2026-08-24

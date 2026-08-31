@@ -1,0 +1,29 @@
+id: snook-liberty-mutual-mmh
+title: "Liberty Mutual (Snook) MMH Tables and the 2021 LM-MMH Equations"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Snook S.H., Ciriello V.M., Potvin J.R., et al."
+  institution: "Liberty Mutual Insurance Research Center"
+  year: 1991
+
+links:
+  paper: "https://doi.org/10.1080/00140139108964855"
+  doi: "10.1080/00140139108964855"
+  record: "https://doi.org/10.1080/00140139.2021.1891297"
+  website: "https://libertymmhtables.libertymutual.com/"
+
+domain: "Manual material handling — psychophysical task design limits"
+inputs: "Task type (lift, lower, push, pull, carry), hand heights and distances, frequency, and object width"
+outputs: "Maximum acceptable weights and forces by population percentile - the share of workers a task design accommodates"
+tags: [psychophysics, mmh, lifting, pushing-pulling, carrying, design-limits]
+description: >
+  Psychophysical tables of maximum acceptable weights and forces for lifting,
+  lowering, pushing, pulling, and carrying by male and female population
+  percentile (Snook & Ciriello, Ergonomics, 1991), the industry standard for
+  designing MMH tasks. Recast in 2021 as the LM-MMH regression equations
+  (Potvin et al., Ergonomics - linked as the record), which smooth the tables
+  into continuous equations. Free interactive web tool from Liberty Mutual;
+  the tool loads in browsers but returns 403 to automated link checkers.
+added: 2026-08-24

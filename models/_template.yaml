@@ -6,6 +6,8 @@
 id: my-model                          # lowercase-hyphenated slug, same as the filename
 title: "Human-readable model name"
 sample: false
+category: vision                      # assessment-method | biomechanical | vision | wearable
+                                      # (pick by the model's primary form — see schema/model.schema.json)
 # status: coming_soon             # only for announced-but-unpublished methods; lets you omit links
 
 source:

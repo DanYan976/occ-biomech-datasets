@@ -1,0 +1,27 @@
+id: porta-single-imu-trunk-flexion
+title: "Single-IMU Trunk Flexion Monitoring for Warehouse Work"
+sample: false
+category: wearable
+
+source:
+  authors: "Porta M., Pau M., Orru P.F., Nussbaum M.A."
+  institution: "University of Cagliari / Virginia Tech"
+  year: 2020
+
+links:
+  paper: "https://doi.org/10.3390/ijerph17197117"
+  doi: "10.3390/ijerph17197117"
+
+domain: "Warehouse work — minimal-sensor trunk flexion exposure surveillance during real shifts"
+inputs: "One inertial measurement unit worn on the lower back during actual warehouse shifts"
+outputs: "Trunk flexion exposure classified by amplitude, frequency, and duration, plus minimum sampling duration guidance"
+tags: [imu, trunk-flexion, exposure-assessment, warehouse, minimal-sensing, low-back]
+description: >
+  Continuous trunk-flexion exposure tracking with a single lower-back IMU on
+  twelve warehouse workers during real shifts (IJERPH, 2020, open access):
+  workers spent 5.1 percent of work time at 30-60 degrees of flexion and 2.3
+  percent at 60-90 degrees. Sampling-duration analysis showed that, depending
+  on acceptable error, monitoring periods up to about 50 minutes can
+  characterize a shift's trunk flexion exposure, supporting practical
+  minimal-sensor surveillance. No code release.
+added: 2026-08-25

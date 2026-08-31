@@ -109,17 +109,11 @@
   function setStats() {
     var totalEl = document.getElementById("stat-total");
     if (!totalEl) return;
-    var open = 0, soon = 0, mods = new Set(), ctry = new Set();
+    var ctry = new Set();
     DATA.forEach(function (d) {
-      if (d.status === "open") open++;
-      if (d.status === "coming_soon") soon++;
-      (d.modalities || []).forEach(function (m) { mods.add(m); });
       countries(d).forEach(function (c) { ctry.add(c); });
     });
     totalEl.textContent = DATA.length;
-    document.getElementById("stat-open").textContent = open;
-    document.getElementById("stat-soon").textContent = soon;
-    document.getElementById("stat-mod").textContent = mods.size;
     var ctryEl = document.getElementById("stat-countries");
     if (ctryEl) ctryEl.textContent = ctry.size;
   }

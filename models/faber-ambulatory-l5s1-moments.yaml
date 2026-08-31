@@ -1,0 +1,29 @@
+id: faber-ambulatory-l5s1-moments
+title: "Ambulatory 3D L5/S1 Moment Estimation From a Full-Body Inertial Suit"
+sample: false
+category: wearable
+
+source:
+  authors: "Faber G.S., Kingma I., Chang C.C., Dennerlein J.T., van Dieen J.H."
+  institution: "Vrije Universiteit Amsterdam / Liberty Mutual Research Institute / Harvard T.H. Chan School of Public Health"
+  year: 2016
+
+links:
+  paper: "https://doi.org/10.1016/j.jbiomech.2015.11.042"
+  doi: "10.1016/j.jbiomech.2015.11.042"
+  record: "https://doi.org/10.1016/j.jbiomech.2020.109671"
+
+domain: "Trunk bending and manual lifting — ambulatory spine-load assessment outside the lab"
+inputs: "Full-body Xsens IMU suit kinematics; the 2020 extension adds instrumented force shoes and hand forces"
+outputs: "3D L5/S1 moments (extension and asymmetric components) and total ground reaction force"
+tags: [imu, inverse-dynamics, spine-loading, low-back, lifting, wearables]
+description: >
+  Inverse-dynamics method line estimating 3D L5/S1 moments from a full-body
+  inertial motion-capture suit without force plates (J. Biomech., 2016):
+  top-down dynamics over upper-body kinematics kept moment RMS errors under
+  10 Nm (~5% of peak) in trunk bending, validated against optical mocap and
+  force plates on nine participants. The 2020 extension (linked as the record,
+  open access CC BY) adds instrumented force shoes and hand forces for 10 kg
+  box lifting, where the top-down variant stayed under 20 Nm (~10% of peak).
+  No code or data release.
+added: 2026-08-24

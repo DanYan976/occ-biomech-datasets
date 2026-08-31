@@ -1,0 +1,33 @@
+id: vtt-coniot
+title: "VTT-ConIoT: Activity Recognition of Construction Workers with IMUs"
+status: open
+sample: false
+
+source:
+  authors: "Makela S.-M., Lamsa A., Keranen J.S., Liikka J., Ronkainen J., Peltola J., Haikio J., Bordallo Lopez M."
+  institution: "VTT Technical Research Centre of Finland / University of Oulu"
+  country: [FI]
+  year: 2021
+
+access:
+  url: "https://doi.org/10.5281/zenodo.4683703"
+  doi: "10.5281/zenodo.4683703"
+  license: "CC-BY-4.0"
+
+tasks: [assembly, walking, reaching]
+modalities: [imu, video]
+
+subjects:
+  n: 13
+
+load: "16 simulated construction-work activities (installation, painting, drilling, cleaning, climbing, walking) designed with building-industry stakeholders"
+equipment: "10-DOF wearable IMUs (accelerometer, gyroscope, magnetometer, barometer) at three body locations; body pose keypoints extracted from complementary video"
+formats: [csv]
+tags: [construction, activity-recognition, har, wearable-sensors]
+description: >
+  Realistic human activity recognition dataset for professional construction
+  work: 13 subjects performing 16 recommended or non-recommended work
+  activities with 10-DOF IMUs at three body positions, plus video-derived pose
+  keypoints. Designed with construction-industry stakeholders and validated
+  against real site conditions (doi:10.3390/su14010220).
+added: 2026-08-25

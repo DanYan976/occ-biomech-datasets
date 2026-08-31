@@ -1,0 +1,28 @@
+id: marras-granata-emg-spine-model
+title: "OSU EMG-Assisted Model of Spine Loading During Free-Dynamic Lifting"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Marras W.S., Granata K.P."
+  institution: "The Ohio State University (Biodynamics Laboratory)"
+  year: 1997
+
+links:
+  paper: "https://doi.org/10.1016/S1050-6411(97)00006-0"
+  doi: "10.1016/S1050-6411(97)00006-0"
+
+domain: "Dynamic occupational lifting — individualized spine-load estimation"
+inputs: "Surface EMG from ten trunk muscles plus measured trunk kinematics during whole-body lifting"
+outputs: "Individual muscle forces and 3D L5/S1 spine loads: compression, anterior-posterior and lateral shear"
+tags: [emg, spine-loading, low-back, lifting, biomechanical-model]
+description: >
+  Biologically assisted biomechanical trunk model (J. Electromyogr. Kinesiol.,
+  1997) that drives muscle-force estimates from surface EMG of ten trunk
+  muscles plus trunk kinematics, capturing individual recruitment and
+  co-contraction to compute 3D L5/S1 compression and shear during unconstrained
+  whole-body dynamic lifting. Validated through muscle-gain and
+  predicted-versus-measured trunk-moment checks across repeated free-dynamic
+  exertions; the methodological backbone of much of the OSU spine-loading
+  literature. Research model; no public software release.
+added: 2026-08-24

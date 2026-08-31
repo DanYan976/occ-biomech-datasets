@@ -1,0 +1,27 @@
+id: lind-kth-smart-workwear
+title: "KTH Smart Workwear System With Haptic Posture Feedback"
+sample: false
+category: wearable
+
+source:
+  authors: "Lind C.M., Diaz-Olivares J.A., Lindecrantz K., Eklund J."
+  institution: "KTH Royal Institute of Technology"
+  year: 2020
+
+links:
+  paper: "https://doi.org/10.3390/s20216010"
+  doi: "10.3390/s20216010"
+
+domain: "Repetitive manual handling — work-technique training and postural exposure reduction"
+inputs: "IMUs carried in embedded pockets of a sensorized workwear shirt, tracking trunk inclination and upper-arm elevation"
+outputs: "Continuous posture angles plus real-time vibrotactile feedback when exposure thresholds are exceeded"
+tags: [imu, sensorized-garment, haptic-feedback, posture, work-technique, intervention]
+description: >
+  IMU-instrumented workwear that monitors trunk inclination and upper-arm
+  elevation and vibrates to coach the wearer's work technique (Sensors, 2020,
+  open access). Evaluated on sixteen novices in simulated mail sorting, where
+  it reduced adverse arm movements and postures; a companion Applied
+  Ergonomics study in real order picking showed reduced time at trunk
+  inclinations above 20-45 degrees and arm elevations above 30-45 degrees.
+  No code or hardware release.
+added: 2026-08-25

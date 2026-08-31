@@ -1,0 +1,27 @@
+id: vignais-realtime-rula-feedback
+title: "Vignais Real-Time IMU Ergonomic Feedback System"
+sample: false
+category: wearable
+
+source:
+  authors: "Vignais N., Miezal M., Bleser G., Mura K., Gorecky D., Marin F."
+  institution: "Universite de Technologie de Compiegne / DFKI Kaiserslautern"
+  year: 2013
+
+links:
+  paper: "https://doi.org/10.1016/j.apergo.2012.11.008"
+  doi: "10.1016/j.apergo.2012.11.008"
+
+domain: "Industrial manufacturing and assembly — real-time worker posture feedback"
+inputs: "A network of body-worn inertial sensors reconstructing upper-body joint angles"
+outputs: "Continuous RULA scores with visual and auditory feedback delivered to the worker in real time"
+tags: [imu, rula, real-time, feedback, assembly, landmark-study]
+description: >
+  Landmark IMU-network system reconstructing upper-body joint angles in real
+  time and computing RULA continuously, with local and global risk scores fed
+  back to the worker through a see-through display and auditory warnings
+  (Appl. Ergon., 2013, 44:566-574). Evaluated in a simulated industrial
+  assembly task, where concurrent feedback reduced time spent at hazardous
+  RULA levels; the design template for later real-time wearable coaching
+  systems. No code release.
+added: 2026-08-25

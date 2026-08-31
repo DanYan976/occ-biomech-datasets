@@ -1,0 +1,29 @@
+id: agostinelli-cv-ergonomic-assessment
+title: "Computer-Vision REBA/RULA Assessment Validated on Real Manufacturing Lines"
+sample: false
+category: vision
+
+source:
+  authors: "Agostinelli T., Generosi A., Ceccacci S., Mengoni M."
+  institution: "Universita Politecnica delle Marche / University of Macerata"
+  year: 2024
+
+links:
+  paper: "https://doi.org/10.1038/s41598-024-79373-4"
+  doi: "10.1038/s41598-024-79373-4"
+  record: "https://github.com/boso94/ergonomicAnalysis"
+
+domain: "Manufacturing production lines — observational postural risk scoring from video"
+inputs: "RGB video of work cycles from commodity action cameras behind and lateral to the workstation"
+outputs: "Joint-position and inter-limb-angle time series with REBA, RULA, and OCRA scores over the work cycle"
+tags: [computer-vision, reba, rula, ocra, markerless, risk-assessment, manufacturing, field-validation]
+description: >
+  Markerless ergonomic-assessment platform combining tf-pose-estimation and
+  MediaPipe to track joint angles from work-cycle video and compute REBA, RULA,
+  and OCRA — validated in situ on three real manufacturing production lines
+  with 12 operators against expert ergonomists (Scientific Reports, 2024, open
+  access). Risk-level agreement reached 40-80% depending on line and method;
+  the authors position it for continuous monitoring alongside, not instead of,
+  expert assessment. The linked GitHub repo holds the raw validation data; the
+  tool's source code is not released.
+added: 2026-08-24

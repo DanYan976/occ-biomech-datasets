@@ -4,24 +4,24 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Schema &amp; API — OccBiomechanics</title>
-<meta name="description" content="How OccBiomechanics dataset metadata is structured (fields and controlled vocabularies) and how to consume the catalog programmatically via catalog.json." />
+<meta name="description" content="How OccBiomechanics dataset and model metadata is structured (fields and controlled vocabularies) and how to consume the libraries programmatically via catalog.json and models.json." />
 <link rel="canonical" href="https://occbiomechanics.org/docs.html" />
 <link rel="icon" type="image/png" href="favicon.png?v=20260824" />
 <meta name="theme-color" content="#0F766E" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="OccBiomechanics" />
 <meta property="og:title" content="Schema &amp; API — OccBiomechanics" />
-<meta property="og:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
+<meta property="og:description" content="Dataset and model metadata schemas, controlled vocabularies, and the JSON API of the OccBiomechanics libraries." />
 <meta property="og:url" content="https://occbiomechanics.org/docs.html" />
 <meta property="og:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Schema &amp; API — OccBiomechanics" />
-<meta name="twitter:description" content="Dataset metadata schema, controlled vocabularies, and the JSON API of the OccBiomechanics catalog." />
+<meta name="twitter:description" content="Dataset and model metadata schemas, controlled vocabularies, and the JSON API of the OccBiomechanics libraries." />
 <meta name="twitter:image" content="https://occbiomechanics.org/og-image.png?v=20260824" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260822b" />
+<link rel="stylesheet" href="style.css?v=20260824" />
 <script src="nav.js?v=20260821" defer></script>
 </head>
 <body>
@@ -54,7 +54,7 @@
   <div class="wrap">
     <span class="eyebrow">Documentation</span>
     <h1>Schema &amp; API</h1>
-    <p class="lede">Every dataset in the catalog is described by one metadata record, validated against a JSON Schema. The compiled catalog is a single JSON file you can fetch — no key, no rate limits.</p>
+    <p class="lede">Every dataset in the catalog — and every entry in the <a href="models.html">models library</a> — is described by one metadata record, validated against a JSON Schema. Each compiled library is a single JSON file you can fetch — no key, no rate limits.</p>
   </div>
 </section>
 
@@ -118,8 +118,35 @@
   <dt>exoskeleton.body_region</dt><dd><code>back</code> <code>shoulder</code> <code>knee</code> <code>hip</code> <code>ankle</code> <code>neck</code> <code>wrist</code> <code>full_body</code></dd>
   <dt>exoskeleton.actuation</dt><dd><code>passive</code> <code>active</code> <code>quasi_passive</code></dd>
   <dt>exoskeleton.outcomes</dt><dd><code>muscle_activity</code> <code>kinematics</code> <code>kinetics</code> <code>metabolic</code> <code>cardiovascular</code> <code>task_performance</code> <code>subjective</code> <code>discomfort</code></dd>
+  <dt>model.category</dt><dd><code>assessment-method</code> <code>biomechanical</code> <code>vision</code> <code>wearable</code></dd>
+  <dt>model.status</dt><dd><code>released</code> <code>coming_soon</code></dd>
 </dl>
 <!-- VOCAB:END -->
+
+  <h2 id="model-schema">Model library schema</h2>
+  <p class="gov">Entries in the <a href="models.html">models library</a> follow a smaller record, validated against its own JSON Schema. Four fields are required: <code>id</code>, <code>title</code>, <code>source</code>, <code>category</code>, plus at least one entry in <code>links</code> (only <code>coming_soon</code> entries may omit links). The library links out; it does not rehost code or weights.</p>
+
+  <dl class="detail-table">
+    <dt><code>id</code></dt><dd>Unique lowercase-hyphenated slug; also the card's anchor on the models page (<code>models.html#model-&lt;id&gt;</code>).</dd>
+    <dt><code>title</code></dt><dd>Human-readable model or method name.</dd>
+    <dt><code>category</code></dt><dd>Primary form of the model, judged by its main contribution — the grouping on the models page. <code>assessment-method</code> = observational methods, psychophysical tables, and exposure equations (an equation derived from video measurements still belongs here) · <code>biomechanical</code> = physical/physiological predictive models: spine loading, muscle fatigue, metabolic cost · <code>vision</code> = models consuming video, images, or skeleton sequences · <code>wearable</code> = models driven by IMU, insole, or biosensor signals (sensor-fusion models with a wearable core belong here).</dd>
+    <dt><code>status</code></dt><dd><code>released</code> = the paper and/or code is public (default) · <code>coming_soon</code> = announced but not yet published.</dd>
+    <dt><code>source</code></dt><dd>Authors, institution, and publication year of the founding paper.</dd>
+    <dt><code>links</code></dt><dd><code>paper</code> is the canonical landing page (usually the DOI resolver) · <code>doi</code> · <code>code</code> when a repository is released · <code>preprint</code> when the paper is paywalled · <code>record</code> for an institutional record or a companion/updated paper · <code>website</code> when the method ships as software.</dd>
+    <dt><code>code_license</code></dt><dd>SPDX-style license of the released code; omitted when no code is released.</dd>
+    <dt><code>domain</code></dt><dd>Occupational context the model was built for.</dd>
+    <dt><code>inputs</code> / <code>outputs</code></dt><dd>What the model consumes and what it produces.</dd>
+    <dt><code>related_datasets</code></dt><dd><code>id</code>s of catalog datasets the model was trained on or is otherwise tied to.</dd>
+    <dt><code>description</code> · <code>tags</code> · <code>added</code></dt><dd>As in the dataset schema.</dd>
+  </dl>
+
+  <p class="gov">The compiled library is <code>models.json</code>, same shape as the catalog. Example: list wearable-sensor models with released code:</p>
+  <div class="citebox">
+    <pre>models = requests.get("https://occbiomechanics.org/models.json").json()
+for m in models["models"]:
+    if m["category"] == "wearable" and m.get("links", {}).get("code"):
+        print(m["id"], "->", m["links"]["code"])</pre>
+  </div>
 
   <h2>JSON API</h2>
   <p class="gov">The whole catalog is compiled into one static JSON file. Fetch it directly — it is CORS-friendly, requires no authentication, and its shape is stable:</p>
@@ -155,7 +182,7 @@ for d in catalog["datasets"]:
   <div class="wrap">
     <div class="eyebrow">About this catalog</div>
     <p class="gov">This is a discovery index for the occupational biomechanics community — human-motion datasets today, with models and open-source analysis tools being added. Each entry describes a resource and links to its original source; listing is descriptive and is not an endorsement. Datasets keep their own licenses, and access terms are set by their authors. The catalog is maintained by the <a href="https://sites.google.com/view/weiyin-njit">AnyMotion Lab</a>.</p>
-    <p>Machine-readable: <a href="catalog.json">catalog.json</a></p>
+    <p>Machine-readable: <a href="catalog.json">catalog.json</a> · <a href="models.json">models.json</a></p>
     <p>A project of <a href="https://sites.google.com/view/weiyin-njit"><strong>AnyMotion Lab</strong></a> · New Jersey Institute of Technology</p>
     <p>Site code: MIT · Catalog metadata: CC0 · contact: <a href="mailto:dy266@njit.edu">dy266@njit.edu</a></p>
   </div>

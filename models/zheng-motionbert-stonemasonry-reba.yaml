@@ -1,0 +1,26 @@
+id: zheng-motionbert-stonemasonry-reba
+title: "MotionBERT-Based 3D Posture Risk Assessment for Stonemasonry Workers"
+sample: false
+category: vision
+
+source:
+  authors: "Zheng Z., Wang C., Hu J."
+  institution: "Huaqiao University"
+  year: 2026
+
+links:
+  paper: "https://doi.org/10.1016/j.measurement.2026.121589"
+  doi: "10.1016/j.measurement.2026.121589"
+
+domain: "Stonemasonry construction trade — automated postural risk assessment under cluttered field conditions"
+inputs: "RGB video of stonemasonry work, processed by YOLOv8n detection and distillation-optimized RTMPose 2D keypoints"
+outputs: "MotionBERT spatiotemporal 3D pose reconstruction and frame-wise REBA postural risk levels"
+tags: [pose-estimation, transformer, motionbert, reba, construction, markerless, computer-vision]
+description: >
+  Cascaded markerless pipeline for an occupational trade with high-load
+  manual tasks: YOLOv8n worker detection, knowledge-distilled RTMPose 2D
+  keypoints, and MotionBERT spatiotemporal 3D reconstruction feeding
+  automated REBA scoring (Measurement, 2026). Reports 28.3 mm mean per-joint
+  position error under obstructed field conditions and 86.2 percent agreement
+  with expert risk classifications for stonemasonry workers. No code release.
+added: 2026-08-25

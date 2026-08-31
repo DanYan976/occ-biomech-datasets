@@ -1,0 +1,35 @@
+id: inhard
+title: "InHARD: Industrial Human Action Recognition Dataset"
+status: open
+sample: false
+
+source:
+  authors: "Dallel M., Havard V., Baudry D., Savatier X."
+  institution: "CESI LINEACT / ESIGELEC-IRSEEM"
+  country: [FR]
+  year: 2020
+
+access:
+  url: "https://doi.org/10.5281/zenodo.4003541"
+  doi: "10.5281/zenodo.4003541"
+  license: "CC-BY-4.0"
+
+tasks: [assembly]
+modalities: [mocap, video]
+
+subjects:
+  n: 16
+
+load: "Industrial assembly actions in a human-robot collaboration cell; 13 action classes, 4,800+ action samples, 2M+ frames"
+equipment: "Perception Neuron 32 inertial mocap suit (17 joints, BVH skeletons); three Logitech C920 RGB cameras (two side views at ±45°, one top view)"
+sampling:
+  mocap: 120
+formats: [mp4, csv]
+tags: [activity-recognition, har, human-robot-collaboration, assembly, skeleton, manufacturing]
+description: >
+  RGB+skeleton dataset for industrial human action recognition in a
+  collaborative-robotics context: 16 subjects performing assembly actions
+  alongside a robot, labeled into 13 action and 74 meta-action classes.
+  Skeleton data from a Perception Neuron suit at 120 Hz plus three synchronized
+  RGB views. Presented at IEEE ICHMS 2020 (doi:10.1109/ICHMS49158.2020.9209531).
+added: 2026-08-25

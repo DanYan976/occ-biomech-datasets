@@ -1,0 +1,28 @@
+id: muller-imc-l5s1-moments
+title: "Force-Plate-Free L5/S1 Moment Estimation From Inertial Motion Capture"
+sample: false
+category: wearable
+
+source:
+  authors: "Muller A., Mecheri H., Corbeil P., Plamondon A., Robert-Lachaine X."
+  institution: "IRSST (Montreal) / Universite Laval / LBMC (Lyon)"
+  year: 2022
+
+links:
+  paper: "https://doi.org/10.3390/s22176454"
+  doi: "10.3390/s22176454"
+
+domain: "Manual material handling — spine-load assessment in workplace settings"
+inputs: "Full-body Xsens inertial motion capture (17 IMUs) only; no force plates or hand-force sensors"
+outputs: "Ground reaction forces, center of pressure, and L5/S1 flexion and asymmetric moments"
+tags: [imu, inverse-dynamics, spine-loading, low-back, mmh, force-plate-free]
+description: >
+  Estimates L5/S1 moments from full-body inertial kinematics alone (Sensors,
+  2022, open access): an optimization distributes external forces over discrete
+  foot and hand contact points subject to whole-body dynamics, removing the
+  need for force plates. Validated on nine experienced handlers each performing
+  156 workplace-representative box transfers with six load types: RMSE 21.4 Nm
+  for the L5/S1 flexion moment and 15.6 Nm for the asymmetric moment, with
+  peak/cumulative flexion indicators correlating strongly (r-squared ~0.87)
+  but asymmetric indicators weakly (~0.31). No code release.
+added: 2026-08-24

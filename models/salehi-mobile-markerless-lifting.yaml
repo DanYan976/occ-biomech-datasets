@@ -1,0 +1,29 @@
+id: salehi-mobile-markerless-lifting
+title: "Mobile-Device Markerless Motion Capture for Occupational Lifting"
+sample: false
+category: vision
+
+source:
+  authors: "Salehi M., Taheri A., Choi S., Kim J.H."
+  institution: "Oregon State University / Texas A&M University"
+  year: 2026
+
+links:
+  paper: "https://doi.org/10.1016/j.apergo.2026.104743"
+  doi: "10.1016/j.apergo.2026.104743"
+  record: "https://pubmed.ncbi.nlm.nih.gov/41628493/"
+
+domain: "Manual lifting — field-viable 3D kinematics measurement for ergonomics applications"
+inputs: "Video from two or more mobile-device cameras, processed through the OpenCap markerless pipeline"
+outputs: "Full-body 3D joint kinematics during lifting, from a task-specific marker augmentation model"
+tags: [markerless, motion-capture, opencap, lifting, smartphone, validation, computer-vision]
+description: >
+  Adapts OpenCap, the open-source smartphone-based markerless motion capture
+  platform, to occupational lifting by retraining its marker augmentation
+  model on a large, diverse manual-lifting dataset (Appl. Ergon., 2026).
+  Against reference motion capture, the task-specific model cut joint
+  kinematic errors by about 37 percent versus the original OpenCap model
+  (9.5 vs. 15.0 degrees RMSE), with gains concentrated in trunk and
+  upper-body joints and robustness across lift heights, asymmetry angles,
+  and camera setups.
+added: 2026-08-25

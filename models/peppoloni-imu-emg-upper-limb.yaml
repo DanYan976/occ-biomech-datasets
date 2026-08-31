@@ -1,0 +1,26 @@
+id: peppoloni-imu-emg-upper-limb
+title: "Peppoloni IMU and EMG Upper-Limb Risk Assessment System"
+sample: false
+category: wearable
+
+source:
+  authors: "Peppoloni L., Filippeschi A., Ruffaldi E., Avizzano C.A."
+  institution: "Scuola Superiore Sant'Anna (PERCRO Lab)"
+  year: 2016
+
+links:
+  paper: "https://doi.org/10.1016/j.ergon.2015.07.002"
+  doi: "10.1016/j.ergon.2015.07.002"
+
+domain: "Repetitive industrial work — online upper-limb biomechanical load monitoring"
+inputs: "Wearable IMUs fused with surface EMG on the upper limb"
+outputs: "Online 7-DoF upper-limb kinematic chain reconstruction with automatic RULA and Strain Index scoring"
+tags: [imu, emg, upper-limb, rula, strain-index, sensor-fusion, real-time]
+description: >
+  Wearable system reconstructing a 7-degree-of-freedom upper-limb kinematic
+  chain online from IMUs fused with surface EMG via unscented Kalman
+  filtering, feeding automatic RULA and Strain Index scoring for repetitive
+  efforts (Int. J. Ind. Ergon., 2016, 52:1-11). An early demonstration that
+  continuous instrumented assessment can replace intermittent observational
+  scoring in industrial upper-limb work. No code release.
+added: 2026-08-25

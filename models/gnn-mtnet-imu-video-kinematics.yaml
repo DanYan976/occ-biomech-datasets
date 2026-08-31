@@ -3,6 +3,7 @@ id: gnn-mtnet-imu-video-kinematics
 title: "GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics"
 status: coming_soon
 sample: false
+category: wearable
 
 source:
   authors: "Yan D., Zhu G., Chen Y., Tao J., Ding Y., Zhang X., Yuan C., Yin W."

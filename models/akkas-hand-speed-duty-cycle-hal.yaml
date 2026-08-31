@@ -1,6 +1,7 @@
 id: akkas-hand-speed-duty-cycle-hal
 title: "Hand Speed-Duty Cycle Equation for Estimating the ACGIH Hand Activity Level"
 sample: false
+category: assessment-method
 
 source:
   authors: "Akkas O., Azari D.P., Chen C.-H.E., Hu Y.H., Ulin S.S., Armstrong T.J., Rempel D., Radwin R.G."

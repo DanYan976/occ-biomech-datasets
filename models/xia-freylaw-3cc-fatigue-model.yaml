@@ -1,0 +1,27 @@
+id: xia-freylaw-3cc-fatigue-model
+title: "Three-Compartment Controller (3CC) Muscle Fatigue Model"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Xia T., Frey Law L.A."
+  institution: "The University of Iowa"
+  year: 2008
+
+links:
+  paper: "https://doi.org/10.1016/j.jbiomech.2008.07.013"
+  doi: "10.1016/j.jbiomech.2008.07.013"
+
+domain: "Sustained and intermittent occupational exertions — muscle fatigue and endurance prediction"
+inputs: "Target load intensity and duty cycle, with joint-specific fatigue and recovery parameters"
+outputs: "Time histories of active, fatigued, and resting muscle compartments; predicted force decay, endurance time, and recovery"
+tags: [fatigue, endurance, muscle-model, physiology, digital-human-modeling]
+description: >
+  Physiology-based muscle-fatigue model (J. Biomech., 2008) representing a
+  muscle as active, fatigued, and resting compartments with first-order
+  transfer rates and a feedback controller that matches activation to the
+  target load, predicting force decay and recovery over arbitrary duty cycles.
+  Later Frey Law group work fit joint-specific fatigue/recovery parameters
+  against published endurance-time and intermittent-contraction data, and the
+  model has been adopted in digital human modeling and ergonomics software.
+added: 2026-08-24

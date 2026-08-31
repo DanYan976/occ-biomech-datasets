@@ -3,7 +3,7 @@
   "title": "Occupational Biomechanics Model Entry",
   "description": "Metadata record for one model/method in the Models library: a published method, trained model, or the paper behind an analysis tool. Aligned with schema.org/SoftwareSourceCode and ScholarlyArticle where possible. The library links out; it does not rehost code or weights.",
   "type": "object",
-  "required": ["id", "title", "source"],
+  "required": ["id", "title", "source", "category"],
   "anyOf": [
     { "required": ["links"] },
     { "required": ["status"], "properties": { "status": { "const": "coming_soon" } } }
@@ -21,6 +21,11 @@
       "description": "true for placeholder/example entries. Remove or set false for real records.",
       "default": false
     },
+    "category": {
+      "type": "string",
+      "enum": ["assessment-method", "biomechanical", "vision", "wearable"],
+      "description": "Primary form of the model, judged by its main contribution: assessment-method = published observational methods, psychophysical tables, and exposure equations usable without instrumentation (an equation derived from video measurements still belongs here); biomechanical = physical/physiological predictive models (spine loading, fatigue, metabolic); vision = models consuming video, images, or skeleton sequences; wearable = models driven by IMU, insole, or biosensor signals (sensor-fusion models with a wearable core belong here)."
+    },
     "status": {
       "type": "string",
       "enum": ["released", "coming_soon"],
@@ -34,7 +39,7 @@
       "properties": {
         "authors": { "type": "string" },
         "institution": { "type": "string" },
-        "year": { "type": "integer", "minimum": 1980, "maximum": 2100 }
+        "year": { "type": "integer", "minimum": 1970, "maximum": 2100 }
       }
     },
     "links": {

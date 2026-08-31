@@ -1,0 +1,28 @@
+id: occhipinti-ocra-index
+title: "OCRA Index for Repetitive Upper-Limb Work"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Occhipinti E."
+  institution: "EPM Research Unit, Milan"
+  year: 1998
+
+links:
+  paper: "https://doi.org/10.1080/001401398186315"
+  doi: "10.1080/001401398186315"
+  website: "https://www.epmresearch.org/"
+
+domain: "Repetitive upper-limb work — exposure assessment"
+inputs: "Technical actions per shift with force, posture, repetitiveness, recovery-period, and additional factors"
+outputs: "Ratio of actual to recommended technical actions, classified into upper-limb risk exposure classes"
+tags: [upper-extremity, repetitive-motion, exposure-assessment, risk-index, iso-11228]
+description: >
+  The OCRA index (Ergonomics, 1998) scores repetitive upper-limb work as the
+  ratio of technical actions actually performed per shift to a recommended
+  number derived from force, posture, repetitiveness, recovery periods, and
+  additional factors, yielding exposure classes for work-related upper-limb
+  MSD risk. It is the reference method cited by ISO 11228-3 and EN 1005-5 for
+  biomechanical overload of the upper limbs; the EPM International Ergonomics
+  School distributes free OCRA assessment tools on its site.
+added: 2026-08-24

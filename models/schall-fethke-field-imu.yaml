@@ -1,0 +1,27 @@
+id: schall-fethke-field-imu
+title: "Schall and Fethke Field IMU Method for Postural Exposure"
+sample: false
+category: wearable
+
+source:
+  authors: "Schall M.C. Jr., Fethke N.B., Chen H., Oyama S., Douphrate D.I."
+  institution: "Auburn University / University of Iowa"
+  year: 2016
+
+links:
+  paper: "https://doi.org/10.1080/00140139.2015.1079335"
+  doi: "10.1080/00140139.2015.1079335"
+
+domain: "Full-shift field-based occupational exposure assessment (validated during dairy parlor work)"
+inputs: "Body-worn inertial measurement units on the trunk and upper arms during real work shifts"
+outputs: "Trunk angular displacement and upper-arm elevation angles and angular velocities over the full shift"
+tags: [imu, exposure-assessment, field-method, trunk, upper-arm, validation]
+description: >
+  Establishes IMU accuracy and repeatability for direct exposure measurement
+  in the field: trunk angular displacement and upper-arm elevation were
+  compared with optical motion capture over eight-hour laboratory trials and
+  during field-based dairy parlor work (Ergonomics, 2016, 59:591-602). The
+  method underlies the group's later full-shift studies of nurses and other
+  workers, and is a standard reference for shift-long IMU posture sampling.
+  No code release.
+added: 2026-08-25

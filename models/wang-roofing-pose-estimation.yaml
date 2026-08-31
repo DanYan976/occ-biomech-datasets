@@ -1,6 +1,7 @@
 id: wang-roofing-pose-estimation
 title: "Video-Based 3D Pose Estimation for Residential Roofing"
 sample: false
+category: vision
 
 source:
   authors: "Wang R., Zheng L., Hawke A.L., Carey R.E., Breloff S.P., Li K., Peng X."

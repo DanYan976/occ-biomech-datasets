@@ -1,0 +1,30 @@
+id: parsa-stcn-action-ergonomic-risk
+title: "Spatiotemporal Convolutional Networks for Action Segmentation and Ergonomic Risk Prediction"
+sample: false
+category: vision
+
+source:
+  authors: "Parsa B., Samani E.U., Hendrix R., Devine C., Singh S.M., Devasia S., Banerjee A.G."
+  institution: "University of Washington / IIT Gandhinagar"
+  year: 2019
+
+links:
+  paper: "https://doi.org/10.1109/LRA.2019.2925305"
+  doi: "10.1109/LRA.2019.2925305"
+  preprint: "https://arxiv.org/abs/1902.05176"
+  code: "https://github.com/BehnooshParsa/HumanActionRecognition_with_ErgonomicRisk"
+
+domain: "Indoor object manipulation (warehouse-style pick-and-place) — ergonomic risk prediction"
+inputs: "RGB video frames; VGG16 spatial features fed to a temporal convolutional network"
+outputs: "Frame-wise action labels mapped to safe / monitor / high-risk ergonomic tiers"
+related_datasets: [uw-iom]
+tags: [activity-recognition, risk-assessment, computer-vision, deep-learning, tensorflow, temporal-convolutional-network]
+description: >
+  IEEE RA-L 2019 method framing worker ergonomic-risk prediction as action
+  segmentation of task video: per-frame VGG16 features drive an encoder-decoder
+  temporal convolutional network that labels every frame with an action class
+  tied to a safe, monitor, or high-risk tier, reaching 87-94% F1-overlap on
+  videos over two minutes long. Introduced the UW-IOM dataset (20 participants
+  manipulating boxes and rods; Mendeley Data, CC BY 4.0). TensorFlow code is on
+  GitHub (no license stated).
+added: 2026-08-24

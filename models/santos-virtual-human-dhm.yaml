@@ -1,0 +1,28 @@
+id: santos-virtual-human-dhm
+title: "Santos Virtual Human: Predictive Digital Human Modeling"
+sample: false
+category: biomechanical
+
+source:
+  authors: "Abdel-Malek K., Bhatt R., Frey Law L., Murphy C., Mohammad B."
+  institution: "University of Iowa Virtual Soldier Research / SantosHuman Inc."
+  year: 2025
+
+links:
+  paper: "https://doi.org/10.1007/978-3-032-00839-8_14"
+  doi: "10.1007/978-3-032-00839-8_14"
+  website: "https://www.santoshumaninc.com/"
+
+domain: "Workplace and defense task design — simulation-based ergonomic evaluation without motion capture"
+inputs: "Task definition, anthropometry, loads, and environment; no prerecorded motion or mocap required"
+outputs: "Predicted posture and motion, joint torques, strength percent-capable, discomfort, and fatigue measures"
+tags: [digital-human-modeling, predictive-simulation, optimization, strength, fatigue, commercial]
+description: >
+  Physics- and optimization-based predictive digital human developed at the
+  University of Iowa Virtual Soldier Research program: predicts posture,
+  motion, strength, reach, discomfort, and joint loads from task descriptions
+  rather than prerecorded motion. The linked chapter (DHM 2025 symposium)
+  is a recent application evaluating the U.S. Army Combat Fitness Test
+  biomechanically with Santos. Commercially available through SantosHuman
+  Inc.; research versions at the Iowa Technology Institute.
+added: 2026-08-25

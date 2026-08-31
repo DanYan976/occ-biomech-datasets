@@ -1,6 +1,7 @@
 id: radwin-frequency-duty-cycle-hal
 title: "Frequency-Duty Cycle Equation for the ACGIH Hand Activity Level"
 sample: false
+category: assessment-method
 
 source:
   authors: "Radwin R.G., Azari D.P., Lindstrom M.J., Ulin S.S., Armstrong T.J., Rempel D."

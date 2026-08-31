@@ -1,6 +1,6 @@
 {
   "generated_from": "datasets/*.yaml",
-  "count": 23,
+  "count": 26,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -159,8 +159,8 @@
       "status": "open",
       "sample": false,
       "source": {
-        "authors": "Northwestern University",
-        "institution": "Northwestern University",
+        "authors": "Mohapatra P., Aravind V., Bisram M., et al.",
+        "institution": "Northwestern University / Boeing / Deere & Co. / University at Buffalo",
         "country": [
           "US"
         ],
@@ -184,7 +184,7 @@
         "n": 43
       },
       "load": "Composite sheet layup and wire harnessing simulations with weighted vest",
-      "equipment": "Flexible wearable sensors: ANNE vitals (heart rate, ECG, chest temperature) + chest accelerometer/gyroscope; Borg RPE scale",
+      "equipment": "Six wearable sensing locations: chest-mounted ANNE soft biosensor (ECG-derived heart rate, HRV, skin temperature) + five IMU nodes across torso and arms; Borg RPE scale",
       "formats": [
         "csv"
       ],
@@ -195,7 +195,7 @@
         "borg-scale",
         "physiological"
       ],
-      "description": "Wearable-sensor (heart rate, ECG, chest temperature, chest accelerometer/ gyroscope) and self-reported Borg data from 43 workers performing composite layup and wire-harnessing tasks with a weighted vest to induce fatigue, across five work segments plus rest, for multi-level fatigue prediction.\n",
+      "description": "Multimodal wearable data - a chest-mounted soft biosensor (ECG-derived heart rate, HRV, skin temperature) plus five torso/arm IMUs - with self-reported Borg ratings from 43 workers performing composite layup and wire-harnessing tasks with a weighted vest to induce fatigue, across five work segments plus rest, for multi-level fatigue prediction (PNAS Nexus, 2024).\n",
       "added": "2026-07-11"
     },
     {
@@ -837,6 +837,144 @@
       ],
       "description": "Phase-level assessment of interventions against knee musculoskeletal disorder risk in roofing: 9 participants installed shingles on a slope-adjustable roof platform (0, 15, 30 deg) with no intervention, knee pads, knee savers, or both. Knee flexion, ab/adduction and rotation angles were captured across seven task phases, from reaching for shingles to returning upright. Public-domain NIOSH research dataset RD-1108-2025-0 on CDC STACKS.\n",
       "added": "2026-08-17"
+    },
+    {
+      "id": "uw-iom",
+      "title": "UW-IOM: University of Washington Indoor Object Manipulation Dataset",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Parsa B., Samani E.U., Hendrix R., Devine C., Singh S.M., Devasia S., Banerjee A.G.",
+        "institution": "University of Washington",
+        "country": [
+          "US"
+        ],
+        "year": 2019
+      },
+      "access": {
+        "url": "https://data.mendeley.com/datasets/xwzzkxtf9s/1",
+        "doi": "10.17632/xwzzkxtf9s.1",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "reaching",
+        "mmh"
+      ],
+      "modalities": [
+        "video"
+      ],
+      "subjects": {
+        "n": 20,
+        "age_range": "18-25"
+      },
+      "load": "Boxes and rods of varying weights picked and placed at multiple shelf heights",
+      "equipment": "Kinect for Xbox One (RGB video at ~12 fps plus Kinect skeletal tracking)",
+      "sampling": {
+        "video": 12
+      },
+      "tags": [
+        "action-recognition",
+        "ergonomic-risk",
+        "object-manipulation",
+        "warehouse",
+        "kinect"
+      ],
+      "description": "Warehouse-style object-manipulation dataset introduced with the spatiotemporal convolutional ergonomic-risk work (IEEE RA-L, 2019): 20 participants pick and place boxes and rods of varying weights at multiple heights in ~3-minute Kinect recordings with skeletal tracking. Every frame is annotated with one of 17 action labels on a four-tier hierarchy (object, motion, manipulation, surface height), of which 3 classes are low, 11 medium, and 3 high ergonomic risk - ground truth for the UW action-segmentation and REBA-prediction models.\n",
+      "added": "2026-08-24"
+    },
+    {
+      "id": "inhard",
+      "title": "InHARD: Industrial Human Action Recognition Dataset",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Dallel M., Havard V., Baudry D., Savatier X.",
+        "institution": "CESI LINEACT / ESIGELEC-IRSEEM",
+        "country": [
+          "FR"
+        ],
+        "year": 2020
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.4003541",
+        "doi": "10.5281/zenodo.4003541",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "assembly"
+      ],
+      "modalities": [
+        "mocap",
+        "video"
+      ],
+      "subjects": {
+        "n": 16
+      },
+      "load": "Industrial assembly actions in a human-robot collaboration cell; 13 action classes, 4,800+ action samples, 2M+ frames",
+      "equipment": "Perception Neuron 32 inertial mocap suit (17 joints, BVH skeletons); three Logitech C920 RGB cameras (two side views at ±45°, one top view)",
+      "sampling": {
+        "mocap": 120
+      },
+      "formats": [
+        "mp4",
+        "csv"
+      ],
+      "tags": [
+        "activity-recognition",
+        "har",
+        "human-robot-collaboration",
+        "assembly",
+        "skeleton",
+        "manufacturing"
+      ],
+      "description": "RGB+skeleton dataset for industrial human action recognition in a collaborative-robotics context: 16 subjects performing assembly actions alongside a robot, labeled into 13 action and 74 meta-action classes. Skeleton data from a Perception Neuron suit at 120 Hz plus three synchronized RGB views. Presented at IEEE ICHMS 2020 (doi:10.1109/ICHMS49158.2020.9209531).\n",
+      "added": "2026-08-25"
+    },
+    {
+      "id": "vtt-coniot",
+      "title": "VTT-ConIoT: Activity Recognition of Construction Workers with IMUs",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Makela S.-M., Lamsa A., Keranen J.S., Liikka J., Ronkainen J., Peltola J., Haikio J., Bordallo Lopez M.",
+        "institution": "VTT Technical Research Centre of Finland / University of Oulu",
+        "country": [
+          "FI"
+        ],
+        "year": 2021
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.4683703",
+        "doi": "10.5281/zenodo.4683703",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "assembly",
+        "walking",
+        "reaching"
+      ],
+      "modalities": [
+        "imu",
+        "video"
+      ],
+      "subjects": {
+        "n": 13
+      },
+      "load": "16 simulated construction-work activities (installation, painting, drilling, cleaning, climbing, walking) designed with building-industry stakeholders",
+      "equipment": "10-DOF wearable IMUs (accelerometer, gyroscope, magnetometer, barometer) at three body locations; body pose keypoints extracted from complementary video",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "construction",
+        "activity-recognition",
+        "har",
+        "wearable-sensors"
+      ],
+      "description": "Realistic human activity recognition dataset for professional construction work: 13 subjects performing 16 recommended or non-recommended work activities with 10-DOF IMUs at three body positions, plus video-derived pose keypoints. Designed with construction-industry stakeholders and validated against real site conditions (doi:10.3390/su14010220).\n",
+      "added": "2026-08-25"
     },
     {
       "id": "mayer-apogee-lifting-speeds",

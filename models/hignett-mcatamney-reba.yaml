@@ -1,0 +1,29 @@
+id: hignett-mcatamney-reba
+title: "REBA: Rapid Entire Body Assessment"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Hignett S., McAtamney L."
+  institution: "Nottingham City Hospital"
+  year: 2000
+
+links:
+  paper: "https://doi.org/10.1016/S0003-6870(99)00039-3"
+  doi: "10.1016/S0003-6870(99)00039-3"
+  code: "https://github.com/rs9000/ergonomics"
+
+code_license: "MIT"
+domain: "Whole-body, unpredictable working postures — observational MSD risk screening"
+inputs: "Observed trunk, neck, leg, upper-arm, lower-arm and wrist postures plus load/force, coupling, and activity ratings"
+outputs: "REBA score (1-15) with five action levels for whole-body MSD risk"
+tags: [reba, postural-assessment, whole-body, observational-method, risk-index]
+description: >
+  Rapid Entire Body Assessment (Applied Ergonomics, 2000): whole-body
+  observational scoring of trunk, neck, leg, and arm postures combined with
+  load, coupling, and activity ratings into a 1-15 score and five action
+  levels, designed for the unpredictable postures of healthcare and service
+  work. Public method requiring no equipment; the linked rs9000/ergonomics
+  Python library (MIT) computes REBA scores automatically from 3D pose
+  keypoints, and REBA is the risk target of several models in this library.
+added: 2026-08-24

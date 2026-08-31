@@ -10,3 +10,11 @@ node_modules/
 website_description*.docx
 website_description*.pdf
 ~$*.docx
+/*.docx
+/*.pptx
+
+# Stray images at repo root (site assets live under site/)
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp

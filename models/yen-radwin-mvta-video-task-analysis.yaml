@@ -1,6 +1,7 @@
 id: yen-radwin-mvta-video-task-analysis
 title: "Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition"
 sample: false
+category: vision
 
 source:
   authors: "Yen T.Y., Radwin R.G."

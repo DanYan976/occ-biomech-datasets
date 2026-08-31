@@ -21,13 +21,1421 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260822b" />
+<link rel="stylesheet" href="style.css?v=20260824" />
 <script src="nav.js?v=20260821" defer></script>
 <!-- MODELS_JSONLD:START -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-zheng-motionbert-stonemasonry-reba",
+      "name": "MotionBERT-Based 3D Posture Risk Assessment for Stonemasonry Workers",
+      "url": "https://doi.org/10.1016/j.measurement.2026.121589",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Zheng Z."
+        },
+        {
+          "@type": "Person",
+          "name": "Wang C."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu J."
+        }
+      ],
+      "description": "Cascaded markerless pipeline for an occupational trade with high-load manual tasks: YOLOv8n worker detection, knowledge-distilled RTMPose 2D keypoints, and MotionBERT spatiotemporal 3D reconstruction feeding automated REBA scoring (Measurement, 2026). Reports 28.3 mm mean per-joint position error under obstructed field conditions and 86.2 percent agreement with expert risk classifications for stonemasonry workers. No code release.",
+      "datePublished": "2026",
+      "identifier": "https://doi.org/10.1016/j.measurement.2026.121589",
+      "keywords": [
+        "computer-vision",
+        "construction",
+        "markerless",
+        "motionbert",
+        "pose-estimation",
+        "reba",
+        "transformer"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-vignais-realtime-rula-feedback",
+      "name": "Vignais Real-Time IMU Ergonomic Feedback System",
+      "url": "https://doi.org/10.1016/j.apergo.2012.11.008",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Vignais N."
+        },
+        {
+          "@type": "Person",
+          "name": "Miezal M."
+        },
+        {
+          "@type": "Person",
+          "name": "Bleser G."
+        },
+        {
+          "@type": "Person",
+          "name": "Mura K."
+        },
+        {
+          "@type": "Person",
+          "name": "Gorecky D."
+        },
+        {
+          "@type": "Person",
+          "name": "Marin F."
+        }
+      ],
+      "description": "Landmark IMU-network system reconstructing upper-body joint angles in real time and computing RULA continuously, with local and global risk scores fed back to the worker through a see-through display and auditory warnings (Appl. Ergon., 2013, 44:566-574). Evaluated in a simulated industrial assembly task, where concurrent feedback reduced time spent at hazardous RULA levels; the design template for later real-time wearable coaching systems. No code release.",
+      "datePublished": "2013",
+      "identifier": "https://doi.org/10.1016/j.apergo.2012.11.008",
+      "keywords": [
+        "assembly",
+        "feedback",
+        "imu",
+        "landmark-study",
+        "real-time",
+        "rula"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-schaub-eaws-worksheet",
+      "name": "EAWS: Ergonomic Assessment Worksheet (European Assembly Worksheet)",
+      "url": "https://doi.org/10.1080/1463922X.2012.678283",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Schaub K."
+        },
+        {
+          "@type": "Person",
+          "name": "Caragnano G."
+        },
+        {
+          "@type": "Person",
+          "name": "Britzke B."
+        },
+        {
+          "@type": "Person",
+          "name": "Bruder R."
+        }
+      ],
+      "description": "First-level screening worksheet integrating working postures, action forces, manual materials handling, and repetitive upper-limb load into one whole-body physical workload score (Theor. Issues Ergon. Sci., 2013). Developed with the MTM association and widely embedded in automotive production planning and digital human modeling suites. Use of the method and training are licensed; the paper describes the structure and rationale.",
+      "datePublished": "2013",
+      "identifier": "https://doi.org/10.1080/1463922X.2012.678283",
+      "keywords": [
+        "assembly",
+        "automotive",
+        "licensed-method",
+        "mmh",
+        "screening",
+        "upper-limb",
+        "whole-body"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-schall-fethke-field-imu",
+      "name": "Schall and Fethke Field IMU Method for Postural Exposure",
+      "url": "https://doi.org/10.1080/00140139.2015.1079335",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "Schall M.C. Jr., Fethke N.B., Chen H., Oyama S., Douphrate D.I."
+        }
+      ],
+      "description": "Establishes IMU accuracy and repeatability for direct exposure measurement in the field: trunk angular displacement and upper-arm elevation were compared with optical motion capture over eight-hour laboratory trials and during field-based dairy parlor work (Ergonomics, 2016, 59:591-602). The method underlies the group's later full-shift studies of nurses and other workers, and is a standard reference for shift-long IMU posture sampling. No code release.",
+      "datePublished": "2016",
+      "identifier": "https://doi.org/10.1080/00140139.2015.1079335",
+      "keywords": [
+        "exposure-assessment",
+        "field-method",
+        "imu",
+        "trunk",
+        "upper-arm",
+        "validation"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-santos-virtual-human-dhm",
+      "name": "Santos Virtual Human: Predictive Digital Human Modeling",
+      "url": "https://doi.org/10.1007/978-3-032-00839-8_14",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Abdel-Malek K."
+        },
+        {
+          "@type": "Person",
+          "name": "Bhatt R."
+        },
+        {
+          "@type": "Person",
+          "name": "Frey Law L."
+        },
+        {
+          "@type": "Person",
+          "name": "Murphy C."
+        },
+        {
+          "@type": "Person",
+          "name": "Mohammad B."
+        }
+      ],
+      "description": "Physics- and optimization-based predictive digital human developed at the University of Iowa Virtual Soldier Research program: predicts posture, motion, strength, reach, discomfort, and joint loads from task descriptions rather than prerecorded motion. The linked chapter (DHM 2025 symposium) is a recent application evaluating the U.S. Army Combat Fitness Test biomechanically with Santos. Commercially available through SantosHuman Inc.; research versions at the Iowa Technology Institute.",
+      "datePublished": "2025",
+      "identifier": "https://doi.org/10.1007/978-3-032-00839-8_14",
+      "keywords": [
+        "commercial",
+        "digital-human-modeling",
+        "fatigue",
+        "optimization",
+        "predictive-simulation",
+        "strength"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-salehi-mobile-markerless-lifting",
+      "name": "Mobile-Device Markerless Motion Capture for Occupational Lifting",
+      "url": "https://doi.org/10.1016/j.apergo.2026.104743",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Salehi M."
+        },
+        {
+          "@type": "Person",
+          "name": "Taheri A."
+        },
+        {
+          "@type": "Person",
+          "name": "Choi S."
+        },
+        {
+          "@type": "Person",
+          "name": "Kim J.H."
+        }
+      ],
+      "description": "Adapts OpenCap, the open-source smartphone-based markerless motion capture platform, to occupational lifting by retraining its marker augmentation model on a large, diverse manual-lifting dataset (Appl. Ergon., 2026). Against reference motion capture, the task-specific model cut joint kinematic errors by about 37 percent versus the original OpenCap model (9.5 vs. 15.0 degrees RMSE), with gains concentrated in trunk and upper-body joints and robustness across lift heights, asymmetry angles, and camera setups.",
+      "datePublished": "2026",
+      "identifier": "https://doi.org/10.1016/j.apergo.2026.104743",
+      "sameAs": "https://pubmed.ncbi.nlm.nih.gov/41628493/",
+      "keywords": [
+        "computer-vision",
+        "lifting",
+        "markerless",
+        "motion-capture",
+        "opencap",
+        "smartphone",
+        "validation"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-rs9000-ergonomics-reba-library",
+      "name": "rs9000/ergonomics: REBA Scoring Library From 3D Pose",
+      "url": "https://github.com/rs9000/ergonomics",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "rs9000 (GitHub)"
+        }
+      ],
+      "description": "Python library computing REBA scores directly from 3D pose keypoints (13+2 joints as root-relative X, Y, Z coordinates), released under the MIT license. A community open-source implementation of the REBA method (see the hignett-mcatamney-reba entry in this library) rather than a published model of its own: it bolts onto the output of any pose-estimation system to turn skeletons into postural risk scores, serving as a building block for automated occupational posture-risk pipelines.",
+      "codeRepository": "https://github.com/rs9000/ergonomics",
+      "license": "https://opensource.org/license/mit",
+      "keywords": [
+        "library",
+        "open-source",
+        "posture-assessment",
+        "python",
+        "reba",
+        "skeleton"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-robert-lachaine-imu-validation",
+      "name": "Full-Body IMU Joint Angle Validation for Manual Material Handling",
+      "url": "https://doi.org/10.1007/s11517-016-1537-2",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Robert-Lachaine X."
+        },
+        {
+          "@type": "Person",
+          "name": "Mecheri H."
+        },
+        {
+          "@type": "Person",
+          "name": "Larue C."
+        },
+        {
+          "@type": "Person",
+          "name": "Plamondon A."
+        }
+      ],
+      "description": "Systematic validation of full-body inertial motion capture joint angles against an optoelectronic reference during manual material handling (Med. Biol. Eng. Comput., 2017, 55:609-619), quantifying agreement per joint and plane and the drift accumulated over task duration. Widely cited as the methodological basis for using IMU suits in MMH ergonomics studies, including the IRSST force-plate-free L5/S1 model already in this library. No code release.",
+      "datePublished": "2017",
+      "identifier": "https://doi.org/10.1007/s11517-016-1537-2",
+      "keywords": [
+        "imu",
+        "joint-angles",
+        "methodology",
+        "mmh",
+        "motion-capture",
+        "validation"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-porta-single-imu-trunk-flexion",
+      "name": "Single-IMU Trunk Flexion Monitoring for Warehouse Work",
+      "url": "https://doi.org/10.3390/ijerph17197117",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Porta M."
+        },
+        {
+          "@type": "Person",
+          "name": "Pau M."
+        },
+        {
+          "@type": "Person",
+          "name": "Orru P.F."
+        },
+        {
+          "@type": "Person",
+          "name": "Nussbaum M.A."
+        }
+      ],
+      "description": "Continuous trunk-flexion exposure tracking with a single lower-back IMU on twelve warehouse workers during real shifts (IJERPH, 2020, open access): workers spent 5.1 percent of work time at 30-60 degrees of flexion and 2.3 percent at 60-90 degrees. Sampling-duration analysis showed that, depending on acceptable error, monitoring periods up to about 50 minutes can characterize a shift's trunk flexion exposure, supporting practical minimal-sensor surveillance. No code release.",
+      "datePublished": "2020",
+      "identifier": "https://doi.org/10.3390/ijerph17197117",
+      "keywords": [
+        "exposure-assessment",
+        "imu",
+        "low-back",
+        "minimal-sensing",
+        "trunk-flexion",
+        "warehouse"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-peppoloni-imu-emg-upper-limb",
+      "name": "Peppoloni IMU and EMG Upper-Limb Risk Assessment System",
+      "url": "https://doi.org/10.1016/j.ergon.2015.07.002",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Peppoloni L."
+        },
+        {
+          "@type": "Person",
+          "name": "Filippeschi A."
+        },
+        {
+          "@type": "Person",
+          "name": "Ruffaldi E."
+        },
+        {
+          "@type": "Person",
+          "name": "Avizzano C.A."
+        }
+      ],
+      "description": "Wearable system reconstructing a 7-degree-of-freedom upper-limb kinematic chain online from IMUs fused with surface EMG via unscented Kalman filtering, feeding automatic RULA and Strain Index scoring for repetitive efforts (Int. J. Ind. Ergon., 2016, 52:1-11). An early demonstration that continuous instrumented assessment can replace intermittent observational scoring in industrial upper-limb work. No code release.",
+      "datePublished": "2016",
+      "identifier": "https://doi.org/10.1016/j.ergon.2015.07.002",
+      "keywords": [
+        "emg",
+        "imu",
+        "real-time",
+        "rula",
+        "sensor-fusion",
+        "strain-index",
+        "upper-limb"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-openpack-torch-activity-recognition",
+      "name": "OpenPack Baseline Models for Packaging Work Recognition (openpack-torch)",
+      "url": "https://github.com/open-pack/openpack-torch",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Yoshimura N."
+        },
+        {
+          "@type": "Person",
+          "name": "Morales J."
+        },
+        {
+          "@type": "Person",
+          "name": "Maekawa T."
+        },
+        {
+          "@type": "Person",
+          "name": "Hara T."
+        }
+      ],
+      "description": "Official PyTorch baselines accompanying the OpenPack dataset (IEEE PerCom 2024): U-Net and DeepConvLSTM models on IMU acceleration and ST-GCN on skeleton keypoints, framing packaging-operation recognition as frame-wise semantic segmentation over 10 operation classes. Ships as the pip-installable openpack-torch package (MIT) with tutorials and the companion openpack-toolkit for data loading; served as the reference implementation for the OpenPack Challenge 2022.",
+      "datePublished": "2024",
+      "codeRepository": "https://github.com/open-pack/openpack-torch",
+      "license": "https://opensource.org/license/mit",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://ieeexplore.ieee.org/document/10494448"
+      },
+      "keywords": [
+        "activity-recognition",
+        "baselines",
+        "deep-learning",
+        "imu",
+        "logistics",
+        "packaging",
+        "skeleton"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-lind-kth-smart-workwear",
+      "name": "KTH Smart Workwear System With Haptic Posture Feedback",
+      "url": "https://doi.org/10.3390/s20216010",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Lind C.M."
+        },
+        {
+          "@type": "Person",
+          "name": "Diaz-Olivares J.A."
+        },
+        {
+          "@type": "Person",
+          "name": "Lindecrantz K."
+        },
+        {
+          "@type": "Person",
+          "name": "Eklund J."
+        }
+      ],
+      "description": "IMU-instrumented workwear that monitors trunk inclination and upper-arm elevation and vibrates to coach the wearer's work technique (Sensors, 2020, open access). Evaluated on sixteen novices in simulated mail sorting, where it reduced adverse arm movements and postures; a companion Applied Ergonomics study in real order picking showed reduced time at trunk inclinations above 20-45 degrees and arm elevations above 30-45 degrees. No code or hardware release.",
+      "datePublished": "2020",
+      "identifier": "https://doi.org/10.3390/s20216010",
+      "keywords": [
+        "haptic-feedback",
+        "imu",
+        "intervention",
+        "posture",
+        "sensorized-garment",
+        "work-technique"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-lin-auto-method-selection-posture",
+      "name": "Real-Time Posture Evaluation With Automatic Ergonomic Method Selection",
+      "url": "https://doi.org/10.1038/s41598-022-05812-9",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Lin P.-C."
+        },
+        {
+          "@type": "Person",
+          "name": "Chen Y.-J."
+        },
+        {
+          "@type": "Person",
+          "name": "Chen W.-S."
+        },
+        {
+          "@type": "Person",
+          "name": "Lee Y.-J."
+        }
+      ],
+      "description": "Computes joint angles from workplace video via OpenPose, then a decision tree picks the most appropriate observational method (REBA, RULA, or OWAS) from task repetitiveness and upper/lower-limb activity and scores MSD risk (Sci. Rep., 2022, open access). Tested on 15 operation videos spanning six occupational categories (assembly, maintenance, manual handling, cleaning, office work, driving), isolating the ~10% of frames that are high risk and cutting expert evaluation time by roughly 90%. No code release.",
+      "datePublished": "2022",
+      "identifier": "https://doi.org/10.1038/s41598-022-05812-9",
+      "sameAs": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8825815/",
+      "keywords": [
+        "computer-vision",
+        "decision-tree",
+        "openpose",
+        "owas",
+        "posture-assessment",
+        "reba",
+        "rula"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-lee-scaffolding-3d-pose-risk",
+      "name": "Real-Time Monocular 3D Pose Risk Assessment for Scaffolding Workers",
+      "url": "https://www.iaarc.org/publications/fulltext/ISARC2026_1279.pdf",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Lee S."
+        },
+        {
+          "@type": "Person",
+          "name": "Kim K."
+        },
+        {
+          "@type": "Person",
+          "name": "Jang J."
+        },
+        {
+          "@type": "Person",
+          "name": "Park M."
+        },
+        {
+          "@type": "Person",
+          "name": "Chun G."
+        },
+        {
+          "@type": "Person",
+          "name": "Park S."
+        }
+      ],
+      "description": "Vision-based framework estimating 3D joint angles from a single RGB camera, classifying construction-specific hazardous postures, and computing time-weighted cumulative REBA scores in real time for scaffolding work (ISARC 2026). Validation showed strong agreement with expert assessments, with stable detection of squatting postures and higher misclassification for overhead work due to depth ambiguity and self-occlusion. No code release.",
+      "datePublished": "2026",
+      "keywords": [
+        "computer-vision",
+        "construction",
+        "monocular",
+        "pose-estimation",
+        "real-time",
+        "reba",
+        "scaffolding"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-larsen-imc-spine-loading",
+      "name": "Inertial Motion Capture Driven Musculoskeletal Spine Loading Model",
+      "url": "https://doi.org/10.1007/s10439-019-02409-8",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Larsen F.G."
+        },
+        {
+          "@type": "Person",
+          "name": "Svenningsen F.P."
+        },
+        {
+          "@type": "Person",
+          "name": "Andersen M.S."
+        },
+        {
+          "@type": "Person",
+          "name": "de Zee M."
+        },
+        {
+          "@type": "Person",
+          "name": "Skals S."
+        }
+      ],
+      "description": "Couples full-body inertial motion capture with a detailed musculoskeletal model and predicted ground reaction forces and moments to estimate L4-L5 compression and shear during symmetric and asymmetric manual lifting (Ann. Biomed. Eng., 2020, 48:805-821). Removing force plates makes spine-load estimation feasible outside the laboratory; errors were largest for heavy asymmetric lifts. No code release.",
+      "datePublished": "2020",
+      "identifier": "https://doi.org/10.1007/s10439-019-02409-8",
+      "keywords": [
+        "imu",
+        "inverse-dynamics",
+        "low-back",
+        "mmh",
+        "musculoskeletal-model",
+        "spine-loading"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-cruciata-lightweight-vit-posture",
+      "name": "Lightweight Vision Transformer for Frame-Level Posture Risk Classification",
+      "url": "https://doi.org/10.3390/s25154750",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Cruciata L."
+        },
+        {
+          "@type": "Person",
+          "name": "Contino S."
+        },
+        {
+          "@type": "Person",
+          "name": "Ciccarelli M."
+        },
+        {
+          "@type": "Person",
+          "name": "Mostarda L."
+        },
+        {
+          "@type": "Person",
+          "name": "Papetti A."
+        },
+        {
+          "@type": "Person",
+          "name": "Piangerelli M."
+        },
+        {
+          "@type": "Person",
+          "name": "Pirrone R."
+        }
+      ],
+      "description": "~5M-parameter vision transformer (SPECTRE-ViT) that classifies ergonomic risk for eight anatomical regions (neck, trunk, bilateral upper/lower arms, wrists) directly from raw RGB frames in a single multi-label pass (Sensors, 2025, open access). Trained on synchronized RGB video and full-body inertial motion capture with labels from RULA thresholds; reports F1 above 0.99 and AUC above 0.996 per region with real-time inference on edge devices. Code and data are available only on request to the authors.",
+      "datePublished": "2025",
+      "identifier": "https://doi.org/10.3390/s25154750",
+      "sameAs": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12349185/",
+      "keywords": [
+        "deep-learning",
+        "edge-computing",
+        "manufacturing",
+        "posture-classification",
+        "rula",
+        "vision-transformer",
+        "wmsd"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-chen-colearning-3d-pose-construction",
+      "name": "Co-Learning 3D Pose Estimation for Real-Time Construction Ergonomics",
+      "url": "https://doi.org/10.1111/mice.13139",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Chen W."
+        },
+        {
+          "@type": "Person",
+          "name": "Gu D."
+        },
+        {
+          "@type": "Person",
+          "name": "Ke J."
+        }
+      ],
+      "description": "Lightweight monocular 3D human pose estimation model with a residual log-likelihood estimation head, trained with a co-learning scheme that draws 2D and 3D features from multi-dimension datasets simultaneously (Comput.-Aided Civ. Infrastruct. Eng., 2024). Combined with pose tracking, it recognizes workers' 3D postures in real time for on-site ergonomic risk assessment in construction. No code release.",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1111/mice.13139",
+      "keywords": [
+        "computer-vision",
+        "construction",
+        "deep-learning",
+        "monocular",
+        "pose-estimation",
+        "real-time"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-aghazadeh-coupled-ann-spine-loads",
+      "name": "Coupled Neural Networks for Posture Prediction and Spinal Loads",
+      "url": "https://doi.org/10.1016/j.jbiomech.2019.109332",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Aghazadeh F."
+        },
+        {
+          "@type": "Person",
+          "name": "Arjmand N."
+        },
+        {
+          "@type": "Person",
+          "name": "Nasrabadi A.M."
+        }
+      ],
+      "description": "Two coupled artificial neural networks trained on 15 subjects each performing 135 load-handling activities (nine horizontal by five vertical load locations): the first predicts full-body 3D posture from a few measurable inputs, the second maps predicted posture to lumbosacral moments and spinal loads (J. Biomech., 2020, vol. 102). Bypasses motion capture and detailed biomechanical modeling for quick spine-load screening of manual handling; extended by later work from the same group. No code release.",
+      "datePublished": "2020",
+      "identifier": "https://doi.org/10.1016/j.jbiomech.2019.109332",
+      "keywords": [
+        "low-back",
+        "mmh",
+        "neural-network",
+        "posture-prediction",
+        "sparse-input",
+        "spine-loading"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-xia-freylaw-3cc-fatigue-model",
+      "name": "Three-Compartment Controller (3CC) Muscle Fatigue Model",
+      "url": "https://doi.org/10.1016/j.jbiomech.2008.07.013",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Xia T."
+        },
+        {
+          "@type": "Person",
+          "name": "Frey Law L.A."
+        }
+      ],
+      "description": "Physiology-based muscle-fatigue model (J. Biomech., 2008) representing a muscle as active, fatigued, and resting compartments with first-order transfer rates and a feedback controller that matches activation to the target load, predicting force decay and recovery over arbitrary duty cycles. Later Frey Law group work fit joint-specific fatigue/recovery parameters against published endurance-time and intermittent-contraction data, and the model has been adopted in digital human modeling and ergonomics software.",
+      "datePublished": "2008",
+      "identifier": "https://doi.org/10.1016/j.jbiomech.2008.07.013",
+      "keywords": [
+        "digital-human-modeling",
+        "endurance",
+        "fatigue",
+        "muscle-model",
+        "physiology"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-wu-insole-load-estimation-exo",
+      "name": "Insole-Pressure Load Estimation for Adaptive Lifting-Exoskeleton Control",
+      "url": "https://doi.org/10.1109/AIRC69745.2026.11631439",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Wu K."
+        },
+        {
+          "@type": "Person",
+          "name": "Xiang P."
+        },
+        {
+          "@type": "Person",
+          "name": "Lin C."
+        },
+        {
+          "@type": "Person",
+          "name": "Bai O."
+        }
+      ],
+      "description": "Machine-learning method estimating the mass of a manually lifted object from low-cost 36-channel insole plantar-pressure data, so an upper-limb industrial exoskeleton can scale its assistance to the actual load (IEEE AIRC 2026; open preprint on arXiv). On five subjects lifting 2-10 kg, channel-based support vector regression on differential pressure reached a mean absolute error of 0.55 kg and extrapolated to held-out load levels; a MobileNetV2 pressure-map variant was a within-subject feasibility study. The code repository cited in the paper is empty as of August 2026.",
+      "datePublished": "2026",
+      "identifier": "https://doi.org/10.1109/AIRC69745.2026.11631439",
+      "keywords": [
+        "exoskeleton",
+        "lifting",
+        "load-estimation",
+        "machine-learning",
+        "pressure-insoles",
+        "svr"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-waters-revised-niosh-lifting-equation",
+      "name": "Revised NIOSH Lifting Equation (RNLE)",
+      "url": "https://doi.org/10.1080/00140139308967940",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Waters T.R."
+        },
+        {
+          "@type": "Person",
+          "name": "Putz-Anderson V."
+        },
+        {
+          "@type": "Person",
+          "name": "Garg A."
+        },
+        {
+          "@type": "Person",
+          "name": "Fine L.J."
+        }
+      ],
+      "description": "The standard model for evaluating two-handed manual lifting (Ergonomics, 1993): six task-factor multipliers reduce a 23 kg load constant to a Recommended Weight Limit, and the ratio of actual load to RWL gives the Lifting Index (Composite Lifting Index for multi-task jobs). Public domain, anchored to the 3.4 kN L5/S1 compression criterion. Implementations include NIOSH's free NLE Calc mobile app and the Applications Manual (DHHS 94-110, linked as the record); the WISHA lifting calculator derives from it.",
+      "datePublished": "1993",
+      "identifier": "https://doi.org/10.1080/00140139308967940",
+      "sameAs": "https://www.cdc.gov/niosh/docs/94-110/",
+      "keywords": [
+        "lifting",
+        "mmh",
+        "niosh-lifting-equation",
+        "public-domain",
+        "risk-index"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-snook-liberty-mutual-mmh",
+      "name": "Liberty Mutual (Snook) MMH Tables and the 2021 LM-MMH Equations",
+      "url": "https://doi.org/10.1080/00140139108964855",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "Snook S.H., Ciriello V.M., Potvin J.R., et al."
+        }
+      ],
+      "description": "Psychophysical tables of maximum acceptable weights and forces for lifting, lowering, pushing, pulling, and carrying by male and female population percentile (Snook & Ciriello, Ergonomics, 1991), the industry standard for designing MMH tasks. Recast in 2021 as the LM-MMH regression equations (Potvin et al., Ergonomics - linked as the record), which smooth the tables into continuous equations. Free interactive web tool from Liberty Mutual; the tool loads in browsers but returns 403 to automated link checkers.",
+      "datePublished": "1991",
+      "identifier": "https://doi.org/10.1080/00140139108964855",
+      "sameAs": "https://doi.org/10.1080/00140139.2021.1891297",
+      "keywords": [
+        "carrying",
+        "design-limits",
+        "lifting",
+        "mmh",
+        "psychophysics",
+        "pushing-pulling"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-parsa-stcn-action-ergonomic-risk",
+      "name": "Spatiotemporal Convolutional Networks for Action Segmentation and Ergonomic Risk Prediction",
+      "url": "https://github.com/BehnooshParsa/HumanActionRecognition_with_ErgonomicRisk",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Parsa B."
+        },
+        {
+          "@type": "Person",
+          "name": "Samani E.U."
+        },
+        {
+          "@type": "Person",
+          "name": "Hendrix R."
+        },
+        {
+          "@type": "Person",
+          "name": "Devine C."
+        },
+        {
+          "@type": "Person",
+          "name": "Singh S.M."
+        },
+        {
+          "@type": "Person",
+          "name": "Devasia S."
+        },
+        {
+          "@type": "Person",
+          "name": "Banerjee A.G."
+        }
+      ],
+      "description": "IEEE RA-L 2019 method framing worker ergonomic-risk prediction as action segmentation of task video: per-frame VGG16 features drive an encoder-decoder temporal convolutional network that labels every frame with an action class tied to a safe, monitor, or high-risk tier, reaching 87-94% F1-overlap on videos over two minutes long. Introduced the UW-IOM dataset (20 participants manipulating boxes and rods; Mendeley Data, CC BY 4.0). TensorFlow code is on GitHub (no license stated).",
+      "datePublished": "2019",
+      "identifier": "https://doi.org/10.1109/LRA.2019.2925305",
+      "codeRepository": "https://github.com/BehnooshParsa/HumanActionRecognition_with_ErgonomicRisk",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1109/LRA.2019.2925305"
+      },
+      "keywords": [
+        "activity-recognition",
+        "computer-vision",
+        "deep-learning",
+        "risk-assessment",
+        "temporal-convolutional-network",
+        "tensorflow"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-parsa-mtl-era-activity-reba",
+      "name": "MTL-ERA: Multi-Task Activity Segmentation and REBA Risk Assessment From 3D Skeletons",
+      "url": "https://github.com/BehnooshParsa/MTL-ERA",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Parsa B."
+        },
+        {
+          "@type": "Person",
+          "name": "Banerjee A.G."
+        }
+      ],
+      "description": "Multi-task graph convolutional network (WACV 2021) that jointly segments worker activities and regresses frame-wise REBA ergonomic-risk scores from 3D skeleton sequences: a shared GCN backbone feeds an encoder-decoder TCN segmentation head and an LSTM risk head. On the UW-IOM dataset the best variant reached 92% F1-overlap for segmentation with a REBA-score MSE of 0.61, versus 1.68 for the single-task baseline. PyTorch code is on GitHub (no license stated).",
+      "datePublished": "2021",
+      "identifier": "https://doi.org/10.1109/WACV48630.2021.00240",
+      "codeRepository": "https://github.com/BehnooshParsa/MTL-ERA",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1109/WACV48630.2021.00240"
+      },
+      "keywords": [
+        "activity-recognition",
+        "deep-learning",
+        "graph-neural-network",
+        "pytorch",
+        "reba",
+        "risk-assessment",
+        "skeleton"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-occhipinti-ocra-index",
+      "name": "OCRA Index for Repetitive Upper-Limb Work",
+      "url": "https://doi.org/10.1080/001401398186315",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Occhipinti E."
+        }
+      ],
+      "description": "The OCRA index (Ergonomics, 1998) scores repetitive upper-limb work as the ratio of technical actions actually performed per shift to a recommended number derived from force, posture, repetitiveness, recovery periods, and additional factors, yielding exposure classes for work-related upper-limb MSD risk. It is the reference method cited by ISO 11228-3 and EN 1005-5 for biomechanical overload of the upper limbs; the EPM International Ergonomics School distributes free OCRA assessment tools on its site.",
+      "datePublished": "1998",
+      "identifier": "https://doi.org/10.1080/001401398186315",
+      "keywords": [
+        "exposure-assessment",
+        "iso-11228",
+        "repetitive-motion",
+        "risk-index",
+        "upper-extremity"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-niosh-wearable-imu-lifting-risk",
+      "name": "NIOSH Five-IMU Wearable System for Automatic Lifting Risk-Factor Assessment",
+      "url": "https://doi.org/10.1007/978-3-030-49904-4_15",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Lu M."
+        },
+        {
+          "@type": "Person",
+          "name": "Barim M.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Feng S."
+        },
+        {
+          "@type": "Person",
+          "name": "Hughes G."
+        },
+        {
+          "@type": "Person",
+          "name": "Hayden M."
+        },
+        {
+          "@type": "Person",
+          "name": "Werren D."
+        }
+      ],
+      "description": "NIOSH algorithm computing the Revised NIOSH Lifting Equation input variables from five body-worn IMUs: a wrist-motion synchronization feature drives machine-learning lift detection (85% training accuracy) and a body-segment-length ratio model derives trunk flexion and hand locations (HCII 2020, LNCS 12198). Validated against optical motion capture on 10 subjects and 360 lifting trials - duration within ~1 s, trunk angle within ~2 degrees, and hand-location errors down to 14/2.2 cm with measured segment lengths. Open copy on CDC STACKS; no code release.",
+      "datePublished": "2020",
+      "identifier": "https://doi.org/10.1007/978-3-030-49904-4_15",
+      "sameAs": "https://stacks.cdc.gov/view/cdc/224429",
+      "keywords": [
+        "exposure-assessment",
+        "imu",
+        "lifting",
+        "machine-learning",
+        "niosh-lifting-equation",
+        "wearables"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-muller-imc-l5s1-moments",
+      "name": "Force-Plate-Free L5/S1 Moment Estimation From Inertial Motion Capture",
+      "url": "https://doi.org/10.3390/s22176454",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Muller A."
+        },
+        {
+          "@type": "Person",
+          "name": "Mecheri H."
+        },
+        {
+          "@type": "Person",
+          "name": "Corbeil P."
+        },
+        {
+          "@type": "Person",
+          "name": "Plamondon A."
+        },
+        {
+          "@type": "Person",
+          "name": "Robert-Lachaine X."
+        }
+      ],
+      "description": "Estimates L5/S1 moments from full-body inertial kinematics alone (Sensors, 2022, open access): an optimization distributes external forces over discrete foot and hand contact points subject to whole-body dynamics, removing the need for force plates. Validated on nine experienced handlers each performing 156 workplace-representative box transfers with six load types: RMSE 21.4 Nm for the L5/S1 flexion moment and 15.6 Nm for the asymmetric moment, with peak/cumulative flexion indicators correlating strongly (r-squared ~0.87) but asymmetric indicators weakly (~0.31). No code release.",
+      "datePublished": "2022",
+      "identifier": "https://doi.org/10.3390/s22176454",
+      "keywords": [
+        "force-plate-free",
+        "imu",
+        "inverse-dynamics",
+        "low-back",
+        "mmh",
+        "spine-loading"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-moore-garg-strain-index",
+      "name": "Strain Index and Revised Strain Index for Distal Upper-Extremity Risk",
+      "url": "https://doi.org/10.1080/15428119591016863",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Moore J.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Garg A."
+        },
+        {
+          "@type": "Person",
+          "name": "Kapellusch J.M."
+        }
+      ],
+      "description": "The Strain Index (AIHA Journal, 1995) multiplies six task-variable ratings into a single score for risk of distal upper-extremity disorders in hand-intensive work. The Revised Strain Index (Garg, Moore & Kapellusch, Ergonomics, 2017 - linked as the record) replaces the categorical multipliers with continuous functions of force, exertion frequency and duration, and posture, and has been validated against carpal tunnel syndrome incidence in prospective cohorts. Public method; both papers are paywalled.",
+      "datePublished": "1995",
+      "identifier": "https://doi.org/10.1080/15428119591016863",
+      "sameAs": "https://doi.org/10.1080/00140139.2016.1237678",
+      "keywords": [
+        "exposure-assessment",
+        "repetitive-motion",
+        "risk-index",
+        "strain-index",
+        "upper-extremity"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-mohapatra-wearable-fatigue-prediction",
+      "name": "Wearable Network for Multilevel Physical Fatigue Prediction in Manufacturing Workers",
+      "url": "https://github.com/payalmohapatra/WorkerFatigue",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "Mohapatra P., Aravind V., Bisram M., et al."
+        }
+      ],
+      "description": "Task-agnostic XGBoost regressor predicting continuous 0-10 Borg physical fatigue from a six-location wearable network - one skin-interfaced chest biosensor plus five IMUs (PNAS Nexus, 2024, open access). Developed on 43 participants replicating two strenuous aerospace-manufacturing tasks; an asymmetric LINEX loss cut fatigue underprediction from 0.71 to 0.38 with average MAE ~2.3 across tasks and unseen users. Code is on GitHub (no license stated) and the full deidentified multimodal database is on Zenodo (CC BY 4.0).",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1093/pnasnexus/pgae421",
+      "codeRepository": "https://github.com/payalmohapatra/WorkerFatigue",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1093/pnasnexus/pgae421"
+      },
+      "keywords": [
+        "biosensors",
+        "fatigue",
+        "imu",
+        "machine-learning",
+        "manufacturing",
+        "wearables",
+        "xgboost"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-mehrizi-multiview-3d-lifting-pose",
+      "name": "Deep Multi-View 3D Pose Estimation for Lifting Motions",
+      "url": "https://doi.org/10.1016/j.jbiomech.2018.12.022",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Mehrizi R."
+        },
+        {
+          "@type": "Person",
+          "name": "Peng X."
+        },
+        {
+          "@type": "Person",
+          "name": "Xu X."
+        },
+        {
+          "@type": "Person",
+          "name": "Zhang S."
+        },
+        {
+          "@type": "Person",
+          "name": "Li K."
+        }
+      ],
+      "description": "Two-stage deep network estimating full-body 3D pose during lifting from two ordinary camera views - an hourglass 2D module per view feeding a multi-view 3D pose generator (J. Biomech., 2019; the arXiv preprint is the FG 2018 conference version). Validated against synchronized marker-based motion capture on 12 adults performing nine lifting variations (three heights, three asymmetry angles): mean 3D joint error 14.7 +/- 3.0 mm, with larger errors at 60-degree asymmetry and shoulder height. The lifting dataset and code were not released.",
+      "datePublished": "2019",
+      "identifier": "https://doi.org/10.1016/j.jbiomech.2018.12.022",
+      "keywords": [
+        "computer-vision",
+        "deep-learning",
+        "lifting",
+        "markerless",
+        "multi-view",
+        "pose-estimation"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-mcatamney-corlett-rula",
+      "name": "RULA: Rapid Upper Limb Assessment",
+      "url": "https://github.com/fhstp/auto_rula",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "McAtamney L."
+        },
+        {
+          "@type": "Person",
+          "name": "Corlett E.N."
+        }
+      ],
+      "description": "Rapid Upper Limb Assessment (Applied Ergonomics, 1993): a survey method scoring observed upper-limb, neck, trunk, and leg postures with muscle-use and force ratings into a 1-7 grand score and four action levels for work-related upper-limb disorder risk. Public method requiring no equipment; among many implementations, the linked auto_rula library (with the ergo4all mobile app) scores RULA automatically from 3D pose data under a non-commercial MIT/Commons Clause license.",
+      "datePublished": "1993",
+      "identifier": "https://doi.org/10.1016/0003-6870(93)90080-S",
+      "codeRepository": "https://github.com/fhstp/auto_rula",
+      "license": "MIT with Commons Clause (non-commercial)",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/0003-6870(93)90080-S"
+      },
+      "keywords": [
+        "observational-method",
+        "postural-assessment",
+        "risk-index",
+        "rula",
+        "upper-extremity"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-matijevich-trunk-imu-insole-low-back-load",
+      "name": "Trunk IMU + Pressure-Insole Estimation of Low-Back Loading in Manual Material Handling",
+      "url": "https://doi.org/10.3390/s21020340",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Matijevich E.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Volgyesi P."
+        },
+        {
+          "@type": "Person",
+          "name": "Zelik K.E."
+        }
+      ],
+      "description": "Gradient-boosted decision-tree model estimating the time-series lumbar (L5/S1) extension moment from a single trunk IMU and pressure-sensing insoles (Sensors, 2021, open access). Trained and evaluated on 10 adults each performing about 400 distinct manual-material-handling tasks against lab-based ground truth: r-squared = 0.89 (RMSE ~20 Nm) with idealized signals and r-squared = 0.80 with actual wearable sensors, with the insoles proving irreplaceable among the sensor options tested. No public code or data release.",
+      "datePublished": "2021",
+      "identifier": "https://doi.org/10.3390/s21020340",
+      "keywords": [
+        "imu",
+        "lifting",
+        "machine-learning",
+        "pressure-insoles",
+        "spine-loading",
+        "wearables"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-marras-lmm-lbd-risk-model",
+      "name": "Marras Lumbar Motion Monitor Low-Back Disorder Risk Model",
+      "url": "https://doi.org/10.1097/00007632-199304000-00015",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "Marras W.S., Lavender S.A., Leurgans S.E., et al."
+        }
+      ],
+      "description": "Logistic risk model from a case-control study of 403 industrial lifting jobs (Spine, 1993): five trunk-motion and workplace measures captured with the Lumbar Motion Monitor - a wearable exoskeleton goniometer - combine into a probability of high-risk group membership for low-back disorder. Ohio State reports the model as two to three times more predictive of occupational LBD rates than the NIOSH lifting guides; the LMM instrument is commercial and the model lives on in the OSU Spine Research Institute's risk-exposure services.",
+      "datePublished": "1993",
+      "identifier": "https://doi.org/10.1097/00007632-199304000-00015",
+      "keywords": [
+        "epidemiology",
+        "lifting",
+        "low-back",
+        "risk-assessment",
+        "trunk-kinematics"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-marras-granata-emg-spine-model",
+      "name": "OSU EMG-Assisted Model of Spine Loading During Free-Dynamic Lifting",
+      "url": "https://doi.org/10.1016/S1050-6411(97)00006-0",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Marras W.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Granata K.P."
+        }
+      ],
+      "description": "Biologically assisted biomechanical trunk model (J. Electromyogr. Kinesiol., 1997) that drives muscle-force estimates from surface EMG of ten trunk muscles plus trunk kinematics, capturing individual recruitment and co-contraction to compute 3D L5/S1 compression and shear during unconstrained whole-body dynamic lifting. Validated through muscle-gain and predicted-versus-measured trunk-moment checks across repeated free-dynamic exertions; the methodological backbone of much of the OSU spine-loading literature. Research model; no public software release.",
+      "datePublished": "1997",
+      "identifier": "https://doi.org/10.1016/S1050-6411(97)00006-0",
+      "keywords": [
+        "biomechanical-model",
+        "emg",
+        "lifting",
+        "low-back",
+        "spine-loading"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-hignett-mcatamney-reba",
+      "name": "REBA: Rapid Entire Body Assessment",
+      "url": "https://github.com/rs9000/ergonomics",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Hignett S."
+        },
+        {
+          "@type": "Person",
+          "name": "McAtamney L."
+        }
+      ],
+      "description": "Rapid Entire Body Assessment (Applied Ergonomics, 2000): whole-body observational scoring of trunk, neck, leg, and arm postures combined with load, coupling, and activity ratings into a 1-15 score and five action levels, designed for the unpredictable postures of healthcare and service work. Public method requiring no equipment; the linked rs9000/ergonomics Python library (MIT) computes REBA scores automatically from 3D pose keypoints, and REBA is the risk target of several models in this library.",
+      "datePublished": "2000",
+      "identifier": "https://doi.org/10.1016/S0003-6870(99)00039-3",
+      "codeRepository": "https://github.com/rs9000/ergonomics",
+      "license": "https://opensource.org/license/mit",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/S0003-6870(99)00039-3"
+      },
+      "keywords": [
+        "observational-method",
+        "postural-assessment",
+        "reba",
+        "risk-index",
+        "whole-body"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-greene-cv-rnle-trunk-kinematics",
+      "name": "Computer-Vision Trunk Kinematics Enhancement of the NIOSH Lifting Equation",
+      "url": "https://doi.org/10.1177/1071181321651211",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Greene R.L."
+        },
+        {
+          "@type": "Person",
+          "name": "Chen G."
+        },
+        {
+          "@type": "Person",
+          "name": "Lu M.-L."
+        },
+        {
+          "@type": "Person",
+          "name": "Hu Y.H."
+        },
+        {
+          "@type": "Person",
+          "name": "Radwin R.G."
+        }
+      ],
+      "description": "Extends the Revised NIOSH Lifting Equation with trunk kinematics extracted from ordinary workplace video (HFES Proceedings, 2021): reanalyzing videos from NIOSH's prospective 78-worker cohort, average trunk speed and acceleration correlated with low-back-pain outcomes, and adding them to the Lifting Index significantly improved risk prediction (p = 0.003). The underlying trunk-angle extraction method (linked as the record; Human Factors, 2022, free full text) was validated against motion capture on 216 lifting trials (mean absolute difference 14.7 degrees, r-squared = 0.80).",
+      "datePublished": "2021",
+      "identifier": "https://doi.org/10.1177/1071181321651211",
+      "sameAs": "https://doi.org/10.1177/0018720820958840",
+      "keywords": [
+        "computer-vision",
+        "lifting",
+        "markerless",
+        "niosh-lifting-equation",
+        "risk-assessment",
+        "trunk-kinematics"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-garg-metabolic-energy-model",
+      "name": "Garg Metabolic Energy Prediction Model for Manual Materials Handling",
+      "url": "https://doi.org/10.1080/0002889778507831",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Garg A."
+        },
+        {
+          "@type": "Person",
+          "name": "Chaffin D.B."
+        },
+        {
+          "@type": "Person",
+          "name": "Herrin G.D."
+        }
+      ],
+      "description": "Additive model predicting the metabolic rate of manual-materials-handling jobs (AIHA Journal, 1978): a job is decomposed into task elements whose energy costs - functions of posture, load, frequency, and body weight - sum with postural maintenance costs to give kcal/min, used for whole-body fatigue criteria and work-rest scheduling. Implemented as the free University of Michigan Energy Expenditure Prediction Program (EEPP), a legacy tool whose page blocks automated link checkers but remains live.",
+      "datePublished": "1978",
+      "identifier": "https://doi.org/10.1080/0002889778507831",
+      "keywords": [
+        "energy-expenditure",
+        "fatigue",
+        "metabolic-cost",
+        "mmh",
+        "work-design"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-faber-ambulatory-l5s1-moments",
+      "name": "Ambulatory 3D L5/S1 Moment Estimation From a Full-Body Inertial Suit",
+      "url": "https://doi.org/10.1016/j.jbiomech.2015.11.042",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Faber G.S."
+        },
+        {
+          "@type": "Person",
+          "name": "Kingma I."
+        },
+        {
+          "@type": "Person",
+          "name": "Chang C.C."
+        },
+        {
+          "@type": "Person",
+          "name": "Dennerlein J.T."
+        },
+        {
+          "@type": "Person",
+          "name": "van Dieen J.H."
+        }
+      ],
+      "description": "Inverse-dynamics method line estimating 3D L5/S1 moments from a full-body inertial motion-capture suit without force plates (J. Biomech., 2016): top-down dynamics over upper-body kinematics kept moment RMS errors under 10 Nm (~5% of peak) in trunk bending, validated against optical mocap and force plates on nine participants. The 2020 extension (linked as the record, open access CC BY) adds instrumented force shoes and hand forces for 10 kg box lifting, where the top-down variant stayed under 20 Nm (~10% of peak). No code or data release.",
+      "datePublished": "2016",
+      "identifier": "https://doi.org/10.1016/j.jbiomech.2015.11.042",
+      "sameAs": "https://doi.org/10.1016/j.jbiomech.2020.109671",
+      "keywords": [
+        "imu",
+        "inverse-dynamics",
+        "lifting",
+        "low-back",
+        "spine-loading",
+        "wearables"
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://occbiomechanics.org/models.html#model-cp3d-construction-pose-risk",
+      "name": "CP3D: Construction 3D Pose Dataset and Deep-Learning Ergonomic Risk Assessment",
+      "url": "https://github.com/xinmingliUofA/CP3D",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Fan C."
+        },
+        {
+          "@type": "Person",
+          "name": "Mei Q."
+        },
+        {
+          "@type": "Person",
+          "name": "Li X."
+        }
+      ],
+      "description": "Construction-specific 3D pose resource and model (Automation in Construction, 2024, open access): ~420k Vicon-captured 3D poses of 7 actors across 14 common construction activities, on a purpose-built skeletal model that supplies every joint angle REBA and RULA require, plus a PyTorch multi-person pipeline scoring worker ergonomic risk from RGB images. Models trained with CP3D outperform those trained without it. The GitHub repo carries a REBA demo (no license stated); the dataset itself is requested via a link in the README.",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1016/j.autcon.2024.105452",
+      "codeRepository": "https://github.com/xinmingliUofA/CP3D",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1016/j.autcon.2024.105452"
+      },
+      "keywords": [
+        "construction",
+        "deep-learning",
+        "mocap",
+        "pose-estimation",
+        "pytorch",
+        "reba",
+        "risk-assessment",
+        "rula"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-chae-mun-insole-joint-moments",
+      "name": "Insole-Only Joint and Low-Back Moment Estimation for Lifting-Exoskeleton Control",
+      "url": "https://doi.org/10.3390/app112411735",
+      "creator": [
+        {
+          "@type": "Organization",
+          "name": "Chae S., Choi A., Mun J.H., et al."
+        }
+      ],
+      "description": "Method line estimating joint moments from plantar pressure alone for lifting-exoskeleton control (Applied Sciences, 2021, open access): an SVM posture classifier feeding posture-specific LSTM regressors estimated sagittal ankle/knee/hip/L5S1 moments during squat and stoop lifting with rRMSE 8-14% against optical mocap and force plates. The 2024 extension (Actuators, linked as the record) transfers a Bi-LSTM from 70 subjects on research insoles to a low-cost 18-point insole, estimating 3-axis L5/S1 moments in asymmetric lifting at ~12% rRMSE. No code or data release.",
+      "datePublished": "2021",
+      "identifier": "https://doi.org/10.3390/app112411735",
+      "sameAs": "https://doi.org/10.3390/act13030092",
+      "keywords": [
+        "exoskeleton",
+        "lifting",
+        "load-estimation",
+        "lstm",
+        "machine-learning",
+        "pressure-insoles",
+        "spine-loading"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://occbiomechanics.org/models.html#model-agostinelli-cv-ergonomic-assessment",
+      "name": "Computer-Vision REBA/RULA Assessment Validated on Real Manufacturing Lines",
+      "url": "https://doi.org/10.1038/s41598-024-79373-4",
+      "creator": [
+        {
+          "@type": "Person",
+          "name": "Agostinelli T."
+        },
+        {
+          "@type": "Person",
+          "name": "Generosi A."
+        },
+        {
+          "@type": "Person",
+          "name": "Ceccacci S."
+        },
+        {
+          "@type": "Person",
+          "name": "Mengoni M."
+        }
+      ],
+      "description": "Markerless ergonomic-assessment platform combining tf-pose-estimation and MediaPipe to track joint angles from work-cycle video and compute REBA, RULA, and OCRA — validated in situ on three real manufacturing production lines with 12 operators against expert ergonomists (Scientific Reports, 2024, open access). Risk-level agreement reached 40-80% depending on line and method; the authors position it for continuous monitoring alongside, not instead of, expert assessment. The linked GitHub repo holds the raw validation data; the tool's source code is not released.",
+      "datePublished": "2024",
+      "identifier": "https://doi.org/10.1038/s41598-024-79373-4",
+      "sameAs": "https://github.com/boso94/ergonomicAnalysis",
+      "keywords": [
+        "computer-vision",
+        "field-validation",
+        "manufacturing",
+        "markerless",
+        "ocra",
+        "reba",
+        "risk-assessment",
+        "rula"
+      ]
+    },
     {
       "@type": "ScholarlyArticle",
       "@id": "https://occbiomechanics.org/models.html#model-yen-radwin-mvta-video-task-analysis",
@@ -354,7 +1762,16 @@
   <div class="wrap">
     <span class="eyebrow">Library</span>
     <h1>Models</h1>
-    <p class="lede">Published models, methods, and open-source code for occupational biomechanics — markerless pose and kinematics estimation, video-based exposure assessment, and the ACGIH hand activity level equations today, with musculoskeletal models to follow. Each entry links to its paper, its source code where released, and the software that implements it where one exists. Looking for data instead? Browse the <a href="datasets.html">dataset library</a>.</p>
+    <p class="lede">Published models, methods, and open-source code for occupational biomechanics, in four groups: the classic assessment methods and indices (NIOSH lifting equation, RULA, REBA, strain index…), biomechanical and physiological models of spine loading, fatigue, and metabolic cost, vision models that read posture and risk from video, and wearable-sensor models driven by IMUs, insoles, and biosensors. Each entry links to its paper, its source code where released, and the software that implements it where one exists. Looking for data instead? Browse the <a href="datasets.html">dataset library</a>.</p>
+    <!-- MODELS_STATS:START -->
+<div class="readout" aria-label="Library summary">
+      <div class="cell"><div class="num accent">49</div><div class="lbl">Models</div></div>
+      <div class="cell"><div class="num">4</div><div class="lbl">Categories</div></div>
+      <div class="cell"><div class="num">9</div><div class="lbl">With&nbsp;code</div></div>
+      <div class="cell"><div class="num">9</div><div class="lbl">As&nbsp;software</div></div>
+      <div class="cell"><div class="num amber">1</div><div class="lbl">Coming&nbsp;soon</div></div>
+    </div>
+<!-- MODELS_STATS:END -->
   </div>
 </section>
 
@@ -362,67 +1779,114 @@
   <!-- The build script (scripts/build_catalog.py) replaces everything between
        these markers with cards compiled from models/*.yaml. -->
   <!-- MODELS:START -->
-<section class="exo-group">
-  <div class="section-head"><h2>All models</h2><span class="count-note">8 models</span></div>
+<p class="desc" id="model-cats"><a href="#cat-assessment-method">Assessment methods &amp; indices</a> (9) · <a href="#cat-biomechanical">Biomechanical &amp; physiological models</a> (6) · <a href="#cat-vision">Video &amp; vision models</a> (18) · <a href="#cat-wearable">Wearable-sensor models</a> (16)</p>
+<section class="exo-group" id="cat-assessment-method">
+  <div class="section-head"><h2>Assessment methods &amp; indices</h2><span class="count-note">9 models</span></div>
+  <p class="desc">Published observational methods, psychophysical tables, and exposure equations.</p>
   <div class="grid">
-<article class="card" id="model-yen-radwin-mvta-video-task-analysis">
+<article class="card" id="model-schaub-eaws-worksheet">
   <div class="card-top">
-    <div><span class="cid">yen-radwin-mvta-video-task-analysis</span></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+    <div><span class="cid">schaub-eaws-worksheet</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
   </div>
-  <h3><a class="title-link" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition</a></h3>
-  <div class="src">University of Wisconsin-Madison · 1995</div>
-  <p class="desc">Video-based data acquisition and interactive data-extraction method (IEEE Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in synchrony with task video, and analysts mark event breakpoints while the video plays at any speed or direction to obtain elemental times, event frequencies, duty cycles and postures. Implemented as the MVTA software, distributed commercially by NexGen Ergonomics, which supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.</p>
-  <div class="tags"><span class="tag">video-analysis</span><span class="tag">time-study</span><span class="tag">duty-cycle</span><span class="tag">hand-activity-level</span><span class="tag">upper-extremity</span></div>
-  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)">Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Elemental times, event frequency, duty cycle, postural analysis">Elemental times, event frequency, duty cycle, postural analysis</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive manual work — time study and exposure assessment from task video">Repetitive manual work — time study and exposure assessment from task video</span></div></div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/1463922X.2012.678283" target="_blank" rel="noopener">EAWS: Ergonomic Assessment Worksheet (European Assembly Worksheet)</a></h3>
+  <div class="src">TU Darmstadt (IAD) / International MTM Directorate · 2013</div>
+  <p class="desc">First-level screening worksheet integrating working postures, action forces, manual materials handling, and repetitive upper-limb load into one whole-body physical workload score (Theor. Issues Ergon. Sci., 2013). Developed with the MTM association and widely embedded in automotive production planning and digital human modeling suites. Use of the method and training are licensed; the paper describes the structure and rationale.</p>
+  <div class="tags"><span class="tag">whole-body</span><span class="tag">screening</span><span class="tag">assembly</span><span class="tag">automotive</span><span class="tag">mmh</span><span class="tag">upper-limb</span><span class="tag">licensed-method</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Observed working postures, action forces, manual materials handling parameters, and upper-limb repetitive load over a shift">Observed working postures, action forces, manual materials handling parameters, and upper-limb repetitive load over a shift</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Section scores for postures, forces, MMH, and upper limb, combined into a whole-body risk score with traffic-light zones">Section scores for postures, forces, MMH, and upper limb, combined into a whole-body risk score with traffic-light zones</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Assembly and production work — whole-body physical workload screening, common in automotive">Assembly and production work — whole-body physical workload screening, common in automotive</span></div></div>
   <div class="card-foot">
-    <span class="lic">Available as software</span>
-    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/197950" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://mvta.engr.wisc.edu/" target="_blank" rel="noopener">Software ↗</a></span>
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/1463922X.2012.678283" target="_blank" rel="noopener">Paper ↗</a></span>
   </div>
 </article>
-<article class="card" id="model-wang-2d-video-lifting-monitor">
+<article class="card" id="model-waters-revised-niosh-lifting-equation">
   <div class="card-top">
-    <div><span class="cid">wang-2d-video-lifting-monitor</span></div>
+    <div><span class="cid">waters-revised-niosh-lifting-equation</span></div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
   </div>
-  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation</a></h3>
-  <div class="src">University of Wisconsin-Madison / NIOSH · 2019</div>
-  <p class="desc">Single-camera computer-vision method that detects lifting instances with a motion &quot;ghosting&quot; effect and predicts hand and feet locations to extract the spatial and temporal factors of the revised NIOSH lifting equation (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture classification (Greene et al., Human Factors, 2019); patented as US 11,450,148 (WARF) and commercialized by KineVid LLC.</p>
-  <div class="tags"><span class="tag">computer-vision</span><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">markerless</span><span class="tag">deep-learning</span></div>
-  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Single sagittal-plane video camera, no sensors on the worker">Single sagittal-plane video camera, no sensors on the worker</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit">Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — Revised NIOSH Lifting Equation risk assessment">Manual lifting — Revised NIOSH Lifting Equation risk assessment</span></div></div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139308967940" target="_blank" rel="noopener">Revised NIOSH Lifting Equation (RNLE)</a></h3>
+  <div class="src">NIOSH · 1993</div>
+  <p class="desc">The standard model for evaluating two-handed manual lifting (Ergonomics, 1993): six task-factor multipliers reduce a 23 kg load constant to a Recommended Weight Limit, and the ratio of actual load to RWL gives the Lifting Index (Composite Lifting Index for multi-task jobs). Public domain, anchored to the 3.4 kN L5/S1 compression criterion. Implementations include NIOSH&#x27;s free NLE Calc mobile app and the Applications Manual (DHHS 94-110, linked as the record); the WISHA lifting calculator derives from it.</p>
+  <div class="tags"><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">mmh</span><span class="tag">risk-index</span><span class="tag">public-domain</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Six task factors: horizontal and vertical hand locations, vertical travel distance, asymmetry angle, lifting frequency and duration, coupling quality">Six task factors: horizontal and vertical hand locations, vertical travel distance, asymmetry angle, lifting frequency and duration, coupling quality</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Recommended Weight Limit plus the Lifting Index and Composite Lifting Index">Recommended Weight Limit plus the Lifting Index and Composite Lifting Index</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Two-handed manual lifting — task design and risk evaluation">Two-handed manual lifting — task design and risk evaluation</span></div></div>
   <div class="card-foot">
     <span class="lic">Available as software</span>
-    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/213608" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139308967940" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.cdc.gov/niosh/docs/94-110/" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://www.cdc.gov/niosh/ergonomics/about/RNLE.html" target="_blank" rel="noopener">Software ↗</a></span>
   </div>
 </article>
-<article class="card is-coming" id="model-gnn-mtnet-imu-video-kinematics">
+<article class="card" id="model-snook-liberty-mutual-mmh">
   <div class="card-top">
-    <div><span class="cid">gnn-mtnet-imu-video-kinematics</span></div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge coming_soon">Coming soon</span></div>
-  </div>
-  <h3>GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics</h3>
-  <div class="src">New Jersey Institute of Technology / Texas A&amp;M University / Georgia Institute of Technology · 2026</div>
-  <p class="desc">Graph-enhanced multimodal deep-learning model that fuses wearable IMU signals with 2-D keypoints from dual-view smartphone video to predict 16 full-body joint angles during occupational tasks. Per-channel bidirectional LSTM/GRU encoders with temporal attention feed a 40-node anatomical graph (GATv2), so accuracy degrades gracefully when sensors are occluded or missing, and a single-step autoregressive feedback keeps predictions temporally coherent. Developed on the offshore wind turbine maintenance dataset; paper and code release pending.</p>
-  <div class="tags"><span class="tag">kinematics</span><span class="tag">imu</span><span class="tag">video</span><span class="tag">sensor-fusion</span><span class="tag">graph-neural-network</span><span class="tag">deep-learning</span><span class="tag">pytorch</span><span class="tag">wind-energy</span><span class="tag">ladder-climbing</span></div>
-  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos">11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos</span></div><div class="metric"><span class="k">Output</span><span class="v" title="16 lower-limb, lumbar, and arm joint angles over time">16 lower-limb, lumbar, and arm joint angles over time</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)">Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)</span></div></div>
-  <div class="card-foot">
-    <span class="lic">Release pending</span>
-    <span class="pending">Paper pending</span>
-  </div>
-</article>
-<article class="card" id="model-chen-video-hand-activity-level">
-  <div class="card-top">
-    <div><span class="cid">chen-video-hand-activity-level</span></div>
+    <div><span class="cid">snook-liberty-mutual-mmh</span></div>
     <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
   </div>
-  <h3><a class="title-link" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Automated Video Exposure Assessment of the ACGIH Hand Activity Level</a></h3>
-  <div class="src">University of Wisconsin-Madison · 2013</div>
-  <p class="desc">Marker-less digital video processing that tracks hand motion in ordinary workplace video and quantifies repetitive hand activity automatically (Human Factors, 2013), later extended to fully automated elemental-time and duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the hand speed-duty cycle equation it forms Radwin&#x27;s video HAL pipeline, patented as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.</p>
-  <div class="tags"><span class="tag">computer-vision</span><span class="tag">hand-activity-level</span><span class="tag">markerless</span><span class="tag">duty-cycle</span><span class="tag">upper-extremity</span></div>
-  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Conventional 2D workplace video; marker-less hand tracking">Conventional 2D workplace video; marker-less hand tracking</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level">Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive hand-intensive work (upper-extremity exposure assessment)">Repetitive hand-intensive work (upper-extremity exposure assessment)</span></div></div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139108964855" target="_blank" rel="noopener">Liberty Mutual (Snook) MMH Tables and the 2021 LM-MMH Equations</a></h3>
+  <div class="src">Liberty Mutual Insurance Research Center · 1991</div>
+  <p class="desc">Psychophysical tables of maximum acceptable weights and forces for lifting, lowering, pushing, pulling, and carrying by male and female population percentile (Snook &amp; Ciriello, Ergonomics, 1991), the industry standard for designing MMH tasks. Recast in 2021 as the LM-MMH regression equations (Potvin et al., Ergonomics - linked as the record), which smooth the tables into continuous equations. Free interactive web tool from Liberty Mutual; the tool loads in browsers but returns 403 to automated link checkers.</p>
+  <div class="tags"><span class="tag">psychophysics</span><span class="tag">mmh</span><span class="tag">lifting</span><span class="tag">pushing-pulling</span><span class="tag">carrying</span><span class="tag">design-limits</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Task type (lift, lower, push, pull, carry), hand heights and distances, frequency, and object width">Task type (lift, lower, push, pull, carry), hand heights and distances, frequency, and object width</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Maximum acceptable weights and forces by population percentile - the share of workers a task design accommodates">Maximum acceptable weights and forces by population percentile - the share of workers a task design accommodates</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual material handling — psychophysical task design limits">Manual material handling — psychophysical task design limits</span></div></div>
   <div class="card-foot">
     <span class="lic">Available as software</span>
-    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139108964855" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://doi.org/10.1080/00140139.2021.1891297" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://libertymmhtables.libertymutual.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-occhipinti-ocra-index">
+  <div class="card-top">
+    <div><span class="cid">occhipinti-ocra-index</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/001401398186315" target="_blank" rel="noopener">OCRA Index for Repetitive Upper-Limb Work</a></h3>
+  <div class="src">EPM Research Unit, Milan · 1998</div>
+  <p class="desc">The OCRA index (Ergonomics, 1998) scores repetitive upper-limb work as the ratio of technical actions actually performed per shift to a recommended number derived from force, posture, repetitiveness, recovery periods, and additional factors, yielding exposure classes for work-related upper-limb MSD risk. It is the reference method cited by ISO 11228-3 and EN 1005-5 for biomechanical overload of the upper limbs; the EPM International Ergonomics School distributes free OCRA assessment tools on its site.</p>
+  <div class="tags"><span class="tag">upper-extremity</span><span class="tag">repetitive-motion</span><span class="tag">exposure-assessment</span><span class="tag">risk-index</span><span class="tag">iso-11228</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Technical actions per shift with force, posture, repetitiveness, recovery-period, and additional factors">Technical actions per shift with force, posture, repetitiveness, recovery-period, and additional factors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Ratio of actual to recommended technical actions, classified into upper-limb risk exposure classes">Ratio of actual to recommended technical actions, classified into upper-limb risk exposure classes</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive upper-limb work — exposure assessment">Repetitive upper-limb work — exposure assessment</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/001401398186315" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.epmresearch.org/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-moore-garg-strain-index">
+  <div class="card-top">
+    <div><span class="cid">moore-garg-strain-index</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/15428119591016863" target="_blank" rel="noopener">Strain Index and Revised Strain Index for Distal Upper-Extremity Risk</a></h3>
+  <div class="src">Medical College of Wisconsin / University of Wisconsin-Milwaukee · 1995</div>
+  <p class="desc">The Strain Index (AIHA Journal, 1995) multiplies six task-variable ratings into a single score for risk of distal upper-extremity disorders in hand-intensive work. The Revised Strain Index (Garg, Moore &amp; Kapellusch, Ergonomics, 2017 - linked as the record) replaces the categorical multipliers with continuous functions of force, exertion frequency and duration, and posture, and has been validated against carpal tunnel syndrome incidence in prospective cohorts. Public method; both papers are paywalled.</p>
+  <div class="tags"><span class="tag">upper-extremity</span><span class="tag">strain-index</span><span class="tag">repetitive-motion</span><span class="tag">risk-index</span><span class="tag">exposure-assessment</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Six task variables: intensity of exertion, duration of exertion, efforts per minute, hand/wrist posture, speed of work, duration per day">Six task variables: intensity of exertion, duration of exertion, efforts per minute, hand/wrist posture, speed of work, duration per day</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Strain Index score classifying jobs as safe or hazardous for distal upper-extremity disorders">Strain Index score classifying jobs as safe or hazardous for distal upper-extremity disorders</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Hand-intensive repetitive work — distal upper-extremity MSD risk">Hand-intensive repetitive work — distal upper-extremity MSD risk</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/15428119591016863" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://doi.org/10.1080/00140139.2016.1237678" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-mcatamney-corlett-rula">
+  <div class="card-top">
+    <div><span class="cid">mcatamney-corlett-rula</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/fhstp/auto_rula" target="_blank" rel="noopener">RULA: Rapid Upper Limb Assessment</a></h3>
+  <div class="src">University of Nottingham (Institute for Occupational Ergonomics) · 1993</div>
+  <p class="desc">Rapid Upper Limb Assessment (Applied Ergonomics, 1993): a survey method scoring observed upper-limb, neck, trunk, and leg postures with muscle-use and force ratings into a 1-7 grand score and four action levels for work-related upper-limb disorder risk. Public method requiring no equipment; among many implementations, the linked auto_rula library (with the ergo4all mobile app) scores RULA automatically from 3D pose data under a non-commercial MIT/Commons Clause license.</p>
+  <div class="tags"><span class="tag">rula</span><span class="tag">postural-assessment</span><span class="tag">upper-extremity</span><span class="tag">observational-method</span><span class="tag">risk-index</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Observed postures of upper arm, lower arm, wrist, neck, trunk and legs, plus muscle-use and force/load ratings">Observed postures of upper arm, lower arm, wrist, neck, trunk and legs, plus muscle-use and force/load ratings</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Grand score (1-7) with an action level indicating how urgently the work needs investigation and change">Grand score (1-7) with an action level indicating how urgently the work needs investigation and change</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Seated and standing upper-limb-intensive work — observational postural risk screening">Seated and standing upper-limb-intensive work — observational postural risk screening</span></div></div>
+  <div class="card-foot">
+    <span class="lic">MIT with Commons Clause (non-commercial)</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/0003-6870(93)90080-S" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/fhstp/auto_rula" target="_blank" rel="noopener">Code ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-hignett-mcatamney-reba">
+  <div class="card-top">
+    <div><span class="cid">hignett-mcatamney-reba</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/rs9000/ergonomics" target="_blank" rel="noopener">REBA: Rapid Entire Body Assessment</a></h3>
+  <div class="src">Nottingham City Hospital · 2000</div>
+  <p class="desc">Rapid Entire Body Assessment (Applied Ergonomics, 2000): whole-body observational scoring of trunk, neck, leg, and arm postures combined with load, coupling, and activity ratings into a 1-15 score and five action levels, designed for the unpredictable postures of healthcare and service work. Public method requiring no equipment; the linked rs9000/ergonomics Python library (MIT) computes REBA scores automatically from 3D pose keypoints, and REBA is the risk target of several models in this library.</p>
+  <div class="tags"><span class="tag">reba</span><span class="tag">postural-assessment</span><span class="tag">whole-body</span><span class="tag">observational-method</span><span class="tag">risk-index</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Observed trunk, neck, leg, upper-arm, lower-arm and wrist postures plus load/force, coupling, and activity ratings">Observed trunk, neck, leg, upper-arm, lower-arm and wrist postures plus load/force, coupling, and activity ratings</span></div><div class="metric"><span class="k">Output</span><span class="v" title="REBA score (1-15) with five action levels for whole-body MSD risk">REBA score (1-15) with five action levels for whole-body MSD risk</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Whole-body, unpredictable working postures — observational MSD risk screening">Whole-body, unpredictable working postures — observational MSD risk screening</span></div></div>
+  <div class="card-foot">
+    <span class="lic">MIT</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/S0003-6870(99)00039-3" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/rs9000/ergonomics" target="_blank" rel="noopener">Code ↗</a></span>
   </div>
 </article>
 <article class="card" id="model-radwin-frequency-duty-cycle-hal">
@@ -455,6 +1919,348 @@
     <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2014.966155" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/200752" target="_blank" rel="noopener">Record ↗</a></span>
   </div>
 </article>
+  </div>
+</section>
+<section class="exo-group" id="cat-biomechanical">
+  <div class="section-head"><h2>Biomechanical &amp; physiological models</h2><span class="count-note">6 models</span></div>
+  <p class="desc">Predictive models with explicit physical or physiological structure: spine loading, muscle fatigue, metabolic cost.</p>
+  <div class="grid">
+<article class="card" id="model-santos-virtual-human-dhm">
+  <div class="card-top">
+    <div><span class="cid">santos-virtual-human-dhm</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1007/978-3-032-00839-8_14" target="_blank" rel="noopener">Santos Virtual Human: Predictive Digital Human Modeling</a></h3>
+  <div class="src">University of Iowa Virtual Soldier Research / SantosHuman Inc. · 2025</div>
+  <p class="desc">Physics- and optimization-based predictive digital human developed at the University of Iowa Virtual Soldier Research program: predicts posture, motion, strength, reach, discomfort, and joint loads from task descriptions rather than prerecorded motion. The linked chapter (DHM 2025 symposium) is a recent application evaluating the U.S. Army Combat Fitness Test biomechanically with Santos. Commercially available through SantosHuman Inc.; research versions at the Iowa Technology Institute.</p>
+  <div class="tags"><span class="tag">digital-human-modeling</span><span class="tag">predictive-simulation</span><span class="tag">optimization</span><span class="tag">strength</span><span class="tag">fatigue</span><span class="tag">commercial</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Task definition, anthropometry, loads, and environment; no prerecorded motion or mocap required">Task definition, anthropometry, loads, and environment; no prerecorded motion or mocap required</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Predicted posture and motion, joint torques, strength percent-capable, discomfort, and fatigue measures">Predicted posture and motion, joint torques, strength percent-capable, discomfort, and fatigue measures</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Workplace and defense task design — simulation-based ergonomic evaluation without motion capture">Workplace and defense task design — simulation-based ergonomic evaluation without motion capture</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1007/978-3-032-00839-8_14" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.santoshumaninc.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-aghazadeh-coupled-ann-spine-loads">
+  <div class="card-top">
+    <div><span class="cid">aghazadeh-coupled-ann-spine-loads</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.jbiomech.2019.109332" target="_blank" rel="noopener">Coupled Neural Networks for Posture Prediction and Spinal Loads</a></h3>
+  <div class="src">Sharif University of Technology / Shahed University · 2020</div>
+  <p class="desc">Two coupled artificial neural networks trained on 15 subjects each performing 135 load-handling activities (nine horizontal by five vertical load locations): the first predicts full-body 3D posture from a few measurable inputs, the second maps predicted posture to lumbosacral moments and spinal loads (J. Biomech., 2020, vol. 102). Bypasses motion capture and detailed biomechanical modeling for quick spine-load screening of manual handling; extended by later work from the same group. No code release.</p>
+  <div class="tags"><span class="tag">neural-network</span><span class="tag">posture-prediction</span><span class="tag">spine-loading</span><span class="tag">low-back</span><span class="tag">mmh</span><span class="tag">sparse-input</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="A small set of measurable task and subject parameters (load position in space, subject anthropometry), no motion capture">A small set of measurable task and subject parameters (load position in space, subject anthropometry), no motion capture</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Full-body 3D posture (segment orientations), then lumbosacral moments and L5/S1 compression and shear loads">Full-body 3D posture (segment orientations), then lumbosacral moments and L5/S1 compression and shear loads</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Load-handling activities — spine-load estimation from a few easily measured inputs">Load-handling activities — spine-load estimation from a few easily measured inputs</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.jbiomech.2019.109332" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-xia-freylaw-3cc-fatigue-model">
+  <div class="card-top">
+    <div><span class="cid">xia-freylaw-3cc-fatigue-model</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.jbiomech.2008.07.013" target="_blank" rel="noopener">Three-Compartment Controller (3CC) Muscle Fatigue Model</a></h3>
+  <div class="src">The University of Iowa · 2008</div>
+  <p class="desc">Physiology-based muscle-fatigue model (J. Biomech., 2008) representing a muscle as active, fatigued, and resting compartments with first-order transfer rates and a feedback controller that matches activation to the target load, predicting force decay and recovery over arbitrary duty cycles. Later Frey Law group work fit joint-specific fatigue/recovery parameters against published endurance-time and intermittent-contraction data, and the model has been adopted in digital human modeling and ergonomics software.</p>
+  <div class="tags"><span class="tag">fatigue</span><span class="tag">endurance</span><span class="tag">muscle-model</span><span class="tag">physiology</span><span class="tag">digital-human-modeling</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Target load intensity and duty cycle, with joint-specific fatigue and recovery parameters">Target load intensity and duty cycle, with joint-specific fatigue and recovery parameters</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Time histories of active, fatigued, and resting muscle compartments; predicted force decay, endurance time, and recovery">Time histories of active, fatigued, and resting muscle compartments; predicted force decay, endurance time, and recovery</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Sustained and intermittent occupational exertions — muscle fatigue and endurance prediction">Sustained and intermittent occupational exertions — muscle fatigue and endurance prediction</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.jbiomech.2008.07.013" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-marras-lmm-lbd-risk-model">
+  <div class="card-top">
+    <div><span class="cid">marras-lmm-lbd-risk-model</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1097/00007632-199304000-00015" target="_blank" rel="noopener">Marras Lumbar Motion Monitor Low-Back Disorder Risk Model</a></h3>
+  <div class="src">The Ohio State University (Biodynamics Laboratory) · 1993</div>
+  <p class="desc">Logistic risk model from a case-control study of 403 industrial lifting jobs (Spine, 1993): five trunk-motion and workplace measures captured with the Lumbar Motion Monitor - a wearable exoskeleton goniometer - combine into a probability of high-risk group membership for low-back disorder. Ohio State reports the model as two to three times more predictive of occupational LBD rates than the NIOSH lifting guides; the LMM instrument is commercial and the model lives on in the OSU Spine Research Institute&#x27;s risk-exposure services.</p>
+  <div class="tags"><span class="tag">low-back</span><span class="tag">lifting</span><span class="tag">risk-assessment</span><span class="tag">trunk-kinematics</span><span class="tag">epidemiology</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Trunk kinematics from the Lumbar Motion Monitor plus workplace measures: lift rate, maximum load moment, sagittal flexion, lateral velocity, twisting velocity">Trunk kinematics from the Lumbar Motion Monitor plus workplace measures: lift rate, maximum load moment, sagittal flexion, lateral velocity, twisting velocity</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Probability of membership in the high-risk group for occupational low-back disorders">Probability of membership in the high-risk group for occupational low-back disorders</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Industrial lifting jobs — low-back disorder risk surveillance">Industrial lifting jobs — low-back disorder risk surveillance</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1097/00007632-199304000-00015" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://spine.osu.edu/risk-exposure-quantification" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-marras-granata-emg-spine-model">
+  <div class="card-top">
+    <div><span class="cid">marras-granata-emg-spine-model</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/S1050-6411(97)00006-0" target="_blank" rel="noopener">OSU EMG-Assisted Model of Spine Loading During Free-Dynamic Lifting</a></h3>
+  <div class="src">The Ohio State University (Biodynamics Laboratory) · 1997</div>
+  <p class="desc">Biologically assisted biomechanical trunk model (J. Electromyogr. Kinesiol., 1997) that drives muscle-force estimates from surface EMG of ten trunk muscles plus trunk kinematics, capturing individual recruitment and co-contraction to compute 3D L5/S1 compression and shear during unconstrained whole-body dynamic lifting. Validated through muscle-gain and predicted-versus-measured trunk-moment checks across repeated free-dynamic exertions; the methodological backbone of much of the OSU spine-loading literature. Research model; no public software release.</p>
+  <div class="tags"><span class="tag">emg</span><span class="tag">spine-loading</span><span class="tag">low-back</span><span class="tag">lifting</span><span class="tag">biomechanical-model</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Surface EMG from ten trunk muscles plus measured trunk kinematics during whole-body lifting">Surface EMG from ten trunk muscles plus measured trunk kinematics during whole-body lifting</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Individual muscle forces and 3D L5/S1 spine loads: compression, anterior-posterior and lateral shear">Individual muscle forces and 3D L5/S1 spine loads: compression, anterior-posterior and lateral shear</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Dynamic occupational lifting — individualized spine-load estimation">Dynamic occupational lifting — individualized spine-load estimation</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/S1050-6411(97)00006-0" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-garg-metabolic-energy-model">
+  <div class="card-top">
+    <div><span class="cid">garg-metabolic-energy-model</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/0002889778507831" target="_blank" rel="noopener">Garg Metabolic Energy Prediction Model for Manual Materials Handling</a></h3>
+  <div class="src">University of Michigan · 1978</div>
+  <p class="desc">Additive model predicting the metabolic rate of manual-materials-handling jobs (AIHA Journal, 1978): a job is decomposed into task elements whose energy costs - functions of posture, load, frequency, and body weight - sum with postural maintenance costs to give kcal/min, used for whole-body fatigue criteria and work-rest scheduling. Implemented as the free University of Michigan Energy Expenditure Prediction Program (EEPP), a legacy tool whose page blocks automated link checkers but remains live.</p>
+  <div class="tags"><span class="tag">metabolic-cost</span><span class="tag">energy-expenditure</span><span class="tag">mmh</span><span class="tag">fatigue</span><span class="tag">work-design</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Job decomposed into task elements (lift, lower, carry, walk, hold) with posture, load, frequency, and worker body weight">Job decomposed into task elements (lift, lower, carry, walk, hold) with posture, load, frequency, and worker body weight</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Predicted metabolic energy expenditure rate (kcal/min) for the job">Predicted metabolic energy expenditure rate (kcal/min) for the job</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual material handling — metabolic workload and work-rest design">Manual material handling — metabolic workload and work-rest design</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/0002889778507831" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://c4e.engin.umich.edu/tools-services/eepp-software/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+  </div>
+</section>
+<section class="exo-group" id="cat-vision">
+  <div class="section-head"><h2>Video &amp; vision models</h2><span class="count-note">18 models</span></div>
+  <p class="desc">Models that estimate posture, activity, or ergonomic risk from video, images, or skeleton sequences.</p>
+  <div class="grid">
+<article class="card" id="model-zheng-motionbert-stonemasonry-reba">
+  <div class="card-top">
+    <div><span class="cid">zheng-motionbert-stonemasonry-reba</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.measurement.2026.121589" target="_blank" rel="noopener">MotionBERT-Based 3D Posture Risk Assessment for Stonemasonry Workers</a></h3>
+  <div class="src">Huaqiao University · 2026</div>
+  <p class="desc">Cascaded markerless pipeline for an occupational trade with high-load manual tasks: YOLOv8n worker detection, knowledge-distilled RTMPose 2D keypoints, and MotionBERT spatiotemporal 3D reconstruction feeding automated REBA scoring (Measurement, 2026). Reports 28.3 mm mean per-joint position error under obstructed field conditions and 86.2 percent agreement with expert risk classifications for stonemasonry workers. No code release.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">transformer</span><span class="tag">motionbert</span><span class="tag">reba</span><span class="tag">construction</span><span class="tag">markerless</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video of stonemasonry work, processed by YOLOv8n detection and distillation-optimized RTMPose 2D keypoints">RGB video of stonemasonry work, processed by YOLOv8n detection and distillation-optimized RTMPose 2D keypoints</span></div><div class="metric"><span class="k">Output</span><span class="v" title="MotionBERT spatiotemporal 3D pose reconstruction and frame-wise REBA postural risk levels">MotionBERT spatiotemporal 3D pose reconstruction and frame-wise REBA postural risk levels</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Stonemasonry construction trade — automated postural risk assessment under cluttered field conditions">Stonemasonry construction trade — automated postural risk assessment under cluttered field conditions</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.measurement.2026.121589" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-salehi-mobile-markerless-lifting">
+  <div class="card-top">
+    <div><span class="cid">salehi-mobile-markerless-lifting</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.apergo.2026.104743" target="_blank" rel="noopener">Mobile-Device Markerless Motion Capture for Occupational Lifting</a></h3>
+  <div class="src">Oregon State University / Texas A&amp;M University · 2026</div>
+  <p class="desc">Adapts OpenCap, the open-source smartphone-based markerless motion capture platform, to occupational lifting by retraining its marker augmentation model on a large, diverse manual-lifting dataset (Appl. Ergon., 2026). Against reference motion capture, the task-specific model cut joint kinematic errors by about 37 percent versus the original OpenCap model (9.5 vs. 15.0 degrees RMSE), with gains concentrated in trunk and upper-body joints and robustness across lift heights, asymmetry angles, and camera setups.</p>
+  <div class="tags"><span class="tag">markerless</span><span class="tag">motion-capture</span><span class="tag">opencap</span><span class="tag">lifting</span><span class="tag">smartphone</span><span class="tag">validation</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Video from two or more mobile-device cameras, processed through the OpenCap markerless pipeline">Video from two or more mobile-device cameras, processed through the OpenCap markerless pipeline</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Full-body 3D joint kinematics during lifting, from a task-specific marker augmentation model">Full-body 3D joint kinematics during lifting, from a task-specific marker augmentation model</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — field-viable 3D kinematics measurement for ergonomics applications">Manual lifting — field-viable 3D kinematics measurement for ergonomics applications</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.apergo.2026.104743" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://pubmed.ncbi.nlm.nih.gov/41628493/" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-rs9000-ergonomics-reba-library">
+  <div class="card-top">
+    <div><span class="cid">rs9000-ergonomics-reba-library</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/rs9000/ergonomics" target="_blank" rel="noopener">rs9000/ergonomics: REBA Scoring Library From 3D Pose</a></h3>
+  <div class="src">Independent open-source project</div>
+  <p class="desc">Python library computing REBA scores directly from 3D pose keypoints (13+2 joints as root-relative X, Y, Z coordinates), released under the MIT license. A community open-source implementation of the REBA method (see the hignett-mcatamney-reba entry in this library) rather than a published model of its own: it bolts onto the output of any pose-estimation system to turn skeletons into postural risk scores, serving as a building block for automated occupational posture-risk pipelines.</p>
+  <div class="tags"><span class="tag">reba</span><span class="tag">posture-assessment</span><span class="tag">open-source</span><span class="tag">python</span><span class="tag">skeleton</span><span class="tag">library</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="3D pose keypoints (13+2 joints as X, Y, Z coordinates relative to the root joint): head, shoulders, elbows, wrists, hips, knees, ankles">3D pose keypoints (13+2 joints as X, Y, Z coordinates relative to the root joint): head, shoulders, elbows, wrists, hips, knees, ankles</span></div><div class="metric"><span class="k">Output</span><span class="v" title="REBA scores computed from the joint configuration">REBA scores computed from the joint configuration</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Occupational posture-risk pipelines — automated REBA scoring behind any pose-estimation system">Occupational posture-risk pipelines — automated REBA scoring behind any pose-estimation system</span></div></div>
+  <div class="card-foot">
+    <span class="lic">MIT</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://github.com/rs9000/ergonomics" target="_blank" rel="noopener">Code ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-lin-auto-method-selection-posture">
+  <div class="card-top">
+    <div><span class="cid">lin-auto-method-selection-posture</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1038/s41598-022-05812-9" target="_blank" rel="noopener">Real-Time Posture Evaluation With Automatic Ergonomic Method Selection</a></h3>
+  <div class="src">National Tsing Hua University · 2022</div>
+  <p class="desc">Computes joint angles from workplace video via OpenPose, then a decision tree picks the most appropriate observational method (REBA, RULA, or OWAS) from task repetitiveness and upper/lower-limb activity and scores MSD risk (Sci. Rep., 2022, open access). Tested on 15 operation videos spanning six occupational categories (assembly, maintenance, manual handling, cleaning, office work, driving), isolating the ~10% of frames that are high risk and cutting expert evaluation time by roughly 90%. No code release.</p>
+  <div class="tags"><span class="tag">posture-assessment</span><span class="tag">openpose</span><span class="tag">reba</span><span class="tag">rula</span><span class="tag">owas</span><span class="tag">decision-tree</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video of work tasks, processed to OpenPose joint keypoints, no body-worn sensors">RGB video of work tasks, processed to OpenPose joint keypoints, no body-worn sensors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Automatically selected assessment method (REBA, RULA, or OWAS), its risk score, and flagged high-risk frames">Automatically selected assessment method (REBA, RULA, or OWAS), its risk score, and flagged high-risk frames</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="General occupational tasks — automated observational posture assessment from workplace video">General occupational tasks — automated observational posture assessment from workplace video</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1038/s41598-022-05812-9" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8825815/" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-lee-scaffolding-3d-pose-risk">
+  <div class="card-top">
+    <div><span class="cid">lee-scaffolding-3d-pose-risk</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://www.iaarc.org/publications/fulltext/ISARC2026_1279.pdf" target="_blank" rel="noopener">Real-Time Monocular 3D Pose Risk Assessment for Scaffolding Workers</a></h3>
+  <div class="src">Sungkyunkwan University / Gangneung-Wonju National University / KAIST · 2026</div>
+  <p class="desc">Vision-based framework estimating 3D joint angles from a single RGB camera, classifying construction-specific hazardous postures, and computing time-weighted cumulative REBA scores in real time for scaffolding work (ISARC 2026). Validation showed strong agreement with expert assessments, with stable detection of squatting postures and higher misclassification for overhead work due to depth ambiguity and self-occlusion. No code release.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">monocular</span><span class="tag">construction</span><span class="tag">scaffolding</span><span class="tag">reba</span><span class="tag">real-time</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Monocular RGB camera video of scaffolding workers, no wearable sensors">Monocular RGB camera video of scaffolding workers, no wearable sensors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="3D joint angles, construction-specific hazardous posture classes, and time-weighted cumulative REBA scores">3D joint angles, construction-specific hazardous posture classes, and time-weighted cumulative REBA scores</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Construction scaffolding work — continuous WMSD risk monitoring of high-risk postures">Construction scaffolding work — continuous WMSD risk monitoring of high-risk postures</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://www.iaarc.org/publications/fulltext/ISARC2026_1279.pdf" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-cruciata-lightweight-vit-posture">
+  <div class="card-top">
+    <div><span class="cid">cruciata-lightweight-vit-posture</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/s25154750" target="_blank" rel="noopener">Lightweight Vision Transformer for Frame-Level Posture Risk Classification</a></h3>
+  <div class="src">University of Palermo / Polytechnic University of Marche / University of Perugia / University of Camerino · 2025</div>
+  <p class="desc">~5M-parameter vision transformer (SPECTRE-ViT) that classifies ergonomic risk for eight anatomical regions (neck, trunk, bilateral upper/lower arms, wrists) directly from raw RGB frames in a single multi-label pass (Sensors, 2025, open access). Trained on synchronized RGB video and full-body inertial motion capture with labels from RULA thresholds; reports F1 above 0.99 and AUC above 0.996 per region with real-time inference on edge devices. Code and data are available only on request to the authors.</p>
+  <div class="tags"><span class="tag">posture-classification</span><span class="tag">vision-transformer</span><span class="tag">deep-learning</span><span class="tag">rula</span><span class="tag">wmsd</span><span class="tag">manufacturing</span><span class="tag">edge-computing</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Raw RGB video frames (224x224), no skeleton reconstruction or joint-angle estimation">Raw RGB video frames (224x224), no skeleton reconstruction or joint-angle estimation</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Binary ergonomic risk labels (acceptable vs. risky) for eight body regions per frame, from RULA-derived thresholds">Binary ergonomic risk labels (acceptable vs. risky) for eight body regions per frame, from RULA-derived thresholds</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual manufacturing — WMSD risk monitoring on assembly, handling, and quality-control tasks">Manual manufacturing — WMSD risk monitoring on assembly, handling, and quality-control tasks</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/s25154750" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12349185/" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-chen-colearning-3d-pose-construction">
+  <div class="card-top">
+    <div><span class="cid">chen-colearning-3d-pose-construction</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1111/mice.13139" target="_blank" rel="noopener">Co-Learning 3D Pose Estimation for Real-Time Construction Ergonomics</a></h3>
+  <div class="src">The University of Hong Kong · 2024</div>
+  <p class="desc">Lightweight monocular 3D human pose estimation model with a residual log-likelihood estimation head, trained with a co-learning scheme that draws 2D and 3D features from multi-dimension datasets simultaneously (Comput.-Aided Civ. Infrastruct. Eng., 2024). Combined with pose tracking, it recognizes workers&#x27; 3D postures in real time for on-site ergonomic risk assessment in construction. No code release.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">monocular</span><span class="tag">construction</span><span class="tag">deep-learning</span><span class="tag">real-time</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Monocular RGB video of construction workers, no markers or wearable sensors">Monocular RGB video of construction workers, no markers or wearable sensors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Real-time 3D postures via pose tracking and ergonomic risk levels for monitored workers">Real-time 3D postures via pose tracking and ergonomic risk levels for monitored workers</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Construction sites — continuous on-site ergonomic risk monitoring from a single camera">Construction sites — continuous on-site ergonomic risk monitoring from a single camera</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1111/mice.13139" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-parsa-stcn-action-ergonomic-risk">
+  <div class="card-top">
+    <div><span class="cid">parsa-stcn-action-ergonomic-risk</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/BehnooshParsa/HumanActionRecognition_with_ErgonomicRisk" target="_blank" rel="noopener">Spatiotemporal Convolutional Networks for Action Segmentation and Ergonomic Risk Prediction</a></h3>
+  <div class="src">University of Washington / IIT Gandhinagar · 2019</div>
+  <p class="desc">IEEE RA-L 2019 method framing worker ergonomic-risk prediction as action segmentation of task video: per-frame VGG16 features drive an encoder-decoder temporal convolutional network that labels every frame with an action class tied to a safe, monitor, or high-risk tier, reaching 87-94% F1-overlap on videos over two minutes long. Introduced the UW-IOM dataset (20 participants manipulating boxes and rods; Mendeley Data, CC BY 4.0). TensorFlow code is on GitHub (no license stated).</p>
+  <div class="tags"><span class="tag">activity-recognition</span><span class="tag">risk-assessment</span><span class="tag">computer-vision</span><span class="tag">deep-learning</span><span class="tag">tensorflow</span><span class="tag">temporal-convolutional-network</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video frames; VGG16 spatial features fed to a temporal convolutional network">RGB video frames; VGG16 spatial features fed to a temporal convolutional network</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Frame-wise action labels mapped to safe / monitor / high-risk ergonomic tiers">Frame-wise action labels mapped to safe / monitor / high-risk ergonomic tiers</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Indoor object manipulation (warehouse-style pick-and-place) — ergonomic risk prediction">Indoor object manipulation (warehouse-style pick-and-place) — ergonomic risk prediction</span></div></div>
+  <div class="card-foot">
+    <span class="lic">—</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/LRA.2019.2925305" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/BehnooshParsa/HumanActionRecognition_with_ErgonomicRisk" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://arxiv.org/abs/1902.05176" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-parsa-mtl-era-activity-reba">
+  <div class="card-top">
+    <div><span class="cid">parsa-mtl-era-activity-reba</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/BehnooshParsa/MTL-ERA" target="_blank" rel="noopener">MTL-ERA: Multi-Task Activity Segmentation and REBA Risk Assessment From 3D Skeletons</a></h3>
+  <div class="src">University of Washington · 2021</div>
+  <p class="desc">Multi-task graph convolutional network (WACV 2021) that jointly segments worker activities and regresses frame-wise REBA ergonomic-risk scores from 3D skeleton sequences: a shared GCN backbone feeds an encoder-decoder TCN segmentation head and an LSTM risk head. On the UW-IOM dataset the best variant reached 92% F1-overlap for segmentation with a REBA-score MSE of 0.61, versus 1.68 for the single-task baseline. PyTorch code is on GitHub (no license stated).</p>
+  <div class="tags"><span class="tag">activity-recognition</span><span class="tag">reba</span><span class="tag">risk-assessment</span><span class="tag">graph-neural-network</span><span class="tag">deep-learning</span><span class="tag">pytorch</span><span class="tag">skeleton</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Sequences of 15-joint 3D skeleton keypoints from long task videos">Sequences of 15-joint 3D skeleton keypoints from long task videos</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Frame-wise activity segmentation labels and continuous REBA ergonomic-risk scores">Frame-wise activity segmentation labels and continuous REBA ergonomic-risk scores</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Industrial object-manipulation work — activity recognition and postural risk scoring">Industrial object-manipulation work — activity recognition and postural risk scoring</span></div></div>
+  <div class="card-foot">
+    <span class="lic">—</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/WACV48630.2021.00240" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/BehnooshParsa/MTL-ERA" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://arxiv.org/abs/2008.03014" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-mehrizi-multiview-3d-lifting-pose">
+  <div class="card-top">
+    <div><span class="cid">mehrizi-multiview-3d-lifting-pose</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.jbiomech.2018.12.022" target="_blank" rel="noopener">Deep Multi-View 3D Pose Estimation for Lifting Motions</a></h3>
+  <div class="src">Rutgers University / North Carolina State University / UNC Charlotte · 2019</div>
+  <p class="desc">Two-stage deep network estimating full-body 3D pose during lifting from two ordinary camera views - an hourglass 2D module per view feeding a multi-view 3D pose generator (J. Biomech., 2019; the arXiv preprint is the FG 2018 conference version). Validated against synchronized marker-based motion capture on 12 adults performing nine lifting variations (three heights, three asymmetry angles): mean 3D joint error 14.7 +/- 3.0 mm, with larger errors at 60-degree asymmetry and shoulder height. The lifting dataset and code were not released.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">markerless</span><span class="tag">lifting</span><span class="tag">deep-learning</span><span class="tag">multi-view</span><span class="tag">computer-vision</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video frames from two synchronized camera views at 90 and 135 degrees, no markers or depth sensors">RGB video frames from two synchronized camera views at 90 and 135 degrees, no markers or depth sensors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Per-frame 3D coordinates of 14 body joints">Per-frame 3D coordinates of 14 body joints</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — markerless full-body 3D pose for biomechanical analysis">Manual lifting — markerless full-body 3D pose for biomechanical analysis</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.jbiomech.2018.12.022" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://arxiv.org/abs/1802.01741" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-greene-cv-rnle-trunk-kinematics">
+  <div class="card-top">
+    <div><span class="cid">greene-cv-rnle-trunk-kinematics</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1177/1071181321651211" target="_blank" rel="noopener">Computer-Vision Trunk Kinematics Enhancement of the NIOSH Lifting Equation</a></h3>
+  <div class="src">University of Wisconsin-Madison / NIOSH · 2021</div>
+  <p class="desc">Extends the Revised NIOSH Lifting Equation with trunk kinematics extracted from ordinary workplace video (HFES Proceedings, 2021): reanalyzing videos from NIOSH&#x27;s prospective 78-worker cohort, average trunk speed and acceleration correlated with low-back-pain outcomes, and adding them to the Lifting Index significantly improved risk prediction (p = 0.003). The underlying trunk-angle extraction method (linked as the record; Human Factors, 2022, free full text) was validated against motion capture on 216 lifting trials (mean absolute difference 14.7 degrees, r-squared = 0.80).</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">trunk-kinematics</span><span class="tag">risk-assessment</span><span class="tag">markerless</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Conventional 2D workplace lifting video processed with a computationally efficient computer-vision method">Conventional 2D workplace lifting video processed with a computationally efficient computer-vision method</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Average trunk angular speed and acceleration, combined with the RNLE Lifting Index in a logistic low-back-pain risk model">Average trunk angular speed and acceleration, combined with the RNLE Lifting Index in a logistic low-back-pain risk model</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — video-based low-back-pain risk prediction">Manual lifting — video-based low-back-pain risk prediction</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1177/1071181321651211" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://doi.org/10.1177/0018720820958840" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-cp3d-construction-pose-risk">
+  <div class="card-top">
+    <div><span class="cid">cp3d-construction-pose-risk</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/xinmingliUofA/CP3D" target="_blank" rel="noopener">CP3D: Construction 3D Pose Dataset and Deep-Learning Ergonomic Risk Assessment</a></h3>
+  <div class="src">University of Alberta · 2024</div>
+  <p class="desc">Construction-specific 3D pose resource and model (Automation in Construction, 2024, open access): ~420k Vicon-captured 3D poses of 7 actors across 14 common construction activities, on a purpose-built skeletal model that supplies every joint angle REBA and RULA require, plus a PyTorch multi-person pipeline scoring worker ergonomic risk from RGB images. Models trained with CP3D outperform those trained without it. The GitHub repo carries a REBA demo (no license stated); the dataset itself is requested via a link in the README.</p>
+  <div class="tags"><span class="tag">pose-estimation</span><span class="tag">construction</span><span class="tag">reba</span><span class="tag">rula</span><span class="tag">risk-assessment</span><span class="tag">deep-learning</span><span class="tag">pytorch</span><span class="tag">mocap</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB images of construction workers with bounding-box and root-depth information">RGB images of construction workers with bounding-box and root-depth information</span></div><div class="metric"><span class="k">Output</span><span class="v" title="3D joint coordinates on a biomechanical skeleton covering all REBA/RULA joint angles, plus REBA and RULA risk scores">3D joint coordinates on a biomechanical skeleton covering all REBA/RULA joint angles, plus REBA and RULA risk scores</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Construction work — 3D pose estimation and ergonomic risk assessment">Construction work — 3D pose estimation and ergonomic risk assessment</span></div></div>
+  <div class="card-foot">
+    <span class="lic">—</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.autcon.2024.105452" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/xinmingliUofA/CP3D" target="_blank" rel="noopener">Code ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-agostinelli-cv-ergonomic-assessment">
+  <div class="card-top">
+    <div><span class="cid">agostinelli-cv-ergonomic-assessment</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1038/s41598-024-79373-4" target="_blank" rel="noopener">Computer-Vision REBA/RULA Assessment Validated on Real Manufacturing Lines</a></h3>
+  <div class="src">Universita Politecnica delle Marche / University of Macerata · 2024</div>
+  <p class="desc">Markerless ergonomic-assessment platform combining tf-pose-estimation and MediaPipe to track joint angles from work-cycle video and compute REBA, RULA, and OCRA — validated in situ on three real manufacturing production lines with 12 operators against expert ergonomists (Scientific Reports, 2024, open access). Risk-level agreement reached 40-80% depending on line and method; the authors position it for continuous monitoring alongside, not instead of, expert assessment. The linked GitHub repo holds the raw validation data; the tool&#x27;s source code is not released.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">reba</span><span class="tag">rula</span><span class="tag">ocra</span><span class="tag">markerless</span><span class="tag">risk-assessment</span><span class="tag">manufacturing</span><span class="tag">field-validation</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="RGB video of work cycles from commodity action cameras behind and lateral to the workstation">RGB video of work cycles from commodity action cameras behind and lateral to the workstation</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Joint-position and inter-limb-angle time series with REBA, RULA, and OCRA scores over the work cycle">Joint-position and inter-limb-angle time series with REBA, RULA, and OCRA scores over the work cycle</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manufacturing production lines — observational postural risk scoring from video">Manufacturing production lines — observational postural risk scoring from video</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1038/s41598-024-79373-4" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/boso94/ergonomicAnalysis" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-yen-radwin-mvta-video-task-analysis">
+  <div class="card-top">
+    <div><span class="cid">yen-radwin-mvta-video-task-analysis</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Multimedia Video Task Analysis (MVTA): Video-Synchronized Biomechanical Data Acquisition</a></h3>
+  <div class="src">University of Wisconsin-Madison · 1995</div>
+  <p class="desc">Video-based data acquisition and interactive data-extraction method (IEEE Trans. Biomed. Eng., 1995): analog biomechanical signals are recorded in synchrony with task video, and analysts mark event breakpoints while the video plays at any speed or direction to obtain elemental times, event frequencies, duty cycles and postures. Implemented as the MVTA software, distributed commercially by NexGen Ergonomics, which supplied the duty-cycle measurements behind the frequency- and hand-speed-based ACGIH HAL equations.</p>
+  <div class="tags"><span class="tag">video-analysis</span><span class="tag">time-study</span><span class="tag">duty-cycle</span><span class="tag">hand-activity-level</span><span class="tag">upper-extremity</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)">Task video with analyst-marked event breakpoints; optional synchronized analog channels (EMG, goniometers)</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Elemental times, event frequency, duty cycle, postural analysis">Elemental times, event frequency, duty cycle, postural analysis</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive manual work — time study and exposure assessment from task video">Repetitive manual work — time study and exposure assessment from task video</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/10.412663" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/197950" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://mvta.engr.wisc.edu/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-wang-2d-video-lifting-monitor">
+  <div class="card-top">
+    <div><span class="cid">wang-2d-video-lifting-monitor</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">2D Video-Based Lifting Monitor for the Revised NIOSH Lifting Equation</a></h3>
+  <div class="src">University of Wisconsin-Madison / NIOSH · 2019</div>
+  <p class="desc">Single-camera computer-vision method that detects lifting instances with a motion &quot;ghosting&quot; effect and predicts hand and feet locations to extract the spatial and temporal factors of the revised NIOSH lifting equation (Ergonomics, 2019); in the lab its recommended-weight-limit estimates were within 0.2 kg of 3D motion capture. Builds on bounding-box lifting-posture classification (Greene et al., Human Factors, 2019); patented as US 11,450,148 (WARF) and commercialized by KineVid LLC.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">markerless</span><span class="tag">deep-learning</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Single sagittal-plane video camera, no sensors on the worker">Single sagittal-plane video camera, no sensors on the worker</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit">Lift detection, hand and feet locations, and the horizontal/vertical RNLE factors for the recommended weight limit</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — Revised NIOSH Lifting Equation risk assessment">Manual lifting — Revised NIOSH Lifting Equation risk assessment</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2019.1618500" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/213608" target="_blank" rel="noopener">Record ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-chen-video-hand-activity-level">
+  <div class="card-top">
+    <div><span class="cid">chen-video-hand-activity-level</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Software</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Automated Video Exposure Assessment of the ACGIH Hand Activity Level</a></h3>
+  <div class="src">University of Wisconsin-Madison · 2013</div>
+  <p class="desc">Marker-less digital video processing that tracks hand motion in ordinary workplace video and quantifies repetitive hand activity automatically (Human Factors, 2013), later extended to fully automated elemental-time and duty-cycle measurement (Akkas et al., Ergonomics, 2016). Together with the hand speed-duty cycle equation it forms Radwin&#x27;s video HAL pipeline, patented as US 9,566,004 and commercialized by the UW-Madison spin-off KineVid LLC.</p>
+  <div class="tags"><span class="tag">computer-vision</span><span class="tag">hand-activity-level</span><span class="tag">markerless</span><span class="tag">duty-cycle</span><span class="tag">upper-extremity</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Conventional 2D workplace video; marker-less hand tracking">Conventional 2D workplace video; marker-less hand tracking</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level">Hand speed, duty cycle and exertion frequency, converted to an ACGIH hand activity level</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive hand-intensive work (upper-extremity exposure assessment)">Repetitive hand-intensive work (upper-extremity exposure assessment)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Available as software</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1177/0018720812458121" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://www.kinevid.com/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
 <article class="card" id="model-wang-roofing-pose-estimation">
   <div class="card-top">
     <div><span class="cid">wang-roofing-pose-estimation</span></div>
@@ -483,6 +2289,252 @@
   <div class="card-foot">
     <span class="lic">MIT</span>
     <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.cviu.2023.103780" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/Nyquixt/KinematicNet" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://arxiv.org/abs/2307.05896" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+  </div>
+</section>
+<section class="exo-group" id="cat-wearable">
+  <div class="section-head"><h2>Wearable-sensor models</h2><span class="count-note">16 models</span></div>
+  <p class="desc">Estimation models driven by IMUs, pressure insoles, and body-worn biosensors.</p>
+  <div class="grid">
+<article class="card" id="model-vignais-realtime-rula-feedback">
+  <div class="card-top">
+    <div><span class="cid">vignais-realtime-rula-feedback</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.apergo.2012.11.008" target="_blank" rel="noopener">Vignais Real-Time IMU Ergonomic Feedback System</a></h3>
+  <div class="src">Universite de Technologie de Compiegne / DFKI Kaiserslautern · 2013</div>
+  <p class="desc">Landmark IMU-network system reconstructing upper-body joint angles in real time and computing RULA continuously, with local and global risk scores fed back to the worker through a see-through display and auditory warnings (Appl. Ergon., 2013, 44:566-574). Evaluated in a simulated industrial assembly task, where concurrent feedback reduced time spent at hazardous RULA levels; the design template for later real-time wearable coaching systems. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">rula</span><span class="tag">real-time</span><span class="tag">feedback</span><span class="tag">assembly</span><span class="tag">landmark-study</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="A network of body-worn inertial sensors reconstructing upper-body joint angles">A network of body-worn inertial sensors reconstructing upper-body joint angles</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Continuous RULA scores with visual and auditory feedback delivered to the worker in real time">Continuous RULA scores with visual and auditory feedback delivered to the worker in real time</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Industrial manufacturing and assembly — real-time worker posture feedback">Industrial manufacturing and assembly — real-time worker posture feedback</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.apergo.2012.11.008" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-schall-fethke-field-imu">
+  <div class="card-top">
+    <div><span class="cid">schall-fethke-field-imu</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1080/00140139.2015.1079335" target="_blank" rel="noopener">Schall and Fethke Field IMU Method for Postural Exposure</a></h3>
+  <div class="src">Auburn University / University of Iowa · 2016</div>
+  <p class="desc">Establishes IMU accuracy and repeatability for direct exposure measurement in the field: trunk angular displacement and upper-arm elevation were compared with optical motion capture over eight-hour laboratory trials and during field-based dairy parlor work (Ergonomics, 2016, 59:591-602). The method underlies the group&#x27;s later full-shift studies of nurses and other workers, and is a standard reference for shift-long IMU posture sampling. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">exposure-assessment</span><span class="tag">field-method</span><span class="tag">trunk</span><span class="tag">upper-arm</span><span class="tag">validation</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Body-worn inertial measurement units on the trunk and upper arms during real work shifts">Body-worn inertial measurement units on the trunk and upper arms during real work shifts</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Trunk angular displacement and upper-arm elevation angles and angular velocities over the full shift">Trunk angular displacement and upper-arm elevation angles and angular velocities over the full shift</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Full-shift field-based occupational exposure assessment (validated during dairy parlor work)">Full-shift field-based occupational exposure assessment (validated during dairy parlor work)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1080/00140139.2015.1079335" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-robert-lachaine-imu-validation">
+  <div class="card-top">
+    <div><span class="cid">robert-lachaine-imu-validation</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1007/s11517-016-1537-2" target="_blank" rel="noopener">Full-Body IMU Joint Angle Validation for Manual Material Handling</a></h3>
+  <div class="src">IRSST (Montreal) / Ecole de technologie superieure · 2017</div>
+  <p class="desc">Systematic validation of full-body inertial motion capture joint angles against an optoelectronic reference during manual material handling (Med. Biol. Eng. Comput., 2017, 55:609-619), quantifying agreement per joint and plane and the drift accumulated over task duration. Widely cited as the methodological basis for using IMU suits in MMH ergonomics studies, including the IRSST force-plate-free L5/S1 model already in this library. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">validation</span><span class="tag">joint-angles</span><span class="tag">mmh</span><span class="tag">methodology</span><span class="tag">motion-capture</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Full-body Xsens inertial motion capture suit during manual handling tasks">Full-body Xsens inertial motion capture suit during manual handling tasks</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Whole-body joint angles benchmarked against an optoelectronic reference system">Whole-body joint angles benchmarked against an optoelectronic reference system</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual material handling — methodological basis for inertial motion capture in MMH ergonomics">Manual material handling — methodological basis for inertial motion capture in MMH ergonomics</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1007/s11517-016-1537-2" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-porta-single-imu-trunk-flexion">
+  <div class="card-top">
+    <div><span class="cid">porta-single-imu-trunk-flexion</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/ijerph17197117" target="_blank" rel="noopener">Single-IMU Trunk Flexion Monitoring for Warehouse Work</a></h3>
+  <div class="src">University of Cagliari / Virginia Tech · 2020</div>
+  <p class="desc">Continuous trunk-flexion exposure tracking with a single lower-back IMU on twelve warehouse workers during real shifts (IJERPH, 2020, open access): workers spent 5.1 percent of work time at 30-60 degrees of flexion and 2.3 percent at 60-90 degrees. Sampling-duration analysis showed that, depending on acceptable error, monitoring periods up to about 50 minutes can characterize a shift&#x27;s trunk flexion exposure, supporting practical minimal-sensor surveillance. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">trunk-flexion</span><span class="tag">exposure-assessment</span><span class="tag">warehouse</span><span class="tag">minimal-sensing</span><span class="tag">low-back</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="One inertial measurement unit worn on the lower back during actual warehouse shifts">One inertial measurement unit worn on the lower back during actual warehouse shifts</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Trunk flexion exposure classified by amplitude, frequency, and duration, plus minimum sampling duration guidance">Trunk flexion exposure classified by amplitude, frequency, and duration, plus minimum sampling duration guidance</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Warehouse work — minimal-sensor trunk flexion exposure surveillance during real shifts">Warehouse work — minimal-sensor trunk flexion exposure surveillance during real shifts</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/ijerph17197117" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-peppoloni-imu-emg-upper-limb">
+  <div class="card-top">
+    <div><span class="cid">peppoloni-imu-emg-upper-limb</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.ergon.2015.07.002" target="_blank" rel="noopener">Peppoloni IMU and EMG Upper-Limb Risk Assessment System</a></h3>
+  <div class="src">Scuola Superiore Sant&#x27;Anna (PERCRO Lab) · 2016</div>
+  <p class="desc">Wearable system reconstructing a 7-degree-of-freedom upper-limb kinematic chain online from IMUs fused with surface EMG via unscented Kalman filtering, feeding automatic RULA and Strain Index scoring for repetitive efforts (Int. J. Ind. Ergon., 2016, 52:1-11). An early demonstration that continuous instrumented assessment can replace intermittent observational scoring in industrial upper-limb work. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">emg</span><span class="tag">upper-limb</span><span class="tag">rula</span><span class="tag">strain-index</span><span class="tag">sensor-fusion</span><span class="tag">real-time</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Wearable IMUs fused with surface EMG on the upper limb">Wearable IMUs fused with surface EMG on the upper limb</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Online 7-DoF upper-limb kinematic chain reconstruction with automatic RULA and Strain Index scoring">Online 7-DoF upper-limb kinematic chain reconstruction with automatic RULA and Strain Index scoring</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive industrial work — online upper-limb biomechanical load monitoring">Repetitive industrial work — online upper-limb biomechanical load monitoring</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.ergon.2015.07.002" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-openpack-torch-activity-recognition">
+  <div class="card-top">
+    <div><span class="cid">openpack-torch-activity-recognition</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/open-pack/openpack-torch" target="_blank" rel="noopener">OpenPack Baseline Models for Packaging Work Recognition (openpack-torch)</a></h3>
+  <div class="src">Osaka University · 2024</div>
+  <p class="desc">Official PyTorch baselines accompanying the OpenPack dataset (IEEE PerCom 2024): U-Net and DeepConvLSTM models on IMU acceleration and ST-GCN on skeleton keypoints, framing packaging-operation recognition as frame-wise semantic segmentation over 10 operation classes. Ships as the pip-installable openpack-torch package (MIT) with tutorials and the companion openpack-toolkit for data loading; served as the reference implementation for the OpenPack Challenge 2022.</p>
+  <div class="tags"><span class="tag">activity-recognition</span><span class="tag">deep-learning</span><span class="tag">imu</span><span class="tag">skeleton</span><span class="tag">logistics</span><span class="tag">packaging</span><span class="tag">baselines</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Wearable IMU acceleration streams and skeleton keypoints from the OpenPack dataset">Wearable IMU acceleration streams and skeleton keypoints from the OpenPack dataset</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Frame-wise labels over 10 packaging work operations (semantic segmentation of the work period)">Frame-wise labels over 10 packaging work operations (semantic segmentation of the work period)</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Logistics packaging work — operation recognition for IoT-enabled warehouses">Logistics packaging work — operation recognition for IoT-enabled warehouses</span></div></div>
+  <div class="card-foot">
+    <span class="lic">MIT</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://ieeexplore.ieee.org/document/10494448" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/open-pack/openpack-torch" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://arxiv.org/abs/2212.11152" target="_blank" rel="noopener">Preprint ↗</a><a class="out" href="https://open-pack.github.io/" target="_blank" rel="noopener">Software ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-lind-kth-smart-workwear">
+  <div class="card-top">
+    <div><span class="cid">lind-kth-smart-workwear</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/s20216010" target="_blank" rel="noopener">KTH Smart Workwear System With Haptic Posture Feedback</a></h3>
+  <div class="src">KTH Royal Institute of Technology · 2020</div>
+  <p class="desc">IMU-instrumented workwear that monitors trunk inclination and upper-arm elevation and vibrates to coach the wearer&#x27;s work technique (Sensors, 2020, open access). Evaluated on sixteen novices in simulated mail sorting, where it reduced adverse arm movements and postures; a companion Applied Ergonomics study in real order picking showed reduced time at trunk inclinations above 20-45 degrees and arm elevations above 30-45 degrees. No code or hardware release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">sensorized-garment</span><span class="tag">haptic-feedback</span><span class="tag">posture</span><span class="tag">work-technique</span><span class="tag">intervention</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="IMUs carried in embedded pockets of a sensorized workwear shirt, tracking trunk inclination and upper-arm elevation">IMUs carried in embedded pockets of a sensorized workwear shirt, tracking trunk inclination and upper-arm elevation</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Continuous posture angles plus real-time vibrotactile feedback when exposure thresholds are exceeded">Continuous posture angles plus real-time vibrotactile feedback when exposure thresholds are exceeded</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Repetitive manual handling — work-technique training and postural exposure reduction">Repetitive manual handling — work-technique training and postural exposure reduction</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/s20216010" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-larsen-imc-spine-loading">
+  <div class="card-top">
+    <div><span class="cid">larsen-imc-spine-loading</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1007/s10439-019-02409-8" target="_blank" rel="noopener">Inertial Motion Capture Driven Musculoskeletal Spine Loading Model</a></h3>
+  <div class="src">Aalborg University · 2020</div>
+  <p class="desc">Couples full-body inertial motion capture with a detailed musculoskeletal model and predicted ground reaction forces and moments to estimate L4-L5 compression and shear during symmetric and asymmetric manual lifting (Ann. Biomed. Eng., 2020, 48:805-821). Removing force plates makes spine-load estimation feasible outside the laboratory; errors were largest for heavy asymmetric lifts. No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">musculoskeletal-model</span><span class="tag">spine-loading</span><span class="tag">low-back</span><span class="tag">mmh</span><span class="tag">inverse-dynamics</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Full-body inertial motion capture suit kinematics; ground reaction forces and moments are predicted, not measured">Full-body inertial motion capture suit kinematics; ground reaction forces and moments are predicted, not measured</span></div><div class="metric"><span class="k">Output</span><span class="v" title="L4-L5 compression and anteroposterior shear forces from a musculoskeletal model during lifting">L4-L5 compression and anteroposterior shear forces from a musculoskeletal model during lifting</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual materials handling — laboratory-free estimation of lumbar spine loads">Manual materials handling — laboratory-free estimation of lumbar spine loads</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1007/s10439-019-02409-8" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-wu-insole-load-estimation-exo">
+  <div class="card-top">
+    <div><span class="cid">wu-insole-load-estimation-exo</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1109/AIRC69745.2026.11631439" target="_blank" rel="noopener">Insole-Pressure Load Estimation for Adaptive Lifting-Exoskeleton Control</a></h3>
+  <div class="src">Florida International University · 2026</div>
+  <p class="desc">Machine-learning method estimating the mass of a manually lifted object from low-cost 36-channel insole plantar-pressure data, so an upper-limb industrial exoskeleton can scale its assistance to the actual load (IEEE AIRC 2026; open preprint on arXiv). On five subjects lifting 2-10 kg, channel-based support vector regression on differential pressure reached a mean absolute error of 0.55 kg and extrapolated to held-out load levels; a MobileNetV2 pressure-map variant was a within-subject feasibility study. The code repository cited in the paper is empty as of August 2026.</p>
+  <div class="tags"><span class="tag">pressure-insoles</span><span class="tag">load-estimation</span><span class="tag">exoskeleton</span><span class="tag">lifting</span><span class="tag">machine-learning</span><span class="tag">svr</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="36-channel plantar pressure from a pair of low-cost instrumented insoles">36-channel plantar pressure from a pair of low-cost instrumented insoles</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Estimated mass of the lifted load (2-10 kg) as a set-point for exoskeleton assistance torque">Estimated mass of the lifted load (2-10 kg) as a set-point for exoskeleton assistance torque</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Industrial manual lifting — adaptive assistance control of upper-limb exoskeletons">Industrial manual lifting — adaptive assistance control of upper-limb exoskeletons</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1109/AIRC69745.2026.11631439" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://arxiv.org/abs/2503.07527" target="_blank" rel="noopener">Preprint ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-niosh-wearable-imu-lifting-risk">
+  <div class="card-top">
+    <div><span class="cid">niosh-wearable-imu-lifting-risk</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1007/978-3-030-49904-4_15" target="_blank" rel="noopener">NIOSH Five-IMU Wearable System for Automatic Lifting Risk-Factor Assessment</a></h3>
+  <div class="src">NIOSH / FocusMotion · 2020</div>
+  <p class="desc">NIOSH algorithm computing the Revised NIOSH Lifting Equation input variables from five body-worn IMUs: a wrist-motion synchronization feature drives machine-learning lift detection (85% training accuracy) and a body-segment-length ratio model derives trunk flexion and hand locations (HCII 2020, LNCS 12198). Validated against optical motion capture on 10 subjects and 360 lifting trials - duration within ~1 s, trunk angle within ~2 degrees, and hand-location errors down to 14/2.2 cm with measured segment lengths. Open copy on CDC STACKS; no code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">lifting</span><span class="tag">niosh-lifting-equation</span><span class="tag">wearables</span><span class="tag">machine-learning</span><span class="tag">exposure-assessment</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Five body-worn IMUs (both wrists, dominant upper arm, upper back, dominant thigh), optionally with measured body-segment lengths">Five body-worn IMUs (both wrists, dominant upper arm, upper back, dominant thigh), optionally with measured body-segment lengths</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Automatic lift detection plus the RNLE input variables: lifting duration, trunk flexion angle, and vertical/horizontal hand locations">Automatic lift detection plus the RNLE input variables: lifting duration, trunk flexion angle, and vertical/horizontal hand locations</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — Revised NIOSH Lifting Equation exposure assessment in the field">Manual lifting — Revised NIOSH Lifting Equation exposure assessment in the field</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1007/978-3-030-49904-4_15" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://stacks.cdc.gov/view/cdc/224429" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-muller-imc-l5s1-moments">
+  <div class="card-top">
+    <div><span class="cid">muller-imc-l5s1-moments</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/s22176454" target="_blank" rel="noopener">Force-Plate-Free L5/S1 Moment Estimation From Inertial Motion Capture</a></h3>
+  <div class="src">IRSST (Montreal) / Universite Laval / LBMC (Lyon) · 2022</div>
+  <p class="desc">Estimates L5/S1 moments from full-body inertial kinematics alone (Sensors, 2022, open access): an optimization distributes external forces over discrete foot and hand contact points subject to whole-body dynamics, removing the need for force plates. Validated on nine experienced handlers each performing 156 workplace-representative box transfers with six load types: RMSE 21.4 Nm for the L5/S1 flexion moment and 15.6 Nm for the asymmetric moment, with peak/cumulative flexion indicators correlating strongly (r-squared ~0.87) but asymmetric indicators weakly (~0.31). No code release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">inverse-dynamics</span><span class="tag">spine-loading</span><span class="tag">low-back</span><span class="tag">mmh</span><span class="tag">force-plate-free</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Full-body Xsens inertial motion capture (17 IMUs) only; no force plates or hand-force sensors">Full-body Xsens inertial motion capture (17 IMUs) only; no force plates or hand-force sensors</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Ground reaction forces, center of pressure, and L5/S1 flexion and asymmetric moments">Ground reaction forces, center of pressure, and L5/S1 flexion and asymmetric moments</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual material handling — spine-load assessment in workplace settings">Manual material handling — spine-load assessment in workplace settings</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/s22176454" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-mohapatra-wearable-fatigue-prediction">
+  <div class="card-top">
+    <div><span class="cid">mohapatra-wearable-fatigue-prediction</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge open">Code</span></div>
+  </div>
+  <h3><a class="title-link" href="https://github.com/payalmohapatra/WorkerFatigue" target="_blank" rel="noopener">Wearable Network for Multilevel Physical Fatigue Prediction in Manufacturing Workers</a></h3>
+  <div class="src">Northwestern University / Boeing / Deere &amp; Co. / University at Buffalo · 2024</div>
+  <p class="desc">Task-agnostic XGBoost regressor predicting continuous 0-10 Borg physical fatigue from a six-location wearable network - one skin-interfaced chest biosensor plus five IMUs (PNAS Nexus, 2024, open access). Developed on 43 participants replicating two strenuous aerospace-manufacturing tasks; an asymmetric LINEX loss cut fatigue underprediction from 0.71 to 0.38 with average MAE ~2.3 across tasks and unseen users. Code is on GitHub (no license stated) and the full deidentified multimodal database is on Zenodo (CC BY 4.0).</p>
+  <div class="tags"><span class="tag">fatigue</span><span class="tag">wearables</span><span class="tag">imu</span><span class="tag">biosensors</span><span class="tag">machine-learning</span><span class="tag">xgboost</span><span class="tag">manufacturing</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Chest-mounted soft biosensor (heart rate, HRV, skin temperature) plus five torso/arm IMUs and worker attributes">Chest-mounted soft biosensor (heart rate, HRV, skin temperature) plus five torso/arm IMUs and worker attributes</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Continuous perceived physical fatigue on a modified Borg 0-10 scale">Continuous perceived physical fatigue on a modified Borg 0-10 scale</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manufacturing (aerospace composite layup and wire harnessing) — physical fatigue monitoring">Manufacturing (aerospace composite layup and wire harnessing) — physical fatigue monitoring</span></div></div>
+  <div class="card-foot">
+    <span class="lic">—</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1093/pnasnexus/pgae421" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://github.com/payalmohapatra/WorkerFatigue" target="_blank" rel="noopener">Code ↗</a><a class="out" href="https://zenodo.org/records/12788571" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-matijevich-trunk-imu-insole-low-back-load">
+  <div class="card-top">
+    <div><span class="cid">matijevich-trunk-imu-insole-low-back-load</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/s21020340" target="_blank" rel="noopener">Trunk IMU + Pressure-Insole Estimation of Low-Back Loading in Manual Material Handling</a></h3>
+  <div class="src">Vanderbilt University · 2021</div>
+  <p class="desc">Gradient-boosted decision-tree model estimating the time-series lumbar (L5/S1) extension moment from a single trunk IMU and pressure-sensing insoles (Sensors, 2021, open access). Trained and evaluated on 10 adults each performing about 400 distinct manual-material-handling tasks against lab-based ground truth: r-squared = 0.89 (RMSE ~20 Nm) with idealized signals and r-squared = 0.80 with actual wearable sensors, with the insoles proving irreplaceable among the sensor options tested. No public code or data release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">pressure-insoles</span><span class="tag">spine-loading</span><span class="tag">lifting</span><span class="tag">machine-learning</span><span class="tag">wearables</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="One trunk-mounted IMU plus bilateral pressure-sensing insoles">One trunk-mounted IMU plus bilateral pressure-sensing insoles</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Continuous time-series L5/S1 lumbar extension moment">Continuous time-series L5/S1 lumbar extension moment</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual material handling — continuous low-back load monitoring">Manual material handling — continuous low-back load monitoring</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/s21020340" target="_blank" rel="noopener">Paper ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-faber-ambulatory-l5s1-moments">
+  <div class="card-top">
+    <div><span class="cid">faber-ambulatory-l5s1-moments</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.1016/j.jbiomech.2015.11.042" target="_blank" rel="noopener">Ambulatory 3D L5/S1 Moment Estimation From a Full-Body Inertial Suit</a></h3>
+  <div class="src">Vrije Universiteit Amsterdam / Liberty Mutual Research Institute / Harvard T.H. Chan School of Public Health · 2016</div>
+  <p class="desc">Inverse-dynamics method line estimating 3D L5/S1 moments from a full-body inertial motion-capture suit without force plates (J. Biomech., 2016): top-down dynamics over upper-body kinematics kept moment RMS errors under 10 Nm (~5% of peak) in trunk bending, validated against optical mocap and force plates on nine participants. The 2020 extension (linked as the record, open access CC BY) adds instrumented force shoes and hand forces for 10 kg box lifting, where the top-down variant stayed under 20 Nm (~10% of peak). No code or data release.</p>
+  <div class="tags"><span class="tag">imu</span><span class="tag">inverse-dynamics</span><span class="tag">spine-loading</span><span class="tag">low-back</span><span class="tag">lifting</span><span class="tag">wearables</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Full-body Xsens IMU suit kinematics; the 2020 extension adds instrumented force shoes and hand forces">Full-body Xsens IMU suit kinematics; the 2020 extension adds instrumented force shoes and hand forces</span></div><div class="metric"><span class="k">Output</span><span class="v" title="3D L5/S1 moments (extension and asymmetric components) and total ground reaction force">3D L5/S1 moments (extension and asymmetric components) and total ground reaction force</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Trunk bending and manual lifting — ambulatory spine-load assessment outside the lab">Trunk bending and manual lifting — ambulatory spine-load assessment outside the lab</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.1016/j.jbiomech.2015.11.042" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://doi.org/10.1016/j.jbiomech.2020.109671" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card" id="model-chae-mun-insole-joint-moments">
+  <div class="card-top">
+    <div><span class="cid">chae-mun-insole-joint-moments</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge restricted">Paper only</span></div>
+  </div>
+  <h3><a class="title-link" href="https://doi.org/10.3390/app112411735" target="_blank" rel="noopener">Insole-Only Joint and Low-Back Moment Estimation for Lifting-Exoskeleton Control</a></h3>
+  <div class="src">Sungkyunkwan University · 2021</div>
+  <p class="desc">Method line estimating joint moments from plantar pressure alone for lifting-exoskeleton control (Applied Sciences, 2021, open access): an SVM posture classifier feeding posture-specific LSTM regressors estimated sagittal ankle/knee/hip/L5S1 moments during squat and stoop lifting with rRMSE 8-14% against optical mocap and force plates. The 2024 extension (Actuators, linked as the record) transfers a Bi-LSTM from 70 subjects on research insoles to a low-cost 18-point insole, estimating 3-axis L5/S1 moments in asymmetric lifting at ~12% rRMSE. No code or data release.</p>
+  <div class="tags"><span class="tag">pressure-insoles</span><span class="tag">load-estimation</span><span class="tag">spine-loading</span><span class="tag">exoskeleton</span><span class="tag">lifting</span><span class="tag">machine-learning</span><span class="tag">lstm</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="Plantar pressure alone: 99-sensor research insoles, extended by transfer learning to an 18-point low-cost insole">Plantar pressure alone: 99-sensor research insoles, extended by transfer learning to an 18-point low-cost insole</span></div><div class="metric"><span class="k">Output</span><span class="v" title="Sagittal ankle, knee, hip, and L5/S1 moments (2021); 3-axis L5/S1 moments during asymmetric lifting (2024)">Sagittal ankle, knee, hip, and L5/S1 moments (2021); 3-axis L5/S1 moments during asymmetric lifting (2024)</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Manual lifting — sensing for exoskeleton control without body-worn kinematic sensors">Manual lifting — sensing for exoskeleton control without body-worn kinematic sensors</span></div></div>
+  <div class="card-foot">
+    <span class="lic">No code released</span>
+    <span style="display:flex;gap:14px;flex-wrap:wrap"><a class="out" href="https://doi.org/10.3390/app112411735" target="_blank" rel="noopener">Paper ↗</a><a class="out" href="https://doi.org/10.3390/act13030092" target="_blank" rel="noopener">Record ↗</a></span>
+  </div>
+</article>
+<article class="card is-coming" id="model-gnn-mtnet-imu-video-kinematics">
+  <div class="card-top">
+    <div><span class="cid">gnn-mtnet-imu-video-kinematics</span></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><span class="badge coming_soon">Coming soon</span></div>
+  </div>
+  <h3>GNN-MTNet: Graph-Enhanced IMU + Smartphone-Video Fusion for Full-Body Kinematics</h3>
+  <div class="src">New Jersey Institute of Technology / Texas A&amp;M University / Georgia Institute of Technology · 2026</div>
+  <p class="desc">Graph-enhanced multimodal deep-learning model that fuses wearable IMU signals with 2-D keypoints from dual-view smartphone video to predict 16 full-body joint angles during occupational tasks. Per-channel bidirectional LSTM/GRU encoders with temporal attention feed a 40-node anatomical graph (GATv2), so accuracy degrades gracefully when sensors are occluded or missing, and a single-step autoregressive feedback keeps predictions temporally coherent. Developed on the offshore wind turbine maintenance dataset; paper and code release pending.</p>
+  <div class="tags"><span class="tag">kinematics</span><span class="tag">imu</span><span class="tag">video</span><span class="tag">sensor-fusion</span><span class="tag">graph-neural-network</span><span class="tag">deep-learning</span><span class="tag">pytorch</span><span class="tag">wind-energy</span><span class="tag">ladder-climbing</span></div>
+  <div class="metrics"><div class="metric"><span class="k">Input</span><span class="v" title="11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos">11 body-worn IMUs (3-axis accelerometer + gyroscope) and OpenPose 2-D keypoints from two smartphone videos</span></div><div class="metric"><span class="k">Output</span><span class="v" title="16 lower-limb, lumbar, and arm joint angles over time">16 lower-limb, lumbar, and arm joint angles over time</span></div><div class="metric"><span class="k">Domain</span><span class="v" title="Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)">Field ergonomics of occupational tasks (offshore wind turbine maintenance: lifting, ladder stepping, rung climbing)</span></div></div>
+  <div class="card-foot">
+    <span class="lic">Release pending</span>
+    <span class="pending">Paper pending</span>
   </div>
 </article>
   </div>

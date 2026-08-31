@@ -1,6 +1,7 @@
 id: kinematicnet
 title: "KinematicNet: Whole-Body Kinematics From Multi-View Images"
 sample: false
+category: vision
 
 source:
   authors: "Nguyen K.X., Zheng L., Hawke A.L., Carey R.E., Breloff S.P., Li K., Peng X."

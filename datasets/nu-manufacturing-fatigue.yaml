@@ -4,8 +4,8 @@ status: open
 sample: false
 
 source:
-  authors: "Northwestern University"
-  institution: "Northwestern University"
+  authors: "Mohapatra P., Aravind V., Bisram M., et al."
+  institution: "Northwestern University / Boeing / Deere & Co. / University at Buffalo"
   country: [US]
   year: 2024
 
@@ -21,12 +21,13 @@ subjects:
   n: 43
 
 load: "Composite sheet layup and wire harnessing simulations with weighted vest"
-equipment: "Flexible wearable sensors: ANNE vitals (heart rate, ECG, chest temperature) + chest accelerometer/gyroscope; Borg RPE scale"
+equipment: "Six wearable sensing locations: chest-mounted ANNE soft biosensor (ECG-derived heart rate, HRV, skin temperature) + five IMU nodes across torso and arms; Borg RPE scale"
 formats: [csv]
 tags: [fatigue, manufacturing, wearables, borg-scale, physiological]
 description: >
-  Wearable-sensor (heart rate, ECG, chest temperature, chest accelerometer/
-  gyroscope) and self-reported Borg data from 43 workers performing composite
-  layup and wire-harnessing tasks with a weighted vest to induce fatigue,
-  across five work segments plus rest, for multi-level fatigue prediction.
+  Multimodal wearable data - a chest-mounted soft biosensor (ECG-derived heart
+  rate, HRV, skin temperature) plus five torso/arm IMUs - with self-reported
+  Borg ratings from 43 workers performing composite layup and wire-harnessing
+  tasks with a weighted vest to induce fatigue, across five work segments plus
+  rest, for multi-level fatigue prediction (PNAS Nexus, 2024).
 added: 2026-07-11

@@ -1,0 +1,29 @@
+id: waters-revised-niosh-lifting-equation
+title: "Revised NIOSH Lifting Equation (RNLE)"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Waters T.R., Putz-Anderson V., Garg A., Fine L.J."
+  institution: "NIOSH"
+  year: 1993
+
+links:
+  paper: "https://doi.org/10.1080/00140139308967940"
+  doi: "10.1080/00140139308967940"
+  record: "https://www.cdc.gov/niosh/docs/94-110/"
+  website: "https://www.cdc.gov/niosh/ergonomics/about/RNLE.html"
+
+domain: "Two-handed manual lifting — task design and risk evaluation"
+inputs: "Six task factors: horizontal and vertical hand locations, vertical travel distance, asymmetry angle, lifting frequency and duration, coupling quality"
+outputs: "Recommended Weight Limit plus the Lifting Index and Composite Lifting Index"
+tags: [lifting, niosh-lifting-equation, mmh, risk-index, public-domain]
+description: >
+  The standard model for evaluating two-handed manual lifting (Ergonomics,
+  1993): six task-factor multipliers reduce a 23 kg load constant to a
+  Recommended Weight Limit, and the ratio of actual load to RWL gives the
+  Lifting Index (Composite Lifting Index for multi-task jobs). Public domain,
+  anchored to the 3.4 kN L5/S1 compression criterion. Implementations include
+  NIOSH's free NLE Calc mobile app and the Applications Manual (DHHS 94-110,
+  linked as the record); the WISHA lifting calculator derives from it.
+added: 2026-08-24

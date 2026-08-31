@@ -1,0 +1,37 @@
+id: uw-iom
+title: "UW-IOM: University of Washington Indoor Object Manipulation Dataset"
+status: open
+sample: false
+
+source:
+  authors: "Parsa B., Samani E.U., Hendrix R., Devine C., Singh S.M., Devasia S., Banerjee A.G."
+  institution: "University of Washington"
+  country: [US]
+  year: 2019
+
+access:
+  url: "https://data.mendeley.com/datasets/xwzzkxtf9s/1"
+  doi: "10.17632/xwzzkxtf9s.1"
+  license: "CC-BY-4.0"
+
+tasks: [lifting, lowering, reaching, mmh]
+modalities: [video]
+
+subjects:
+  n: 20
+  age_range: "18-25"
+
+load: "Boxes and rods of varying weights picked and placed at multiple shelf heights"
+equipment: "Kinect for Xbox One (RGB video at ~12 fps plus Kinect skeletal tracking)"
+sampling:
+  video: 12
+tags: [action-recognition, ergonomic-risk, object-manipulation, warehouse, kinect]
+description: >
+  Warehouse-style object-manipulation dataset introduced with the spatiotemporal
+  convolutional ergonomic-risk work (IEEE RA-L, 2019): 20 participants pick and
+  place boxes and rods of varying weights at multiple heights in ~3-minute
+  Kinect recordings with skeletal tracking. Every frame is annotated with one of
+  17 action labels on a four-tier hierarchy (object, motion, manipulation,
+  surface height), of which 3 classes are low, 11 medium, and 3 high ergonomic
+  risk - ground truth for the UW action-segmentation and REBA-prediction models.
+added: 2026-08-24

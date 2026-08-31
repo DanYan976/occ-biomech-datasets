@@ -1,0 +1,26 @@
+id: larsen-imc-spine-loading
+title: "Inertial Motion Capture Driven Musculoskeletal Spine Loading Model"
+sample: false
+category: wearable
+
+source:
+  authors: "Larsen F.G., Svenningsen F.P., Andersen M.S., de Zee M., Skals S."
+  institution: "Aalborg University"
+  year: 2020
+
+links:
+  paper: "https://doi.org/10.1007/s10439-019-02409-8"
+  doi: "10.1007/s10439-019-02409-8"
+
+domain: "Manual materials handling — laboratory-free estimation of lumbar spine loads"
+inputs: "Full-body inertial motion capture suit kinematics; ground reaction forces and moments are predicted, not measured"
+outputs: "L4-L5 compression and anteroposterior shear forces from a musculoskeletal model during lifting"
+tags: [imu, musculoskeletal-model, spine-loading, low-back, mmh, inverse-dynamics]
+description: >
+  Couples full-body inertial motion capture with a detailed musculoskeletal
+  model and predicted ground reaction forces and moments to estimate L4-L5
+  compression and shear during symmetric and asymmetric manual lifting
+  (Ann. Biomed. Eng., 2020, 48:805-821). Removing force plates makes
+  spine-load estimation feasible outside the laboratory; errors were largest
+  for heavy asymmetric lifts. No code release.
+added: 2026-08-25

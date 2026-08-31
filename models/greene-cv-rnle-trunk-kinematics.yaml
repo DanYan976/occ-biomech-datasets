@@ -1,0 +1,29 @@
+id: greene-cv-rnle-trunk-kinematics
+title: "Computer-Vision Trunk Kinematics Enhancement of the NIOSH Lifting Equation"
+sample: false
+category: vision
+
+source:
+  authors: "Greene R.L., Chen G., Lu M.-L., Hu Y.H., Radwin R.G."
+  institution: "University of Wisconsin-Madison / NIOSH"
+  year: 2021
+
+links:
+  paper: "https://doi.org/10.1177/1071181321651211"
+  doi: "10.1177/1071181321651211"
+  record: "https://doi.org/10.1177/0018720820958840"
+
+domain: "Manual lifting — video-based low-back-pain risk prediction"
+inputs: "Conventional 2D workplace lifting video processed with a computationally efficient computer-vision method"
+outputs: "Average trunk angular speed and acceleration, combined with the RNLE Lifting Index in a logistic low-back-pain risk model"
+tags: [computer-vision, lifting, niosh-lifting-equation, trunk-kinematics, risk-assessment, markerless]
+description: >
+  Extends the Revised NIOSH Lifting Equation with trunk kinematics extracted
+  from ordinary workplace video (HFES Proceedings, 2021): reanalyzing videos
+  from NIOSH's prospective 78-worker cohort, average trunk speed and
+  acceleration correlated with low-back-pain outcomes, and adding them to the
+  Lifting Index significantly improved risk prediction (p = 0.003). The
+  underlying trunk-angle extraction method (linked as the record; Human
+  Factors, 2022, free full text) was validated against motion capture on 216
+  lifting trials (mean absolute difference 14.7 degrees, r-squared = 0.80).
+added: 2026-08-24

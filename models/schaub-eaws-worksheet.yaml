@@ -1,0 +1,26 @@
+id: schaub-eaws-worksheet
+title: "EAWS: Ergonomic Assessment Worksheet (European Assembly Worksheet)"
+sample: false
+category: assessment-method
+
+source:
+  authors: "Schaub K., Caragnano G., Britzke B., Bruder R."
+  institution: "TU Darmstadt (IAD) / International MTM Directorate"
+  year: 2013
+
+links:
+  paper: "https://doi.org/10.1080/1463922X.2012.678283"
+  doi: "10.1080/1463922X.2012.678283"
+
+domain: "Assembly and production work — whole-body physical workload screening, common in automotive"
+inputs: "Observed working postures, action forces, manual materials handling parameters, and upper-limb repetitive load over a shift"
+outputs: "Section scores for postures, forces, MMH, and upper limb, combined into a whole-body risk score with traffic-light zones"
+tags: [whole-body, screening, assembly, automotive, mmh, upper-limb, licensed-method]
+description: >
+  First-level screening worksheet integrating working postures, action forces,
+  manual materials handling, and repetitive upper-limb load into one
+  whole-body physical workload score (Theor. Issues Ergon. Sci., 2013).
+  Developed with the MTM association and widely embedded in automotive
+  production planning and digital human modeling suites. Use of the method
+  and training are licensed; the paper describes the structure and rationale.
+added: 2026-08-25

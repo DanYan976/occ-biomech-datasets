@@ -1,0 +1,29 @@
+id: chae-mun-insole-joint-moments
+title: "Insole-Only Joint and Low-Back Moment Estimation for Lifting-Exoskeleton Control"
+sample: false
+category: wearable
+
+source:
+  authors: "Chae S., Choi A., Mun J.H., et al."
+  institution: "Sungkyunkwan University"
+  year: 2021
+
+links:
+  paper: "https://doi.org/10.3390/app112411735"
+  doi: "10.3390/app112411735"
+  record: "https://doi.org/10.3390/act13030092"
+
+domain: "Manual lifting — sensing for exoskeleton control without body-worn kinematic sensors"
+inputs: "Plantar pressure alone: 99-sensor research insoles, extended by transfer learning to an 18-point low-cost insole"
+outputs: "Sagittal ankle, knee, hip, and L5/S1 moments (2021); 3-axis L5/S1 moments during asymmetric lifting (2024)"
+tags: [pressure-insoles, load-estimation, spine-loading, exoskeleton, lifting, machine-learning, lstm]
+description: >
+  Method line estimating joint moments from plantar pressure alone for
+  lifting-exoskeleton control (Applied Sciences, 2021, open access): an SVM
+  posture classifier feeding posture-specific LSTM regressors estimated
+  sagittal ankle/knee/hip/L5S1 moments during squat and stoop lifting with
+  rRMSE 8-14% against optical mocap and force plates. The 2024 extension
+  (Actuators, linked as the record) transfers a Bi-LSTM from 70 subjects on
+  research insoles to a low-cost 18-point insole, estimating 3-axis L5/S1
+  moments in asymmetric lifting at ~12% rRMSE. No code or data release.
+added: 2026-08-24
