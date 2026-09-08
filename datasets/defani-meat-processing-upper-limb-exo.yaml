@@ -1,0 +1,43 @@
+id: defani-meat-processing-upper-limb-exo
+title: "Upper-Limb Exoskeleton on a Meat-Processing Production Line"
+status: open
+sample: false
+
+source:
+  authors: "Defani J."
+  institution: "Universidade Tecnológica Federal do Paraná (UTFPR)"
+  country: [BR]
+  year: 2025
+
+access:
+  url: "https://zenodo.org/records/17762189"
+  doi: "10.5281/zenodo.17762189"
+  license: "CC-BY-4.0"
+
+tasks: [reaching, holding]
+setting: field
+modalities: [emg, survey]
+
+subjects:
+  n: 17
+
+exoskeleton:
+  role: evaluation
+  devices: ["Passive upper-limb exoskeleton (model not stated)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton during repetitive arm-elevation production tasks"
+  outcomes: [muscle_activity, subjective]
+
+load: "Repetitive arm-elevation tasks on a meat-processing production line (field study)"
+equipment: "Surface EMG; subjective workload / physical-effort ratings (processed data)"
+tags: [exoskeleton, shoulder, field-study, meat-processing, semg]
+description: >
+  Field study of a passive upper-limb exoskeleton worn by 17 workers on a
+  Brazilian meat-processing production line: processed surface-EMG and
+  subjective workload data with vs. without the device, reporting a
+  significant activity reduction in the right medial deltoid and
+  medium-to-large effect sizes across several muscles. One of very few
+  open-data field studies of occupational exoskeletons; distributed as a
+  single Excel workbook on Zenodo (CC BY 4.0).
+added: 2026-09-01

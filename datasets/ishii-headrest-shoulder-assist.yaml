@@ -1,0 +1,51 @@
+id: ishii-headrest-shoulder-assist
+title: "Shoulder Assist Device with Movable Headrest: Overhead Holds and Simulated Harvesting"
+status: restricted
+sample: false
+
+source:
+  authors: "Ishii C., Hirasawa K."
+  institution: "Hosei University"
+  country: [JP]
+  year: 2022
+
+access:
+  url: "https://doi.org/10.1017/wtc.2022.22"
+  license: "Data from corresponding author upon reasonable request"
+
+tasks: [holding, reaching]
+setting: lab
+modalities: [emg]
+
+subjects:
+  n: 5
+  sex: "5M"
+  age_range: "22.8 ± 1.2"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Custom shoulder assist device with headrest (Hosei)"]
+  body_region: [shoulder, neck]
+  actuation: [passive]
+  comparison: "Headrest types vs. no headrest vs. no device, static overhead holds and a 10-min simulated fruit-harvesting protocol"
+  outcomes: [muscle_activity]
+
+publications:
+  - citation: "Ishii C., Hirasawa K. (2022). The effect of a movable headrest in shoulder assist device for overhead work. Wearable Technol. 3:e25"
+    doi: "10.1017/wtc.2022.22"
+    note: "The combined reclining-and-slide headrest was most effective at reducing sternocleidomastoid load."
+
+load: "Static overhead holds (135° flexion / 90° abduction) with 1.25-5 kg dumbbells; 10-min simulated fruit harvesting with 1.25 kg dumbbells"
+equipment: "Surface EMG at 1 kHz on anterior deltoid and sternocleidomastoid (%MVC); NEUTONE TDM-NA1 muscle-hardness tester"
+sampling:
+  emg: 1000
+tags: [exoskeleton, shoulder, neck, overhead-work, agriculture, headrest]
+description: >
+  Evaluation of a movable headrest add-on for a passive shoulder assist
+  device, targeting the neck strain that shoulder-only exoskeletons ignore
+  during face-up overhead work: 5 males performed static overhead holds and
+  a 10-minute simulated fruit-harvesting protocol while deltoid and
+  sternocleidomastoid EMG and muscle stiffness were measured across
+  headrest variants (Wearable Technologies, 2022). Data from the
+  corresponding author on reasonable request.
+added: 2026-09-01

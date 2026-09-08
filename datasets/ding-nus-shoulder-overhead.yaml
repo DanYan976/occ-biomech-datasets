@@ -1,0 +1,50 @@
+id: ding-nus-shoulder-overhead
+title: "NUS Passive Shoulder Exoskeleton: Overhead Drilling and Sustained Flexion EMG"
+status: restricted
+sample: false
+
+source:
+  authors: "Ding S., Reyes Francisco A., Li T., Yu H."
+  institution: "National University of Singapore"
+  country: [SG]
+  year: 2023
+
+access:
+  url: "https://doi.org/10.1017/wtc.2023.1"
+  license: "EMG data by email to corresponding author upon request"
+
+tasks: [reaching, holding, assembly]
+setting: lab
+modalities: [emg, mocap]
+
+subjects:
+  n: 10
+  sex: "10M"
+  age_range: "27 ± 4"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Passive shoulder exoskeleton prototype (NUS)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, repetitive overhead drilling and sustained 90° shoulder flexion, 45 s trials"
+  outcomes: [muscle_activity, kinematics]
+
+publications:
+  - citation: "Ding S., Reyes Francisco A., Li T., Yu H. (2023). A novel passive shoulder exoskeleton for assisting overhead work. Wearable Technol. 4:e7"
+    doi: "10.1017/wtc.2023.1"
+    note: "Up to 25% reduction in shoulder-muscle EMG without loading the lumbar spine."
+
+load: "Repetitive overhead screw insertion with a 2.3 kg drill; sustained sinusoidal-line drawing at constant 90° shoulder flexion"
+equipment: "Delsys Trigno Avanti sEMG on 7 muscles; 8-camera Vicon Vero mocap (100 Hz, Plug-in-Gait) for kinematic transparency"
+sampling:
+  mocap: 100
+tags: [exoskeleton, shoulder, overhead-work, spring-cam, semg]
+description: >
+  Validation data for an NUS passive shoulder exoskeleton that relocates
+  its 3.2 kg mass to the wearer's back via Bowden cables (0.2 kg per arm)
+  and matches the shoulder's nonlinear torque demand with a spring-cam
+  mechanism: 10 males performed overhead drilling and sustained-flexion
+  tasks with and without the device (Wearable Technologies, 2023). EMG
+  data available by email to the corresponding author.
+added: 2026-09-01

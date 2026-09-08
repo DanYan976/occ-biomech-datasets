@@ -1,0 +1,49 @@
+id: gillette-airframe-automotive-emg
+title: "Levitate Airframe on the Assembly Line: EMG Fatigue Assessment at Toyota Canada"
+status: restricted
+sample: false
+
+source:
+  authors: "Gillette J.C., Saadat S., Butler T."
+  institution: "Iowa State University / Lean Steps Consulting"
+  country: [CA]
+  year: 2022
+
+access:
+  url: "https://doi.org/10.1017/wtc.2022.20"
+  license: "Data from corresponding author upon reasonable request"
+
+tasks: [assembly, reaching, holding]
+setting: field
+modalities: [emg, survey]
+
+subjects:
+  n: 16
+  sex: "16M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Airframe (Levitate)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton across 16 real assembly processes with elevated arm postures"
+  outcomes: [muscle_activity, subjective]
+
+publications:
+  - citation: "Gillette J.C., Saadat S., Butler T. (2022). Electromyography-based fatigue assessment of an upper body exoskeleton during automotive assembly. Wearable Technol. 3:e23"
+    doi: "10.1017/wtc.2022.20"
+    note: "Significantly reduced anterior deltoid amplitude and fatigue risk; other muscles unchanged."
+
+load: "16 automotive assembly processes with elevated arm postures; cycle times 66.5-115 s, elevated-arm time 24-73% of cycle"
+equipment: "Delsys Trigno wireless EMG (1926 Hz) on bilateral anterior deltoid, biceps brachii, upper trapezius and lumbar erector spinae; worker perception questionnaire"
+sampling:
+  emg: 1926
+tags: [exoskeleton, shoulder, field-study, automotive, assembly, fatigue]
+description: >
+  Field study at Toyota Motor Manufacturing Canada: 16 male team members
+  wore the Levitate Airframe passive shoulder exoskeleton during 16 real
+  assembly processes with elevated arm postures while bilateral EMG on four
+  muscle groups was recorded (Wearable Technologies, 2022). One of the few
+  exoskeleton evaluations run on a live automotive line; data available
+  from the corresponding author upon reasonable request.
+added: 2026-09-01

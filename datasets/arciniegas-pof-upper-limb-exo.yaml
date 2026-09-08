@@ -1,0 +1,48 @@
+id: arciniegas-pof-upper-limb-exo
+title: "POF-Sensed Upper-Limb Exoskeleton: Kinematics, EMG and Controller Data"
+status: open
+sample: false
+
+source:
+  authors: "Arciniegas-Mayag L.J., Silva P., Cifuentes C.A., Segatto M.E.V., Diaz C.A.R."
+  institution: "Federal University of Espírito Santo (UFES) / University of the West of England"
+  country: [BR]
+  year: 2026
+
+access:
+  url: "https://figshare.com/articles/dataset/Dataset_for_POF-Based_Sensing_in_an_Upper-Limb_Exoskeleton/31864330"
+  doi: "10.6084/m9.figshare.31864330.v1"
+  license: "CC-BY-4.0"
+
+tasks: [lifting, carrying, lowering]
+setting: lab
+modalities: [imu, emg]
+
+subjects:
+  n: 3
+
+exoskeleton:
+  role: evaluation
+  devices: ["POF-sensed upper-limb exoskeleton (UFES)"]
+  body_region: [shoulder]
+  actuation: [active]
+  comparison: "Assisted (POF- and IMU-sensed control) vs. unassisted, lifting/carrying/lowering; plus test-bench step/chirp characterization"
+  outcomes: [muscle_activity, kinematics]
+
+publications:
+  - citation: "Arciniegas-Mayag L.J., Silva P., Segatto M.E.V., Cifuentes C.A., Diaz C.A.R. (2026). Characterization and functional evaluation of a fiber-optic instrumented impedance-controlled upper-limb exoskeleton. Sci. Rep."
+    doi: "10.1038/s41598-026-65142-y"
+    note: "Reports 16-23% reduction in muscle activation with assistance while preserving range of motion."
+
+load: "Industrial-style lifting, carrying and lowering load tasks, assisted vs. unassisted"
+equipment: "Polymer-optical-fiber (POF) joint-angle sensing vs. IMU sensing on an impedance-controlled upper-limb exoskeleton; surface EMG"
+formats: [csv]
+tags: [exoskeleton, upper-limb, fiber-optic-sensing, impedance-control, semg]
+description: >
+  Evaluation data for polymer-optical-fiber vs. IMU sensing in an
+  impedance-controlled upper-limb industrial exoskeleton: arm kinematics,
+  surface EMG and control-loop signals from 3 subjects performing lifting,
+  carrying and lowering tasks assisted and unassisted, plus test-bench
+  step/chirp response trials. 38 raw CSV files on figshare (CC BY 4.0)
+  accompanying a Scientific Reports 2026 paper.
+added: 2026-09-01

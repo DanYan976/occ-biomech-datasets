@@ -1,0 +1,48 @@
+id: brusamento-adaptive-paexo-fmg
+title: "DLR/Ottobock: Force Myography for Intent Detection with an Adaptive Shoulder Exoskeleton"
+status: restricted
+sample: false
+
+source:
+  authors: "Brusamento D., Sierotowicz M., Schirrmeister B., Connan M., Bornmann J., Gonzalez-Vargas J., Castellini C."
+  institution: "DLR / Ottobock"
+  country: [DE]
+  year: 2021
+
+access:
+  url: "https://zenodo.org/records/5764234"
+  doi: "10.5281/zenodo.5764234"
+  license: "Requires approval by DLR e.V. (Zenodo request form)"
+
+tasks: [lifting, carrying, holding]
+setting: lab
+modalities: [pressure, emg, video]
+
+subjects:
+  n: 12
+  sex: "9M / 3F"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Adaptive Paexo Shoulder (Ottobock)"]
+  body_region: [shoulder]
+  actuation: [active]
+  comparison: "Lifting sequences with varied weights (0/1/2 kg) to train regression-based intent detection for automatic support adaptation"
+  outcomes: [muscle_activity]
+
+publications:
+  - citation: "Sierotowicz M., Brusamento D., Schirrmeister B., Connan M., Bornmann J., Gonzalez-Vargas J., Castellini C. (2022). Unobtrusive, natural support control of an adaptive industrial exoskeleton using force myography. Front. Robot. AI 9:919370"
+    doi: "10.3389/frobt.2022.919370"
+
+load: "Pickup-hold-carry-release sequences with 0/1/2 kg held horizontally or at ~45° elevation, isometric and dynamic"
+equipment: "Two force-myography bracelets (20 FSR sensors each) on forearm and upper arm; Delsys Trigno EMG on deltoids for validation; privacy-protected video"
+formats: [csv, mp4]
+tags: [exoskeleton, shoulder, force-myography, intent-detection, adaptive-control, andy-project]
+description: >
+  Force-myography recordings from 12 subjects wearing the adaptive (active)
+  variant of the Ottobock Paexo Shoulder while performing lifting sequences
+  with varied weights, collected at DLR to develop regression-based intent
+  detection for automatic support-level adaptation. CSV sensor data plus
+  privacy-protected video on Zenodo (EU H2020 An.Dy project); access
+  requires DLR approval.
+added: 2026-09-01

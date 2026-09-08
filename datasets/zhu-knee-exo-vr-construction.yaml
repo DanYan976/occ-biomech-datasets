@@ -1,0 +1,47 @@
+id: zhu-knee-exo-vr-construction
+title: "Knee Exoskeleton Assistance in Simulated Construction Environments (Rutgers)"
+status: open
+sample: false
+
+source:
+  authors: "Zhu C., Huang X., Yi J."
+  institution: "Rutgers University"
+  country: [US]
+  year: 2025
+
+access:
+  url: "https://data.mendeley.com/datasets/rygyy8mdhp"
+  doi: "10.17632/rygyy8mdhp.1"
+  license: "CC-BY-4.0"
+
+tasks: [walking, squatting]
+setting: lab
+modalities: [mocap, force_plate, emg, imu, physiological, survey]
+
+subjects:
+  n: 21
+
+exoskeleton:
+  role: evaluation
+  devices: ["Powered knee exoskeleton (Rutgers)"]
+  body_region: [knee]
+  actuation: [active]
+  comparison: "With vs. without knee exoskeleton, randomized crossover, stair/ramp/kneeling tasks"
+  outcomes: [muscle_activity, kinematics, kinetics, metabolic, subjective]
+
+publications:
+  - citation: "Zhu C., Huang X., Liu X., van der Meulen Rodgers Y., Yi J. (2026). Ergonomic evaluation of knee exoskeleton assistance in construction: A multimodal study. J. Safety Res. 98:319-332"
+    doi: "10.1016/j.jsr.2026.07.004"
+
+load: "Stair/ramp ascent-descent, kneeling and VR precision tasks on a modular stair-ramp-deck platform"
+equipment: "Optical motion capture, force plates, surface EMG, IMUs, VO2 metabolic sensing, immersive VR task scenarios"
+formats: [mat]
+tags: [exoskeleton, knee, construction, vr, multimodal, metabolic]
+description: >
+  Multimodal dataset from 21 adults performing construction-like tasks
+  (stair and ramp ascent/descent, kneeling, VR precision work) on a modular
+  stair-ramp-deck platform, with and without powered knee exoskeleton
+  assistance, in a randomized crossover design. Synchronized motion capture,
+  force plate, sEMG, IMU and metabolic recordings in a single 3.75 GB MATLAB
+  file on Mendeley Data (CC BY 4.0).
+added: 2026-09-01

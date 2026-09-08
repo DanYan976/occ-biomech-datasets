@@ -376,6 +376,8 @@ a.brand:hover { text-decoration: none; }
 }
 .device-chip[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
 .device-chip[aria-pressed="true"] .dcount { background: rgba(255, 255, 255, .16); color: var(--surface); }
+/* the collapsed unnamed/prototype bucket reads quieter than named devices */
+.device-chip.generic { color: var(--ink-muted); border-style: dashed; border-color: var(--line-strong); }
 .actuation-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 .actuation-row .lbl {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: .1em;
@@ -507,6 +509,8 @@ a.cid:hover { color: var(--accent); text-decoration: underline; }
   background: transparent; color: var(--ink-muted);
   border: 1px dashed var(--line-strong);
 }
+/* field studies are rare and valuable — the loudest badge on the card */
+.badge.field { background: var(--ink); color: var(--paper); }
 /* exoskeleton records read as a family, whatever their access status */
 .badge.exo {
   background: transparent; color: var(--ink);

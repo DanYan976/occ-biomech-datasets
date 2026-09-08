@@ -1,0 +1,47 @@
+id: moya-esteban-nmbc-exosuit
+title: "Twente Soft Back Exosuit with Neuromechanical-Model Control: Lifting Unknown Loads"
+status: restricted
+sample: false
+
+source:
+  authors: "Moya-Esteban A., Mohamed Refai M.I., Sridar S., van der Kooij H., Sartori M."
+  institution: "University of Twente"
+  country: [NL]
+  year: 2025
+
+access:
+  url: "https://doi.org/10.1017/wtc.2025.3"
+  license: "Data by email to corresponding author upon reasonable request"
+
+tasks: [lifting]
+setting: lab
+modalities: [emg, imu, mocap]
+
+subjects:
+  n: 10
+  sex: "7M / 3F"
+  age_range: "30 ± 2"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Twente soft active back exosuit"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "EMG-driven musculoskeletal-model controller vs. no assistance, stoop lifting of unknown 5/15 kg loads"
+  outcomes: [muscle_activity, kinetics]
+
+publications:
+  - citation: "Moya-Esteban A., Mohamed Refai M.I., Sridar S., van der Kooij H., Sartori M. (2025). Soft back exosuit controlled by neuro-mechanical modeling provides adaptive assistance while lifting unknown loads and reduces lumbosacral compression forces. Wearable Technol. 6:e9"
+    doi: "10.1017/wtc.2025.3"
+
+load: "Metronome-paced stoop lifting of unknown 5 kg and 15 kg box loads"
+equipment: "8-channel Ottobock 13E400 EMG, 9 Xsens MVN Link IMUs, 12-camera Qualisys mocap (33 markers), cable load cells; off-board cable-driven actuation"
+tags: [exoskeleton, back, exosuit, neuromusculoskeletal-model, adaptive-control, lifting]
+description: >
+  Evaluation of a University of Twente soft active back exosuit whose
+  assistance is set in real time by an EMG-driven musculoskeletal model
+  (NMBC): 10 participants stoop-lifted unknown 5 and 15 kg loads while
+  EMG, IMU and optical mocap data were recorded, showing adaptive
+  assistance and reduced lumbosacral compression (Wearable Technologies,
+  2025). Data by email to the corresponding author on reasonable request.
+added: 2026-09-01

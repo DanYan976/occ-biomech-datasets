@@ -15,6 +15,7 @@ access:
   license: "CC0-1.0"
 
 tasks: [lifting, lowering, carrying, squatting, walking]
+setting: lab
 modalities: [emg, pressure, imu]
 
 subjects:
@@ -22,7 +23,7 @@ subjects:
 
 exoskeleton:
   role: evaluation
-  devices: ["Bilateral backdrivable knee exoskeleton (Divekar et al., 2024)"]
+  devices: ["Bilateral backdrivable knee exoskeleton (Divekar 2024)"]
   body_region: [knee]
   actuation: [active]
   comparison: "With vs. without the exoskeleton, within-subject"

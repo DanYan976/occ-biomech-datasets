@@ -1,0 +1,46 @@
+id: jakobsen-relax-warehouse-exo
+title: "RELAX: 18-Month In-Field Back-Exoskeleton Intervention in Warehouse Order Picking"
+status: coming_soon
+sample: false
+
+source:
+  authors: "Jakobsen L.S., Skals S., Christiansen D.H., Sørensen J., Pontonnier C., Madeleine P."
+  institution: "Aalborg University / NFA / Univ Rennes"
+  country: [DK]
+  year: 2026
+
+access:
+  url: "https://www.medrxiv.org/content/10.64898/2026.05.21.26353770v1"
+
+tasks: [mmh, lifting]
+setting: field
+modalities: [survey]
+
+subjects:
+  n: 90
+
+exoskeleton:
+  role: evaluation
+  devices: ["IX Back Air (SUITX by Ottobock)"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "Controlled non-randomized in-field intervention: exoskeleton department vs. usual-work control department, ~45 workers each, 18 months"
+  outcomes: [subjective, discomfort, task_performance]
+
+publications:
+  - citation: "Jakobsen L.S., Skals S., Christiansen D.H., Sørensen J., Pontonnier C., Madeleine P. (2026). Protocol of the RELAX project, an 18-month in-field controlled intervention study. medRxiv"
+    doi: "10.64898/2026.05.21.26353770"
+    note: "Protocol only; trial registered as NCT07561112, running through 2029. Results pending."
+
+load: "Manual order picking at a Dagrofa Logistik warehouse (Vejle, Denmark): heavy lifting, awkward postures, repetitive movements at production pace"
+equipment: "Questionnaires (perceived work intensity, Cornell Musculoskeletal Discomfort), company registers (sickness absence, turnover, productivity), exoskeleton usage logs, focus-group interviews, cost-effectiveness analysis"
+tags: [exoskeleton, back, field-study, warehouse, intervention, protocol]
+description: >
+  Protocol of the RELAX project: an 18-month controlled (non-randomized)
+  in-field intervention at a Danish warehouse, comparing a department of
+  ~45 order pickers using the SUITX IX Back Air passive back exoskeleton
+  against a usual-work control department. Outcomes cover perceived work
+  intensity, musculoskeletal discomfort, absence, turnover, productivity
+  and cost-effectiveness. Results pending (trial runs through 2029); data
+  will be available from the authors on reasonable request.
+added: 2026-09-01

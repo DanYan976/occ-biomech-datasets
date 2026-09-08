@@ -108,6 +108,8 @@ EXO_REGION_LABEL = {
     "ankle": "Ankle", "neck": "Neck", "wrist": "Wrist", "full_body": "Full body",
 }
 EXO_ACTUATION_LABEL = {"passive": "Passive", "active": "Active", "quasi_passive": "Quasi-passive"}
+SETTING_LABEL = {"lab": "Laboratory (controlled or simulated)", "field": "Field — real workplace",
+                 "mixed": "Field and laboratory"}
 # ISO 3166-1 alpha-2 → display name for source.country (mirror of COUNTRY_LABEL in site/app.js).
 COUNTRY_LABEL = {
     "AT": "Austria", "AU": "Australia", "BE": "Belgium", "BR": "Brazil", "CA": "Canada", "CH": "Switzerland",
@@ -322,6 +324,7 @@ def inject_vocab() -> None:
         f'  <dt>tasks</dt><dd>{codes(tasks)}</dd>\n'
         f'  <dt>modalities</dt><dd>{codes(mods)}</dd>\n'
         f'  <dt>formats</dt><dd>{codes(formats)}</dd>\n'
+        f'  <dt>setting</dt><dd>{codes(props["setting"]["enum"])}</dd>\n'
         f'  <dt>exoskeleton.role</dt><dd>{codes(exo["role"]["enum"])}</dd>\n'
         f'  <dt>exoskeleton.body_region</dt><dd>{codes(exo["body_region"]["items"]["enum"])}</dd>\n'
         f'  <dt>exoskeleton.actuation</dt><dd>{codes(exo["actuation"]["items"]["enum"])}</dd>\n'
@@ -436,8 +439,13 @@ def _detail_page(entry: dict) -> str:
                          '<a href="/exoskeletons.html">exoskeleton collection</a>.</p>\n\n  ')
         if exo.get("role") == "evaluation":  # control-input records carry no badge
             exo_badge = ' <span class="badge exo">Exo evaluation</span>'
+    if entry.get("setting") == "field":
+        exo_badge = ' <span class="badge field">Field</span>' + exo_badge
+    elif entry.get("setting") == "mixed":
+        exo_badge = ' <span class="badge field">Field + Lab</span>' + exo_badge
 
     row("Subjects", " · ".join(subj_bits))
+    row("Setting", e(SETTING_LABEL.get(entry.get("setting"), "")))
     row("Protocol / load", e(entry.get("load", "")))
     row("Equipment", e(entry.get("equipment", "")))
     if entry.get("sampling"):
@@ -490,7 +498,7 @@ def _detail_page(entry: dict) -> str:
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/style.css?v=20260824" />
+<link rel="stylesheet" href="/style.css?v=20260901b" />
 <script src="/nav.js?v=20260821" defer></script>
 {jsonld}</head>
 <body>

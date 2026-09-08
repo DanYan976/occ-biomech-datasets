@@ -11,6 +11,7 @@ source:
   year: 2026
 
 tasks: [lifting, carrying, walking, lowering, mmh]
+setting: lab
 modalities: [mocap, force_plate]
 
 subjects:
@@ -19,7 +20,7 @@ subjects:
 
 exoskeleton:
   role: evaluation
-  devices: ["EXO1 (4.9 kg)", "EXO2 (6.7 kg)", "EXO3 (8.6 kg)"]
+  devices: ["Airframe (Levitate)", "EksoVest (Ekso Bionics)", "ShoulderX (SuitX)"]
   body_region: [shoulder]
   actuation: [passive]
   comparison: "No-exoskeleton baseline vs. each of three passive shoulder-assist exoskeletons, within-subject repeated measures, condition order randomized"
@@ -35,10 +36,10 @@ tags: [exoskeleton, shoulder, balance, stability, margin-of-stability, sample-en
 description: >
   Whole-body optical motion capture and force-plate recordings of 11 adults
   performing a simulated MMH sequence — floor lift, carry while walking, shelf
-  placement, retrieval and return of a 13.6 kg box — without an exoskeleton and
-  wearing three commercial passive shoulder-assist exoskeletons. Collected in
-  2024 to characterize how shoulder exoskeletons affect balance across the full
-  task: phase-specific margin of stability and sample entropy of the body+load
-  CoM during walking, and CoP time-to-boundary during box placement. Box tracked
-  as a rigid body; OpenSim-compatible. Release planned.
+  placement and return of a 13.6 kg box — without an exoskeleton and wearing
+  the Levitate Airframe (4.9 kg), Ekso Bionics EksoVest (6.7 kg) and SuitX
+  ShoulderX (8.6 kg). Collected in 2024 to characterize how shoulder
+  exoskeletons affect balance: phase-specific margin of stability, sample
+  entropy of the body+load CoM, and CoP time-to-boundary during placement.
+  Box tracked as a rigid body; OpenSim-compatible. Release planned.
 added: 2026-08-20

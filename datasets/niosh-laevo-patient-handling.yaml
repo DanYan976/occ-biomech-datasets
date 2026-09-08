@@ -15,6 +15,7 @@ access:
   license: "Public domain (U.S. Government work)"
 
 tasks: [pulling, holding]
+setting: lab
 modalities: [mocap, emg, physiological]
 
 subjects:

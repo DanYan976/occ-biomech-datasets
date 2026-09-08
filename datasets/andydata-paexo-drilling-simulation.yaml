@@ -1,0 +1,48 @@
+id: andydata-paexo-drilling-simulation
+title: "AnDy: AnyBody Simulation of Overhead Drilling with the Paexo Shoulder"
+status: restricted
+sample: false
+
+source:
+  authors: "Galibarov P.E., Damsgaard M."
+  institution: "AnyBody Technology"
+  country: [SI]
+  year: 2021
+
+access:
+  url: "https://zenodo.org/record/5770292"
+  doi: "10.5281/zenodo.5770292"
+  license: "Download on request via Zenodo; state intended use"
+
+tasks: [reaching, holding, assembly]
+setting: lab
+modalities: [mocap]
+
+subjects:
+  n: 12
+  sex: "12M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Paexo Shoulder (Ottobock)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "Simulated with vs. without the exoskeleton, overhead drilling, driven by mocap from the An.Dy experimental study"
+  outcomes: [kinetics, muscle_activity]
+
+publications:
+  - citation: "Fritzsche L., Galibarov P.E., Gärtner C., et al. (2021). Assessing the efficiency of exoskeletons in physical strain reduction by biomechanical simulation with AnyBody Modeling System. Wearable Technol. 2:e6"
+    doi: "10.1017/wtc.2021.5"
+
+load: "Overhead drilling/pointing above the head with a 0.66 kg hand-held drill"
+equipment: "Full-body AnyBody Modeling System musculoskeletal model (AMMR), driven by optical mocap from the An.Dy experiment; per-subject/per-trial CSVs of joint reaction forces and muscle activations"
+formats: [csv]
+tags: [exoskeleton, shoulder, simulation, anybody, musculoskeletal-model, andy-project]
+description: >
+  AnyBody musculoskeletal simulation outputs replicating the An.Dy overhead
+  drilling experiment: simulated joint reaction forces and muscle
+  activations for 12 subjects working with and without the Ottobock Paexo
+  Shoulder, driven by the motion capture behind the AnDy one-person
+  datasets already in this catalog. Zenodo deposit from the EU H2020 An.Dy
+  project; download on request with a statement of intended use.
+added: 2026-09-01

@@ -1,0 +1,50 @@
+id: chung-exosuit-adaptive-assistance
+title: "Harvard Back Exosuit: Scaling Assistance to Changing Box Weights"
+status: restricted
+sample: false
+
+source:
+  authors: "Chung J., Quirk D.A., Cherin J.M., Friedrich D., Kim D., Walsh C.J."
+  institution: "Harvard University / Korea University"
+  country: [US]
+  year: 2025
+
+access:
+  url: "https://doi.org/10.1038/s41598-025-94726-3"
+  license: "Data and code from corresponding author upon reasonable request"
+
+tasks: [lifting, carrying, walking]
+setting: lab
+modalities: [emg, imu, mocap, force_plate, video]
+
+subjects:
+  n: 21
+  sex: "14M / 7F"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Harvard soft back exosuit"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "Adaptive controllers (A-ADPT, DA-ADPT, camera/ML-based WDA-ADPT) vs. non-assistive SLACK condition, variable-weight box transfer"
+  outcomes: [muscle_activity, kinematics, kinetics, subjective]
+
+publications:
+  - citation: "Chung J., Quirk D.A., Cherin J.M., Friedrich D., Kim D., Walsh C.J. (2025). The perceptual and biomechanical effects of scaling back exosuit assistance to changing task demands. Sci. Rep. 15:10929"
+    doi: "10.1038/s41598-025-94726-3"
+
+load: "Color-coded 2/8/14 kg box transfers with walking, bending and obstacle maneuvering; 9,600 lifts total"
+equipment: "EMG (2148 Hz), IMUs (100-200 Hz), chest-mounted 180° fisheye camera (100 Hz) for ML weight estimation, 22-camera mocap (200 Hz), force plates (200 Hz), exosuit load cells"
+sampling:
+  emg: 2148
+  mocap: 200
+  force_plate: 200
+tags: [exoskeleton, back, exosuit, adaptive-control, machine-learning, lifting]
+description: >
+  Evaluation of adaptive back-exosuit assistance that scales to box weight,
+  including a camera/ML-based weight-detection controller: 15 + 6
+  participants transferred 2/8/14 kg boxes (9,600 lifts) while EMG, IMU,
+  mocap, force-plate and perceptual data were recorded (Scientific Reports,
+  2025). Datasets and code available from the corresponding author upon
+  reasonable request.
+added: 2026-09-01

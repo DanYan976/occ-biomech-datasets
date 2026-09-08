@@ -15,6 +15,7 @@ access:
   license: "CC-BY-4.0"
 
 tasks: [reaching, holding]
+setting: lab
 modalities: [mocap, force_plate, emg, physiological, video]
 
 subjects:

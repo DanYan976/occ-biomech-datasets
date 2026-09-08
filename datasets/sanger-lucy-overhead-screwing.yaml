@@ -1,0 +1,48 @@
+id: sanger-lucy-overhead-screwing
+title: "Lucy Active Shoulder Exoskeleton: Overhead Screwing at Four Support Levels"
+status: restricted
+sample: false
+
+source:
+  authors: "Sänger J., Yao Z., Schubert T., Wolf A., Molz C., Miehling J., Wartzack S., Gwosch T., Matthiesen S., Weidner R."
+  institution: "KIT / Helmut Schmidt University Hamburg / FAU Erlangen-Nürnberg"
+  country: [DE]
+  year: 2022
+
+access:
+  url: "https://doi.org/10.3390/app122110805"
+  license: "Data from corresponding author upon reasonable request"
+
+tasks: [reaching, holding, assembly]
+setting: lab
+modalities: [emg, mocap, force_plate, pressure]
+
+subjects:
+  n: 5
+  sex: "5M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Lucy (HSU Hamburg)"]
+  body_region: [shoulder]
+  actuation: [active]
+  comparison: "Four support levels during two overhead screwing tasks, within-subject"
+  outcomes: [muscle_activity, kinematics, kinetics]
+
+publications:
+  - citation: "Sänger J. et al. (2022). Evaluation of Active Shoulder Exoskeleton Support to Deduce Application-Oriented Optimization Potentials for Overhead Work. Appl. Sci. 12(21):10805"
+    doi: "10.3390/app122110805"
+
+load: "Overhead screwing with a cordless screwdriver: fixing a pre-drilled wooden component to an overhead board (arm lifting, screw-in, arm lowering phases)"
+equipment: "Myon 320 EMG on 8 muscles (1000 Hz), Vicon Bonita mocap, ground reaction force, XSENSOR X3 Pro pressure mat at the arm interface, push-force sensing, exoskeleton datalogger"
+sampling:
+  emg: 1000
+tags: [exoskeleton, shoulder, overhead-work, active-exoskeleton, semg]
+description: >
+  Rich multimodal evaluation of the Lucy active pneumatic shoulder
+  exoskeleton: 5 participants performed two overhead screwing tasks at four
+  support levels while 8-muscle EMG, optical mocap, ground reaction forces,
+  interface pressure and tool current were recorded (Applied Sciences,
+  2022). Data available from the corresponding author upon reasonable
+  request.
+added: 2026-09-01

@@ -1,0 +1,46 @@
+id: cha-yu-or-exoskeleton-focus-groups
+title: "Exoskeletons in the Operating Room: Surgical-Team Focus-Group Transcripts"
+status: open
+sample: false
+
+source:
+  authors: "Cha J.S., Yu D."
+  institution: "Purdue University"
+  country: [US]
+  year: 2019
+
+access:
+  url: "https://purr.purdue.edu/publications/3318/1"
+  doi: "10.4231/TF0A-S814"
+  license: "CC0-1.0"
+
+tasks: [holding, reaching]
+setting: lab
+modalities: [survey]
+
+subjects:
+  n: 14
+
+exoskeleton:
+  role: evaluation
+  devices: ["Commercial upper-body arm-support exoskeleton (model not stated)"]
+  body_region: [shoulder]
+  comparison: "Focus groups after a 10-min simulated surgical (FLS) task wearing the exoskeleton"
+  outcomes: [subjective]
+
+publications:
+  - citation: "Cha J.S., Monfared S., Stefanidis D., Nussbaum M.A., Yu D. (2020). Supporting Surgical Teams: Identifying Needs and Barriers for Exoskeleton Implementation in the Operating Room. Hum. Factors 62(3):377-390"
+    doi: "10.1177/0018720819879271"
+    note: "Identified four adoption themes; mean System Usability Scale score 81.3."
+
+load: "Simulated laparoscopic (FLS) surgical task with sustained arm elevation, followed by focus groups"
+equipment: "Anonymized focus-group transcripts (PDF); usability questionnaire administered but not deposited"
+tags: [exoskeleton, shoulder, healthcare, surgery, qualitative, adoption]
+description: >
+  Anonymized focus-group transcripts from 14 operating-room team members
+  (7 surgical residents, 4 nurses, 3 attending surgeons) on the needs and
+  barriers for exoskeleton use in surgery, collected after a simulated
+  surgical task wearing a commercial upper-body exoskeleton. Qualitative
+  data only, public domain (CC0) on the Purdue University Research
+  Repository; supports the Human Factors 2020 adoption study.
+added: 2026-09-01

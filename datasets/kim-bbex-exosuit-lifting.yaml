@@ -1,0 +1,48 @@
+id: kim-bbex-exosuit-lifting
+title: "BBEX Bilateral Back Exosuit: Symmetric and Asymmetric Lifting"
+status: open
+sample: false
+
+source:
+  authors: "Kim J.I., Choi J., Kim J., Song J., Park J., Park Y.-L."
+  institution: "Seoul National University"
+  country: [KR]
+  year: 2024
+
+access:
+  url: "https://datadryad.org/dataset/doi:10.5061/dryad.fbg79cp45"
+  doi: "10.5061/dryad.fbg79cp45"
+  license: "CC0-1.0"
+
+tasks: [lifting]
+setting: lab
+modalities: [mocap, emg, physiological]
+
+subjects:
+  n: 11
+  sex: "11M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["BBEX (Seoul National University)"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "With vs. without the exosuit, symmetric and asymmetric lifting, within-subject"
+  outcomes: [muscle_activity, kinematics, kinetics, cardiovascular]
+
+publications:
+  - citation: "Kim J.I., Choi J., Kim J., Song J., Park J., Park Y.-L. (2024). Bilateral back extensor exosuit for multidimensional assistance and prevention of spinal injuries. Sci. Robot. 9(92):eadk6717"
+    doi: "10.1126/scirobotics.adk6717"
+
+load: "5.5 kg weight, 30 lifts per trial, symmetric and asymmetric lifting"
+equipment: "Optical motion capture (reflective markers), surface EMG, heart-rate monitor; OpenSim musculoskeletal modeling of spinal loading"
+formats: [trc, mot]
+tags: [exoskeleton, back, exosuit, lifting, opensim, spine-loading]
+description: >
+  Motion capture, surface EMG and OpenSim simulation data from 11 male
+  participants lifting a 5.5 kg weight symmetrically and asymmetrically with
+  and without the BBEX active bilateral back extensor exosuit (Science
+  Robotics, 2024). The 2.5 GB Dryad deposit (CC0) includes marker
+  trajectories, musculoskeletal models, external-load files, lumbar joint
+  loading results and the R statistics code.
+added: 2026-09-01

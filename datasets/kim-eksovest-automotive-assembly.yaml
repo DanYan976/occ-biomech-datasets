@@ -15,6 +15,7 @@ access:
   license: "Available on request from the authors"
 
 tasks: [assembly, reaching, holding]
+setting: field
 modalities: [survey]
 
 subjects:

@@ -1,0 +1,48 @@
+id: zakir-hpulse-overhead-fatigue
+title: "H-PULSE Semi-Active Shoulder Exoskeleton: Fatigue During Continuous Overhead Work"
+status: restricted
+sample: false
+
+source:
+  authors: "Zakir S., Grazi L., Giovacchini F., Vitiello N., Trigili E., Crea S."
+  institution: "Scuola Superiore Sant'Anna / IUVO"
+  country: [IT]
+  year: 2025
+
+access:
+  url: "https://doi.org/10.1017/wtc.2025.10008"
+  license: "Data by email to corresponding author upon reasonable request"
+
+tasks: [reaching, holding, assembly]
+setting: lab
+modalities: [emg, physiological]
+
+subjects:
+  n: 10
+  sex: "10M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["H-PULSE (Sant'Anna / IUVO)"]
+  body_region: [shoulder]
+  actuation: [quasi_passive]
+  comparison: "Different support levels vs. no exoskeleton during 6-min continuous overhead screwing, fatigue progression"
+  outcomes: [muscle_activity, cardiovascular]
+
+publications:
+  - citation: "Zakir S., Grazi L., Giovacchini F., Vitiello N., Trigili E., Crea S. (2025). Evaluation of fatigue progression during overhead tasks and the effects of exoskeleton assistance. Wearable Technol. 6:e23"
+    doi: "10.1017/wtc.2025.10008"
+
+load: "6-minute continuous overhead screwing/unscrewing at self-selected pace, shoulders and elbows at ~90° flexion"
+equipment: "BTS FREEEMG 1000 surface EMG on bilateral anterior/posterior deltoids + ECG lead (1 kHz); EMG median-frequency fatigue analysis, heart rate and HRV"
+sampling:
+  emg: 1000
+tags: [exoskeleton, shoulder, overhead-work, fatigue, semi-active, hrv]
+description: >
+  Fatigue-progression study of the H-PULSE semi-active shoulder-support
+  exoskeleton with motor-adjustable spring preload: 10 participants
+  performed 6 minutes of continuous overhead screwing at different support
+  levels and without the device, while bilateral deltoid EMG (median-
+  frequency fatigue analysis), heart rate and HRV were recorded (Wearable
+  Technologies, 2025). Data available by email to the corresponding author.
+added: 2026-09-01

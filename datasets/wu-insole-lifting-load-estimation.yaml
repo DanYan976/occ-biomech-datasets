@@ -1,0 +1,44 @@
+id: wu-insole-lifting-load-estimation
+title: "Insole Plantar-Pressure Data for Lifting-Load Estimation (FIU)"
+status: coming_soon
+sample: false
+
+source:
+  authors: "Wu K., Xiang P., Lin C., Bai O."
+  institution: "Florida International University"
+  country: [US]
+  year: 2026
+
+access:
+  url: "https://github.com/Kaida-Wu/insole-pressure-load-estimation"
+
+tasks: [lifting, holding]
+setting: lab
+modalities: [pressure]
+
+subjects:
+  n: 5
+
+exoskeleton:
+  role: control_input
+  body_region: [back, shoulder]
+  comparison: "Data collected to develop load-estimation input for adaptive lifting-exoskeleton assistance control; no device worn during capture"
+
+publications:
+  - citation: "Wu K., Xiang P., Lin C., Bai O. (2026). Load Estimation for Industrial Load-lifting Exoskeletons Using Insole Pressure Sensors and Machine Learning. IEEE AIRC 2026"
+    doi: "10.48550/arXiv.2503.07527"
+    note: "Companion to the wu-insole-load-estimation-exo entry in the Models library."
+
+load: "Static box lifting with 2-10 kg dumbbell loads in 0.5 kg steps, 3 sessions per subject"
+equipment: "Pair of 18-channel RX-ES42-18 insole pressure sensors (36 channels total), Bluetooth, 20 Hz"
+sampling:
+  pressure: 20
+tags: [pressure-insoles, load-estimation, exoskeleton-control, lifting, machine-learning]
+description: >
+  Announced dataset of raw 36-channel insole plantar-pressure recordings
+  from 5 subjects lifting 2-10 kg loads, collected to train lifting-load
+  regression models for adaptive control of industrial lifting exoskeletons
+  (IEEE AIRC 2026; arXiv 2503.07527). The paper states data and code are
+  public on GitHub, but the linked repository is still empty as of
+  September 2026 - listed as coming soon until the deposit is populated.
+added: 2026-09-01

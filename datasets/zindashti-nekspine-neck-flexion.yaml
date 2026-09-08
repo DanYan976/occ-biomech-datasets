@@ -1,0 +1,50 @@
+id: zindashti-nekspine-neck-flexion
+title: "NekSpine Neck and Lower-Back Exoskeleton: Sustained Neck-Flexion EMG and Endurance"
+status: restricted
+sample: false
+
+source:
+  authors: "Jasimi Zindashti N., Riahi N., Miller L., Tavakoli M., Rouhani H., Golabchi A."
+  institution: "University of Alberta / EWI Works"
+  country: [CA]
+  year: 2026
+
+access:
+  url: "https://doi.org/10.3390/s26041354"
+  license: "Data available upon request"
+
+tasks: [holding]
+setting: lab
+modalities: [emg, survey]
+
+subjects:
+  n: 10
+  sex: "5M / 5F"
+  age_range: "26 ± 3"
+
+exoskeleton:
+  role: evaluation
+  devices: ["NekSpine"]
+  body_region: [neck, back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton at 15/30/45/60° sustained neck flexion, plus an endurance test at 45°"
+  outcomes: [muscle_activity, subjective, discomfort]
+
+publications:
+  - citation: "Jasimi Zindashti N., Riahi N., Miller L., Tavakoli M., Rouhani H., Golabchi A. (2026). Assessment of a Passive Exoskeleton for Neck and Lower Back Support. Sensors 26(4):1354"
+    doi: "10.3390/s26041354"
+    note: "Up to 31% median reduction in neck/lower-back muscle activity and ~50% longer endurance, largest at 30-45° flexion."
+
+load: "5-min simulated sorting task at sustained neck flexion of 15-60°; endurance hold at 45° until fatigue"
+equipment: "Delsys Trigno Avanti sEMG (2148 Hz), bilateral splenius capitis, trapezius and latissimus dorsi; RPE for neck and lower back"
+sampling:
+  emg: 2148
+tags: [exoskeleton, neck, back, sustained-posture, endurance, semg]
+description: >
+  Evaluation of the NekSpine passive neck + lower-back exoskeleton during
+  sustained downward-gaze work: 10 participants (5M/5F) performed a
+  simulated sorting task at 15-60° neck flexion and an endurance hold with
+  and without the device while bilateral neck/back EMG and perceived
+  exertion were recorded (Sensors, 2026). One of the few neck-support
+  records in the catalog; data available upon request.
+added: 2026-09-01

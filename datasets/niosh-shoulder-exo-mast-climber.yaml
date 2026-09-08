@@ -1,0 +1,52 @@
+id: niosh-shoulder-exo-mast-climber
+title: "NIOSH: Shoulder-Assist Exoskeletons During Block-Laying on a Simulated Mast Climber"
+status: open
+sample: false
+
+source:
+  authors: "Zheng L., Pan C.S., Wei L., Bahreinizad H., Chowdhury S., Ning X., Santos F."
+  institution: "NIOSH / Texas Tech University"
+  country: [US]
+  year: 2024
+
+access:
+  url: "https://www.datalumos.org/datalumos/project/239318/version/V1/view"
+  doi: "10.3886/E239318V1"
+  license: "Public domain (U.S. Government work)"
+
+tasks: [lifting, assembly]
+setting: lab
+modalities: [emg, force_plate]
+
+subjects:
+  n: 7
+  sex: "7M"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Three anonymized passive shoulder-assist exoskeletons"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "No device vs. three anonymized devices, block-laying at two heights on an unstable elevated platform"
+  outcomes: [muscle_activity, kinetics]
+
+publications:
+  - citation: "Zheng L., Pan C.S., Wei L., Bahreinizad H., Chowdhury S., Ning X., Santos F. (2024). Shoulder-assist exoskeleton effects on balance and muscle activity during a block-laying task on a simulated mast climber. Int. J. Ind. Ergon. 104:103652"
+    doi: "10.1016/j.ergon.2024.103652"
+    note: "Two of the three devices significantly increased postural sway on the elevated platform."
+
+load: "35-lb (15.9 kg) cinder blocks laid at elbow and shoulder heights"
+equipment: "Delsys Quattro/Avanti EMG on six shoulder/upper-arm muscles (2000 Hz); K-Force force plates (75 Hz) for center-of-pressure balance measures"
+sampling:
+  emg: 2000
+  force_plate: 75
+formats: [csv]
+tags: [exoskeleton, shoulder, construction, balance, mast-climber, niosh]
+description: >
+  Processed shoulder EMG and force-plate balance data from 7 construction
+  workers laying 35-lb blocks at two heights on a simulated mast-climbing
+  work platform, without a device and with three anonymized passive
+  shoulder-assist exoskeletons (IJIE, 2024). Public-domain NIOSH dataset,
+  preserved on ICPSR DataLumos with a parallel CDC STACKS record
+  (cdc/208601).
+added: 2026-09-01

@@ -15,6 +15,7 @@ access:
   license: "Public domain (U.S. Government work)"
 
 tasks: [lifting, holding, pulling]
+setting: lab
 modalities: [mocap, emg, physiological]
 
 subjects:
@@ -27,6 +28,11 @@ exoskeleton:
   actuation: [passive]
   comparison: "With vs. without the exoskeleton, four bed-to-chair patient-transfer tasks"
   outcomes: [muscle_activity, kinematics, cardiovascular]
+
+publications:
+  - citation: "Zheng L., Sekhar C., Alluri V., Hawke A.L., Hwang J. (2025). Evaluation of a passive back-support exoskeleton in bed-to-chair patient handling tasks. Int. J. Occup. Safety Ergon. 31(2):478-485"
+    doi: "10.1080/10803548.2025.2452752"
+    note: "Primary analysis of this dataset: 19% erector spinae EMG reduction in two of the four transfer tasks."
 
 load: "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer"
 equipment: "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, optical motion capture for trunk/hip angles, heart-rate monitor"

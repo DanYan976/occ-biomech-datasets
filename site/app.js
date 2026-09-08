@@ -73,6 +73,11 @@
   function exo(d) { return d.exoskeleton || null; }
   function exoRole(d) { return exo(d) ? d.exoskeleton.role : null; }
   function exoList(d, key) { return (exo(d) && d.exoskeleton[key]) || []; }
+  // Unnamed devices and generic research prototypes collapse into one muted
+  // chip in the device index instead of each claiming a chip of their own.
+  var GENERIC_DEVICE = /model not stated|anonymized|prototype|^commercial |^custom |^passive |^powered |^three /i;
+  function isGenericDevice(name) { return GENERIC_DEVICE.test(name); }
+  var GENERIC_CHIP = "__generic__";
   function exoActuations(d) {
     var a = exoList(d, "actuation");
     return ACTUATION_ORDER.filter(function (k) { return a.indexOf(k) !== -1; });
@@ -84,11 +89,13 @@
       var node = document.getElementById(id);
       if (node) node.textContent = value;
     }
-    var devices = new Set(), regions = new Set(), evals = 0, control = 0;
+    var devices = new Set(), regions = new Set(), evals = 0, control = 0, field = 0, open = 0;
     EXO_DATA.forEach(function (d) {
       if (exoRole(d) === "evaluation") evals++;
       if (exoRole(d) === "control_input") control++;
-      exoList(d, "devices").forEach(function (v) { devices.add(v); });
+      if (d.setting === "field" || d.setting === "mixed") field++;
+      if (d.status === "open") open++;
+      exoList(d, "devices").forEach(function (v) { if (!isGenericDevice(v)) devices.add(v); });
       exoList(d, "body_region").forEach(function (v) { regions.add(v); });
     });
     put("stat-exo", EXO_DATA.length);
@@ -96,6 +103,8 @@
     put("exo-device-count", devices.size);
     put("exo-region-count", regions.size);
     put("exo-control-count", control);
+    put("exo-field-count", field);
+    put("exo-open-count", open);
   }
 
   // ---- shared helpers ---------------------------------------------------
@@ -150,6 +159,8 @@
     var badges = el("div");
     badges.style.cssText = "display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end";
     badges.appendChild(el("span", "badge " + d.status, STATUS_LABEL[d.status] || d.status));
+    if (d.setting === "field") badges.appendChild(el("span", "badge field", "Field"));
+    if (d.setting === "mixed") badges.appendChild(el("span", "badge field", "Field + Lab"));
     if (EXO_ROLE_BADGE[exoRole(d)]) badges.appendChild(el("span", "badge exo", EXO_ROLE_BADGE[exoRole(d)]));
     var acts = exoActuations(d);
     if (acts.length) {
@@ -228,12 +239,21 @@
 
     var deviceFilter = null;      // null = show every record
     var actuationFilter = null;   // null | "passive" | "active" | "quasi_passive"
+    var regionFilter = null;      // null | body_region code ("back", "shoulder", ...)
 
     var inActuation = function (d) {
       return !actuationFilter || exoList(d, "actuation").indexOf(actuationFilter) !== -1;
     };
+    var inRegion = function (d) {
+      return !regionFilter || exoList(d, "body_region").indexOf(regionFilter) !== -1;
+    };
+    var matchesDevice = function (d) {
+      if (!deviceFilter) return true;
+      if (deviceFilter === GENERIC_CHIP) return exoList(d, "devices").some(isGenericDevice);
+      return exoList(d, "devices").indexOf(deviceFilter) !== -1;
+    };
     var inFilter = function (d) {
-      return inActuation(d) && (!deviceFilter || exoList(d, "devices").indexOf(deviceFilter) !== -1);
+      return inActuation(d) && inRegion(d) && matchesDevice(d);
     };
 
     // Actuation toggle: All / Passive / Active (quasi-passive only once the catalog has one)
@@ -259,35 +279,65 @@
       });
     };
 
+    // Exo type toggle: supported body region (only regions present in the catalog)
+    var regionToggle = function () {
+      var box = document.getElementById("region-toggle");
+      if (!box) return;
+      var present = REGION_ORDER.filter(function (r) {
+        return EXO_DATA.some(function (d) { return exoList(d, "body_region").indexOf(r) !== -1; });
+      });
+      box.innerHTML = "";
+      if (!present.length) { box.parentNode.hidden = true; return; }
+      [null].concat(present).forEach(function (r) {
+        var b = document.createElement("button");
+        b.className = "tbtn";
+        b.type = "button";
+        b.textContent = r ? (EXO_REGION_LABEL[r] || r) : "All";
+        b.setAttribute("aria-pressed", regionFilter === r ? "true" : "false");
+        b.addEventListener("click", function () {
+          regionFilter = r;
+          renderCollection();
+        });
+        box.appendChild(b);
+      });
+    };
+
     var deviceIndex = function () {
       var box = document.getElementById("device-index");
       if (!box) return;
-      var counts = new Map();
-      EXO_DATA.filter(inActuation).forEach(function (d) {
+      var counts = new Map(), genericStudies = 0;
+      EXO_DATA.filter(function (d) { return inActuation(d) && inRegion(d); }).forEach(function (d) {
+        var hasGeneric = false;
         exoList(d, "devices").forEach(function (name) {
+          if (isGenericDevice(name)) { hasGeneric = true; return; }
           counts.set(name, (counts.get(name) || 0) + 1);
         });
+        if (hasGeneric) genericStudies++;
       });
       box.innerHTML = "";
-      if (!counts.size) {
+      if (!counts.size && !genericStudies) {
         box.appendChild(el("p", "gov", actuationFilter
           ? "No " + EXO_ACTUATION_LABEL[actuationFilter].toLowerCase() + " devices indexed yet."
           : "No devices indexed yet."));
         return;
       }
-      Array.from(counts.keys()).sort().forEach(function (name) {
+      var chip = function (name, label, count, extraClass) {
         var b = document.createElement("button");
-        b.className = "device-chip";
+        b.className = "device-chip" + (extraClass ? " " + extraClass : "");
         b.type = "button";
         b.setAttribute("aria-pressed", deviceFilter === name ? "true" : "false");
-        b.appendChild(el("span", "dname", name));
-        b.appendChild(el("span", "dcount", String(counts.get(name))));
+        b.appendChild(el("span", "dname", label));
+        b.appendChild(el("span", "dcount", String(count)));
         b.addEventListener("click", function () {
           deviceFilter = deviceFilter === name ? null : name;
           renderCollection();
         });
         box.appendChild(b);
-      });
+      };
+      Array.from(counts.keys()).sort(function (a, b) {
+        return counts.get(b) - counts.get(a) || a.localeCompare(b);
+      }).forEach(function (name) { chip(name, name, counts.get(name)); });
+      if (genericStudies) chip(GENERIC_CHIP, "Unnamed / prototype devices", genericStudies, "generic");
     };
 
     var group = function (title, note, items) {
@@ -305,10 +355,11 @@
     };
 
     var renderCollection = function () {
-      // a device that vanished under the new actuation filter can't stay selected
+      // a device that vanished under the new actuation/type filter can't stay selected
       if (deviceFilter && !EXO_DATA.some(function (d) {
-        return inActuation(d) && exoList(d, "devices").indexOf(deviceFilter) !== -1;
+        return inActuation(d) && inRegion(d) && matchesDevice(d);
       })) deviceFilter = null;
+      regionToggle();
       actuationToggle();
       deviceIndex();
       exoGroups.innerHTML = "";
@@ -317,17 +368,20 @@
       var evaluations = shown.filter(function (d) { return exoRole(d) === "evaluation"; });
       var controls = shown.filter(function (d) { return exoRole(d) === "control_input"; });
 
-      if (deviceFilter || actuationFilter) {
+      if (deviceFilter || actuationFilter || regionFilter) {
         var bar = el("div", "filter-note");
-        var what = actuationFilter ? EXO_ACTUATION_LABEL[actuationFilter].toLowerCase() + "-device studies" : "studies";
+        var what = (actuationFilter ? EXO_ACTUATION_LABEL[actuationFilter].toLowerCase() + "-device " : "")
+          + (regionFilter ? (EXO_REGION_LABEL[regionFilter] || regionFilter).toLowerCase() + "-support " : "")
+          + "studies";
+        var devLabel = deviceFilter === GENERIC_CHIP ? "unnamed or prototype devices" : deviceFilter;
         bar.appendChild(el("span", null,
-          "Showing " + what + (deviceFilter ? " of " + deviceFilter : "") + "."));
+          "Showing " + what + (deviceFilter ? " of " + devLabel : "") + "."));
         var clear = document.createElement("button");
         clear.className = "linkbtn";
         clear.type = "button";
         clear.textContent = "Show all";
         clear.addEventListener("click", function () {
-          deviceFilter = null; actuationFilter = null; renderCollection();
+          deviceFilter = null; actuationFilter = null; regionFilter = null; renderCollection();
         });
         bar.appendChild(clear);
         exoGroups.appendChild(bar);

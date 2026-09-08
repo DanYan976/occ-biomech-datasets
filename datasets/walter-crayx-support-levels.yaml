@@ -1,0 +1,51 @@
+id: walter-crayx-support-levels
+title: "Cray X Active Back Exoskeleton: Erector Spinae EMG Across 11 Support Levels"
+status: restricted
+sample: false
+
+source:
+  authors: "Walter T., Stutzig N., Siebert T."
+  institution: "University of Stuttgart"
+  country: [DE]
+  year: 2023
+
+access:
+  url: "https://doi.org/10.3389/fbioe.2023.1143926"
+  license: "Raw data from the authors without undue reservation"
+
+tasks: [lifting]
+setting: lab
+modalities: [emg, video]
+
+subjects:
+  n: 14
+  sex: "3F / 11M"
+  age_range: "22.3 ± 1.1"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Cray X (German Bionic)"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "Support levels 0-100% in 10% steps plus no-exoskeleton condition, stoop lifting, within-subject"
+  outcomes: [muscle_activity, subjective]
+
+publications:
+  - citation: "Walter T., Stutzig N., Siebert T. (2023). Active exoskeleton reduces erector spinae muscle activity during lifting. Front. Bioeng. Biotechnol. 11:1143926"
+    doi: "10.3389/fbioe.2023.1143926"
+    note: "~22% erector spinae EMG reduction at maximum support vs. no exoskeleton."
+
+load: "Stoop lifting of a 15 kg box (40 x 30 x 22 cm) at 11 graded support levels"
+equipment: "BTS FREEEMG 1000 bilateral erector spinae EMG (1000 Hz); 30 Hz video for phase demarcation; Borg RPE"
+sampling:
+  emg: 1000
+  video: 30
+tags: [exoskeleton, back, active-exoskeleton, lifting, support-levels, semg]
+description: >
+  Dose-response evaluation of the Cray X generation-4 active back
+  exoskeleton: 14 participants stoop-lifted a 15 kg box at support levels
+  from 0 to 100% in 10% steps plus a no-device condition while bilateral
+  erector spinae EMG was recorded (Frontiers in Bioengineering and
+  Biotechnology, 2023). Rare graded-assistance dataset; raw data available
+  from the authors without undue reservation.
+added: 2026-09-01

@@ -15,6 +15,7 @@ access:
   license: "Data on request from the corresponding author"
 
 tasks: [lifting]
+setting: lab
 modalities: [emg, mocap]
 
 subjects:

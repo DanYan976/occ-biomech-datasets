@@ -1,0 +1,51 @@
+id: moulart-japet-lumbar-traction
+title: "Japet.W Active Lumbar Traction Exoskeleton: Kinematics and EMG in Manual Handling"
+status: restricted
+sample: false
+
+source:
+  authors: "Moulart M., Acien M., Leonard A., Loir M., Olivier N., Marin F."
+  institution: "Université de Technologie de Compiègne / Japet Medical Devices"
+  country: [FR]
+  year: 2024
+
+access:
+  url: "https://doi.org/10.3390/biomechanics4020025"
+  license: "On request from corresponding author (privacy-restricted)"
+
+tasks: [lifting, carrying, squatting]
+setting: lab
+modalities: [mocap, emg]
+
+subjects:
+  n: 23
+  sex: "14F / 9M"
+  age_range: "20.2 ± 1.2"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Japet.W (Japet)", "Japet.W passive belt (Japet)"]
+  body_region: [back]
+  actuation: [active, passive]
+  comparison: "Control vs. passive belt vs. active exoskeleton, three 5 kg handling tasks, within-subject"
+  outcomes: [kinematics, muscle_activity]
+
+publications:
+  - citation: "Moulart M., Acien M., Leonard A., Loir M., Olivier N., Marin F. (2024). Investigating Kinematics and Electromyography Changes in Manual Handling Tasks with an Active Lumbar Exoskeleton. Biomechanics 4(2):357-368"
+    doi: "10.3390/biomechanics4020025"
+    note: "Reduced time in RULA-dangerous trunk postures; abdominal-lumbar EMG not significantly changed. First author is a Japet employee (declared COI)."
+
+load: "Free lifting, squat lifting and table-to-table transfer of a 5 kg load"
+equipment: "36-camera Vicon T160 mocap (200 Hz) with device marker clusters; Cometa PICO EMG (1000 Hz) on longissimus dorsi, rectus abdominis, obliquus externus"
+sampling:
+  mocap: 200
+  emg: 1000
+tags: [exoskeleton, back, lumbar-traction, manual-handling, rula, semg]
+description: >
+  Motion-capture and EMG evaluation of the Japet.W active lumbar traction
+  exoskeleton (adjustable 4-16 kg vertical traction) and its passive
+  textile belt: 23 participants performed free lifting, squat lifting and
+  load transfer of 5 kg under control, belt and exoskeleton conditions
+  (Biomechanics, 2024). Data on request from the corresponding author
+  (privacy-restricted).
+added: 2026-09-01

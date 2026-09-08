@@ -1,0 +1,48 @@
+id: siedl-laevo-acceptance-field
+title: "Laevo V2.5 Acceptance Among Logistics Workers: Field Questionnaire Data"
+status: open
+sample: false
+
+source:
+  authors: "Siedl S.M., Mara M."
+  institution: "Johannes Kepler University Linz"
+  country: [AT]
+  year: 2021
+
+access:
+  url: "https://osf.io/vc56n/?view_only=909ca9f08c0f43b09de7c2d08608d254"
+  license: "OSF view-only share link (no explicit license; can be revoked by authors)"
+
+tasks: [mmh, lifting, carrying]
+setting: field
+modalities: [survey]
+
+subjects:
+  n: 31
+  sex: "28M / 3F"
+  age_range: "20-56"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Laevo V2.5"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "~30-min field trials during real logistics work; acceptance, self-efficacy and perceived-relief questionnaires"
+  outcomes: [subjective]
+
+publications:
+  - citation: "Siedl S.M., Mara M. (2021). Exoskeleton acceptance and its relationship to self-efficacy enhancement, perceived usefulness, and physical relief: A field study among logistics workers. Wearable Technol. 2:e10"
+    doi: "10.1017/wtc.2021.10"
+
+load: "Real logistics work at a vehicle manufacturer: component stocking, order picking, packaging, internal transport"
+equipment: "Questionnaires only (task-specific self-efficacy, perceived usefulness, usability, strain relief, intention to use) - no biomechanical sensors"
+tags: [exoskeleton, back, field-study, logistics, acceptance, questionnaire, laevo]
+description: >
+  Field acceptance study of the Laevo V2.5 passive trunk exoskeleton: 31
+  logistics workers at a vehicle manufacturer wore the device for ~30-min
+  trials during their real jobs and completed questionnaires on
+  self-efficacy, perceived usefulness, usability and strain relief
+  (Wearable Technologies, 2021). Questionnaire data (no biomechanical
+  signals) shared via an OSF view-only link - no dataset DOI or license,
+  so long-term availability depends on the authors.
+added: 2026-09-01

@@ -1,0 +1,48 @@
+id: kong-military-load-carriage-exo
+title: "Passive Military Load-Carriage Exoskeleton: In-Shoe GRF During Standing and Walking"
+status: open
+sample: false
+
+source:
+  authors: "Kong P.W., Koh A.H., Ho M.Y.M., Iskandar M.N.S., Lim C.X.E."
+  institution: "National Institute of Education, Nanyang Technological University"
+  country: [SG]
+  year: 2024
+
+access:
+  url: "https://researchdata.nie.edu.sg/dataset.xhtml?persistentId=doi:10.25340/R4/N2S4AR"
+  doi: "10.25340/R4/N2S4AR"
+  license: "CC-BY-NC-4.0"
+
+tasks: [carrying, walking, holding]
+setting: lab
+modalities: [pressure]
+
+subjects:
+  n: 8
+
+exoskeleton:
+  role: evaluation
+  devices: ["Passive military load-carriage exoskeleton (model not stated)"]
+  body_region: [back, full_body]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton, randomized crossover, static standing (0-55 kg) and treadmill walking (25/35 kg)"
+  outcomes: [kinetics]
+
+publications:
+  - citation: "Kong P.W., Koh A.H., Ho M.Y.M., Iskandar M.N.S., Lim C.X.E. (2024). Effectiveness of a passive military exoskeleton in off-loading weight during static and dynamic load carriage: A randomised cross-over study. Appl. Ergon. 119:104293"
+    doi: "10.1016/j.apergo.2024.104293"
+    note: "The exoskeleton off-loaded 2.3-13.5 kg statically but showed no meaningful GRF differences during walking."
+
+load: "Static quiet standing under 0-55 kg loads; treadmill walking on flat, inclined and declined surfaces carrying 25/35 kg"
+equipment: "In-shoe normal ground-reaction-force sensors (loadsol, novel GmbH)"
+tags: [exoskeleton, load-carriage, military, in-shoe-grf, walking]
+description: >
+  Randomized crossover study of a passive military load-carriage
+  exoskeleton in 8 Singapore Armed Forces personnel: in-shoe ground
+  reaction forces during static standing under 0-55 kg loads and treadmill
+  walking (flat/incline/decline, 25/35 kg), with and without the device
+  (Applied Ergonomics, 2024). The NIE Data Repository deposit
+  (CC BY-NC 4.0) contains processed summary tables, not raw GRF time
+  series.
+added: 2026-09-01

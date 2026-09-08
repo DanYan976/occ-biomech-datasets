@@ -94,6 +94,50 @@
     <lastmod>2026-08-25</lastmod>
   </url>
   <url>
+    <loc>https://occbiomechanics.org/datasets/arciniegas-pof-upper-limb-exo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/arens-exosuit-preference-optimization.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/bak-warehouse-exo-adoption.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/cha-yu-or-exoskeleton-focus-groups.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/defani-meat-processing-upper-limb-exo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/kim-bbex-exosuit-lifting.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/kong-military-load-carriage-exo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/marican-liftsuit-military-lifting.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/niosh-shoulder-exo-mast-climber.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/siedl-laevo-acceptance-field.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/zhu-knee-exo-vr-construction.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
     <loc>https://occbiomechanics.org/datasets/mayer-apogee-lifting-speeds.html</loc>
     <lastmod>2026-08-07</lastmod>
   </url>
@@ -110,6 +154,62 @@
     <lastmod>2026-08-20</lastmod>
   </url>
   <url>
+    <loc>https://occbiomechanics.org/datasets/ahn-angelx-lifting.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/andydata-paexo-drilling-simulation.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/brusamento-adaptive-paexo-fmg.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/chung-exosuit-adaptive-assistance.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/ding-nus-shoulder-overhead.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/gillette-airframe-automotive-emg.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/graef-exo4work-women-drilling.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/ishii-headrest-shoulder-assist.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/moulart-japet-lumbar-traction.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/moya-esteban-nmbc-exosuit.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/sanger-lucy-overhead-screwing.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/walter-crayx-support-levels.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/zakir-hpulse-overhead-fatigue.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/zindashti-nekspine-neck-flexion.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
     <loc>https://occbiomechanics.org/datasets/njit-egocentric-mmh.html</loc>
     <lastmod>2026-01-01</lastmod>
   </url>
@@ -124,5 +224,13 @@
   <url>
     <loc>https://occbiomechanics.org/datasets/njit-niosh-shoulder-exo-stability.html</loc>
     <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/jakobsen-relax-warehouse-exo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://occbiomechanics.org/datasets/wu-insole-lifting-load-estimation.html</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
 </urlset>

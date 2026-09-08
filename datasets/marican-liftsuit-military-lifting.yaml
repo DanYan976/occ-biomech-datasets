@@ -1,0 +1,51 @@
+id: marican-liftsuit-military-lifting
+title: "Auxivo LiftSuit 2.0 During Simulated Military Lifting Tasks"
+status: open
+sample: false
+
+source:
+  authors: "Marican M.A., Chandra L.D., Tang Y., Iskandar M.N.S., Lim C.X.E., Kong P.W."
+  institution: "National Institute of Education, Nanyang Technological University"
+  country: [SG]
+  year: 2025
+
+access:
+  url: "https://researchdata.nie.edu.sg/dataset.xhtml?persistentId=doi:10.25340/R4/MHOS3X"
+  doi: "10.25340/R4/MHOS3X"
+  license: "CC-BY-NC-4.0"
+
+tasks: [lifting, carrying]
+setting: lab
+modalities: [emg, video]
+
+subjects:
+  n: 10
+  sex: "10M"
+  age_range: "21-45"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Auxivo LiftSuit 2.0"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exosuit, crossover, military lifting and confined-space carrying"
+  outcomes: [muscle_activity]
+
+publications:
+  - citation: "Marican M.A., Chandra L.D., Tang Y., Iskandar M.N.S., Lim C.X.E., Kong P.W. (2025). Biomechanical Effects of a Passive Back-Support Exosuit During Simulated Military Lifting Tasks - An EMG Study. Sensors 25(10):3211"
+    doi: "10.3390/s25103211"
+
+load: "15/25 kg vertical lifts to 0.5 m and 1.2 m; lateral carry of 39 kg in a simulated confined vehicle space"
+equipment: "Noraxon wireless surface EMG (1500 Hz) on longissimus, iliocostalis and multifidus; 1080p/30fps video"
+sampling:
+  emg: 1500
+  video: 30
+tags: [exoskeleton, back, exosuit, military, lifting, semg]
+description: >
+  Crossover EMG study of the Auxivo LiftSuit 2.0 passive back-support
+  exosuit in 10 male military personnel performing 15/25 kg lifts and a
+  39 kg confined-space carry (Sensors, 2025). The NIE Data Repository
+  deposit (CC BY-NC 4.0) holds aggregated back-extensor muscle-activity
+  outcomes with and without the exosuit - processed summary data, not raw
+  EMG signals.
+added: 2026-09-01

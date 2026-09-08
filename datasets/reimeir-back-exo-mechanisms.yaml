@@ -15,6 +15,7 @@ access:
   license: "Data on request from the corresponding author"
 
 tasks: [lifting, carrying, lowering]
+setting: lab
 modalities: [emg, mocap]
 
 subjects:
@@ -22,7 +23,7 @@ subjects:
 
 exoskeleton:
   role: evaluation
-  devices: ["Rakunie", "BionicBack", "SoftExo Lift", "Japet.W", "Cray X (German Bionic)"]
+  devices: ["Rakunie", "BionicBack", "SoftExo Lift", "Japet.W (Japet)", "Cray X (German Bionic)"]
   body_region: [back]
   actuation: [passive, active]
   comparison: "Five devices vs. no device, head-to-head, within-subject"

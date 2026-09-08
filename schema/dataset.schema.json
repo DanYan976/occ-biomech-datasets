@@ -57,6 +57,11 @@
       },
       "description": "Controlled vocabulary. 'mmh' = manual materials handling (umbrella term)."
     },
+    "setting": {
+      "type": "string",
+      "enum": ["lab", "field", "mixed"],
+      "description": "Study setting: lab = controlled or simulated environment; field = a real workplace; mixed = both in one study. Field records get a badge in the catalog. Optional — omit when the record does not say."
+    },
     "modalities": {
       "type": "array",
       "minItems": 1,

@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=20260824" />
+<link rel="stylesheet" href="style.css?v=20260901b" />
 <script src="nav.js?v=20260821" defer></script>
 <script>
 /* Old permalinks pointed at anchors on this page; cards now live on
@@ -197,7 +197,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
-  "count": 26,
+  "count": 53,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -467,6 +467,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "carrying",
         "mmh"
       ],
+      "setting": "lab",
       "modalities": [
         "imu"
       ],
@@ -594,6 +595,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "reaching",
         "holding"
       ],
+      "setting": "lab",
       "modalities": [
         "mocap",
         "force_plate",
@@ -667,6 +669,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "squatting",
         "walking"
       ],
+      "setting": "lab",
       "modalities": [
         "emg",
         "pressure",
@@ -678,7 +681,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "exoskeleton": {
         "role": "evaluation",
         "devices": [
-          "Bilateral backdrivable knee exoskeleton (Divekar et al., 2024)"
+          "Bilateral backdrivable knee exoskeleton (Divekar 2024)"
         ],
         "body_region": [
           "knee"
@@ -732,6 +735,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "pulling",
         "holding"
       ],
+      "setting": "lab",
       "modalities": [
         "mocap",
         "emg",
@@ -793,6 +797,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "lifting",
         "mmh"
       ],
+      "setting": "lab",
       "modalities": [
         "emg"
       ],
@@ -914,6 +919,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "holding",
         "pulling"
       ],
+      "setting": "lab",
       "modalities": [
         "mocap",
         "emg",
@@ -940,6 +946,13 @@ if (location.hash.indexOf("#dataset-") === 0) {
           "cardiovascular"
         ]
       },
+      "publications": [
+        {
+          "citation": "Zheng L., Sekhar C., Alluri V., Hawke A.L., Hwang J. (2025). Evaluation of a passive back-support exoskeleton in bed-to-chair patient handling tasks. Int. J. Occup. Safety Ergon. 31(2):478-485",
+          "doi": "10.1080/10803548.2025.2452752",
+          "note": "Primary analysis of this dataset: 19% erector spinae EMG reduction in two of the four transfer tasks."
+        }
+      ],
       "load": "Four patient-transfer tasks: lying-to-sitting, sitting-to-standing, standing-to-sitting, and bed-to-wheelchair transfer",
       "equipment": "Laevo V2.5 passive back-support exoskeleton; erector spinae EMG, optical motion capture for trunk/hip angles, heart-rate monitor",
       "tags": [
@@ -1174,6 +1187,753 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "added": "2026-08-25"
     },
     {
+      "id": "arciniegas-pof-upper-limb-exo",
+      "title": "POF-Sensed Upper-Limb Exoskeleton: Kinematics, EMG and Controller Data",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Arciniegas-Mayag L.J., Silva P., Cifuentes C.A., Segatto M.E.V., Diaz C.A.R.",
+        "institution": "Federal University of Espírito Santo (UFES) / University of the West of England",
+        "country": [
+          "BR"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://figshare.com/articles/dataset/Dataset_for_POF-Based_Sensing_in_an_Upper-Limb_Exoskeleton/31864330",
+        "doi": "10.6084/m9.figshare.31864330.v1",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "lowering"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "imu",
+        "emg"
+      ],
+      "subjects": {
+        "n": 3
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "POF-sensed upper-limb exoskeleton (UFES)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Assisted (POF- and IMU-sensed control) vs. unassisted, lifting/carrying/lowering; plus test-bench step/chirp characterization",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Arciniegas-Mayag L.J., Silva P., Segatto M.E.V., Cifuentes C.A., Diaz C.A.R. (2026). Characterization and functional evaluation of a fiber-optic instrumented impedance-controlled upper-limb exoskeleton. Sci. Rep.",
+          "doi": "10.1038/s41598-026-65142-y",
+          "note": "Reports 16-23% reduction in muscle activation with assistance while preserving range of motion."
+        }
+      ],
+      "load": "Industrial-style lifting, carrying and lowering load tasks, assisted vs. unassisted",
+      "equipment": "Polymer-optical-fiber (POF) joint-angle sensing vs. IMU sensing on an impedance-controlled upper-limb exoskeleton; surface EMG",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "exoskeleton",
+        "upper-limb",
+        "fiber-optic-sensing",
+        "impedance-control",
+        "semg"
+      ],
+      "description": "Evaluation data for polymer-optical-fiber vs. IMU sensing in an impedance-controlled upper-limb industrial exoskeleton: arm kinematics, surface EMG and control-loop signals from 3 subjects performing lifting, carrying and lowering tasks assisted and unassisted, plus test-bench step/chirp response trials. 38 raw CSV files on figshare (CC BY 4.0) accompanying a Scientific Reports 2026 paper.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "arens-exosuit-preference-optimization",
+      "title": "Harvard Back Exosuit: Preference-Based Assistance Optimization",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Arens P., Quirk D.A., Pan W., Yacoby Y., Doshi-Velez F., Walsh C.J.",
+        "institution": "Harvard University / Wellesley College",
+        "country": [
+          "US"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://datadryad.org/dataset/doi:10.5061/dryad.2z34tmpx5",
+        "doi": "10.5061/dryad.2z34tmpx5",
+        "license": "CC0-1.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 15,
+        "sex": "7M / 8F",
+        "age_range": "25.6 ± 3.6"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Harvard soft back exosuit"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Forced-choice comparisons between assistance settings during stoop lifting/lowering, within-subject Bayesian optimization",
+        "outcomes": [
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Arens P., Quirk D.A., Pan W., Yacoby Y., Doshi-Velez F., Walsh C.J. (2025). Preference-based assistance optimization for lifting and lowering with a soft back exosuit. Sci. Adv. 11(15):eadu2099",
+          "doi": "10.1126/sciadv.adu2099"
+        }
+      ],
+      "load": "Stoop lifting and lowering under varied lifting/lowering assistance gains",
+      "equipment": "Cable-driven soft back exosuit with suit-integrated IMUs; forced-choice preference logging",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "exoskeleton",
+        "back",
+        "exosuit",
+        "human-in-the-loop",
+        "preference-optimization"
+      ],
+      "description": "Forced-choice preference data from human-in-the-loop Bayesian optimization of two control parameters (lifting vs. lowering assistance gain) of an active soft back exosuit, from 15 participants, plus a supplementary just-noticeable-difference experiment on assistance perception (Science Advances, 2025). Behavioral/feedback data only, no raw biomechanical signals; CSV on Dryad under CC0.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "bak-warehouse-exo-adoption",
+      "title": "Stakeholder Perspectives on Exoskeleton Adoption in Warehouse Settings",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Bak V., Pridmore J., Sanchez A., Ho C.",
+        "institution": "Erasmus University Rotterdam",
+        "year": 2026
+      },
+      "access": {
+        "url": "https://zenodo.org/records/21506030",
+        "doi": "10.5281/zenodo.21506030",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "mmh"
+      ],
+      "setting": "field",
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 34
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Auxivo LiftSuit 2.0"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Qualitative case study of real-workplace adoption: 34 stakeholder interviews plus a week-long site visit",
+        "outcomes": [
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Bak V., Pridmore J., Sanchez A., Ho C. (2026). Reframing Success in Embodied Work: Competing Perspectives on Occupational Exoskeleton Adoption. Eur. J. Workplace Innovation 10(2):29-54",
+          "doi": "10.46364/ejwi.v10i2.1575"
+        }
+      ],
+      "load": "Warehouse order picking and manual materials handling (field adoption study, site anonymized)",
+      "equipment": "Semi-structured interviews with operators, managers, ergonomists, researchers and developers; aggregated thematic report, interview guides and consent materials deposited; raw transcripts withheld",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "warehouse",
+        "field-study",
+        "qualitative",
+        "adoption"
+      ],
+      "description": "Qualitative case study of Auxivo LiftSuit 2.0 adoption in a large anonymized European warehouse: 34 semi-structured stakeholder interviews (operators, managers, ergonomists, researchers, developers) plus a week-long site visit, funded by the EU Horizon SEISMEC project. The Zenodo deposit (CC BY 4.0) holds the aggregated thematic report and research materials; participant-level transcripts are withheld for privacy.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "cha-yu-or-exoskeleton-focus-groups",
+      "title": "Exoskeletons in the Operating Room: Surgical-Team Focus-Group Transcripts",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Cha J.S., Yu D.",
+        "institution": "Purdue University",
+        "country": [
+          "US"
+        ],
+        "year": 2019
+      },
+      "access": {
+        "url": "https://purr.purdue.edu/publications/3318/1",
+        "doi": "10.4231/TF0A-S814",
+        "license": "CC0-1.0"
+      },
+      "tasks": [
+        "holding",
+        "reaching"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 14
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Commercial upper-body arm-support exoskeleton (model not stated)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "comparison": "Focus groups after a 10-min simulated surgical (FLS) task wearing the exoskeleton",
+        "outcomes": [
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Cha J.S., Monfared S., Stefanidis D., Nussbaum M.A., Yu D. (2020). Supporting Surgical Teams: Identifying Needs and Barriers for Exoskeleton Implementation in the Operating Room. Hum. Factors 62(3):377-390",
+          "doi": "10.1177/0018720819879271",
+          "note": "Identified four adoption themes; mean System Usability Scale score 81.3."
+        }
+      ],
+      "load": "Simulated laparoscopic (FLS) surgical task with sustained arm elevation, followed by focus groups",
+      "equipment": "Anonymized focus-group transcripts (PDF); usability questionnaire administered but not deposited",
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "healthcare",
+        "surgery",
+        "qualitative",
+        "adoption"
+      ],
+      "description": "Anonymized focus-group transcripts from 14 operating-room team members (7 surgical residents, 4 nurses, 3 attending surgeons) on the needs and barriers for exoskeleton use in surgery, collected after a simulated surgical task wearing a commercial upper-body exoskeleton. Qualitative data only, public domain (CC0) on the Purdue University Research Repository; supports the Human Factors 2020 adoption study.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "defani-meat-processing-upper-limb-exo",
+      "title": "Upper-Limb Exoskeleton on a Meat-Processing Production Line",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Defani J.",
+        "institution": "Universidade Tecnológica Federal do Paraná (UTFPR)",
+        "country": [
+          "BR"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://zenodo.org/records/17762189",
+        "doi": "10.5281/zenodo.17762189",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "reaching",
+        "holding"
+      ],
+      "setting": "field",
+      "modalities": [
+        "emg",
+        "survey"
+      ],
+      "subjects": {
+        "n": 17
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Passive upper-limb exoskeleton (model not stated)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton during repetitive arm-elevation production tasks",
+        "outcomes": [
+          "muscle_activity",
+          "subjective"
+        ]
+      },
+      "load": "Repetitive arm-elevation tasks on a meat-processing production line (field study)",
+      "equipment": "Surface EMG; subjective workload / physical-effort ratings (processed data)",
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "field-study",
+        "meat-processing",
+        "semg"
+      ],
+      "description": "Field study of a passive upper-limb exoskeleton worn by 17 workers on a Brazilian meat-processing production line: processed surface-EMG and subjective workload data with vs. without the device, reporting a significant activity reduction in the right medial deltoid and medium-to-large effect sizes across several muscles. One of very few open-data field studies of occupational exoskeletons; distributed as a single Excel workbook on Zenodo (CC BY 4.0).\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "kim-bbex-exosuit-lifting",
+      "title": "BBEX Bilateral Back Exosuit: Symmetric and Asymmetric Lifting",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Kim J.I., Choi J., Kim J., Song J., Park J., Park Y.-L.",
+        "institution": "Seoul National University",
+        "country": [
+          "KR"
+        ],
+        "year": 2024
+      },
+      "access": {
+        "url": "https://datadryad.org/dataset/doi:10.5061/dryad.fbg79cp45",
+        "doi": "10.5061/dryad.fbg79cp45",
+        "license": "CC0-1.0"
+      },
+      "tasks": [
+        "lifting"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "mocap",
+        "emg",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 11,
+        "sex": "11M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "BBEX (Seoul National University)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "With vs. without the exosuit, symmetric and asymmetric lifting, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "cardiovascular"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Kim J.I., Choi J., Kim J., Song J., Park J., Park Y.-L. (2024). Bilateral back extensor exosuit for multidimensional assistance and prevention of spinal injuries. Sci. Robot. 9(92):eadk6717",
+          "doi": "10.1126/scirobotics.adk6717"
+        }
+      ],
+      "load": "5.5 kg weight, 30 lifts per trial, symmetric and asymmetric lifting",
+      "equipment": "Optical motion capture (reflective markers), surface EMG, heart-rate monitor; OpenSim musculoskeletal modeling of spinal loading",
+      "formats": [
+        "trc",
+        "mot"
+      ],
+      "tags": [
+        "exoskeleton",
+        "back",
+        "exosuit",
+        "lifting",
+        "opensim",
+        "spine-loading"
+      ],
+      "description": "Motion capture, surface EMG and OpenSim simulation data from 11 male participants lifting a 5.5 kg weight symmetrically and asymmetrically with and without the BBEX active bilateral back extensor exosuit (Science Robotics, 2024). The 2.5 GB Dryad deposit (CC0) includes marker trajectories, musculoskeletal models, external-load files, lumbar joint loading results and the R statistics code.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "kong-military-load-carriage-exo",
+      "title": "Passive Military Load-Carriage Exoskeleton: In-Shoe GRF During Standing and Walking",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Kong P.W., Koh A.H., Ho M.Y.M., Iskandar M.N.S., Lim C.X.E.",
+        "institution": "National Institute of Education, Nanyang Technological University",
+        "country": [
+          "SG"
+        ],
+        "year": 2024
+      },
+      "access": {
+        "url": "https://researchdata.nie.edu.sg/dataset.xhtml?persistentId=doi:10.25340/R4/N2S4AR",
+        "doi": "10.25340/R4/N2S4AR",
+        "license": "CC-BY-NC-4.0"
+      },
+      "tasks": [
+        "carrying",
+        "walking",
+        "holding"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "pressure"
+      ],
+      "subjects": {
+        "n": 8
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Passive military load-carriage exoskeleton (model not stated)"
+        ],
+        "body_region": [
+          "back",
+          "full_body"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, randomized crossover, static standing (0-55 kg) and treadmill walking (25/35 kg)",
+        "outcomes": [
+          "kinetics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Kong P.W., Koh A.H., Ho M.Y.M., Iskandar M.N.S., Lim C.X.E. (2024). Effectiveness of a passive military exoskeleton in off-loading weight during static and dynamic load carriage: A randomised cross-over study. Appl. Ergon. 119:104293",
+          "doi": "10.1016/j.apergo.2024.104293",
+          "note": "The exoskeleton off-loaded 2.3-13.5 kg statically but showed no meaningful GRF differences during walking."
+        }
+      ],
+      "load": "Static quiet standing under 0-55 kg loads; treadmill walking on flat, inclined and declined surfaces carrying 25/35 kg",
+      "equipment": "In-shoe normal ground-reaction-force sensors (loadsol, novel GmbH)",
+      "tags": [
+        "exoskeleton",
+        "load-carriage",
+        "military",
+        "in-shoe-grf",
+        "walking"
+      ],
+      "description": "Randomized crossover study of a passive military load-carriage exoskeleton in 8 Singapore Armed Forces personnel: in-shoe ground reaction forces during static standing under 0-55 kg loads and treadmill walking (flat/incline/decline, 25/35 kg), with and without the device (Applied Ergonomics, 2024). The NIE Data Repository deposit (CC BY-NC 4.0) contains processed summary tables, not raw GRF time series.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "marican-liftsuit-military-lifting",
+      "title": "Auxivo LiftSuit 2.0 During Simulated Military Lifting Tasks",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Marican M.A., Chandra L.D., Tang Y., Iskandar M.N.S., Lim C.X.E., Kong P.W.",
+        "institution": "National Institute of Education, Nanyang Technological University",
+        "country": [
+          "SG"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://researchdata.nie.edu.sg/dataset.xhtml?persistentId=doi:10.25340/R4/MHOS3X",
+        "doi": "10.25340/R4/MHOS3X",
+        "license": "CC-BY-NC-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "carrying"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "video"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "10M",
+        "age_range": "21-45"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Auxivo LiftSuit 2.0"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exosuit, crossover, military lifting and confined-space carrying",
+        "outcomes": [
+          "muscle_activity"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Marican M.A., Chandra L.D., Tang Y., Iskandar M.N.S., Lim C.X.E., Kong P.W. (2025). Biomechanical Effects of a Passive Back-Support Exosuit During Simulated Military Lifting Tasks - An EMG Study. Sensors 25(10):3211",
+          "doi": "10.3390/s25103211"
+        }
+      ],
+      "load": "15/25 kg vertical lifts to 0.5 m and 1.2 m; lateral carry of 39 kg in a simulated confined vehicle space",
+      "equipment": "Noraxon wireless surface EMG (1500 Hz) on longissimus, iliocostalis and multifidus; 1080p/30fps video",
+      "sampling": {
+        "emg": 1500,
+        "video": 30
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "exosuit",
+        "military",
+        "lifting",
+        "semg"
+      ],
+      "description": "Crossover EMG study of the Auxivo LiftSuit 2.0 passive back-support exosuit in 10 male military personnel performing 15/25 kg lifts and a 39 kg confined-space carry (Sensors, 2025). The NIE Data Repository deposit (CC BY-NC 4.0) holds aggregated back-extensor muscle-activity outcomes with and without the exosuit - processed summary data, not raw EMG signals.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "niosh-shoulder-exo-mast-climber",
+      "title": "NIOSH: Shoulder-Assist Exoskeletons During Block-Laying on a Simulated Mast Climber",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Zheng L., Pan C.S., Wei L., Bahreinizad H., Chowdhury S., Ning X., Santos F.",
+        "institution": "NIOSH / Texas Tech University",
+        "country": [
+          "US"
+        ],
+        "year": 2024
+      },
+      "access": {
+        "url": "https://www.datalumos.org/datalumos/project/239318/version/V1/view",
+        "doi": "10.3886/E239318V1",
+        "license": "Public domain (U.S. Government work)"
+      },
+      "tasks": [
+        "lifting",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "force_plate"
+      ],
+      "subjects": {
+        "n": 7,
+        "sex": "7M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Three anonymized passive shoulder-assist exoskeletons"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "No device vs. three anonymized devices, block-laying at two heights on an unstable elevated platform",
+        "outcomes": [
+          "muscle_activity",
+          "kinetics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Zheng L., Pan C.S., Wei L., Bahreinizad H., Chowdhury S., Ning X., Santos F. (2024). Shoulder-assist exoskeleton effects on balance and muscle activity during a block-laying task on a simulated mast climber. Int. J. Ind. Ergon. 104:103652",
+          "doi": "10.1016/j.ergon.2024.103652",
+          "note": "Two of the three devices significantly increased postural sway on the elevated platform."
+        }
+      ],
+      "load": "35-lb (15.9 kg) cinder blocks laid at elbow and shoulder heights",
+      "equipment": "Delsys Quattro/Avanti EMG on six shoulder/upper-arm muscles (2000 Hz); K-Force force plates (75 Hz) for center-of-pressure balance measures",
+      "sampling": {
+        "emg": 2000,
+        "force_plate": 75
+      },
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "construction",
+        "balance",
+        "mast-climber",
+        "niosh"
+      ],
+      "description": "Processed shoulder EMG and force-plate balance data from 7 construction workers laying 35-lb blocks at two heights on a simulated mast-climbing work platform, without a device and with three anonymized passive shoulder-assist exoskeletons (IJIE, 2024). Public-domain NIOSH dataset, preserved on ICPSR DataLumos with a parallel CDC STACKS record (cdc/208601).\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "siedl-laevo-acceptance-field",
+      "title": "Laevo V2.5 Acceptance Among Logistics Workers: Field Questionnaire Data",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Siedl S.M., Mara M.",
+        "institution": "Johannes Kepler University Linz",
+        "country": [
+          "AT"
+        ],
+        "year": 2021
+      },
+      "access": {
+        "url": "https://osf.io/vc56n/?view_only=909ca9f08c0f43b09de7c2d08608d254",
+        "license": "OSF view-only share link (no explicit license; can be revoked by authors)"
+      },
+      "tasks": [
+        "mmh",
+        "lifting",
+        "carrying"
+      ],
+      "setting": "field",
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 31,
+        "sex": "28M / 3F",
+        "age_range": "20-56"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Laevo V2.5"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "~30-min field trials during real logistics work; acceptance, self-efficacy and perceived-relief questionnaires",
+        "outcomes": [
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Siedl S.M., Mara M. (2021). Exoskeleton acceptance and its relationship to self-efficacy enhancement, perceived usefulness, and physical relief: A field study among logistics workers. Wearable Technol. 2:e10",
+          "doi": "10.1017/wtc.2021.10"
+        }
+      ],
+      "load": "Real logistics work at a vehicle manufacturer: component stocking, order picking, packaging, internal transport",
+      "equipment": "Questionnaires only (task-specific self-efficacy, perceived usefulness, usability, strain relief, intention to use) - no biomechanical sensors",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "field-study",
+        "logistics",
+        "acceptance",
+        "questionnaire",
+        "laevo"
+      ],
+      "description": "Field acceptance study of the Laevo V2.5 passive trunk exoskeleton: 31 logistics workers at a vehicle manufacturer wore the device for ~30-min trials during their real jobs and completed questionnaires on self-efficacy, perceived usefulness, usability and strain relief (Wearable Technologies, 2021). Questionnaire data (no biomechanical signals) shared via an OSF view-only link - no dataset DOI or license, so long-term availability depends on the authors.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "zhu-knee-exo-vr-construction",
+      "title": "Knee Exoskeleton Assistance in Simulated Construction Environments (Rutgers)",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Zhu C., Huang X., Yi J.",
+        "institution": "Rutgers University",
+        "country": [
+          "US"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://data.mendeley.com/datasets/rygyy8mdhp",
+        "doi": "10.17632/rygyy8mdhp.1",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "walking",
+        "squatting"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "mocap",
+        "force_plate",
+        "emg",
+        "imu",
+        "physiological",
+        "survey"
+      ],
+      "subjects": {
+        "n": 21
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Powered knee exoskeleton (Rutgers)"
+        ],
+        "body_region": [
+          "knee"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "With vs. without knee exoskeleton, randomized crossover, stair/ramp/kneeling tasks",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "metabolic",
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Zhu C., Huang X., Liu X., van der Meulen Rodgers Y., Yi J. (2026). Ergonomic evaluation of knee exoskeleton assistance in construction: A multimodal study. J. Safety Res. 98:319-332",
+          "doi": "10.1016/j.jsr.2026.07.004"
+        }
+      ],
+      "load": "Stair/ramp ascent-descent, kneeling and VR precision tasks on a modular stair-ramp-deck platform",
+      "equipment": "Optical motion capture, force plates, surface EMG, IMUs, VO2 metabolic sensing, immersive VR task scenarios",
+      "formats": [
+        "mat"
+      ],
+      "tags": [
+        "exoskeleton",
+        "knee",
+        "construction",
+        "vr",
+        "multimodal",
+        "metabolic"
+      ],
+      "description": "Multimodal dataset from 21 adults performing construction-like tasks (stair and ramp ascent/descent, kneeling, VR precision work) on a modular stair-ramp-deck platform, with and without powered knee exoskeleton assistance, in a randomized crossover design. Synchronized motion capture, force plate, sEMG, IMU and metabolic recordings in a single 3.75 GB MATLAB file on Mendeley Data (CC BY 4.0).\n",
+      "added": "2026-09-01"
+    },
+    {
       "id": "mayer-apogee-lifting-speeds",
       "title": "Apogee Active Back Exoskeleton: Box Lifting at Different Speeds",
       "status": "restricted",
@@ -1194,6 +1954,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "tasks": [
         "lifting"
       ],
+      "setting": "lab",
       "modalities": [
         "emg",
         "mocap"
@@ -1323,6 +2084,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "carrying",
         "lowering"
       ],
+      "setting": "lab",
       "modalities": [
         "emg",
         "mocap"
@@ -1336,7 +2098,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
           "Rakunie",
           "BionicBack",
           "SoftExo Lift",
-          "Japet.W",
+          "Japet.W (Japet)",
           "Cray X (German Bionic)"
         ],
         "body_region": [
@@ -1388,6 +2150,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "reaching",
         "holding"
       ],
+      "setting": "field",
       "modalities": [
         "survey"
       ],
@@ -1436,6 +2199,1009 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "description": "18-month controlled field study of a passive arm-support exoskeleton (EksoVest) worn during overhead assembly work at nine Ford automotive plants, with matched controls. Repeated questionnaires captured perceived work intensity, discomfort, usability and acceptance; plant medical-visit records tracked health outcomes. Exoskeleton use reduced perceived shoulder demands and may lower medical-visit likelihood. One cohort, two reports — see Publications. Data shared on request.\n",
       "added": "2026-08-20"
+    },
+    {
+      "id": "ahn-angelx-lifting",
+      "title": "Angel X Passive Back Exoskeleton: EMG, Kinematics and Metabolic Cost in Repetitive Lifting",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Ahn J., Jung H., Moon J., Kwon C., Ahn J.",
+        "institution": "Seoul National University / Angel Robotics",
+        "country": [
+          "KR"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://doi.org/10.1038/s41598-025-88471-w",
+        "license": "Data from corresponding author on reasonable request"
+      },
+      "tasks": [
+        "lifting",
+        "holding"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "mocap",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 15,
+        "sex": "15M",
+        "age_range": "24.5 ± 3.5"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Angel X (Angel Robotics)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton: repetitive 15 kg lifting (12/min), 90 s static 15 kg holding, and repetitive 10 kg lifting (16/min)",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "metabolic",
+          "subjective",
+          "discomfort"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Ahn J., Jung H., Moon J., Kwon C., Ahn J. (2025). A comprehensive assessment of a passive back support exoskeleton for load handling assistance. Sci. Rep. 15:3926",
+          "doi": "10.1038/s41598-025-88471-w"
+        }
+      ],
+      "load": "Repetitive lifting of 15 kg (ankle to waist, 12 lifts/min) and 10 kg (16 lifts/min); 90 s static holding of 15 kg",
+      "equipment": "12-channel bilateral EMG on six muscle groups; 49-marker optical mocap (100 Hz); COSMED K5 indirect calorimetry; Borg CR-10 and local discomfort scales",
+      "sampling": {
+        "mocap": 100
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "lifting",
+        "metabolic",
+        "semg",
+        "comprehensive-evaluation"
+      ],
+      "description": "Multifaceted evaluation of the Angel X passive back-support exoskeleton (3 kg, 14-16 Nm adjustable torque): 15 males performed repetitive 10 and 15 kg lifting and static holding while 12-channel EMG, full-body kinematics, indirect-calorimetry metabolic cost and subjective exertion/discomfort were measured (Scientific Reports, 2025). Data from the corresponding author on reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "andydata-paexo-drilling-simulation",
+      "title": "AnDy: AnyBody Simulation of Overhead Drilling with the Paexo Shoulder",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Galibarov P.E., Damsgaard M.",
+        "institution": "AnyBody Technology",
+        "country": [
+          "SI"
+        ],
+        "year": 2021
+      },
+      "access": {
+        "url": "https://zenodo.org/record/5770292",
+        "doi": "10.5281/zenodo.5770292",
+        "license": "Download on request via Zenodo; state intended use"
+      },
+      "tasks": [
+        "reaching",
+        "holding",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "mocap"
+      ],
+      "subjects": {
+        "n": 12,
+        "sex": "12M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Paexo Shoulder (Ottobock)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Simulated with vs. without the exoskeleton, overhead drilling, driven by mocap from the An.Dy experimental study",
+        "outcomes": [
+          "kinetics",
+          "muscle_activity"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Fritzsche L., Galibarov P.E., Gärtner C., et al. (2021). Assessing the efficiency of exoskeletons in physical strain reduction by biomechanical simulation with AnyBody Modeling System. Wearable Technol. 2:e6",
+          "doi": "10.1017/wtc.2021.5"
+        }
+      ],
+      "load": "Overhead drilling/pointing above the head with a 0.66 kg hand-held drill",
+      "equipment": "Full-body AnyBody Modeling System musculoskeletal model (AMMR), driven by optical mocap from the An.Dy experiment; per-subject/per-trial CSVs of joint reaction forces and muscle activations",
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "simulation",
+        "anybody",
+        "musculoskeletal-model",
+        "andy-project"
+      ],
+      "description": "AnyBody musculoskeletal simulation outputs replicating the An.Dy overhead drilling experiment: simulated joint reaction forces and muscle activations for 12 subjects working with and without the Ottobock Paexo Shoulder, driven by the motion capture behind the AnDy one-person datasets already in this catalog. Zenodo deposit from the EU H2020 An.Dy project; download on request with a statement of intended use.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "brusamento-adaptive-paexo-fmg",
+      "title": "DLR/Ottobock: Force Myography for Intent Detection with an Adaptive Shoulder Exoskeleton",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Brusamento D., Sierotowicz M., Schirrmeister B., Connan M., Bornmann J., Gonzalez-Vargas J., Castellini C.",
+        "institution": "DLR / Ottobock",
+        "country": [
+          "DE"
+        ],
+        "year": 2021
+      },
+      "access": {
+        "url": "https://zenodo.org/records/5764234",
+        "doi": "10.5281/zenodo.5764234",
+        "license": "Requires approval by DLR e.V. (Zenodo request form)"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "holding"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "pressure",
+        "emg",
+        "video"
+      ],
+      "subjects": {
+        "n": 12,
+        "sex": "9M / 3F"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Adaptive Paexo Shoulder (Ottobock)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Lifting sequences with varied weights (0/1/2 kg) to train regression-based intent detection for automatic support adaptation",
+        "outcomes": [
+          "muscle_activity"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Sierotowicz M., Brusamento D., Schirrmeister B., Connan M., Bornmann J., Gonzalez-Vargas J., Castellini C. (2022). Unobtrusive, natural support control of an adaptive industrial exoskeleton using force myography. Front. Robot. AI 9:919370",
+          "doi": "10.3389/frobt.2022.919370"
+        }
+      ],
+      "load": "Pickup-hold-carry-release sequences with 0/1/2 kg held horizontally or at ~45° elevation, isometric and dynamic",
+      "equipment": "Two force-myography bracelets (20 FSR sensors each) on forearm and upper arm; Delsys Trigno EMG on deltoids for validation; privacy-protected video",
+      "formats": [
+        "csv",
+        "mp4"
+      ],
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "force-myography",
+        "intent-detection",
+        "adaptive-control",
+        "andy-project"
+      ],
+      "description": "Force-myography recordings from 12 subjects wearing the adaptive (active) variant of the Ottobock Paexo Shoulder while performing lifting sequences with varied weights, collected at DLR to develop regression-based intent detection for automatic support-level adaptation. CSV sensor data plus privacy-protected video on Zenodo (EU H2020 An.Dy project); access requires DLR approval.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "chung-exosuit-adaptive-assistance",
+      "title": "Harvard Back Exosuit: Scaling Assistance to Changing Box Weights",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Chung J., Quirk D.A., Cherin J.M., Friedrich D., Kim D., Walsh C.J.",
+        "institution": "Harvard University / Korea University",
+        "country": [
+          "US"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://doi.org/10.1038/s41598-025-94726-3",
+        "license": "Data and code from corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "walking"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "imu",
+        "mocap",
+        "force_plate",
+        "video"
+      ],
+      "subjects": {
+        "n": 21,
+        "sex": "14M / 7F"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Harvard soft back exosuit"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Adaptive controllers (A-ADPT, DA-ADPT, camera/ML-based WDA-ADPT) vs. non-assistive SLACK condition, variable-weight box transfer",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics",
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Chung J., Quirk D.A., Cherin J.M., Friedrich D., Kim D., Walsh C.J. (2025). The perceptual and biomechanical effects of scaling back exosuit assistance to changing task demands. Sci. Rep. 15:10929",
+          "doi": "10.1038/s41598-025-94726-3"
+        }
+      ],
+      "load": "Color-coded 2/8/14 kg box transfers with walking, bending and obstacle maneuvering; 9,600 lifts total",
+      "equipment": "EMG (2148 Hz), IMUs (100-200 Hz), chest-mounted 180° fisheye camera (100 Hz) for ML weight estimation, 22-camera mocap (200 Hz), force plates (200 Hz), exosuit load cells",
+      "sampling": {
+        "emg": 2148,
+        "mocap": 200,
+        "force_plate": 200
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "exosuit",
+        "adaptive-control",
+        "machine-learning",
+        "lifting"
+      ],
+      "description": "Evaluation of adaptive back-exosuit assistance that scales to box weight, including a camera/ML-based weight-detection controller: 15 + 6 participants transferred 2/8/14 kg boxes (9,600 lifts) while EMG, IMU, mocap, force-plate and perceptual data were recorded (Scientific Reports, 2025). Datasets and code available from the corresponding author upon reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "ding-nus-shoulder-overhead",
+      "title": "NUS Passive Shoulder Exoskeleton: Overhead Drilling and Sustained Flexion EMG",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Ding S., Reyes Francisco A., Li T., Yu H.",
+        "institution": "National University of Singapore",
+        "country": [
+          "SG"
+        ],
+        "year": 2023
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2023.1",
+        "license": "EMG data by email to corresponding author upon request"
+      },
+      "tasks": [
+        "reaching",
+        "holding",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "mocap"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "10M",
+        "age_range": "27 ± 4"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Passive shoulder exoskeleton prototype (NUS)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton, repetitive overhead drilling and sustained 90° shoulder flexion, 45 s trials",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Ding S., Reyes Francisco A., Li T., Yu H. (2023). A novel passive shoulder exoskeleton for assisting overhead work. Wearable Technol. 4:e7",
+          "doi": "10.1017/wtc.2023.1",
+          "note": "Up to 25% reduction in shoulder-muscle EMG without loading the lumbar spine."
+        }
+      ],
+      "load": "Repetitive overhead screw insertion with a 2.3 kg drill; sustained sinusoidal-line drawing at constant 90° shoulder flexion",
+      "equipment": "Delsys Trigno Avanti sEMG on 7 muscles; 8-camera Vicon Vero mocap (100 Hz, Plug-in-Gait) for kinematic transparency",
+      "sampling": {
+        "mocap": 100
+      },
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "overhead-work",
+        "spring-cam",
+        "semg"
+      ],
+      "description": "Validation data for an NUS passive shoulder exoskeleton that relocates its 3.2 kg mass to the wearer's back via Bowden cables (0.2 kg per arm) and matches the shoulder's nonlinear torque demand with a spring-cam mechanism: 10 males performed overhead drilling and sustained-flexion tasks with and without the device (Wearable Technologies, 2023). EMG data available by email to the corresponding author.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "gillette-airframe-automotive-emg",
+      "title": "Levitate Airframe on the Assembly Line: EMG Fatigue Assessment at Toyota Canada",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Gillette J.C., Saadat S., Butler T.",
+        "institution": "Iowa State University / Lean Steps Consulting",
+        "country": [
+          "CA"
+        ],
+        "year": 2022
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2022.20",
+        "license": "Data from corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "assembly",
+        "reaching",
+        "holding"
+      ],
+      "setting": "field",
+      "modalities": [
+        "emg",
+        "survey"
+      ],
+      "subjects": {
+        "n": 16,
+        "sex": "16M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Airframe (Levitate)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton across 16 real assembly processes with elevated arm postures",
+        "outcomes": [
+          "muscle_activity",
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Gillette J.C., Saadat S., Butler T. (2022). Electromyography-based fatigue assessment of an upper body exoskeleton during automotive assembly. Wearable Technol. 3:e23",
+          "doi": "10.1017/wtc.2022.20",
+          "note": "Significantly reduced anterior deltoid amplitude and fatigue risk; other muscles unchanged."
+        }
+      ],
+      "load": "16 automotive assembly processes with elevated arm postures; cycle times 66.5-115 s, elevated-arm time 24-73% of cycle",
+      "equipment": "Delsys Trigno wireless EMG (1926 Hz) on bilateral anterior deltoid, biceps brachii, upper trapezius and lumbar erector spinae; worker perception questionnaire",
+      "sampling": {
+        "emg": 1926
+      },
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "field-study",
+        "automotive",
+        "assembly",
+        "fatigue"
+      ],
+      "description": "Field study at Toyota Motor Manufacturing Canada: 16 male team members wore the Levitate Airframe passive shoulder exoskeleton during 16 real assembly processes with elevated arm postures while bilateral EMG on four muscle groups was recorded (Wearable Technologies, 2022). One of the few exoskeleton evaluations run on a live automotive line; data available from the corresponding author upon reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "graef-exo4work-women-drilling",
+      "title": "Exo4Work Shoulder Exoskeleton: Overhead Precision Drilling in Women",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Gräf J.K., Wollesen B., Díaz M.A., De Bock S., Hansen L., Ducastel V., Preckher A., Roelands B., De Pauw K.",
+        "institution": "Vrije Universiteit Brussel / University of Hamburg / German Sport University Cologne",
+        "country": [
+          "BE"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://doi.org/10.1038/s41598-026-53198-9",
+        "license": "Data from corresponding author on reasonable request"
+      },
+      "tasks": [
+        "reaching",
+        "holding",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "survey"
+      ],
+      "subjects": {
+        "n": 14,
+        "sex": "14F",
+        "age_range": "27 ± 10"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Exo4Work (VUB/BruBotics)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Randomized 2x2 crossover, with vs. without the exoskeleton, women-only cohort",
+        "outcomes": [
+          "muscle_activity",
+          "task_performance",
+          "subjective",
+          "discomfort"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Gräf J.K. et al. (2026). Influence of a passive shoulder exoskeleton on drilling performance in women - a cross-sectional study. Sci. Rep. 16:17853",
+          "doi": "10.1038/s41598-026-53198-9",
+          "note": "Trapezius activation and shoulder strain decreased, but accuracy dropped and usability was rated unacceptable - fit issues for female users."
+        }
+      ],
+      "load": "Overhead precision bolt-tightening: 20 bolts into a sensor-instrumented workstation with a 1.14 kg electric screwdriver",
+      "equipment": "sEMG on 7 shoulder/arm muscles; workstation force sensors and accelerometers; Borg RPE, Body Part Discomfort Scale, System Usability Scale",
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "overhead-work",
+        "women",
+        "usability",
+        "drilling"
+      ],
+      "description": "One of the few occupational-exoskeleton evaluations with a women-only cohort: 14 women performed overhead precision bolt-tightening with and without the Exo4Work passive shoulder exoskeleton in a randomized crossover (Scientific Reports, 2026). Trapezius activity and subjective shoulder strain decreased but accuracy and usability suffered, documenting fit and complexity issues for female users. Data from the corresponding author on reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "ishii-headrest-shoulder-assist",
+      "title": "Shoulder Assist Device with Movable Headrest: Overhead Holds and Simulated Harvesting",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Ishii C., Hirasawa K.",
+        "institution": "Hosei University",
+        "country": [
+          "JP"
+        ],
+        "year": 2022
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2022.22",
+        "license": "Data from corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "holding",
+        "reaching"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg"
+      ],
+      "subjects": {
+        "n": 5,
+        "sex": "5M",
+        "age_range": "22.8 ± 1.2"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Custom shoulder assist device with headrest (Hosei)"
+        ],
+        "body_region": [
+          "shoulder",
+          "neck"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Headrest types vs. no headrest vs. no device, static overhead holds and a 10-min simulated fruit-harvesting protocol",
+        "outcomes": [
+          "muscle_activity"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Ishii C., Hirasawa K. (2022). The effect of a movable headrest in shoulder assist device for overhead work. Wearable Technol. 3:e25",
+          "doi": "10.1017/wtc.2022.22",
+          "note": "The combined reclining-and-slide headrest was most effective at reducing sternocleidomastoid load."
+        }
+      ],
+      "load": "Static overhead holds (135° flexion / 90° abduction) with 1.25-5 kg dumbbells; 10-min simulated fruit harvesting with 1.25 kg dumbbells",
+      "equipment": "Surface EMG at 1 kHz on anterior deltoid and sternocleidomastoid (%MVC); NEUTONE TDM-NA1 muscle-hardness tester",
+      "sampling": {
+        "emg": 1000
+      },
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "neck",
+        "overhead-work",
+        "agriculture",
+        "headrest"
+      ],
+      "description": "Evaluation of a movable headrest add-on for a passive shoulder assist device, targeting the neck strain that shoulder-only exoskeletons ignore during face-up overhead work: 5 males performed static overhead holds and a 10-minute simulated fruit-harvesting protocol while deltoid and sternocleidomastoid EMG and muscle stiffness were measured across headrest variants (Wearable Technologies, 2022). Data from the corresponding author on reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "moulart-japet-lumbar-traction",
+      "title": "Japet.W Active Lumbar Traction Exoskeleton: Kinematics and EMG in Manual Handling",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Moulart M., Acien M., Leonard A., Loir M., Olivier N., Marin F.",
+        "institution": "Université de Technologie de Compiègne / Japet Medical Devices",
+        "country": [
+          "FR"
+        ],
+        "year": 2024
+      },
+      "access": {
+        "url": "https://doi.org/10.3390/biomechanics4020025",
+        "license": "On request from corresponding author (privacy-restricted)"
+      },
+      "tasks": [
+        "lifting",
+        "carrying",
+        "squatting"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "mocap",
+        "emg"
+      ],
+      "subjects": {
+        "n": 23,
+        "sex": "14F / 9M",
+        "age_range": "20.2 ± 1.2"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Japet.W (Japet)",
+          "Japet.W passive belt (Japet)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active",
+          "passive"
+        ],
+        "comparison": "Control vs. passive belt vs. active exoskeleton, three 5 kg handling tasks, within-subject",
+        "outcomes": [
+          "kinematics",
+          "muscle_activity"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Moulart M., Acien M., Leonard A., Loir M., Olivier N., Marin F. (2024). Investigating Kinematics and Electromyography Changes in Manual Handling Tasks with an Active Lumbar Exoskeleton. Biomechanics 4(2):357-368",
+          "doi": "10.3390/biomechanics4020025",
+          "note": "Reduced time in RULA-dangerous trunk postures; abdominal-lumbar EMG not significantly changed. First author is a Japet employee (declared COI)."
+        }
+      ],
+      "load": "Free lifting, squat lifting and table-to-table transfer of a 5 kg load",
+      "equipment": "36-camera Vicon T160 mocap (200 Hz) with device marker clusters; Cometa PICO EMG (1000 Hz) on longissimus dorsi, rectus abdominis, obliquus externus",
+      "sampling": {
+        "mocap": 200,
+        "emg": 1000
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "lumbar-traction",
+        "manual-handling",
+        "rula",
+        "semg"
+      ],
+      "description": "Motion-capture and EMG evaluation of the Japet.W active lumbar traction exoskeleton (adjustable 4-16 kg vertical traction) and its passive textile belt: 23 participants performed free lifting, squat lifting and load transfer of 5 kg under control, belt and exoskeleton conditions (Biomechanics, 2024). Data on request from the corresponding author (privacy-restricted).\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "moya-esteban-nmbc-exosuit",
+      "title": "Twente Soft Back Exosuit with Neuromechanical-Model Control: Lifting Unknown Loads",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Moya-Esteban A., Mohamed Refai M.I., Sridar S., van der Kooij H., Sartori M.",
+        "institution": "University of Twente",
+        "country": [
+          "NL"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2025.3",
+        "license": "Data by email to corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "lifting"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "imu",
+        "mocap"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "7M / 3F",
+        "age_range": "30 ± 2"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Twente soft active back exosuit"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "EMG-driven musculoskeletal-model controller vs. no assistance, stoop lifting of unknown 5/15 kg loads",
+        "outcomes": [
+          "muscle_activity",
+          "kinetics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Moya-Esteban A., Mohamed Refai M.I., Sridar S., van der Kooij H., Sartori M. (2025). Soft back exosuit controlled by neuro-mechanical modeling provides adaptive assistance while lifting unknown loads and reduces lumbosacral compression forces. Wearable Technol. 6:e9",
+          "doi": "10.1017/wtc.2025.3"
+        }
+      ],
+      "load": "Metronome-paced stoop lifting of unknown 5 kg and 15 kg box loads",
+      "equipment": "8-channel Ottobock 13E400 EMG, 9 Xsens MVN Link IMUs, 12-camera Qualisys mocap (33 markers), cable load cells; off-board cable-driven actuation",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "exosuit",
+        "neuromusculoskeletal-model",
+        "adaptive-control",
+        "lifting"
+      ],
+      "description": "Evaluation of a University of Twente soft active back exosuit whose assistance is set in real time by an EMG-driven musculoskeletal model (NMBC): 10 participants stoop-lifted unknown 5 and 15 kg loads while EMG, IMU and optical mocap data were recorded, showing adaptive assistance and reduced lumbosacral compression (Wearable Technologies, 2025). Data by email to the corresponding author on reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "sanger-lucy-overhead-screwing",
+      "title": "Lucy Active Shoulder Exoskeleton: Overhead Screwing at Four Support Levels",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Sänger J., Yao Z., Schubert T., Wolf A., Molz C., Miehling J., Wartzack S., Gwosch T., Matthiesen S., Weidner R.",
+        "institution": "KIT / Helmut Schmidt University Hamburg / FAU Erlangen-Nürnberg",
+        "country": [
+          "DE"
+        ],
+        "year": 2022
+      },
+      "access": {
+        "url": "https://doi.org/10.3390/app122110805",
+        "license": "Data from corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "reaching",
+        "holding",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "mocap",
+        "force_plate",
+        "pressure"
+      ],
+      "subjects": {
+        "n": 5,
+        "sex": "5M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Lucy (HSU Hamburg)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Four support levels during two overhead screwing tasks, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "kinematics",
+          "kinetics"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Sänger J. et al. (2022). Evaluation of Active Shoulder Exoskeleton Support to Deduce Application-Oriented Optimization Potentials for Overhead Work. Appl. Sci. 12(21):10805",
+          "doi": "10.3390/app122110805"
+        }
+      ],
+      "load": "Overhead screwing with a cordless screwdriver: fixing a pre-drilled wooden component to an overhead board (arm lifting, screw-in, arm lowering phases)",
+      "equipment": "Myon 320 EMG on 8 muscles (1000 Hz), Vicon Bonita mocap, ground reaction force, XSENSOR X3 Pro pressure mat at the arm interface, push-force sensing, exoskeleton datalogger",
+      "sampling": {
+        "emg": 1000
+      },
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "overhead-work",
+        "active-exoskeleton",
+        "semg"
+      ],
+      "description": "Rich multimodal evaluation of the Lucy active pneumatic shoulder exoskeleton: 5 participants performed two overhead screwing tasks at four support levels while 8-muscle EMG, optical mocap, ground reaction forces, interface pressure and tool current were recorded (Applied Sciences, 2022). Data available from the corresponding author upon reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "walter-crayx-support-levels",
+      "title": "Cray X Active Back Exoskeleton: Erector Spinae EMG Across 11 Support Levels",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Walter T., Stutzig N., Siebert T.",
+        "institution": "University of Stuttgart",
+        "country": [
+          "DE"
+        ],
+        "year": 2023
+      },
+      "access": {
+        "url": "https://doi.org/10.3389/fbioe.2023.1143926",
+        "license": "Raw data from the authors without undue reservation"
+      },
+      "tasks": [
+        "lifting"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "video"
+      ],
+      "subjects": {
+        "n": 14,
+        "sex": "3F / 11M",
+        "age_range": "22.3 ± 1.1"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "Cray X (German Bionic)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "active"
+        ],
+        "comparison": "Support levels 0-100% in 10% steps plus no-exoskeleton condition, stoop lifting, within-subject",
+        "outcomes": [
+          "muscle_activity",
+          "subjective"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Walter T., Stutzig N., Siebert T. (2023). Active exoskeleton reduces erector spinae muscle activity during lifting. Front. Bioeng. Biotechnol. 11:1143926",
+          "doi": "10.3389/fbioe.2023.1143926",
+          "note": "~22% erector spinae EMG reduction at maximum support vs. no exoskeleton."
+        }
+      ],
+      "load": "Stoop lifting of a 15 kg box (40 x 30 x 22 cm) at 11 graded support levels",
+      "equipment": "BTS FREEEMG 1000 bilateral erector spinae EMG (1000 Hz); 30 Hz video for phase demarcation; Borg RPE",
+      "sampling": {
+        "emg": 1000,
+        "video": 30
+      },
+      "tags": [
+        "exoskeleton",
+        "back",
+        "active-exoskeleton",
+        "lifting",
+        "support-levels",
+        "semg"
+      ],
+      "description": "Dose-response evaluation of the Cray X generation-4 active back exoskeleton: 14 participants stoop-lifted a 15 kg box at support levels from 0 to 100% in 10% steps plus a no-device condition while bilateral erector spinae EMG was recorded (Frontiers in Bioengineering and Biotechnology, 2023). Rare graded-assistance dataset; raw data available from the authors without undue reservation.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "zakir-hpulse-overhead-fatigue",
+      "title": "H-PULSE Semi-Active Shoulder Exoskeleton: Fatigue During Continuous Overhead Work",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Zakir S., Grazi L., Giovacchini F., Vitiello N., Trigili E., Crea S.",
+        "institution": "Scuola Superiore Sant'Anna / IUVO",
+        "country": [
+          "IT"
+        ],
+        "year": 2025
+      },
+      "access": {
+        "url": "https://doi.org/10.1017/wtc.2025.10008",
+        "license": "Data by email to corresponding author upon reasonable request"
+      },
+      "tasks": [
+        "reaching",
+        "holding",
+        "assembly"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "physiological"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "10M"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "H-PULSE (Sant'Anna / IUVO)"
+        ],
+        "body_region": [
+          "shoulder"
+        ],
+        "actuation": [
+          "quasi_passive"
+        ],
+        "comparison": "Different support levels vs. no exoskeleton during 6-min continuous overhead screwing, fatigue progression",
+        "outcomes": [
+          "muscle_activity",
+          "cardiovascular"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Zakir S., Grazi L., Giovacchini F., Vitiello N., Trigili E., Crea S. (2025). Evaluation of fatigue progression during overhead tasks and the effects of exoskeleton assistance. Wearable Technol. 6:e23",
+          "doi": "10.1017/wtc.2025.10008"
+        }
+      ],
+      "load": "6-minute continuous overhead screwing/unscrewing at self-selected pace, shoulders and elbows at ~90° flexion",
+      "equipment": "BTS FREEEMG 1000 surface EMG on bilateral anterior/posterior deltoids + ECG lead (1 kHz); EMG median-frequency fatigue analysis, heart rate and HRV",
+      "sampling": {
+        "emg": 1000
+      },
+      "tags": [
+        "exoskeleton",
+        "shoulder",
+        "overhead-work",
+        "fatigue",
+        "semi-active",
+        "hrv"
+      ],
+      "description": "Fatigue-progression study of the H-PULSE semi-active shoulder-support exoskeleton with motor-adjustable spring preload: 10 participants performed 6 minutes of continuous overhead screwing at different support levels and without the device, while bilateral deltoid EMG (median- frequency fatigue analysis), heart rate and HRV were recorded (Wearable Technologies, 2025). Data available by email to the corresponding author.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "zindashti-nekspine-neck-flexion",
+      "title": "NekSpine Neck and Lower-Back Exoskeleton: Sustained Neck-Flexion EMG and Endurance",
+      "status": "restricted",
+      "sample": false,
+      "source": {
+        "authors": "Jasimi Zindashti N., Riahi N., Miller L., Tavakoli M., Rouhani H., Golabchi A.",
+        "institution": "University of Alberta / EWI Works",
+        "country": [
+          "CA"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://doi.org/10.3390/s26041354",
+        "license": "Data available upon request"
+      },
+      "tasks": [
+        "holding"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "emg",
+        "survey"
+      ],
+      "subjects": {
+        "n": 10,
+        "sex": "5M / 5F",
+        "age_range": "26 ± 3"
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "NekSpine"
+        ],
+        "body_region": [
+          "neck",
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "With vs. without the exoskeleton at 15/30/45/60° sustained neck flexion, plus an endurance test at 45°",
+        "outcomes": [
+          "muscle_activity",
+          "subjective",
+          "discomfort"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Jasimi Zindashti N., Riahi N., Miller L., Tavakoli M., Rouhani H., Golabchi A. (2026). Assessment of a Passive Exoskeleton for Neck and Lower Back Support. Sensors 26(4):1354",
+          "doi": "10.3390/s26041354",
+          "note": "Up to 31% median reduction in neck/lower-back muscle activity and ~50% longer endurance, largest at 30-45° flexion."
+        }
+      ],
+      "load": "5-min simulated sorting task at sustained neck flexion of 15-60°; endurance hold at 45° until fatigue",
+      "equipment": "Delsys Trigno Avanti sEMG (2148 Hz), bilateral splenius capitis, trapezius and latissimus dorsi; RPE for neck and lower back",
+      "sampling": {
+        "emg": 2148
+      },
+      "tags": [
+        "exoskeleton",
+        "neck",
+        "back",
+        "sustained-posture",
+        "endurance",
+        "semg"
+      ],
+      "description": "Evaluation of the NekSpine passive neck + lower-back exoskeleton during sustained downward-gaze work: 10 participants (5M/5F) performed a simulated sorting task at 15-60° neck flexion and an endurance hold with and without the device while bilateral neck/back EMG and perceived exertion were recorded (Sensors, 2026). One of the few neck-support records in the catalog; data available upon request.\n",
+      "added": "2026-09-01"
     },
     {
       "id": "njit-egocentric-mmh",
@@ -1591,6 +3357,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "lowering",
         "mmh"
       ],
+      "setting": "lab",
       "modalities": [
         "mocap",
         "force_plate"
@@ -1602,9 +3369,9 @@ if (location.hash.indexOf("#dataset-") === 0) {
       "exoskeleton": {
         "role": "evaluation",
         "devices": [
-          "EXO1 (4.9 kg)",
-          "EXO2 (6.7 kg)",
-          "EXO3 (8.6 kg)"
+          "Airframe (Levitate)",
+          "EksoVest (Ekso Bionics)",
+          "ShoulderX (SuitX)"
         ],
         "body_region": [
           "shoulder"
@@ -1641,13 +3408,135 @@ if (location.hash.indexOf("#dataset-") === 0) {
         "load-carrying",
         "opensim"
       ],
-      "description": "Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement, retrieval and return of a 13.6 kg box — without an exoskeleton and wearing three commercial passive shoulder-assist exoskeletons. Collected in 2024 to characterize how shoulder exoskeletons affect balance across the full task: phase-specific margin of stability and sample entropy of the body+load CoM during walking, and CoP time-to-boundary during box placement. Box tracked as a rigid body; OpenSim-compatible. Release planned.\n",
+      "description": "Whole-body optical motion capture and force-plate recordings of 11 adults performing a simulated MMH sequence — floor lift, carry while walking, shelf placement and return of a 13.6 kg box — without an exoskeleton and wearing the Levitate Airframe (4.9 kg), Ekso Bionics EksoVest (6.7 kg) and SuitX ShoulderX (8.6 kg). Collected in 2024 to characterize how shoulder exoskeletons affect balance: phase-specific margin of stability, sample entropy of the body+load CoM, and CoP time-to-boundary during placement. Box tracked as a rigid body; OpenSim-compatible. Release planned.\n",
       "added": "2026-08-20"
+    },
+    {
+      "id": "jakobsen-relax-warehouse-exo",
+      "title": "RELAX: 18-Month In-Field Back-Exoskeleton Intervention in Warehouse Order Picking",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "Jakobsen L.S., Skals S., Christiansen D.H., Sørensen J., Pontonnier C., Madeleine P.",
+        "institution": "Aalborg University / NFA / Univ Rennes",
+        "country": [
+          "DK"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://www.medrxiv.org/content/10.64898/2026.05.21.26353770v1"
+      },
+      "tasks": [
+        "mmh",
+        "lifting"
+      ],
+      "setting": "field",
+      "modalities": [
+        "survey"
+      ],
+      "subjects": {
+        "n": 90
+      },
+      "exoskeleton": {
+        "role": "evaluation",
+        "devices": [
+          "IX Back Air (SUITX by Ottobock)"
+        ],
+        "body_region": [
+          "back"
+        ],
+        "actuation": [
+          "passive"
+        ],
+        "comparison": "Controlled non-randomized in-field intervention: exoskeleton department vs. usual-work control department, ~45 workers each, 18 months",
+        "outcomes": [
+          "subjective",
+          "discomfort",
+          "task_performance"
+        ]
+      },
+      "publications": [
+        {
+          "citation": "Jakobsen L.S., Skals S., Christiansen D.H., Sørensen J., Pontonnier C., Madeleine P. (2026). Protocol of the RELAX project, an 18-month in-field controlled intervention study. medRxiv",
+          "doi": "10.64898/2026.05.21.26353770",
+          "note": "Protocol only; trial registered as NCT07561112, running through 2029. Results pending."
+        }
+      ],
+      "load": "Manual order picking at a Dagrofa Logistik warehouse (Vejle, Denmark): heavy lifting, awkward postures, repetitive movements at production pace",
+      "equipment": "Questionnaires (perceived work intensity, Cornell Musculoskeletal Discomfort), company registers (sickness absence, turnover, productivity), exoskeleton usage logs, focus-group interviews, cost-effectiveness analysis",
+      "tags": [
+        "exoskeleton",
+        "back",
+        "field-study",
+        "warehouse",
+        "intervention",
+        "protocol"
+      ],
+      "description": "Protocol of the RELAX project: an 18-month controlled (non-randomized) in-field intervention at a Danish warehouse, comparing a department of ~45 order pickers using the SUITX IX Back Air passive back exoskeleton against a usual-work control department. Outcomes cover perceived work intensity, musculoskeletal discomfort, absence, turnover, productivity and cost-effectiveness. Results pending (trial runs through 2029); data will be available from the authors on reasonable request.\n",
+      "added": "2026-09-01"
+    },
+    {
+      "id": "wu-insole-lifting-load-estimation",
+      "title": "Insole Plantar-Pressure Data for Lifting-Load Estimation (FIU)",
+      "status": "coming_soon",
+      "sample": false,
+      "source": {
+        "authors": "Wu K., Xiang P., Lin C., Bai O.",
+        "institution": "Florida International University",
+        "country": [
+          "US"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://github.com/Kaida-Wu/insole-pressure-load-estimation"
+      },
+      "tasks": [
+        "lifting",
+        "holding"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "pressure"
+      ],
+      "subjects": {
+        "n": 5
+      },
+      "exoskeleton": {
+        "role": "control_input",
+        "body_region": [
+          "back",
+          "shoulder"
+        ],
+        "comparison": "Data collected to develop load-estimation input for adaptive lifting-exoskeleton assistance control; no device worn during capture"
+      },
+      "publications": [
+        {
+          "citation": "Wu K., Xiang P., Lin C., Bai O. (2026). Load Estimation for Industrial Load-lifting Exoskeletons Using Insole Pressure Sensors and Machine Learning. IEEE AIRC 2026",
+          "doi": "10.48550/arXiv.2503.07527",
+          "note": "Companion to the wu-insole-load-estimation-exo entry in the Models library."
+        }
+      ],
+      "load": "Static box lifting with 2-10 kg dumbbell loads in 0.5 kg steps, 3 sessions per subject",
+      "equipment": "Pair of 18-channel RX-ES42-18 insole pressure sensors (36 channels total), Bluetooth, 20 Hz",
+      "sampling": {
+        "pressure": 20
+      },
+      "tags": [
+        "pressure-insoles",
+        "load-estimation",
+        "exoskeleton-control",
+        "lifting",
+        "machine-learning"
+      ],
+      "description": "Announced dataset of raw 36-channel insole plantar-pressure recordings from 5 subjects lifting 2-10 kg loads, collected to train lifting-load regression models for adaptive control of industrial lifting exoskeletons (IEEE AIRC 2026; arXiv 2503.07527). The paper states data and code are public on GitHub, but the linked repository is still empty as of September 2026 - listed as coming soon until the deposit is populated.\n",
+      "added": "2026-09-01"
     }
   ]
 }
 </script>
 <!-- CATALOG:END -->
-<script src="app.js?v=20260825"></script>
+<script src="app.js?v=20260901c"></script>
 </body>
 </html>

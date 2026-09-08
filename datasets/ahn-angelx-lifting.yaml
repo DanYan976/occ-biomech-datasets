@@ -1,0 +1,49 @@
+id: ahn-angelx-lifting
+title: "Angel X Passive Back Exoskeleton: EMG, Kinematics and Metabolic Cost in Repetitive Lifting"
+status: restricted
+sample: false
+
+source:
+  authors: "Ahn J., Jung H., Moon J., Kwon C., Ahn J."
+  institution: "Seoul National University / Angel Robotics"
+  country: [KR]
+  year: 2025
+
+access:
+  url: "https://doi.org/10.1038/s41598-025-88471-w"
+  license: "Data from corresponding author on reasonable request"
+
+tasks: [lifting, holding]
+setting: lab
+modalities: [emg, mocap, physiological]
+
+subjects:
+  n: 15
+  sex: "15M"
+  age_range: "24.5 ± 3.5"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Angel X (Angel Robotics)"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "With vs. without the exoskeleton: repetitive 15 kg lifting (12/min), 90 s static 15 kg holding, and repetitive 10 kg lifting (16/min)"
+  outcomes: [muscle_activity, kinematics, metabolic, subjective, discomfort]
+
+publications:
+  - citation: "Ahn J., Jung H., Moon J., Kwon C., Ahn J. (2025). A comprehensive assessment of a passive back support exoskeleton for load handling assistance. Sci. Rep. 15:3926"
+    doi: "10.1038/s41598-025-88471-w"
+
+load: "Repetitive lifting of 15 kg (ankle to waist, 12 lifts/min) and 10 kg (16 lifts/min); 90 s static holding of 15 kg"
+equipment: "12-channel bilateral EMG on six muscle groups; 49-marker optical mocap (100 Hz); COSMED K5 indirect calorimetry; Borg CR-10 and local discomfort scales"
+sampling:
+  mocap: 100
+tags: [exoskeleton, back, lifting, metabolic, semg, comprehensive-evaluation]
+description: >
+  Multifaceted evaluation of the Angel X passive back-support exoskeleton
+  (3 kg, 14-16 Nm adjustable torque): 15 males performed repetitive 10 and
+  15 kg lifting and static holding while 12-channel EMG, full-body
+  kinematics, indirect-calorimetry metabolic cost and subjective
+  exertion/discomfort were measured (Scientific Reports, 2025). Data from
+  the corresponding author on reasonable request.
+added: 2026-09-01

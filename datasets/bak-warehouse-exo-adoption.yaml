@@ -1,0 +1,46 @@
+id: bak-warehouse-exo-adoption
+title: "Stakeholder Perspectives on Exoskeleton Adoption in Warehouse Settings"
+status: open
+sample: false
+
+source:
+  authors: "Bak V., Pridmore J., Sanchez A., Ho C."
+  institution: "Erasmus University Rotterdam"
+  year: 2026
+
+access:
+  url: "https://zenodo.org/records/21506030"
+  doi: "10.5281/zenodo.21506030"
+  license: "CC-BY-4.0"
+
+tasks: [mmh]
+setting: field
+modalities: [survey]
+
+subjects:
+  n: 34
+
+exoskeleton:
+  role: evaluation
+  devices: ["Auxivo LiftSuit 2.0"]
+  body_region: [back]
+  actuation: [passive]
+  comparison: "Qualitative case study of real-workplace adoption: 34 stakeholder interviews plus a week-long site visit"
+  outcomes: [subjective]
+
+publications:
+  - citation: "Bak V., Pridmore J., Sanchez A., Ho C. (2026). Reframing Success in Embodied Work: Competing Perspectives on Occupational Exoskeleton Adoption. Eur. J. Workplace Innovation 10(2):29-54"
+    doi: "10.46364/ejwi.v10i2.1575"
+
+load: "Warehouse order picking and manual materials handling (field adoption study, site anonymized)"
+equipment: "Semi-structured interviews with operators, managers, ergonomists, researchers and developers; aggregated thematic report, interview guides and consent materials deposited; raw transcripts withheld"
+tags: [exoskeleton, back, warehouse, field-study, qualitative, adoption]
+description: >
+  Qualitative case study of Auxivo LiftSuit 2.0 adoption in a large
+  anonymized European warehouse: 34 semi-structured stakeholder interviews
+  (operators, managers, ergonomists, researchers, developers) plus a
+  week-long site visit, funded by the EU Horizon SEISMEC project. The
+  Zenodo deposit (CC BY 4.0) holds the aggregated thematic report and
+  research materials; participant-level transcripts are withheld for
+  privacy.
+added: 2026-09-01

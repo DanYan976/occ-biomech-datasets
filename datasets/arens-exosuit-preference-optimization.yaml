@@ -1,0 +1,49 @@
+id: arens-exosuit-preference-optimization
+title: "Harvard Back Exosuit: Preference-Based Assistance Optimization"
+status: open
+sample: false
+
+source:
+  authors: "Arens P., Quirk D.A., Pan W., Yacoby Y., Doshi-Velez F., Walsh C.J."
+  institution: "Harvard University / Wellesley College"
+  country: [US]
+  year: 2025
+
+access:
+  url: "https://datadryad.org/dataset/doi:10.5061/dryad.2z34tmpx5"
+  doi: "10.5061/dryad.2z34tmpx5"
+  license: "CC0-1.0"
+
+tasks: [lifting, lowering]
+setting: lab
+modalities: [survey]
+
+subjects:
+  n: 15
+  sex: "7M / 8F"
+  age_range: "25.6 ± 3.6"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Harvard soft back exosuit"]
+  body_region: [back]
+  actuation: [active]
+  comparison: "Forced-choice comparisons between assistance settings during stoop lifting/lowering, within-subject Bayesian optimization"
+  outcomes: [subjective]
+
+publications:
+  - citation: "Arens P., Quirk D.A., Pan W., Yacoby Y., Doshi-Velez F., Walsh C.J. (2025). Preference-based assistance optimization for lifting and lowering with a soft back exosuit. Sci. Adv. 11(15):eadu2099"
+    doi: "10.1126/sciadv.adu2099"
+
+load: "Stoop lifting and lowering under varied lifting/lowering assistance gains"
+equipment: "Cable-driven soft back exosuit with suit-integrated IMUs; forced-choice preference logging"
+formats: [csv]
+tags: [exoskeleton, back, exosuit, human-in-the-loop, preference-optimization]
+description: >
+  Forced-choice preference data from human-in-the-loop Bayesian optimization
+  of two control parameters (lifting vs. lowering assistance gain) of an
+  active soft back exosuit, from 15 participants, plus a supplementary
+  just-noticeable-difference experiment on assistance perception (Science
+  Advances, 2025). Behavioral/feedback data only, no raw biomechanical
+  signals; CSV on Dryad under CC0.
+added: 2026-09-01

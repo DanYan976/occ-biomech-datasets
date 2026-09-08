@@ -1,0 +1,49 @@
+id: graef-exo4work-women-drilling
+title: "Exo4Work Shoulder Exoskeleton: Overhead Precision Drilling in Women"
+status: restricted
+sample: false
+
+source:
+  authors: "Gräf J.K., Wollesen B., Díaz M.A., De Bock S., Hansen L., Ducastel V., Preckher A., Roelands B., De Pauw K."
+  institution: "Vrije Universiteit Brussel / University of Hamburg / German Sport University Cologne"
+  country: [BE]
+  year: 2026
+
+access:
+  url: "https://doi.org/10.1038/s41598-026-53198-9"
+  license: "Data from corresponding author on reasonable request"
+
+tasks: [reaching, holding, assembly]
+setting: lab
+modalities: [emg, survey]
+
+subjects:
+  n: 14
+  sex: "14F"
+  age_range: "27 ± 10"
+
+exoskeleton:
+  role: evaluation
+  devices: ["Exo4Work (VUB/BruBotics)"]
+  body_region: [shoulder]
+  actuation: [passive]
+  comparison: "Randomized 2x2 crossover, with vs. without the exoskeleton, women-only cohort"
+  outcomes: [muscle_activity, task_performance, subjective, discomfort]
+
+publications:
+  - citation: "Gräf J.K. et al. (2026). Influence of a passive shoulder exoskeleton on drilling performance in women - a cross-sectional study. Sci. Rep. 16:17853"
+    doi: "10.1038/s41598-026-53198-9"
+    note: "Trapezius activation and shoulder strain decreased, but accuracy dropped and usability was rated unacceptable - fit issues for female users."
+
+load: "Overhead precision bolt-tightening: 20 bolts into a sensor-instrumented workstation with a 1.14 kg electric screwdriver"
+equipment: "sEMG on 7 shoulder/arm muscles; workstation force sensors and accelerometers; Borg RPE, Body Part Discomfort Scale, System Usability Scale"
+tags: [exoskeleton, shoulder, overhead-work, women, usability, drilling]
+description: >
+  One of the few occupational-exoskeleton evaluations with a women-only
+  cohort: 14 women performed overhead precision bolt-tightening with and
+  without the Exo4Work passive shoulder exoskeleton in a randomized
+  crossover (Scientific Reports, 2026). Trapezius activity and subjective
+  shoulder strain decreased but accuracy and usability suffered,
+  documenting fit and complexity issues for female users. Data from the
+  corresponding author on reasonable request.
+added: 2026-09-01

@@ -15,6 +15,7 @@ access:
   license: "CC-BY-4.0"
 
 tasks: [lifting, carrying, mmh]
+setting: lab
 modalities: [imu]
 
 subjects:
