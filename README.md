@@ -181,6 +181,7 @@ non-commercial to data-on-request.
 - [Yangming Shi](https://cee.mines.edu/project/shi-yangming/) — Colorado School
   of Mines
 - [Xianlian Zhou](https://people.njit.edu/profile/alexzhou) — NJIT
+- [Shantanu Sharma](https://people.njit.edu/profile/ss797) — NJIT
 - [Xudong Zhang](https://engineering.tamu.edu/industrial/profiles/zhang-xudong.html)
   — Texas A&M University
 
