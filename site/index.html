@@ -197,7 +197,7 @@ if (location.hash.indexOf("#dataset-") === 0) {
 <script id="catalog-data" type="application/json">
 {
   "generated_from": "datasets/*.yaml",
-  "count": 53,
+  "count": 54,
   "datasets": [
     {
       "id": "andydata-lab-oneperson",
@@ -1932,6 +1932,69 @@ if (location.hash.indexOf("#dataset-") === 0) {
       ],
       "description": "Multimodal dataset from 21 adults performing construction-like tasks (stair and ramp ascent/descent, kneeling, VR precision work) on a modular stair-ramp-deck platform, with and without powered knee exoskeleton assistance, in a randomized crossover design. Synchronized motion capture, force plate, sEMG, IMU and metabolic recordings in a single 3.75 GB MATLAB file on Mendeley Data (CC BY 4.0).\n",
       "added": "2026-09-01"
+    },
+    {
+      "id": "lim-vt-mmh-ergo-risk",
+      "title": "Kinematic and EMG Dataset for Ergonomic Risk Assessment in Manual Material Handling",
+      "status": "open",
+      "sample": false,
+      "source": {
+        "authors": "Lim S., Nussbaum M.A.",
+        "institution": "Virginia Tech",
+        "country": [
+          "US"
+        ],
+        "year": 2026
+      },
+      "access": {
+        "url": "https://doi.org/10.5281/zenodo.23669308",
+        "doi": "10.5281/zenodo.23669308",
+        "license": "CC-BY-4.0"
+      },
+      "tasks": [
+        "lifting",
+        "lowering",
+        "pushing",
+        "pulling",
+        "mmh"
+      ],
+      "setting": "lab",
+      "modalities": [
+        "imu",
+        "emg",
+        "depth"
+      ],
+      "subjects": {
+        "n": 40,
+        "sex": "20F / 20M",
+        "age_range": "Younger (mean 23 ± 3.1 y) and older (mean 55.5 ± 5.3 y) adults"
+      },
+      "publications": [
+        {
+          "citation": "Taori S., Nussbaum M.A., Lim S. (2026). A Kinematic and Electromyographic Dataset for Ergonomic Risk Assessment in Manual Material Handling. SSRN preprint",
+          "doi": "10.2139/ssrn.7328879",
+          "note": "Data descriptor (preprint)"
+        }
+      ],
+      "load": "Boxes and other load configurations, 2.3-11.3 kg, at multiple lifting heights and handling depths",
+      "equipment": "Full-body IMU system (joint angles), Kinect markerless motion capture (skeleton), 8-channel EMG armband",
+      "sampling": {
+        "imu": 200,
+        "emg": 500,
+        "depth": 30
+      },
+      "formats": [
+        "csv"
+      ],
+      "tags": [
+        "ergonomics",
+        "older-workers",
+        "machine-learning",
+        "multimodal",
+        "sex-balanced"
+      ],
+      "description": "40 younger and older adults (20F/20M) performed simulated lifting/lowering and pushing/pulling tasks with several load types, masses, heights and handling depths, recorded simultaneously with IMUs, a Kinect and an EMG armband. One CSV per participant and modality, with trial conditions and demographics in every row. Built for training and benchmarking ML ergonomic-risk models across age and sex.\n",
+      "added": "2026-11-16"
     },
     {
       "id": "mayer-apogee-lifting-speeds",
