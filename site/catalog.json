@@ -1750,8 +1750,8 @@
         "year": 2026
       },
       "access": {
-        "url": "https://doi.org/10.5281/zenodo.23669308",
-        "doi": "10.5281/zenodo.23669308",
+        "url": "https://doi.org/10.5281/zenodo.23669307",
+        "doi": "10.5281/zenodo.23669307",
         "license": "CC-BY-4.0"
       },
       "tasks": [
@@ -1774,13 +1774,13 @@
       },
       "publications": [
         {
-          "citation": "Taori S., Nussbaum M.A., Lim S. (2026). A Kinematic and Electromyographic Dataset for Ergonomic Risk Assessment in Manual Material Handling. SSRN preprint",
-          "doi": "10.2139/ssrn.7328879",
-          "note": "Data descriptor (preprint)"
+          "citation": "Taori S., Nussbaum M.A., Lim S. (2026). A Kinematic and Electromyographic Dataset for Ergonomic Risk Assessment in Manual Material Handling. Sci. Data",
+          "doi": "10.1038/s41597-026-08812-w",
+          "note": "Data descriptor: protocol, sensor setup, activity labels, missing-data tables and comparison with published MMH datasets"
         }
       ],
-      "load": "Boxes and other load configurations, 2.3-11.3 kg, at multiple lifting heights and handling depths",
-      "equipment": "Full-body IMU system (joint angles), Kinect markerless motion capture (skeleton), 8-channel EMG armband",
+      "load": "Horizontal box, vertical box and sandbag; 2.3, 4.5, 6.8, 9.1 and 11.3 kg; lifted from floor (0 m) or waist (0.90 m) to a cart, cart pushed/pulled 1.59 m, then lowered to shelves",
+      "equipment": "Noraxon Ultium Motion IMUs (16 sensors, joint angles); 3 Microsoft Azure Kinect depth cameras (markerless skeleton); Mindrove 8-channel EMG armband on the right forearm (raw + MVC-normalized)",
       "sampling": {
         "imu": 200,
         "emg": 500,
@@ -1794,9 +1794,11 @@
         "older-workers",
         "machine-learning",
         "multimodal",
-        "sex-balanced"
+        "sex-balanced",
+        "fatigue",
+        "activity-recognition"
       ],
-      "description": "40 younger and older adults (20F/20M) performed simulated lifting/lowering and pushing/pulling tasks with several load types, masses, heights and handling depths, recorded simultaneously with IMUs, a Kinect and an EMG armband. One CSV per participant and modality, with trial conditions and demographics in every row. Built for training and benchmarking ML ergonomic-risk models across age and sex.\n",
+      "description": "40 younger and older adults (20F/20M) each completed 12 trials of lifting, cart pushing/pulling and lowering with three load types and five masses, including fatigue trials at the start and end, recorded with IMUs, three Azure Kinects and an EMG armband (14.9 h in total). Every sample carries activity labels and trial conditions. Built for training and benchmarking ML ergonomic-risk models across age and sex.\n",
       "added": "2026-11-16"
     },
     {
